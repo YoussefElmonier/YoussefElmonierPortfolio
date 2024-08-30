@@ -45,6 +45,9 @@ body {
     outline: hidden;
     scroll-behavior: smooth;
 }
+.intro{
+    margin-top: 12em;
+}
 .intro h1 {
     font-family: askerB;
     font-size: 55px;
@@ -52,7 +55,6 @@ body {
     overflow: hidden;
     white-space: nowrap;
     line-height: 1;
-    
 }
 @-webkit-keyframes slide-top {
     0% {
@@ -320,13 +322,13 @@ img {
 /* Home Section Styling */
 #home {
     font-family: askerM;
-    /* text-transform: uppercase; */
     font-weight: 300;
     background-color: rgba(0, 0, 0, 0.4);
     height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     text-align: center;
     color: rgb(255, 255, 255);
 }
@@ -354,7 +356,11 @@ img {
     animation: fade-in 1.5s forwards;
     animation-delay: 3s;
 }
-
+.hamo p{
+    font-family: askerM;
+    font-size: 20px;
+    text-align: center;
+}
 .intro p2 {
     font-family: askerM;
     font-size: 15px;
@@ -390,24 +396,21 @@ button:hover {
     transform: scale(1.05);
     transition: all 150ms ease-in-out;
 }
-/* About Section Styling */
-/* section {
-    background-color: #000000;
-    padding: 50px 20px;
-    color: rgb(255, 255, 255);
-}
-.aboutP {
-    font-family: Tusker GroteskMed;
-
-} */
 #about {
     background-color: #000000;
+    width: 1510px;
+    height:200px;
+    text-align: center;
 }
-
+#about h2{
+    text-align: center;
+}
 .container {
     background-color: #000000;
-    max-width: 720px;
-    margin: 90px auto;
+    max-width: 1510px;
+    margin: 0px;
+    align-items: center;
+    text-align: center;
 }
 
 .hamo h2 {
@@ -418,20 +421,24 @@ button:hover {
     text-align: center;
     line-height: 1;
     color: #ffffff;
-    /* Replace $blue-dark with an actual color value */
-    transform-origin: center bottom;
-    transition: all 0.4s;
+    align-items: center;
 }
-
-.container h2:first-of-type {
-    background-color: black;
-    transform-origin: center top;
+.about-me {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    background-color: #000000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
 }
-
-.container:hover h2 {
-    transform: scaleY(0);
+.about-me h1 {
+    font-size: 6em;
+    margin-bottom: 0.5em;
 }
-
+.about-me p {
+    font-size: 1.2em;
+    color: #555;
+}
 .text {
     position: relative;
     top: 0;
@@ -443,27 +450,6 @@ button:hover {
     transition: all 0.3s;
     margin-bottom: -50px;
 }
-
-.text:before,
-.text:after {
-    display: block;
-    margin: 50px 0;
-    height: 10px;
-    opacity: 0.75;
-    content: '';
-    transition: all 0.3s;
-    margin-bottom: 50px;
-}
-
-.text:hover {
-    background: rgb(0, 0, 0);
-}
-
-.text:hover:before,
-.text:hover:after {
-    margin: 0;
-}
-
 .parent {
     display: flex;
     justify-content: center;
@@ -478,7 +464,7 @@ button:hover {
     overflow: hidden;
     background: rgb(0, 0, 0);
     line-height: 1.5;
-    font-size: 18px;
+    font-size: 20px;
     font-family: askerM;
     transform: scale(0);
     transition: all 0.3s;
@@ -496,7 +482,7 @@ button:hover {
 
 .container:hover .inner {
     padding: 60px;
-    max-height: 300px;
+    max-height: 100px;
     transform: scale(1);
 }
 
@@ -932,6 +918,40 @@ footer {
 .view-certificate-button:hover {
     background-color: #050505;
 }
+.skills-section {
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 20px;
+}
+.cardSkill{
+    background: rgba(41, 40, 40, 0.26);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8.5px);
+    -webkit-backdrop-filter: blur(10.5px);
+    border: 1px solid rgba(98, 98, 98, 0.33);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+    transition: all 0.3s ease;
+    height: 15em;
+    align-items: start;
+    text-align: left;
+    }  
+    .cardSkill h3 {
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    
+    .cardSkill p {
+        font-size: 16px;
+        color: #555;
+    }
 @media (max-width: 768px) {
     header {
         font-size: 15px;
@@ -1087,7 +1107,60 @@ footer {
     .certificate-item {
         width: 90%;
     }
-
+    .skills-section {
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        flex-wrap: nowrap;
+        gap: 20px;
+    }
+    .cardSkill{
+        background: rgba(41, 40, 40, 0.26);
+        border-radius: 16px;
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(8.5px);
+        -webkit-backdrop-filter: blur(10.5px);
+        border: 1px solid rgba(98, 98, 98, 0.33);
+        padding: 20px;
+        width: 300px;
+        text-align: center;
+        transform-style: preserve-3d;
+        transform: perspective(1000px);
+        transition: all 0.3s ease;
+        height: 12em;
+        align-items: start;
+        text-align: left;
+        }  
+        .cardSkill h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .cardSkill p {
+            font-size: 14px;
+            color: #555;
+        }
+        .about-me {
+            text-align: center;
+            width: 100%;
+            padding: 20px;
+            background-color: #000000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        .about-me h1 {
+            font-size: 4em;
+            margin-bottom: 0.5em;
+        }
+        .about-me p {
+            font-size: 0.7em;
+            color: #555;
+        }
+        .intro{
+            margin-top: 3em;
+        }
 @media (min-width: 768px){
 .animation{
     transform-style: preserve-3d;
