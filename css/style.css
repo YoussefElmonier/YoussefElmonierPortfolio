@@ -1152,11 +1152,13 @@ footer {
         }
         .about-me h1 {
             font-size: 4em;
-            margin-bottom: 0.5em;
+            margin-bottom: 0.1em;
         }
         .about-me p {
-            font-size: 0.7em;
-            color: #555;
+            font-family: askerM;
+            font-size: 0.8em;
+            color: #757575;
+            text-align: center;
         }
         .intro{
             margin-top: 3em;
