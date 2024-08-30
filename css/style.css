@@ -942,6 +942,10 @@ footer {
     height: 15em;
     align-items: start;
     text-align: left;
+    opacity: 0;
+	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+	animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation-delay: 2s;
     }  
     .cardSkill h3 {
         font-size: 24px;
