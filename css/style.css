@@ -302,7 +302,7 @@ nav ul li a {
 .sidebar {
     position: fixed;
     top: 15%;
-    left: 20px;
+    left: 10px;
     /* Adjust this value to control the spacing */
     /* Other styles as needed */
     opacity: 0;
