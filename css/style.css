@@ -19,14 +19,6 @@
 }
 
 @layer reset, baselayout, components;
-
-@keyframes animate-in {
-    from {
-        opacity: 0.2;
-        scale: 0.8;
-        translate: 0 10%;
-    }
-}
 * {
     margin: 0;
     padding: 0;
@@ -56,26 +48,6 @@ body {
     white-space: nowrap;
     line-height: 1;
 }
-@-webkit-keyframes slide-top {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(-100px);
-              transform: translateY(-100px);
-    }
-  }
-  @keyframes slide-top {
-    0% {
-      -webkit-transform: translateY(0);
-              transform: translateY(0);
-    }
-    100% {
-      -webkit-transform: translateY(-100px);
-              transform: translateY(-100px);
-    }
-  }
 @keyframes typewriter {
     from {
         width: 0;
@@ -91,30 +63,6 @@ body {
         opacity: 1;
     }
 }
-@-webkit-keyframes text-focus-in {
-    0% {
-      -webkit-filter: blur(12px);
-              filter: blur(12px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
-  }
-  @keyframes text-focus-in {
-    0% {
-      -webkit-filter: blur(12px);
-              filter: blur(12px);
-      opacity: 0;
-    }
-    100% {
-      -webkit-filter: blur(0px);
-              filter: blur(0px);
-      opacity: 1;
-    }
-  }
   @-webkit-keyframes tracking-in-expand {
     0% {
       letter-spacing: -0.5em;
@@ -356,11 +304,6 @@ img {
     animation: fade-in 1.5s forwards;
     animation-delay: 3s;
 }
-.hamo p{
-    font-family: askerM;
-    font-size: 20px;
-    text-align: center;
-}
 .intro p2 {
     font-family: askerM;
     font-size: 15px;
@@ -396,33 +339,6 @@ button:hover {
     transform: scale(1.05);
     transition: all 150ms ease-in-out;
 }
-#about {
-    background-color: #000000;
-    width: 1510px;
-    height:200px;
-    text-align: center;
-}
-#about h2{
-    text-align: center;
-}
-.container {
-    background-color: #000000;
-    max-width: 1510px;
-    margin: 0px;
-    align-items: center;
-    text-align: center;
-}
-
-.hamo h2 {
-    font-family: askerB;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 90px;
-    text-align: center;
-    line-height: 1;
-    color: #ffffff;
-    align-items: center;
-}
 .about-me {
     text-align: center;
     width: 100%;
@@ -439,52 +355,6 @@ button:hover {
     font-size: 1.2em;
     color: #555;
 }
-.text {
-    position: relative;
-    top: 0;
-    right: 0;
-    left: 0;
-    font-family: Tusker GroteskMed;
-    font-weight: 100;
-    transform: translateY(-50%);
-    transition: all 0.3s;
-    margin-bottom: -50px;
-}
-.parent {
-    display: flex;
-    justify-content: center;
-    /* Center horizontally */
-    align-items: center;
-    /* Center vertically */
-}
-
-.inner {
-    padding: 0 56px;
-    max-height: 0;
-    overflow: hidden;
-    background: rgb(0, 0, 0);
-    line-height: 1.5;
-    font-size: 20px;
-    font-family: askerM;
-    transform: scale(0);
-    transition: all 0.3s;
-}
-
-.hamo {
-    display: flex;
-    justify-content: center;
-    /* Center horizontally */
-    align-items: center;
-    /* Center vertically */
-    flex-direction: column;
-    margin-top: 20px;
-}
-
-.container:hover .inner {
-    padding: 60px;
-    max-height: 100px;
-    transform: scale(1);
-}
 
 /* Footer Styling */
 footer {
@@ -497,16 +367,6 @@ footer {
     position: relative;
     bottom: 0;
     width: 100%;
-}
-.Projects p2 {
-    font-family: askerB;
-    font-size: 60px;
-    text-align: center;
-    margin-bottom: 0px;
-    /* border: 1px solid rgb(3, 158, 80); */
-    margin: 1;
-    padding: 20px;
-    position: relative;
 }
 .Projects p {
     font-family: askerB;
@@ -553,14 +413,6 @@ footer {
     border: 1px solid rgb(85, 85, 85);  
     background: linear-gradient(90deg, rgba(25,26,29,1) 0%, rgba(30,30,33,1) 100%);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.col a {
-    text-decoration: none;
-    width: 70%;
-    display: block;
-    width: fit-content;
-    padding: 20px;
-    margin: 10px;
 }
 .col img {
     height: auto;
@@ -613,14 +465,6 @@ footer {
     background: linear-gradient(90deg, rgba(25,26,29,1) 0%, rgba(30,30,33,1) 100%);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-.colRev a {
-    text-decoration: none;
-    width: 70%;
-    display: block;
-    width: fit-content;
-    padding: 20px;
-    margin: 10px;
-}
 .colRev img {
     height: auto;
     width: 100%;
@@ -671,14 +515,6 @@ footer {
     border: 1px solid rgb(85, 85, 85);  
     background: linear-gradient(90deg, rgba(25,26,29,1) 0%, rgba(30,30,33,1) 100%);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-.row a {
-    text-decoration: none;
-    width: 70%;
-    display: block;
-    width: fit-content;
-    padding: 20px;
-    margin: 10px;
 }
 .row img {
     height: auto;
@@ -745,14 +581,6 @@ footer {
 }
 .Proj-container:nth-child(5) {
     grid-column: 1 / span 2;
-}
-.Proj-container a {
-    text-decoration: none;
-    width: 70%;
-    display: block;
-    width: fit-content;
-    padding: 20px;
-    margin: 10px;
 }
 /* .Proj-container img {
     height: auto;
@@ -1025,19 +853,6 @@ footer {
     .project-icon{
         width: auto !important;
       }
-
-    .title h3 {
-        font-size: 15px;
-        margin-top: -5px;
-        line-height:1.5;
-        text-align: left;
-    }
-    .title h4 {
-        font-size: 40px;
-        margin-top: -5px;
-        line-height:1.5;
-        text-align: left;
-    }
     .Projects p{
         font-size: 30px;
         /* margin-top: -5px; */
@@ -1090,19 +905,6 @@ footer {
         background: linear-gradient(90deg, rgba(25,26,29,1) 0%, rgba(30,30,33,1) 100%);
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    .row a {
-        text-decoration: none;
-        width: 70%;
-        display: block;
-        width: fit-content;
-        padding: 20px;
-        margin: 10px;
-    }
-    .row img:nth-of-type(2) {
-        height: auto;
-        width: 100%;
-        object-fit: cover;
-}
     .certificates-container {
         flex-direction: column;
         align-items: center;
@@ -1162,7 +964,8 @@ footer {
             font-family: askerM;
             font-size: 0.8em;
             color: #757575;
-            text-align: center;
+            text-align: left;
+            padding-left: 25px;
         }
         .intro{
             margin-top: 3em;

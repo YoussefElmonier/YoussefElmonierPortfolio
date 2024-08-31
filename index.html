@@ -15,9 +15,9 @@
         <nav>
             <img src="images/logoW.png" class="logo">
             <ul class="bar">
-                <li><a href="#project">Projects</a></li>
-                <li class="homee"><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#" class="nav-link" data-target=".project">Projects</a></li>
+                <li class="homee"><a href="#" class="nav-link" data-target=".home">Home</a></li>
+                <li class="homee"><a href="#" class="nav-link" data-target=".about-me">About</a></li>
             </ul>
         </nav>
     </header>
@@ -47,36 +47,39 @@
     </div>
     <section id="home">
         <!-- <div class="intro"> -->
-            <div class="intro">
-                <h1 class="line1">Hello</h1>
-                <h1 class="line2">I Am Youssef Elmonier</h1>
-                <p>I'm a Front-End Developer & Graphic Designer</p>
-                <p2>(Jou.png)</p2>
+        <div class="intro">
+            <h1 class="line1">Hello</h1>
+            <h1 class="line2">I Am Youssef Elmonier</h1>
+            <p>I'm a Front-End Developer & Graphic Designer</p>
+            <p2>(Jou.png)</p2>
+        </div>
+        <video autoplay loop muted playsinline class="background-clip">
+            <source src="manga222.mp4" media="(max-width: 599px)">
+            <source src="manga2.mp4">
+        </video>
+        <div class="skills-section">
+            <div class="cardSkill animation">
+                <h3>Web Design</h3>
+                <p>"Expert in HTML, CSS, and JavaScript, creating visually appealing and user-friendly websites with a
+                    focus on functionality and aesthetics."</p>
             </div>
-            <video autoplay loop muted playsinline class="background-clip">
-                <source src="manga222.mp4" media="(max-width: 599px)">
-                <source src="manga2.mp4">
-            </video>
-            <div class="skills-section">
-                <div class="cardSkill animation">
-                    <h3>Web Design</h3>
-                    <p>"Expert in HTML, CSS, and JavaScript, creating visually appealing and user-friendly websites with a focus on functionality and aesthetics."</p>
-                </div>
-                <div class="cardSkill animation">
-                    <h3>UI/UX Design</h3>
-                    <p>"Specialist in designing intuitive user interfaces using Figma, enhancing user experience with creative and functional designs. I prioritize UX to deliver seamless interactions."</p>
-                </div>
-                <div class="cardSkill animation">
-                    <h3>Graphic Design</h3>
-                    <p>"With 7 years in Photoshop and Adobe Premiere, and proficiency in DaVinci Resolve and 3D Blender, I craft stunning visuals for branding and marketing materials."</p>
-                </div>
+            <div class="cardSkill animation">
+                <h3>UI/UX Design</h3>
+                <p>"Specialist in designing intuitive user interfaces using Figma, enhancing user experience with
+                    creative and functional designs. I prioritize UX to deliver seamless interactions."</p>
             </div>
+            <div class="cardSkill animation">
+                <h3>Graphic Design</h3>
+                <p>"With 7 years in Photoshop and Adobe Premiere, and proficiency in DaVinci Resolve and 3D Blender, I
+                    craft stunning visuals for branding and marketing materials."</p>
+            </div>
+        </div>
         <!-- </div> -->
     </section>
     <section class="about-me">
         <h1>ABOUT ME</h1>
         <p>I am a front-end developer and graphic designer with experience in 3D and Graphic Design.<br> I've had
-        the privilege of working with top rappers in Egypt's rap scene as well as with local brands.</p>
+            the privilege of working with top rappers in Egypt's rap scene as well as with local brands.</p>
     </section>
     <!-- <section class="projectTitle"> -->
     <div class="text-with-lines">
@@ -409,6 +412,18 @@
         // Listen for changes in the media query state
         mediaQuery.addListener(handleMediaQueryChange);
     </script>
+        <script>
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetClass = link.getAttribute('data-target');
+                    const targetElement = document.querySelector(targetClass);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        </script>
 </body>
 
 </html>
