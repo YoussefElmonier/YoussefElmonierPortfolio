@@ -1,7 +1,9 @@
+@ -1,466 +1,466 @@
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    <link rel="icon" type="image/png" href="/images/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
@@ -15,9 +17,9 @@
         <nav>
             <img src="images/logoW.png" class="logo">
             <ul class="bar">
-                <li><a href="#project">Projects</a></li>
-                <li class="homee"><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#" class="nav-link" data-target=".project">Projects</a></li>
+                <li class="homee"><a href="#" class="nav-link" data-target=".home">Home</a></li>
+                <li class="homee"><a href="#" class="nav-link" data-target=".about-me">About</a></li>
             </ul>
         </nav>
     </header>
@@ -38,7 +40,7 @@
             <a href="https://wa.me/qr/JZ3OAP5EOO3KI1" target="_blank">
                 <img src="/images/whats.png" alt="WhatsApp">
             </a>
-            <a href="https://drive.google.com/file/d/1VypT8oqcvafNMXBcGjyZlCNCG7JjYMUi/view?usp=sharing"
+            <a href="https://drive.google.com/file/d/140BfUYm4V78PvQOUQUcu1vPy5AUOkSc-/view?usp=sharing"
                 target="_blank">
                 <img src="/images/cv.png" alt="CV">
             </a>
@@ -46,38 +48,49 @@
     </div>
     </div>
     <section id="home">
+        <!-- <div class="intro"> -->
         <div class="intro">
             <h1 class="line1">Hello</h1>
             <h1 class="line2">I Am Youssef Elmonier</h1>
             <p>I'm a Front-End Developer & Graphic Designer</p>
             <p2>(Jou.png)</p2>
-            <!-- <button id="viewProjectsBtn">View Projects</button> -->
-            <video autoplay loop muted playsinline class="background-clip">
-                <source src="manga22.mp4" media="(max-width: 599px)">
-                <source src="manga2.mp4">
-            </video>
+        </div>
+        <video autoplay loop muted playsinline class="background-clip">
+            <source src="manga222.mp4" media="(max-width: 599px)">
+            <source src="manga2.mp4">
+        </video>
+        <div class="skills-section">
+            <div class="cardSkill animation">
+                <h3>Web Design</h3>
+                <p>"Expert in HTML, CSS, and JavaScript, creating visually appealing and user-friendly websites with a
+                    focus on functionality and aesthetics."</p>
+                <p>Expert in HTML, CSS, and JavaScript with experience in frameworks like Tailwind CSS,
+                 creating visually appealing and functional websites.</p>
+            </div>
+            <div class="cardSkill animation">
+                <h3>UI/UX Design</h3>
+                <p>"Specialist in designing intuitive user interfaces using Figma, enhancing user experience with
+                    creative and functional designs. I prioritize UX to deliver seamless interactions."</p>
+            </div>
+            <div class="cardSkill animation">
+                <h3>Graphic Design</h3>
+                <p>"With 7 years in Photoshop and Adobe Premiere, and proficiency in DaVinci Resolve and 3D Blender, I
+                    craft stunning visuals for branding and marketing materials."</p>
+            </div>
+        </div>
+        <!-- </div> -->
     </section>
-    <section id="about">
-        </div>
-        <div class="container">
-            <div class="hamo">
-                <h2>About Me</h2>
-            </div>
-            <div class="text">
-                <p class="inner">
-                    "I am a front-end developer and graphic designer with experience in 3D and Graphic Design. I've had
-                    the
-                    privilege of working with top rappers in Egypt's rap scene as well as with local brands."
-                </p>
-            </div>
-        </div>
+    <section class="about-me">
+        <h1>ABOUT ME</h1>
+        <p>I am a front-end developer and graphic designer with experience in 3D and Graphic Design.<br> I've had
+            the privilege of working with top rappers in Egypt's rap scene as well as with local brands.</p>
     </section>
     <!-- <section class="projectTitle"> -->
     <div class="text-with-lines">
         Projects
     </div>
     <!-- </section> -->
-    <section id="project">
+    <section class="project">
         <div class="Projects">
             <p>3D Projects</p>
             <div class="projects-wrapper">
@@ -87,7 +100,7 @@
                         <div class="title">
                             <h2>Abyusif</h2>
                             <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/198939571/Official-3D-Visuals-for-Abyusif-Grrr-Official-Artwork', '_blank');">
+                                onclick="window.open('https://www.behance.net/gallery/205108417/Kufta-w-Tameya-Product-Design-and-packaging', '_blank');">
                                 <img src="images/play-button.png" alt="View Project" class="project-icon">
                             </button>
                         </div>
@@ -218,25 +231,25 @@
                                 ,including
                                 the
                                 visuals for the 'LAYALINA' music video."</p3>
-                            </div>
                         </div>
                     </div>
-                    <div class="row vertical__item animation Proj-container">
-                        <img src="/images/alab.png" alt="alaab Moscow">
-                        <div class="wrap">
-                            <div class="title">
-                                <h2>Alaab</h2><button class="project-icon-button"
-                                    onclick="window.open('https://www.behance.net/gallery/212643955/Alaab-Moscow-Official-Artwork?', '_blank');">
-                                    <img src="images/play-button.png" alt="View Project" class="project-icon">
-                                </button>
-                            </div>
-                            <div class="details">
-                                <h3>Alaab - Moscow </h3>
-                                <h4> Official Cover Artwork</h4>
-                                <p3>"Designed the Official Art work for Moscow Video clip Alaab & typography for Credits "</p3>
-                            </div>
+                </div>
+                <div class="row vertical__item animation Proj-container">
+                    <img src="/images/alab.png" alt="alaab Moscow">
+                    <div class="wrap">
+                        <div class="title">
+                            <h2>Alaab</h2><button class="project-icon-button"
+                                onclick="window.open('https://www.behance.net/gallery/212643955/Alaab-Moscow-Official-Artwork?', '_blank');">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                            </button>
+                        </div>
+                        <div class="details">
+                            <h3>Alaab - Moscow </h3>
+                            <h4> Official Cover Artwork</h4>
+                            <p3>"Designed the Official Art work for Moscow Video clip Alaab & typography for Credits "</p3>
                         </div>
                     </div>
+                </div>
                 <div class="row vertical__item animation Proj-container ">
                     <img src="/images/m3.png" alt="Moments">
                     <div class="wrap">
@@ -273,6 +286,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
         </div>
     </section>
     <section>
@@ -280,7 +294,7 @@
             <p>UI & UX Design</p>
             <div class="projects-wrapper">
                 <div class="col vertical__item animation Proj-container">
-                    <img src="/images/web3.png" alt="Habebey Leah">
+                    <img src="/images/web8.png" alt="Habebey Leah">
                     <div class="wrap">
                         <div class="title">
                             <h2>Skyloom</h2>
@@ -298,10 +312,28 @@
                     </div>
                 </div>
                 <div class="colRev vertical__item animation Proj-container">
+                    <img src="/images/web4.png" alt="Habebey Leah">
+                    <div class="wrap">
+                        <div class="title">
+                            <h2>Wear Wave</h2>
+                            <button class="project-icon-button"
+                                onclick="window.open('https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album', '_blank');">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                            </button>
+                        </div>
+                        <div class="details">
+                            <h3>Wear Wave</h3>
+                            <h4>UI & UX Design</h4>
+                            <p3>Designed the complete UI and UX for Wear Wave Clothing's website, creating an intuitive
+                                and visually engaging shopping experience.</p3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row vertical__item animation Proj-container">
                     <img src="/images/web6.png" alt="Habebey Leah">
                     <div class="wrap">
                         <div class="title">
-                            <h2>Fin Flow</h2>
+                            <h2>FinFlow</h2>
                             <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album', '_blank');">
                                 <img src="images/play-button.png" alt="View Project" class="project-icon">
@@ -312,24 +344,42 @@
                             <h4>UI & UX Design</h4>
                             <p3>Designed the complete UI and UX for FinFlow banking app, creating an intuitive and
                                 visually engaging shopping experience.</p3>
-                            </div>
                         </div>
                     </div>
-                    <div class="row vertical__item animation Proj-container">
-                        <img src="/images/web4.png" alt="Habebey Leah">
-                        <div class="wrap">
-                            <div class="title">
-                                <h2>Wear Wave</h2>
-                                <button class="project-icon-button"
+                </div>
+                <div class="row vertical__item animation Proj-container">
+                    <img src="/images/web12.png" alt="Habebey Leah">
+                    <div class="wrap">
+                        <div class="title">
+                            <h2>Nomad Hub</h2>
+                            <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album', '_blank');">
                                 <img src="images/play-button.png" alt="View Project" class="project-icon">
                             </button>
                         </div>
                         <div class="details">
-                            <h3>Wear WaveSSSS</h3>
+                            <h3>Nomad Hub</h3>
                             <h4>UI & UX Design</h4>
-                            <p3>Designed the complete UI and UX for Wear Wave Clothing's website, creating an intuitive
-                                and visually engaging shopping experience.</p3>
+                            <p3>Crafted a seamless UI and UX for Digital Nomad Hub,
+                            offering an inspiring and user-friendly platform for remote workers to explore, connect, and thrive.</p3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row vertical__item animation Proj-container">
+                    <img src="/images/web11.png" alt="Habebey Leah">
+                    <div class="wrap">
+                        <div class="title">
+                            <h2>ClimaCheck</h2>
+                            <button class="project-icon-button"
+                                onclick="window.open('https://clima-check-five.vercel.app/','_blank');">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                            </button>
+                        </div>
+                        <div class="details">
+                            <h3>ClimaCheck</h3>
+                            <h4>Web Design</h4>
+                            <p3>Created a dynamic and visually appealing weather forecast website using Tailwind CSS, JavaScript, 
+                            and HTML, providing an intuitive and engaging experience for users to stay informed about the latest weather conditions.</p3>
                         </div>
                     </div>
                 </div>
@@ -418,6 +468,17 @@
         // Listen for changes in the media query state
         mediaQuery.addListener(handleMediaQueryChange);
     </script>
+        <script>
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const targetClass = link.getAttribute('data-target');
+                    const targetElement = document.querySelector(targetClass);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            });
+        </script>
 </body>
-
 </html>
