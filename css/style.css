@@ -582,6 +582,9 @@ footer {
 .Proj-container:nth-child(5) {
     grid-column: 1 / span 2;
 }
+.Proj-container:nth-child(6) {
+    grid-column: 1 / span 2;
+}
 /* .Proj-container img {
     height: auto;
     width: 70%;
