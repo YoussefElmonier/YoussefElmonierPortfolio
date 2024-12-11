@@ -478,11 +478,11 @@
                         rows="5"></textarea>
                 </div>
                 <div id="notification"
-                style="display: none; background-color: #4CAF50; color: white; padding: 15px; position: fixed; top: 10px; right: 10px; border-radius: 5px;">
-                Your message has been sent successfully!
-            </div>
+                    style="display: none; background-color: #4CAF50; color: white; padding: 15px; position: fixed; top: 10px; right: 10px; border-radius: 5px;">
+                    Your message has been sent successfully!
+                </div>
                 <div class="button-container">
-                    <button class="button">
+                    <button id="submitButton" type="submit" class="button">
                         <div class="outline"></div>
                         <div class="state state--default">
                             <div class="icon">
@@ -548,21 +548,29 @@
         </div>
     </section>
     <script>
-document.getElementById('contactForm').addEventListener('submit', function (event) {
-    const purposeSelect = document.getElementById('purpose');
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();  // Prevent default form submission
 
-    if (purposeSelect.value === '') {
-        event.preventDefault();
-        alert('Please select a purpose for your contact.');
-    } else {
-        event.preventDefault(); // Prevent form submission
+            const purposeSelect = document.getElementById('purpose');
+            const submitButton = document.getElementById('submitButton');
 
-        // Optionally, reset the form
-        document.getElementById('contactForm').reset();
-    }
-});
+            // Check if purpose is selected
+            if (purposeSelect.value === '') {
+                alert('Please select a purpose for your contact.');
+            } else {
+                // Change button state to "Sent!"
+                const stateDefault = submitButton.querySelector('.state--default');
+                const stateSent = submitButton.querySelector('.state--sent');
 
+                stateDefault.style.display = 'none'; // Hide default state
+                stateSent.style.display = 'block';   // Show sent state
 
+                // Submit the form after changing the button state
+                setTimeout(function () {
+                    document.getElementById('contactForm').submit();
+                }, 1000);  // Delay to show the "Sent!" state for 1 second before submitting
+            }
+        });
 
     </script>
 
