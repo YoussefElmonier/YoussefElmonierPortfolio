@@ -1191,7 +1191,325 @@ footer {
     animation-play-state: paused;
     opacity: 0.7;
 }
+.showreel-section {
+    position: relative;
+    padding: 0px 0;
+    height: 100%;
+    width: 100%;
+    background-image: url('/images/ReelBgC.png');
+    background-size: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
+.showreel-section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,0.8) 5%,
+            rgba(0,0,0,0) 20%,
+            rgba(0,0,0,0) 80%,
+            rgba(0,0,0,0.8) 95%,
+            rgba(0,0,0,1) 100%
+        ),
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,1) 0%,
+            rgba(0,0,0,0.8) 5%,
+            rgba(0,0,0,0) 20%,
+            rgba(0,0,0,0) 80%,
+            rgba(0,0,0,0.8) 95%,
+            rgba(0,0,0,1) 100%
+        );
+    pointer-events: none;
+}
+
+/* Optional: Add radial gradient for corner emphasis */
+.showreel-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        transparent 50%,
+        rgba(0,0,0,0.3) 100%
+    );
+    pointer-events: none;
+}
+@media (max-width: 768px) {
+    .showreel-section {
+        --fade-start: 10%; /* Smaller fade area on mobile */
+    }
+    
+    .showreel-section::before {
+        background: 
+            linear-gradient(
+                90deg,
+                rgba(0,0,0,1) 0%,
+                rgba(0,0,0,0) 10%,
+                rgba(0,0,0,0) 90%,
+                rgba(0,0,0,1) 100%
+            ),
+            linear-gradient(
+                180deg,
+                rgba(0,0,0,1) 0%,
+                rgba(0,0,0,0) 10%,
+                rgba(0,0,0,0) 90%,
+                rgba(0,0,0,1) 100%
+            );
+    }
+}
+.showreel-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.showreel-wrapper {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.showreel-gif {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.showreel-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 7.5rem;
+    font-weight: bold;
+    text-align: center;
+    transition: all 0.3s ease;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    line-height: 110%;
+}
+
+.showreel-wrapper:hover .showreel-gif {
+    transform: scale(1.05);
+}
+
+
+/* Add a dark overlay on hover */
+.showreel-wrapper::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.582);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.showreel-wrapper:hover::after {
+    opacity: 1;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .showreel-title {
+        font-size: 5rem;
+    }
+    .showreel-container {
+        max-width: 400px;
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+}
+/* From Uiverse.io by vinodjangid07 */ 
+.tooltip-container {
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 17px;
+  border-radius: 10px;
+}
+
+.tooltip {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s;
+  border-radius: 15px;
+}
+
+.profile {
+    background: 
+        linear-gradient(90deg, rgba(25, 26, 29, 1) 0%, rgba(30, 30, 33, 1) 100%) padding-box,
+        linear-gradient(45deg, purple, orange) border-box;
+    border: 3px solid transparent;
+    border-radius: 15px 15px;
+    padding: 10px;
+}
+
+.tooltip-container:hover .tooltip {
+  top: -150px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.icon {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  position: relative;
+}
+.layer {
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s;
+}
+.icon:hover .layer {
+  transform: rotate(-35deg) skew(20deg);
+}
+.layer span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #fff;
+  border-radius: 15px;
+  transition: all 0.3s;
+}
+
+.layer span,
+.text {
+  color: #e6683c;
+  border-color: #e6683c;
+}
+
+.icon:hover.layer span {
+  box-shadow: -1px 1px 3px #e6683c;
+}
+.icon .text {
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  opacity: 0;
+  font-weight: 500;
+  transform: translateX(-50%);
+  transition: bottom 0.3s ease, opacity 0.3s ease;
+}
+.icon:hover .text {
+  bottom: -35px;
+  opacity: 1;
+}
+
+.icon:hover .layer span:nth-child(1) {
+  opacity: 0.2;
+}
+.icon:hover .layer span:nth-child(2) {
+  opacity: 0.4;
+  transform: translate(5px, -5px);
+}
+.icon:hover .layer span:nth-child(3) {
+  opacity: 0.6;
+  transform: translate(10px, -10px);
+}
+.icon:hover .layer span:nth-child(4) {
+  opacity: 0.8;
+  transform: translate(15px, -15px);
+}
+.icon:hover .layer span:nth-child(5) {
+  opacity: 1;
+  transform: translate(20px, -20px);
+}
+
+.instagramSVG {
+  font-size: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: -webkit-linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  background: linear-gradient(
+    45deg,
+    #f09433 0%,
+    #e6683c 25%,
+    #dc2743 50%,
+    #cc2366 75%,
+    #bc1888 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f09433', endColorstr='#bc1888',GradientType=1 );
+}
+.user {
+  display: flex;
+  gap: 10px;
+}
+.img {
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  font-weight: 700;
+  border: 1px solid #f0f0f0;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+}
+.name {
+  font-size: 17px;
+  font-weight: 700;
+  color: #e6683c;
+}
+.details {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  color: #fff;
+}
+.about {
+  color: #ccc;
+  padding-top: 5px;
+}
+.img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 80px;
+    height: 50px;
+    background-color: #000000;
+}
+
+.img img {
+    width: 25px; /* Adjust size as needed */
+    height: 25px;
+    margin-bottom: 10px; /* Space between image and text */
+}
+
+.img .text {
+    font-size: 18px; /* Adjust as needed */
+    color: your-color;
+}
 @keyframes spin {
     0% {
         transform: rotate(0deg);
