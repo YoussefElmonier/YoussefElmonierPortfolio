@@ -867,7 +867,7 @@ footer {
         height: auto;
     }
     .hello {
-        font-size: 18px;
+        font-size: 10px;
         text-align: left;
         padding-left: 3%;
         padding-right: 0;
@@ -876,12 +876,12 @@ footer {
         padding-bottom: 15%;
     }
     .name6 {
-        font-size: 80px;
+        font-size: 65px;
         line-height: 100%;
     }
 
     .job {
-        font-size: 16px;
+        font-size: 13px;
     }
     .homee {
         font-size: 20px;
