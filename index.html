@@ -13,13 +13,8 @@
 
 <body id="vertical">
     <header>
-        <nav>
+        <nav class="navs">
             <img src="images/logoW.png" class="logo">
-            <ul class="bar">
-                <li><a href="#" class="nav-link" data-target=".home">Home</a></li>
-                <li class="homee"><a href="#" class="nav-link" data-target=".about-me">About</a></li>
-                <li class="homee"><a href="#" class="nav-link" data-target=".project">Projects</a></li>
-            </ul>
         </nav>
     </header>
     <div class="sidebar">
@@ -48,12 +43,18 @@
     </div>
     <section id="home">
         <!-- <div class="intro"> -->
-        <div class="intro">
+        <!-- <div class="intro">
             <h1 class="line1">Hello</h1>
             <h1 class="line2">I Am Youssef Elmonier</h1>
             <p>I'm a Front-End Software Engineer & 3D Visualizer</p>
             <p2>(Jou.png)</p2>
+        </div> -->
+        <div class="container">
+            <div id="hello" class="hello hidden"><span class="highlight">HELLO </span> I'AM</div>
+            <div id="name" class="name6 hidden">YOUSSEF <br> ELMONIER</div>
+            <div id="job" class="job hidden">I'm a <span class="highlight">Software Engineer </span>&<span class="highlight">Front-End </span> <span class="gray-text">,3D Visualizer</span></div>
         </div>
+    
         <video autoplay loop muted playsinline class="background-clip">
             <source src="manga222.mp4" media="(max-width: 599px)">
             <source src="manga2.mp4">
@@ -643,7 +644,13 @@
         });
 
     </script>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            setTimeout(() => document.getElementById("hello").classList.add("show"), 500);
+            setTimeout(() => document.getElementById("name").classList.add("show"), 1500);
+            setTimeout(() => document.getElementById("job").classList.add("show"), 2500);
+        });
+    </script>
     <footer>
         <p>&copy; 2024 [Jou.png]. All rights reserved</p>
         <p>&copy;Banger Managment</p>

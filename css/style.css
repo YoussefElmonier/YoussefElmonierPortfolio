@@ -17,6 +17,10 @@
     font-family: askerB;
     src: url(/FONTS/Aspekta-900.ttf)
 }
+@font-face {
+    font-family: New;
+    src: url(/FONTS/oddlini-bold-ultra-expanded.ttf)
+}
 
 @layer reset, baselayout, components;
 * {
@@ -29,13 +33,14 @@ html {
 }
 body {
     background-color: #000000;
-    font-family: Tusker GroteskBold;
+    font-family: Tusker GroteskMed;
     line-height: 1.6;
     margin: 0;
     padding: 0;
     color: #ffffff;
     outline: hidden;
     scroll-behavior: smooth;
+    
 }
 .intro{
     margin-top: 12em;
@@ -47,6 +52,50 @@ body {
     overflow: hidden;
     white-space: nowrap;
     line-height: 1;
+}
+
+.container {
+    text-align: center;
+    font-family: New;
+    color: white;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.hello {
+    font-size: 25px;
+    color: gray;
+    padding-right: 85%;
+    padding-bottom: 1%;
+}
+
+.name6 {
+    font-size: 179px;
+    font-weight: bold;
+    margin: 10px 0;
+    line-height: 85%;
+}
+
+.job {
+    font-size: 18px;
+    color: gray;
+}
+
+.highlight {
+    color: white;
+}
+
+.gray-text {
+    color: #777;
 }
 @keyframes typewriter {
     from {
@@ -187,16 +236,6 @@ nav {
     font-family: askerB !important;
     font-size: 30px;
 }
-
-nav ul {
-    display: flex;
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    flex: 1;
-    justify-content: center;
-}
-
 .bar {
     display: flex;
     flex-direction: row;
@@ -224,14 +263,20 @@ nav ul li a {
 }
 
 .logo {
-    height: 8vh;
-    width: 8vh;
-    opacity: 0;
-	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-	animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    position: absolute;
+    top: 1%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 6vh;
+    width: 6vh;
+    opacity: 1;
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     animation-delay: 1.5s;
 }
-
+.navs{
+    padding-bottom: 4%;
+}
 .icon-container {
     display: flex;
     flex-direction: column;
@@ -821,7 +866,23 @@ footer {
         width: auto;
         height: auto;
     }
+    .hello {
+        font-size: 18px;
+        text-align: left;
+        padding-left: 3%;
+        padding-right: 0;
+    }
+    .navs{
+        padding-bottom: 15%;
+    }
+    .name6 {
+        font-size: 80px;
+        line-height: 100%;
+    }
 
+    .job {
+        font-size: 16px;
+    }
     .homee {
         font-size: 20px;
         margin-top: -5px;
@@ -980,6 +1041,7 @@ footer {
             color: #555;
         }
         .about-me {
+            
             text-align: center;
             width: 100%;
             padding: 20px;
@@ -988,10 +1050,12 @@ footer {
             border-radius: 10px;
         }
         .about-me h1 {
+            padding-top: 45%;
             font-size: 4em;
             margin-bottom: 0.1em;
         }
         .about-me p {
+            padding-top: 3%;
             font-family: askerM;
             font-size: 0.8em;
             color: #757575;
