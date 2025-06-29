@@ -449,6 +449,7 @@ footer {
     border: 1px solid rgb(85, 85, 85);  
     background: linear-gradient(90deg, rgba(25,26,29,1) 0%, rgba(30,30,33,1) 100%);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
 }
 .col img {
     height: 50;
@@ -499,6 +500,7 @@ footer {
     border: 1px solid rgb(85, 85, 85);  
     background: linear-gradient(90deg, rgba(25,26,29,1) 0%, rgba(30,30,33,1) 100%);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
 }
 .colRev img {
     height: auto;
@@ -550,6 +552,7 @@ footer {
     border: 1px solid rgb(85, 85, 85);  
     background: linear-gradient(90deg, rgba(25,26,29,1) 0%, rgba(30,30,33,1) 100%);
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    margin-bottom: 40px;
 }
 .row img {
     height: auto;
