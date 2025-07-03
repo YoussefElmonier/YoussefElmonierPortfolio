@@ -1,3 +1,35 @@
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes shineText {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+@keyframes expandCard {
+    from {
+        max-height: 100px;
+        opacity: 0.8;
+    }
+    to {
+        max-height: 1000px;
+        opacity: 1;
+    }
+}
+
 /* General reset for margin and padding */
 @font-face {
     font-family: Tusker GroteskBold;
@@ -62,13 +94,44 @@ body {
 
 .hidden {
     opacity: 0;
-    transform: translateY(-20px);
-    transition: opacity 0.8s ease-in-out, transform 0.8s ease-in-out;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
 
 .show {
     opacity: 1;
     transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.slide-in-left.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.fade-in-delay {
+    opacity: 0;
+    transition: opacity 0.8s ease-out;
+}
+
+.fade-in-delay.show {
+    opacity: 1;
+}
+
+.scale-fade-in {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.scale-fade-in.show {
+    opacity: 1;
+    transform: scale(1);
 }
 
 .hello {
@@ -97,6 +160,55 @@ body {
 .gray-text {
     color: #777;
 }
+/* Specific animations for index.html elements */
+.hello.show {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+.name6.show {
+    animation: fadeInUp 1s ease-out forwards 0.5s;
+}
+
+.job.show {
+    animation: fadeInUp 1s ease-out forwards 1s;
+}
+
+.highlight.show {
+    animation: fadeInUp 1s ease-out forwards 1.5s;
+}
+
+.gray-text.show {
+    animation: fadeInUp 1s ease-out forwards 2s;
+}
+
+.skills-section .cardSkill.show {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.Projects p.show {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.Proj-container.show {
+    animation: scaleFadeIn 0.8s ease-out forwards;
+}
+
+.showreel-section .showreel-title.show {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.certificates-section .certificate-item.show {
+    animation: scaleFadeIn 0.8s ease-out forwards;
+}
+
+.contact-section .form-group.show {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.contact-section .button-container.show {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
 @keyframes typewriter {
     from {
         width: 0;
@@ -110,6 +222,28 @@ body {
 @keyframes fade-in {
     to {
         opacity: 1;
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
     }
 }
   @-webkit-keyframes tracking-in-expand {
@@ -265,7 +399,7 @@ nav ul li a {
 .logo {
     position: absolute;
     top: 1%;
-    left: 50%;
+    left: 95%;
     transform: translateX(-50%);
     height: 6vh;
     width: 6vh;
@@ -274,8 +408,23 @@ nav ul li a {
     animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     animation-delay: 1.5s;
 }
-.navs{
-    padding-bottom: 4%;
+.navs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    margin-bottom: 40px;
+}
+
+.section-nav {
+    margin-top: px;
+    margin-bottom: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 20px;
 }
 .icon-container {
     display: flex;
@@ -401,6 +550,334 @@ button:hover {
     color: #555;
 }
 
+.nav-links {
+    position: absolute;
+    left: 50px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 30px;
+}
+
+.nav-item {
+    color: #ffffff;
+    text-decoration: none;
+    font-family: askerM;
+    font-size: 18px;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover, .nav-item.active {
+    color: #777;
+}
+
+/* Process Page Styling */
+.reels-section, .process-section {
+    padding: 50px 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease-out forwards;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    display: flex;
+    gap: 20px;
+    width: 100%;
+    min-width: 100vw;
+    padding-bottom: 20px;
+}
+
+.reels-section::-webkit-scrollbar {
+    height: 8px;
+}
+
+.reels-section::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.reels-section::-webkit-scrollbar-thumb {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+}
+
+.project-card {
+    display: inline-block;
+    width: 400px;
+    margin-right: 20px;
+    white-space: normal;
+    vertical-align: top;
+}
+
+.project-card:last-child {
+    margin-right: 0;
+}
+
+.text-with-lines {
+    background: linear-gradient(90deg, #ffffff, #7c7c7c, #ffffff);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shineText 3s linear infinite;
+}
+
+.project-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.project-card .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.project-card .title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.project-card .artist {
+    color: #7c7c7c;
+    font-size: 16px;
+}
+
+.project-card .arrow {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.project-card.expanded .arrow {
+    transform: rotate(180deg);
+}
+
+.project-card .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    width: 100%;
+}
+
+.project-card .reel-video {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.project-card .gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+    width: 100%;
+}
+
+.project-card.expanded .content {
+    animation: expandCard 0.5s ease forwards;
+}
+
+.project-card .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.project-card .gallery img {
+    width: 100%;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.project-card .gallery img:hover {
+    transform: scale(1.05);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.reels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.process-item {
+    background: rgba(41, 40, 40, 0.26);
+    border-radius: 16px;
+    backdrop-filter: blur(8.5px);
+    border: 1px solid rgba(98, 98, 98, 0.33);
+    padding: 25px;
+    transition: transform 0.3s ease;
+}
+
+.process-item:hover {
+    transform: translateY(-5px);
+}
+
+.process-item h3 {
+    font-family: askerB;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.process-content img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.process-content p {
+    font-family: askerM;
+    font-size: 16px;
+    color: #777;
+    line-height: 1.6;
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.tool-card {
+    background: rgba(60, 60, 60, 0.3);
+    border-radius: 8px;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.tool-card:hover {
+    background: rgba(80, 80, 80, 0.3);
+}
+
+.tool-card img {
+    width: 20px;
+    height: 20px;
+}
+
+.tool-card span {
+    font-family: askerM;
+    font-size: 12px;
+    color: #ffffff;
+}
+
+.reel-item {
+    width: 100%;
+    aspect-ratio: 9/16;
+}
+
+.reel-video {
+    width: 88%;
+    border-radius: 4%;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+}
+
+.reel-info {
+    padding: 15px;
+}
+
+.reel-info h3 {
+    font-family: askerB;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #ffffff;
+}
+
+.reel-info p {
+    font-family: askerM;
+    font-size: 14px;
+    color: #777;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        right: 20px;
+    }
+
+    .nav-item {
+        font-size: 14px;
+    }
+.logo {
+    position: absolute;
+    top: 15%;
+    left: 90%;
+    transform: translateX(-50%);
+    height: 5vh;
+    width: 5vh;
+    opacity: 1;
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation-delay: 1.5s;
+}
+.section-nav{
+    margin-top: 200px;
+    margin-bottom: 60px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px 20px;
+}
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .reels-grid {
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-rows: repeat(1, 1fr);
+    }
+
+.reel-video {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    aspect-ratio: 9/16;
+    object-fit: cover;
+    flex-wrap: nowrap;
+    border-radius: 8%;
+}
+    .tools-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+    }
+    
+    .tool-card {
+        padding: 5px;
+    }
+    
+    .tool-card img {
+        width: 16px;
+        height: 16px;
+    }
+    
+    .tool-card span {
+        font-size: 10px;
+    }
+}
+
 /* Footer Styling */
 footer {
     font-family: askerM;
@@ -426,18 +903,6 @@ footer {
     margin: 0 auto;
     
 }
- /* .Proj-container {
-    width: 100%;
-    height: auto; 
-    border-radius: 24px;
-    border: 1px solid rgb(85, 85, 85);
-    overflow: hidden;
-    background: linear-gradient(90deg, rgba(25,26,29,1) 0%, rgba(30,30,33,1) 100%);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transform-style: preserve-3d;
-    transform: perspective(1000px);
-    transition: all 0.3s ease;
-} */
 .col{
     display: flex;
     flex-direction: column;
@@ -631,10 +1096,14 @@ footer {
     object-fit: cover;
 } */
 .projects-wrapper {
-    display: block; /* Ensure they are visible */
-    height: auto; /* Ensure height is auto to fit content */
-    opacity: 1; /* Ensure full visibility */
-    overflow: visible; /* Ensure content is visible */
+    display: flex;
+    flex-direction: column;;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    opacity: 1;
+    overflow: visible;
+    transition: all 0.5s ease;
 }
 .projects-wrapper.active {
     height: auto;
@@ -978,7 +1447,9 @@ footer {
       .projects-wrapper {
         display: flex;
         width: 100%;
-        flex-direction: column;
+        flex-direction: column; /* Changed from column to row */
+        flex-wrap: wrap; /* Allow items to wrap to the next line */
+        justify-content: center; /* Center items horizontally */
         margin-bottom: 6.25rem;
     }
     .row{
@@ -986,7 +1457,8 @@ footer {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        width: 100%;
+        width: 100%; /* Adjust width to allow two items per row, with some gap */
+        margin: 1%; /* Add some margin for spacing */
         text-align: left;
         border-radius: 23px;
         border: 1px solid rgb(85, 85, 85);  
@@ -1099,41 +1571,13 @@ footer {
     right: 20%;
 }
 
-.Projects p {
-    font-size: 2em;
-    margin: 20px 0;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    padding: 15px 20px;
-    border-radius: 8px;
-    background: rgba(41, 40, 40, 0.26);
-    border: 1px solid rgba(98, 98, 98, 0.33);
-    display: flex;
-    align-items: center;
-    position: relative;
-}
 
-.Projects p::after {
-    content: '+';
-    position: absolute;
-    right: 20px;
-    font-size: 1.5em;
-    transition: transform 0.3s ease;
-}
-
-.Projects p.active::after {
-    transform: rotate(45deg);
-}
-
-.Projects p:hover {
-    background: rgba(61, 60, 60, 0.36);
-    transform: translateX(10px);
-}
 
 .projects-wrapper {
-    height: 0;
-    opacity: 0;
-    overflow: hidden;
+    display: flex;
+    height: auto;
+    opacity: 1;
+    overflow: visible;
     transition: all 0.5s ease;
 }
 
@@ -1928,4 +2372,52 @@ textarea {
     /* Change input text color to white */
     font-family: 'askerM';
     /* Apply the preferred font family */
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.fade-up {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s ease;
+}
+
+.fade-up.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: all 0.6s ease;
+}
+
+.slide-in.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.project-description {
+    transition-delay: 0.2s;
+}
+
+.grid-item {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 0.6s ease;
+}
+
+.grid-item.active {
+    opacity: 1;
+    transform: scale(1);
 }
