@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Youssef Elmonier</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        body {
+            background: #111;
+            color: #fff;
+            font-family: 'Aspekta', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 0 20px;
+        }
+        .about-hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .about-text {
+            flex: 1 1 400px;
+        }
+        .about-text h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 1.2rem;
+            line-height: 1.1;
+        }
+        .about-text p {
+            color: #868686;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        .about-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 2rem;
+        }
+        .stat {
+            text-align: center;
+        }
+        .stat strong {
+            font-size: 2.2rem;
+            font-weight: 800;
+            display: block;
+        }
+        .stat span {
+            color: #858282;
+            font-size: 1rem;
+        }
+        .about-image {
+            flex: 0 0 320px;
+            display: flex;
+            justify-content: center;
+        }
+        .about-image img {
+            width: 320px;
+            height: 400px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+        }
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 40px;
+            margin-top: 60px;
+        }
+        .about-video {
+            flex: 1 1 420px;
+            background: #181818;
+            border-radius: 18px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 320px;
+            position: relative;
+        }
+        .about-video video, .about-video img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .about-info {
+            flex: 1 1 320px;
+        }
+        .about-info h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+        .about-info p {
+            color: #868686;
+            font-size: 1.1rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+        .about-buttons {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+        .about-buttons a {
+            padding: 12px 32px;
+            border-radius: 30px;
+            border: 1.5px solid #fff;
+            background: transparent;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .about-buttons a.primary {
+            background: #fff;
+            color: #111;
+            border: none;
+        }
+        .about-buttons a:hover {
+            background: #333;
+            color: #fff;
+        }
+        .about-gallery-section {
+            margin-top: 70px;
+        }
+        .about-gallery {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+        .about-gallery img {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 14px;
+            filter: grayscale(100%) contrast(1.1);
+            transition: filter 0.3s;
+        }
+        .about-gallery img:hover {
+            filter: grayscale(0%) contrast(1.1);
+        }
+        @media (max-width: 1000px) {
+            .about-hero, .about-section {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .about-image {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            .about-image img {
+                width: 100%;
+                max-width: 320px;
+                height: 340px;
+            }
+            .about-gallery {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .about-stats {
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+        }
+        @media (max-width: 600px) {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+            .about-container {
+                padding-top: 0;
+            }
+            nav.navs.section-nav {
+                padding: 8px 0 8px 0;
+                min-height: 36px;
+            }
+            .about-container {
+                padding: 16px 4vw 0 4vw;
+            }
+            .about-hero, .about-section {
+                gap: 22px;
+            }
+            .about-text h1 {
+                font-size: 2.1rem;
+                line-height: 1.18;
+                margin-bottom: 1.2rem;
+                text-align: left;
+                letter-spacing: 0.5px;
+            }
+            .about-text p, .about-info p {
+                font-size: 1.08rem;
+                margin-bottom: 1.2rem;
+                line-height: 1.6;
+            }
+            .about-info h2 {
+                font-size: 1.3rem;
+                margin-bottom: 0.7rem;
+            }
+            .about-image {
+                width: 100%;
+                justify-content: center;
+                margin-bottom: 18px;
+            }
+            .about-image img {
+                width: 90vw;
+                max-width: 320px;
+                height: 180px;
+                margin: 0 auto;
+                display: block;
+            }
+            .about-buttons {
+                flex-direction: column;
+                gap: 12px;
+                margin-top: 1.2rem;
+            }
+            .about-buttons a {
+                width: 100%;
+                justify-content: center;
+                font-size: 1.08rem;
+                padding: 12px 0;
+                border-radius: 18px;
+            }
+            .about-stats {
+                flex-direction: row;
+                gap: 0;
+                justify-content: space-between;
+                margin: 1.5rem 0 1.2rem 0;
+                background: #181818;
+                border-radius: 14px;
+                padding: 18px 8px;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            }
+            .stat {
+                flex: 1 1 0;
+                text-align: center;
+                margin: 0 2px;
+            }
+            .stat strong {
+                font-size: 1.4rem;
+                display: block;
+                margin-bottom: 0.2rem;
+            }
+            .stat span {
+                font-size: 1.01rem;
+            }
+            .about-section {
+                margin-top: 2.2rem;
+                padding: 18px 0 0 0;
+                background: #161616;
+                border-radius: 14px;
+                box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            }
+            nav.navs.section-nav {
+                padding: 18px 0 18px 0;
+                background: #111;
+                border-radius: 0 0 18px 18px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+                display: flex;
+                align-items: center;
+                justify-content: flex-start;
+                min-height: 48px;
+            }
+            .nav-links {
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                gap: 18px;
+                width: auto;
+            }
+            .nav-item {
+                font-size: 0.9rem;
+                padding: 0 8px;
+                line-height: 1.2;
+                height: 50px;
+                display: flex;
+            }
+            .logo {
+                width: 32px;
+                height: auto;
+                margin-left: 0;
+                margin-right: 12px;
+            }
+            footer {
+                font-size: 0.98rem;
+                margin: 30px 0 10px 0;
+            }
+        }
+        .dashboard-section {
+            margin-top: 70px;
+        }
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: 2fr 1.2fr;
+            grid-template-rows: 1.2fr 1fr;
+            gap: 28px;
+            grid-template-areas:
+                "main table"
+                "highlight1 toplist";
+        }
+        .dashboard-card {
+            background: #181818;
+            border-radius: 22px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+            padding: 28px 24px;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .dashboard-main {
+            grid-area: main;
+            position: relative;
+            min-height: 320px;
+        }
+        .dashboard-title {
+            font-size: 1.7rem;
+            font-weight: 800;
+            margin-bottom: 18px;
+        }
+        .dashboard-icons {
+            display: flex;
+            gap: 18px;
+            margin-bottom: 18px;
+        }
+        .dashboard-icon-img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 12px;
+            filter: grayscale(100%);
+            background: #222;
+            border: 2px solid #222;
+        }
+        .dashboard-top-item {
+            position: absolute;
+            top: 24px;
+            right: 24px;
+            background: #222;
+            border-radius: 18px;
+            padding: 18px 22px;
+            min-width: 180px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+        }
+        .dashboard-top-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .dashboard-top-content {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .dashboard-top-img {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            border: 2px solid #333;
+        }
+        .dashboard-top-title {
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        .dashboard-top-desc {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+        .dashboard-table {
+            grid-area: table;
+        }
+        .dashboard-table-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .dashboard-table-content {
+            width: 100%;
+            border-collapse: collapse;
+            color: #fff;
+            font-size: 1rem;
+        }
+        .dashboard-table-content th, .dashboard-table-content td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #333;
+            text-align: left;
+        }
+        .dashboard-table-content th {
+            color: #bbb;
+            font-weight: 600;
+        }
+        .dashboard-highlight {
+            background: #181818;
+            border-radius: 22px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+            padding: 24px 18px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            min-width: 0;
+        }
+        .dashboard-highlight-score {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+        .dashboard-highlight-content {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+        .dashboard-highlight-img {
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            border: 2px solid #222;
+        }
+        .dashboard-highlight-title {
+            font-weight: 700;
+            font-size: 1.05rem;
+        }
+        .dashboard-highlight-desc {
+            color: #bbb;
+            font-size: 0.95rem;
+        }
+        .dashboard-toplist {
+            grid-area: toplist;
+        }
+        .dashboard-toplist-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .dashboard-toplist-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+        .dashboard-toplist-img {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            border: 2px solid #333;
+        }
+        @media (max-width: 1000px) {
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto auto auto auto;
+                grid-template-areas:
+                    "main"
+                    "table"
+                    "highlight1"
+                    "toplist";
+            }
+        }
+        @media (max-width: 600px) {
+            .dashboard-card {
+                padding: 14px 8px;
+            }
+            .dashboard-main {
+                min-height: 220px;
+            }
+            nav.navs.section-nav {
+                padding: 8px 0 8px 0;
+                min-height: 36px;
+            }
+            .nav-links {
+                gap: 8px;
+            }
+            .logo {
+                width: 26px;
+                margin-left: 0;
+                margin-right: 8px;
+            }
+        }
+        .shiny-text {
+            display: inline-block;
+            background: linear-gradient(90deg, #fff 20%, #e0e0e0 40%, #b3b3b3 60%, #fff 80%);
+            background-size: 200% auto;
+            color: #fff;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shine 2.5s linear infinite;
+            font-weight: 900;
+            position: relative;
+        }
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+        .section-separator {
+            border: none;
+            border-top: 2px solid #232323;
+            margin: 40px 0 32px 0;
+            width: 100%;
+            opacity: 0.7;
+        }
+        .reveal-section {
+            opacity: 0;
+            transform: scale(0.98) translateY(40px);
+            transition: opacity 0.7s cubic-bezier(.77,0,.18,1), transform 0.7s cubic-bezier(.77,0,.18,1);
+        }
+        .reveal-section.revealed {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+        .education-hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+            /* background: #181818; */
+            border-radius: 16px;
+            padding: 32px 18px;
+            margin: 40px 0 0 0;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            color: #fff;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .education-text {
+            flex: 1 1 400px;
+        }
+        .education-text h1 {
+            font-size: 2.8rem;
+            font-weight: 900;
+            margin-bottom: 1.2rem;
+            line-height: 1.1;
+        }
+        .education-text p {
+            color: #868686;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+        .education-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 2rem;
+        }
+        .education-stats .stat {
+            text-align: center;
+        }
+        .education-stats .stat strong {
+            font-size: 2.2rem;
+            font-weight: 800;
+            display: block;
+        }
+        .education-stats .stat span {
+            color: #858282;
+            font-size: 1rem;
+        }
+        .education-image {
+            flex: 0 0 320px;
+            display: flex;
+            justify-content: center;
+        }
+        .education-image img {
+            width: 320px;
+            height: 400px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+        }
+        @media (max-width: 1000px) {
+            .education-hero {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .education-image {
+                width: 100%;
+                justify-content: flex-start;
+            }
+            .education-image img {
+                width: 100%;
+                max-width: 320px;
+                height: 340px;
+            }
+            .education-stats {
+                gap: 18px;
+                flex-wrap: wrap;
+            }
+        }
+        @media (max-width: 600px) {
+            .education-hero {
+                padding: 18px 4vw;
+                gap: 18px;
+            }
+            .education-text h1 {
+                font-size: 2rem;
+            }
+            .education-image img {
+                width: 100%;
+                max-width: 100vw;
+                height: 400px;
+            }
+            .education-stats {
+                flex-direction: column;
+                gap: 10px;
+                align-items: flex-start;
+            }
+            .education-stats .stat strong {
+                font-size: 1.2rem;
+            }
+            .education-stats .stat span {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navs section-nav" style="background:#111;">
+        <div class="nav-links">
+            <a href="index.html" class="nav-item">Home</a>
+            <a href="process.html" class="nav-item">Creative Process</a>
+            <a href="AboutMe.html" class="nav-item active">About Me</a>
+        </div>
+    </nav>
+    <div class="about-container">
+        <div class="about-hero reveal-section">
+            <div class="about-text">
+                <h1 class="reveal-child">THIS IS ABOUT ME<br>AND HOW I'VE DONE THIS.</h1>
+                <p class="shiny-text reveal-child">I'm Youssef Elmonier, a passionate software engineer, 3D visualizer, and designer. I specialize in blending technology and creativity to deliver unique digital experiences, from web development to 3D and graphic design.<br><br>
+                Every project is a journey—combining technical expertise, artistic vision, and a drive for innovation. My work tells stories, solves problems, and leaves a lasting impression.</p>
+                <div class="about-stats reveal-child">
+                    <div class="stat">
+                        <strong>50+</strong>
+                        <span>Projects Completed</span>
+                    </div>
+                    <div class="stat">
+                        <strong>35M+</strong>
+                        <span>Views</span>
+                    </div>
+                    <div class="stat">
+                        <strong>7+</strong>
+                        <span>Years Experience</span>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image reveal-child">
+                <img src="images/me1.jpg" alt="Youssef Elmonier">
+            </div>
+        </div>
+        <hr class="section-separator">
+        <div class="about-section reveal-section">
+            <div class="about-video reveal-child">
+                <video>
+                    <source src="manga2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="about-info reveal-child">
+                <h2>WHERE THE MAGIC HAPPENS.</h2>
+                <p class="shiny-text">A heaven for creativity. Whether you're a client looking to enhance your brand or an individual seeking to immortalize a special moment, I provide a professional and personalized experience tailored to your unique vision.</p>
+                <div class="about-buttons">
+                    <a href="index.html#contact" class="primary">Start a Project &rarr;</a>
+                    <a href="index.html#portfolio">My Portfolio</a>
+                    <a href="#more">Learn More &rarr;</a>
+                </div>
+            </div>
+        </div>
+        <hr class="section-separator">
+        <!-- Education & Background Section -->
+        <div class="education-hero reveal-section">
+            <div class="education-text">
+                <h1 class="reveal-child">EDUCATION & BACKGROUND</h1>
+                <p class="shiny-text reveal-child">Bachelor in Software Engineering from Arab Academy for Science and Technology and Maritime Transport, Alexandria, Egypt., Minor in Multimedia and Graphic Design, creative technology, and digital design. Passionate about blending technical skills with artistic vision to create impactful digital experiences.</p>
+                <div class="certifications reveal-child">
+                    <strong>Certifications:</strong> IBM SkillsBuild, Web Design, Agile, Project Management
+                </div>
+            </div>
+            <div class="education-image reveal-child">
+                <img src="images/me3.JPG" alt="Youssef Elmonier Education" />
+            </div>
+        </div>
+    </div>
+    <footer style="text-align:center; color:#888; margin:40px 0 10px 0; font-size:1rem; background:#111;">
+        &copy; 2024 Youssef Elmonier. All rights reserved.
+    </footer>
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Section reveal animation
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    // Stagger children
+                    const children = entry.target.querySelectorAll('.reveal-child');
+                    children.forEach((child, idx) => {
+                        child.style.transitionDelay = (idx * 0.32) + 's';
+                    });
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+        document.querySelectorAll('.reveal-section').forEach(section => {
+            revealObserver.observe(section);
+        });
+    });
+    </script>
+</body>
+</html>
