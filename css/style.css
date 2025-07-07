@@ -899,8 +899,7 @@ footer {
 .Projects {
     width: 80%;
     max-width: 1400px;
-    margin: 0 auto;
-    
+    margin: 48px auto 0 auto;
 }
 .col{
     display: flex;
@@ -1293,6 +1292,7 @@ footer {
     align-items: center;
     flex-wrap: nowrap;
     gap: 20px;
+    margin-bottom: 64px;
 }
 .cardSkill{
     background: rgba(41, 40, 40, 0.26);
@@ -1311,10 +1311,11 @@ footer {
     align-items: start;
     text-align: left;
     opacity: 0;
-	-webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-	animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
+    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     animation-delay: 2s;
-    }  
+    margin-bottom: 24px;
+}  
     .cardSkill h3 {
         font-size: 24px;
         margin-bottom: 5px;
@@ -1480,6 +1481,7 @@ footer {
         align-items: center;
         flex-wrap: nowrap;
         gap: 20px;
+        margin-bottom: 40px;
     }
     .cardSkill{
         background: rgba(41, 40, 40, 0.26);
@@ -1497,7 +1499,8 @@ footer {
         height: 12em;
         align-items: start;
         text-align: left;
-        }  
+        margin-bottom: 20px;
+    }  
         .cardSkill h3 {
             font-size: 16px;
             margin-bottom: 5px;
