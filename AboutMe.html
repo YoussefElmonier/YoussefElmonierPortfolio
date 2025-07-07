@@ -17,6 +17,13 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px 0 20px;
+            margin-top: 70px;
+        }
+        .about-hero, .about-section, .education-hero {
+            border-radius: 38px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            padding: 32px 18px;
+            margin-bottom: 40px;
         }
         .about-hero {
             display: flex;
@@ -191,8 +198,10 @@
             .about-container {
                 padding: 16px 4vw 0 4vw;
             }
-            .about-hero, .about-section {
-                gap: 22px;
+            .about-hero, .about-section, .education-hero {
+                padding: 18px 4vw;
+                margin-bottom: 24px;
+                border-radius: 28px;
             }
             .about-text h1 {
                 font-size: 2.1rem;
@@ -518,14 +527,15 @@
             width: 100%;
             opacity: 0.7;
         }
-        .reveal-section {
+        .scroll-reveal {
             opacity: 0;
-            transform: scale(0.98) translateY(40px);
-            transition: opacity 0.7s cubic-bezier(.77,0,.18,1), transform 0.7s cubic-bezier(.77,0,.18,1);
+            transform: translateY(40px);
+            transition: opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1);
+            will-change: opacity, transform;
         }
-        .reveal-section.revealed {
+        .scroll-reveal.revealed {
             opacity: 1;
-            transform: scale(1) translateY(0);
+            transform: none;
         }
         .education-hero {
             display: flex;
@@ -631,6 +641,48 @@
                 font-size: 0.95rem;
             }
         }
+        nav.navs.section-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            z-index: 1000;
+            /* background: #111; */ /* Remove background for transparency */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            min-height: 48px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            margin: 0;
+        }
+        .about-container {
+            margin-top: 70px;
+        }
+        .nav-links {
+            position: static !important;
+            left: unset !important;
+            top: unset !important;
+            transform: none !important;
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            width: auto;
+        }
+        @media (max-width: 600px) {
+            nav.navs.section-nav {
+                min-height: 44px;
+                padding: 8px 16px;
+                /* background: #111; */ /* Remove background for transparency */
+            }
+            .about-container {
+                margin-top: 56px;
+            }
+            .nav-links {
+                gap: 10px;
+                justify-content: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -642,12 +694,12 @@
         </div>
     </nav>
     <div class="about-container">
-        <div class="about-hero reveal-section">
+        <div class="about-hero">
             <div class="about-text">
-                <h1 class="reveal-child">THIS IS ABOUT ME<br>AND HOW I'VE DONE THIS.</h1>
-                <p class="shiny-text reveal-child">I'm Youssef Elmonier, a passionate software engineer, 3D visualizer, and designer. I specialize in blending technology and creativity to deliver unique digital experiences, from web development to 3D and graphic design.<br><br>
+                <h1 class="scroll-reveal">THIS IS ABOUT ME<br>AND HOW I'VE DONE THIS.</h1>
+                <p class="shiny-text scroll-reveal">I'm Youssef Elmonier, a passionate software engineer, 3D visualizer, and designer. I specialize in blending technology and creativity to deliver unique digital experiences, from web development to 3D and graphic design.<br><br>
                 Every project is a journey—combining technical expertise, artistic vision, and a drive for innovation. My work tells stories, solves problems, and leaves a lasting impression.</p>
-                <div class="about-stats reveal-child">
+                <div class="about-stats scroll-reveal">
                     <div class="stat">
                         <strong>50+</strong>
                         <span>Projects Completed</span>
@@ -662,39 +714,39 @@
                     </div>
                 </div>
             </div>
-            <div class="about-image reveal-child">
+            <div class="about-image scroll-reveal">
                 <img src="images/me1.jpg" alt="Youssef Elmonier">
             </div>
         </div>
-        <hr class="section-separator">
-        <div class="about-section reveal-section">
-            <div class="about-video reveal-child">
-                <video>
+        <hr class="section-separator scroll-reveal">
+        <div class="about-section">
+            <div class="about-video scroll-reveal">
+                <video class="scroll-reveal">
                     <source src="manga2.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <div class="about-info reveal-child">
-                <h2>WHERE THE MAGIC HAPPENS.</h2>
-                <p class="shiny-text">A heaven for creativity. Whether you're a client looking to enhance your brand or an individual seeking to immortalize a special moment, I provide a professional and personalized experience tailored to your unique vision.</p>
-                <div class="about-buttons">
+            <div class="about-info scroll-reveal">
+                <h2 class="scroll-reveal">WHERE THE MAGIC HAPPENS.</h2>
+                <p class="shiny-text scroll-reveal">A heaven for creativity. Whether you're a client looking to enhance your brand or an individual seeking to immortalize a special moment, I provide a professional and personalized experience tailored to your unique vision.</p>
+                <div class="about-buttons scroll-reveal">
                     <a href="index.html#contact" class="primary">Start a Project &rarr;</a>
                     <a href="index.html#portfolio">My Portfolio</a>
                     <a href="#more">Learn More &rarr;</a>
                 </div>
             </div>
         </div>
-        <hr class="section-separator">
+        <hr class="section-separator scroll-reveal">
         <!-- Education & Background Section -->
-        <div class="education-hero reveal-section">
+        <div class="education-hero">
             <div class="education-text">
-                <h1 class="reveal-child">EDUCATION & BACKGROUND</h1>
-                <p class="shiny-text reveal-child">Bachelor in Software Engineering from Arab Academy for Science and Technology and Maritime Transport, Alexandria, Egypt., Minor in Multimedia and Graphic Design, creative technology, and digital design. Passionate about blending technical skills with artistic vision to create impactful digital experiences.</p>
-                <div class="certifications reveal-child">
+                <h1 class="scroll-reveal">EDUCATION & BACKGROUND</h1>
+                <p class="shiny-text scroll-reveal">Bachelor in Software Engineering from Arab Academy for Science and Technology and Maritime Transport, Alexandria, Egypt., Minor in Multimedia and Graphic Design, creative technology, and digital design. Passionate about blending technical skills with artistic vision to create impactful digital experiences.</p>
+                <div class="certifications scroll-reveal">
                     <strong>Certifications:</strong> IBM SkillsBuild, Web Design, Agile, Project Management
                 </div>
             </div>
-            <div class="education-image reveal-child">
+            <div class="education-image scroll-reveal">
                 <img src="images/me3.JPG" alt="Youssef Elmonier Education" />
             </div>
         </div>
@@ -704,24 +756,17 @@
     </footer>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
-        // Section reveal animation
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('revealed');
-                    // Stagger children
-                    const children = entry.target.querySelectorAll('.reveal-child');
-                    children.forEach((child, idx) => {
-                        child.style.transitionDelay = (idx * 0.32) + 's';
-                    });
+        const revealElements = document.querySelectorAll('.scroll-reveal');
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight - 60) {
+                    el.classList.add('revealed');
                 }
             });
-        }, {
-            threshold: 0.15
-        });
-        document.querySelectorAll('.reveal-section').forEach(section => {
-            revealObserver.observe(section);
-        });
+        };
+        window.addEventListener('scroll', revealOnScroll);
+        revealOnScroll(); // Initial check
     });
     </script>
 </body>

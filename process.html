@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <nav class="navs">
+    <nav class="navs section-nav">
         <div class="nav-links">
             <a href="index.html" class="nav-item">Home</a>
             <a href="process.html" class="nav-item active">Process</a>
@@ -467,6 +467,47 @@
         /* Reel item animations */
         .reel-item {
             transition-delay: 0.3s;
+        }
+
+        nav.navs.section-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 24px;
+            min-height: 48px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            margin: 0;
+        }
+        .projects-container, .main-content, .about-container {
+            margin-top: 70px;
+        }
+        .nav-links {
+            position: static !important;
+            left: unset !important;
+            top: unset !important;
+            transform: none !important;
+            display: flex;
+            gap: 18px;
+            justify-content: center;
+            width: auto;
+        }
+        @media (max-width: 600px) {
+            nav.navs.section-nav {
+                min-height: 44px;
+                padding: 8px 16px;
+            }
+            .projects-container, .main-content, .about-container {
+                margin-top: 56px;
+            }
+            .nav-links {
+                gap: 10px;
+                justify-content: center;
+            }
         }
     </style>
 
