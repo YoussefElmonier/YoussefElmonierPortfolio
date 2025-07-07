@@ -828,9 +828,8 @@
 <body>
     <!-- Intro Video Overlay with improved error handling -->
     <div id="intro-video-overlay" style="position:fixed;z-index:2000;top:0;left:0;width:100vw;height:100vh;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity 1s cubic-bezier(.77,0,.18,1);">
-        <video id="intro-video" autoplay muted playsinline webkit-playsinline style="width:100vw;height:100vh;object-fit:cover;" preload="auto" poster="images/me1.jpg">
-            <source src="images/vid1.MP4" type="video/mp4">
-            <source src="images/vid1.webm" type="video/webm">
+        <video id="intro-video" autoplay muted playsinline webkit-playsinline style="width:100vw;height:100vh;object-fit:cover;" preload="metadata" poster="images/me1.jpg">
+            <source src="images/optimized/vid1_optimized.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div id="intro-fade-overlay" style="position:absolute;top:0;left:0;width:100vw;height:100vh;background:#000;opacity:0;pointer-events:none;transition:opacity 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);"></div>
@@ -846,9 +845,8 @@
         <!-- Hero Section with Video BG -->
         <div class="about-hero" style="position:relative;overflow:hidden;">
             <div class="about-bg-video-wrapper" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;">
-                <video class="about-bg-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.25) blur(2px);background:#000;" preload="auto" poster="images/me1.jpg">
-                    <source src="images/vid2.MP4" type="video/mp4">
-                    <source src="images/vid2.webm" type="video/webm">
+                <video class="about-bg-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.25) blur(2px);background:#000;" preload="metadata" poster="images/me1.jpg">
+                    <source src="images/optimized/vid2_optimized.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -880,9 +878,8 @@
         <hr class="section-separator scroll-reveal">
         <div class="about-section" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
             <div class="about-video-wrapper" style="flex:0 0 320px;display:flex;justify-content:center;align-items:center;">
-                <video class="scroll-reveal about-section-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" style="width:100%;height:100%;background:#000;" poster="images/me3.JPG">
-                    <source src="images/vid1.MP4" type="video/mp4">
-                    <source src="images/vid1.webm" type="video/webm">
+                <video class="scroll-reveal about-section-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" style="width:100%;height:100%;background:#000;" poster="images/me4.jpg">
+                    <source src="images/optimized/vid1_optimized.mp4" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -952,6 +949,11 @@
         if (introVideo) {
             console.log('Intro video element found, setting up handlers...');
             
+            // Show poster immediately
+            introVideo.style.backgroundImage = 'url(images/me1.jpg)';
+            introVideo.style.backgroundSize = 'cover';
+            introVideo.style.backgroundPosition = 'center';
+            
             // iOS Safari specific handling
             if (isIOSSafari) {
                 // For iOS Safari, we need user interaction to start video
@@ -964,7 +966,7 @@
                         introOverlay.style.opacity = '0';
                         setTimeout(() => {
                             introOverlay.style.display = 'none';
-                        }, 1000);
+                        }, 500);
                     });
                 };
                 
@@ -972,16 +974,16 @@
                 document.addEventListener('touchstart', startVideoOnInteraction, { once: true });
                 document.addEventListener('click', startVideoOnInteraction, { once: true });
                 
-                // Fallback: hide overlay after 3 seconds on iOS if no interaction
+                // Fallback: hide overlay after 2 seconds on iOS if no interaction
                 setTimeout(() => {
                     if (introOverlay.style.display !== 'none') {
-                        console.log('iOS Safari fallback: hiding intro overlay after 3 seconds');
+                        console.log('iOS Safari fallback: hiding intro overlay after 2 seconds');
                         introOverlay.style.opacity = '0';
                         setTimeout(() => {
                             introOverlay.style.display = 'none';
-                        }, 1000);
+                        }, 500);
                     }
-                }, 3000);
+                }, 2000);
             }
             
             // Hide overlay immediately if video fails to load
@@ -990,7 +992,7 @@
                 introOverlay.style.opacity = '0';
                 setTimeout(() => {
                     introOverlay.style.display = 'none';
-                }, 1000);
+                }, 500);
             });
             
             // Hide overlay if video can't play
@@ -999,16 +1001,16 @@
                 introOverlay.style.opacity = '0';
                 setTimeout(() => {
                     introOverlay.style.display = 'none';
-                }, 1000);
+                }, 500);
             });
             
-            // Auto-hide overlay after video ends or 7 seconds
+            // Auto-hide overlay after video ends or 5 seconds
             introVideo.addEventListener('ended', function() {
                 console.log('Intro video ended');
                 introOverlay.style.opacity = '0';
                 setTimeout(() => {
                     introOverlay.style.display = 'none';
-                }, 1000);
+                }, 500);
             });
             
             // Log when video starts playing
@@ -1021,17 +1023,17 @@
                 console.log('Intro video can play');
             });
             
-            // Fallback: hide overlay after 7 seconds regardless (except on iOS)
+            // Fallback: hide overlay after 5 seconds regardless (except on iOS)
             if (!isIOSSafari) {
                 setTimeout(() => {
                     if (introOverlay.style.display !== 'none') {
-                        console.log('Fallback: hiding intro overlay after 7 seconds');
+                        console.log('Fallback: hiding intro overlay after 5 seconds');
                         introOverlay.style.opacity = '0';
                         setTimeout(() => {
                             introOverlay.style.display = 'none';
-                        }, 1000);
+                        }, 500);
                     }
-                }, 7000);
+                }, 5000);
             }
             
             // Fade overlay at end of video
