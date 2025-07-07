@@ -6,9 +6,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="manga2.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="FONTS/TuskerGrotesk-5500Medium.ttf" as="font" type="font/ttf" crossorigin>
+    
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js"></script>
+    
+    <!-- Preload critical fonts -->
+    <style>
+        @font-face {
+            font-family: 'Aspekta';
+            src: url('FONTS/Aspekta-400.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Tusker GroteskMed';
+            src: url('FONTS/TuskerGrotesk-5500Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-display: swap;
+        }
+    </style>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script>
 </head>
 
 <body id="vertical">
@@ -44,8 +68,10 @@
         </div>
     
         <video autoplay loop muted playsinline class="background-clip">
-            <source src="manga222.mp4" media="(max-width: 599px)">
-            <source src="manga2.mp4">
+            <source src="manga2.mp4" type="video/mp4">
+            <source src="manga2.webm" type="video/webm">
+            <source src="manga222.mp4" type="video/mp4" media="(max-width: 599px)">
+            <source src="manga222.webm" type="video/webm" media="(max-width: 599px)">
         </video>
         <div class="skills-section">
             <div class="cardSkill animation">

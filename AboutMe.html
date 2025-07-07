@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/png" href="/images/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Youssef Elmonier</title>
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="images/vid1.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
+    
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Preload critical fonts -->
     <style>
+        @font-face {
+            font-family: 'Aspekta';
+            src: url('FONTS/Aspekta-400.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Tusker GroteskMed';
+            src: url('FONTS/TuskerGrotesk-5500Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-display: swap;
+        }
         body {
             background: #111;
             color: #fff;
@@ -772,9 +793,13 @@
     </style>
 </head>
 <body>
-    <!-- Intro Video Overlay -->
-    <div id="intro-video-overlay" style="position:fixed;z-index:2000;top:0;left:0;width:100vw;height:100vh;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity 0.4s cubic-bezier(0.77, 0, 0.175, 1);">
-        <video id="intro-video" src="images/vid1.mp4" autoplay muted playsinline style="width:100vw;height:100vh;object-fit:cover;" preload="auto"></video>
+    <!-- Intro Video Overlay with improved error handling -->
+    <div id="intro-video-overlay" style="position:fixed;z-index:2000;top:0;left:0;width:100vw;height:100vh;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity 1s cubic-bezier(.77,0,.18,1);">
+        <video id="intro-video" autoplay muted playsinline style="width:100vw;height:100vh;object-fit:cover;" preload="auto">
+            <source src="images/vid1.mp4" type="video/mp4">
+            <source src="images/vid1.webm" type="video/webm">
+            Your browser does not support the video tag.
+        </video>
         <div id="intro-fade-overlay" style="position:absolute;top:0;left:0;width:100vw;height:100vh;background:#000;opacity:0;pointer-events:none;transition:opacity 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);"></div>
     </div>
     <nav class="navs section-nav" style="background:#111;">
@@ -790,6 +815,7 @@
             <div class="about-bg-video-wrapper" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;">
                 <video class="about-bg-video" autoplay loop muted playsinline loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.25) blur(2px);background:#000;" preload="auto">
                     <source src="images/vid2.mp4" type="video/mp4">
+                    <source src="images/vid2.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -821,8 +847,9 @@
         <hr class="section-separator scroll-reveal">
         <div class="about-section" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
             <div class="about-video-wrapper" style="flex:0 0 320px;display:flex;justify-content:center;align-items:center;">
-                <video class="scroll-reveal about-section-video" autoplay loop muted playsinline loading="lazy" style="width:320px;height:400px;object-fit:cover;background:#000;border-radius:20px;box-shadow:0 8px 32px rgba(0,0,0,0.7);">
+                <video class="scroll-reveal about-section-video" autoplay loop muted playsinline loading="lazy" style="width:100%;height:100%;background:#000;">
                     <source src="images/vid1.mp4" type="video/mp4">
+                    <source src="images/vid1.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </div>
@@ -857,71 +884,92 @@
     <script>
     document.addEventListener('DOMContentLoaded', () => {
         const revealElements = document.querySelectorAll('.scroll-reveal');
-        const revealOnScroll = () => {
-            revealElements.forEach(el => {
-                const rect = el.getBoundingClientRect();
-                if (rect.top < window.innerHeight - 60) {
-                    el.classList.add('revealed');
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
-        };
-        window.addEventListener('scroll', revealOnScroll);
-        revealOnScroll(); // Initial check
+        }, { threshold: 0.1 });
+        
+        revealElements.forEach(el => observer.observe(el));
     });
-    // Intro video overlay logic
+    </script>
+    
+    <!-- Improved Video Error Handling -->
+    <script>
     document.addEventListener('DOMContentLoaded', function() {
-        const overlay = document.getElementById('intro-video-overlay');
+        // Intro video error handling
         const introVideo = document.getElementById('intro-video');
-        const fadeOverlay = document.getElementById('intro-fade-overlay');
+        const introOverlay = document.getElementById('intro-video-overlay');
+        
         if (introVideo) {
-            // Hide overlay when video ends or after 7s fallback
-            const hideOverlay = () => {
-                overlay.style.opacity = '0';
-                setTimeout(() => overlay.style.display = 'none', 1000);
-            };
-            introVideo.addEventListener('ended', hideOverlay);
-            // Fallback in case video doesn't end (e.g. short/loop)
-            setTimeout(hideOverlay, 7000);
-            // Hide overlay instantly if video fails to load/play
-            introVideo.addEventListener('error', hideOverlay);
-            introVideo.addEventListener('stalled', hideOverlay);
-            introVideo.addEventListener('abort', hideOverlay);
-
-            // Black fade overlay logic
+            // Hide overlay immediately if video fails to load
+            introVideo.addEventListener('error', function() {
+                console.log('Intro video failed to load, hiding overlay');
+                introOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    introOverlay.style.display = 'none';
+                }, 1000);
+            });
+            
+            // Hide overlay if video can't play
+            introVideo.addEventListener('stalled', function() {
+                console.log('Intro video stalled, hiding overlay');
+                introOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    introOverlay.style.display = 'none';
+                }, 1000);
+            });
+            
+            // Auto-hide overlay after video ends or 7 seconds
+            introVideo.addEventListener('ended', function() {
+                introOverlay.style.opacity = '0';
+                setTimeout(() => {
+                    introOverlay.style.display = 'none';
+                }, 1000);
+            });
+            
+            // Fallback: hide overlay after 7 seconds regardless
+            setTimeout(() => {
+                if (introOverlay.style.display !== 'none') {
+                    introOverlay.style.opacity = '0';
+                    setTimeout(() => {
+                        introOverlay.style.display = 'none';
+                    }, 1000);
+                }
+            }, 7000);
+            
+            // Fade overlay at end of video
             introVideo.addEventListener('timeupdate', function() {
-                if (introVideo.duration && fadeOverlay) {
+                const fadeOverlay = document.getElementById('intro-fade-overlay');
+                if (fadeOverlay && introVideo.duration) {
                     const timeLeft = introVideo.duration - introVideo.currentTime;
                     if (timeLeft <= 1) {
-                        fadeOverlay.style.opacity = Math.min(1, 1 - timeLeft).toString();
-                    } else {
-                        fadeOverlay.style.opacity = '0';
+                        fadeOverlay.style.opacity = '1';
                     }
                 }
             });
         }
-        // About Me hero bg video fallback
+        
+        // Hero background video error handling
         const bgVideo = document.querySelector('.about-bg-video');
-        const bgPlaceholder = document.querySelector('.about-bg-placeholder');
-        if (bgVideo && bgPlaceholder) {
-            const showBgPlaceholder = () => {
-                bgVideo.style.display = 'none';
-                bgPlaceholder.style.display = 'block';
-            };
-            bgVideo.addEventListener('error', showBgPlaceholder);
-            bgVideo.addEventListener('stalled', showBgPlaceholder);
-            bgVideo.addEventListener('abort', showBgPlaceholder);
+        if (bgVideo) {
+            bgVideo.addEventListener('error', function() {
+                console.log('Hero background video failed to load');
+                // Video will show fallback message
+            });
         }
-        // About section video fallback
-        const aboutSectionVideo = document.querySelector('.about-section-video');
-        const aboutSectionPlaceholder = document.querySelector('.about-section-placeholder');
-        if (aboutSectionVideo && aboutSectionPlaceholder) {
-            const showAboutPlaceholder = () => {
-                aboutSectionVideo.style.display = 'none';
-                aboutSectionPlaceholder.style.display = 'block';
-            };
-            aboutSectionVideo.addEventListener('error', showAboutPlaceholder);
-            aboutSectionVideo.addEventListener('stalled', showAboutPlaceholder);
-            aboutSectionVideo.addEventListener('abort', showAboutPlaceholder);
+        
+        // About section video error handling
+        const aboutVideo = document.querySelector('.about-section-video');
+        if (aboutVideo) {
+            aboutVideo.addEventListener('error', function() {
+                console.log('About section video failed to load');
+                // Video will show fallback message
+            });
         }
     });
     </script>

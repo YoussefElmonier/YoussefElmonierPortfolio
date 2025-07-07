@@ -5,8 +5,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Process & Projects</title>
+    
+    <!-- Preload critical resources -->
     <link rel="preload" href="css/style.css" as="style">
+    <link rel="preload" href="manga2.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="FONTS/TuskerGrotesk-5500Medium.ttf" as="font" type="font/ttf" crossorigin>
+    
     <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Preload critical fonts -->
+    <style>
+        @font-face {
+            font-family: 'Aspekta';
+            src: url('FONTS/Aspekta-400.ttf') format('truetype');
+            font-weight: 400;
+            font-display: swap;
+        }
+        @font-face {
+            font-family: 'Tusker GroteskMed';
+            src: url('FONTS/TuskerGrotesk-5500Medium.ttf') format('truetype');
+            font-weight: 500;
+            font-display: swap;
+        }
+    </style>
+    
     <!-- Minify css/style.css for better performance -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
@@ -167,6 +190,8 @@
                 <div class="reel-item fade-in">
                     <video class="reel-video" autoplay loop muted playsinline loading="lazy" width="400" height="300">
                         <source src="manga2.mp4" type="video/mp4">
+                        <source src="manga2.webm" type="video/webm">
+                        Your browser does not support the video tag.
                     </video>
                     <div class="reel-info">
                         <h3>Motion Graphics Reel</h3>
@@ -176,6 +201,8 @@
                 <div class="reel-item fade-in">
                     <video class="reel-video" autoplay loop muted playsinline loading="lazy" width="400" height="300">
                         <source src="manga222.mp4" type="video/mp4">
+                        <source src="manga222.webm" type="video/webm">
+                        Your browser does not support the video tag.
                     </video>
                     <div class="reel-info">
                         <h3>Visual Effects Reel</h3>
@@ -185,6 +212,8 @@
                 <div class="reel-item fade-in">
                     <video class="reel-video" autoplay loop muted playsinline loading="lazy" width="400" height="300">
                         <source src="images/proj.mp4" type="video/mp4">
+                        <source src="images/proj.webm" type="video/webm">
+                        Your browser does not support the video tag.
                     </video>
                     <div class="reel-info">
                         <h3>Project Showcase</h3>
@@ -193,7 +222,9 @@
                 </div>
                 <div class="reel-item fade-in">
                     <video class="reel-video" autoplay loop muted playsinline loading="lazy" width="400" height="300">
-                        <source src="images/proj.mp4"" type="video/mp4">
+                        <source src="images/proj.mp4" type="video/mp4">
+                        <source src="images/proj.webm" type="video/webm">
+                        Your browser does not support the video tag.
                     </video>
                     <div class="reel-info">
                         <h3>Animation Reel</h3>
@@ -202,7 +233,9 @@
                 </div>
                 <div class="reel-item fade-in">
                     <video class="reel-video" autoplay loop muted playsinline loading="lazy" width="400" height="300">
-                        <source src="images/proj.mp4"" type="video/mp4">
+                        <source src="images/proj.mp4" type="video/mp4">
+                        <source src="images/proj.webm" type="video/webm">
+                        Your browser does not support the video tag.
                     </video>
                     <div class="reel-info">
                         <h3>Design Reel</h3>
@@ -211,7 +244,9 @@
                 </div>
                 <div class="reel-item fade-in">
                     <video class="reel-video" autoplay loop muted playsinline loading="lazy" width="400" height="300">
-                        <source src="images/proj.mp4"" type="video/mp4">
+                        <source src="images/proj.mp4" type="video/mp4">
+                        <source src="images/proj.webm" type="video/webm">
+                        Your browser does not support the video tag.
                     </video>
                     <div class="reel-info">
                         <h3>Concept Art Reel</h3>

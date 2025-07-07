@@ -1,0 +1,13 @@
+=== FILE SIZE COMPARISON ===
+Original vs Optimized:
+
+VIDEOS:
+manga2.mp4:  15M →  13M
+manga222.mp4:  24M → 4.3M
+images/vid1.MP4: 6.3M → 740K
+images/vid2.MP4: 6.8M → 632K
+images/proj.mp4: 3.3M → 3.0M
+
+IMAGES:
+images/me1.jpg: 2.2M → 528K
+images/me2.JPG: 1.7M → 412K
