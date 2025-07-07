@@ -8,7 +8,7 @@
     
     <!-- Preload critical resources -->
     <link rel="preload" href="css/style.css" as="style">
-    <link rel="preload" href="images/vid1.mp4" as="video" type="video/mp4">
+    <link rel="preload" href="images/vid1.MP4" as="video" type="video/mp4">
     <link rel="preload" href="FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
     
     <link rel="stylesheet" href="css/style.css">
@@ -796,7 +796,7 @@
     <!-- Intro Video Overlay with improved error handling -->
     <div id="intro-video-overlay" style="position:fixed;z-index:2000;top:0;left:0;width:100vw;height:100vh;background:#000;display:flex;align-items:center;justify-content:center;transition:opacity 1s cubic-bezier(.77,0,.18,1);">
         <video id="intro-video" autoplay muted playsinline style="width:100vw;height:100vh;object-fit:cover;" preload="auto">
-            <source src="images/vid1.mp4" type="video/mp4">
+            <source src="images/vid1.MP4" type="video/mp4">
             <source src="images/vid1.webm" type="video/webm">
             Your browser does not support the video tag.
         </video>
@@ -814,7 +814,7 @@
         <div class="about-hero" style="position:relative;overflow:hidden;">
             <div class="about-bg-video-wrapper" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;">
                 <video class="about-bg-video" autoplay loop muted playsinline loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.25) blur(2px);background:#000;" preload="auto">
-                    <source src="images/vid2.mp4" type="video/mp4">
+                    <source src="images/vid2.MP4" type="video/mp4">
                     <source src="images/vid2.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
@@ -848,7 +848,7 @@
         <div class="about-section" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
             <div class="about-video-wrapper" style="flex:0 0 320px;display:flex;justify-content:center;align-items:center;">
                 <video class="scroll-reveal about-section-video" autoplay loop muted playsinline loading="lazy" style="width:100%;height:100%;background:#000;">
-                    <source src="images/vid1.mp4" type="video/mp4">
+                    <source src="images/vid1.MP4" type="video/mp4">
                     <source src="images/vid1.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
@@ -901,14 +901,18 @@
     <!-- Improved Video Error Handling -->
     <script>
     document.addEventListener('DOMContentLoaded', function() {
+        console.log('AboutMe page loaded, setting up video handlers...');
+        
         // Intro video error handling
         const introVideo = document.getElementById('intro-video');
         const introOverlay = document.getElementById('intro-video-overlay');
         
         if (introVideo) {
+            console.log('Intro video element found, setting up handlers...');
+            
             // Hide overlay immediately if video fails to load
-            introVideo.addEventListener('error', function() {
-                console.log('Intro video failed to load, hiding overlay');
+            introVideo.addEventListener('error', function(e) {
+                console.error('Intro video failed to load:', e);
                 introOverlay.style.opacity = '0';
                 setTimeout(() => {
                     introOverlay.style.display = 'none';
@@ -926,15 +930,27 @@
             
             // Auto-hide overlay after video ends or 7 seconds
             introVideo.addEventListener('ended', function() {
+                console.log('Intro video ended');
                 introOverlay.style.opacity = '0';
                 setTimeout(() => {
                     introOverlay.style.display = 'none';
                 }, 1000);
             });
             
+            // Log when video starts playing
+            introVideo.addEventListener('play', function() {
+                console.log('Intro video started playing');
+            });
+            
+            // Log when video can play
+            introVideo.addEventListener('canplay', function() {
+                console.log('Intro video can play');
+            });
+            
             // Fallback: hide overlay after 7 seconds regardless
             setTimeout(() => {
                 if (introOverlay.style.display !== 'none') {
+                    console.log('Fallback: hiding intro overlay after 7 seconds');
                     introOverlay.style.opacity = '0';
                     setTimeout(() => {
                         introOverlay.style.display = 'none';
@@ -952,25 +968,45 @@
                     }
                 }
             });
+        } else {
+            console.error('Intro video element not found!');
         }
         
         // Hero background video error handling
         const bgVideo = document.querySelector('.about-bg-video');
         if (bgVideo) {
-            bgVideo.addEventListener('error', function() {
-                console.log('Hero background video failed to load');
-                // Video will show fallback message
+            console.log('Hero background video element found');
+            bgVideo.addEventListener('error', function(e) {
+                console.error('Hero background video failed to load:', e);
             });
+            bgVideo.addEventListener('play', function() {
+                console.log('Hero background video started playing');
+            });
+            bgVideo.addEventListener('canplay', function() {
+                console.log('Hero background video can play');
+            });
+        } else {
+            console.error('Hero background video element not found!');
         }
         
         // About section video error handling
         const aboutVideo = document.querySelector('.about-section-video');
         if (aboutVideo) {
-            aboutVideo.addEventListener('error', function() {
-                console.log('About section video failed to load');
-                // Video will show fallback message
+            console.log('About section video element found');
+            aboutVideo.addEventListener('error', function(e) {
+                console.error('About section video failed to load:', e);
             });
+            aboutVideo.addEventListener('play', function() {
+                console.log('About section video started playing');
+            });
+            aboutVideo.addEventListener('canplay', function() {
+                console.log('About section video can play');
+            });
+        } else {
+            console.error('About section video element not found!');
         }
+        
+        console.log('Video handlers setup complete');
     });
     </script>
 </body>
