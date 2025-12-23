@@ -32,26 +32,36 @@
 
 /* General reset for margin and padding */
 @font-face {
-    font-family: Tusker GroteskBold;
-    src: url(/FONTS/TuskerGrotesk-5700Bold.ttf)
+    font-family: 'Tusker Grotesk';
+    src: url(/FONTS/TuskerGrotesk-5700Bold.ttf) format('truetype');
+    font-weight: bold;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: Tusker GroteskMed;
-    src: url(/FONTS/TuskerGrotesk-5500Medium.ttf)
+    font-family: 'Tusker Grotesk';
+    src: url(/FONTS/TuskerGrotesk-5500Medium.ttf) format('truetype');
+    font-weight: medium;
+    font-display: swap;
 }
 
 @font-face {
-    font-family: askerM;
-    src: url(/FONTS/Aspekta-600.ttf)
+    font-family: 'Aspekta';
+    src: url(/FONTS/Aspekta-600.ttf) format('truetype');
+    font-weight: 600;
+    font-display: swap;
 }
 @font-face {
-    font-family: askerB;
-    src: url(/FONTS/Aspekta-900.ttf)
+    font-family: 'Aspekta';
+    src: url(/FONTS/Aspekta-900.ttf) format('truetype');
+    font-weight: 900;
+    font-display: swap;
 }
 @font-face {
-    font-family: New;
-    src: url(/FONTS/oddlini-bold-ultra-expanded.ttf)
+    font-family: 'Oddlini';
+    src: url(/FONTS/oddlini-bold-ultra-expanded.ttf) format('truetype');
+    font-weight: bold;
+    font-display: swap;
 }
 
 @layer reset, baselayout, components;
@@ -65,7 +75,7 @@ html {
 }
 body {
     background-color: #000000;
-    font-family: Tusker GroteskMed;
+    font-family: 'Tusker Grotesk', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -78,7 +88,7 @@ body {
     margin-top: 12em;
 }
 .intro h1 {
-    font-family: askerB;
+    font-family: 'Aspekta', sans-serif;
     font-size: 55px;
     position: relative;
     overflow: hidden;
@@ -88,7 +98,7 @@ body {
 
 .container {
     text-align: center;
-    font-family: New;
+    font-family: 'Oddlini', sans-serif;
     color: white;
 }
 

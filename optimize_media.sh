@@ -1,133 +1,83 @@
 #!/bin/bash
 
-# Media Optimization Script for YoussefElmonierPortfolio
-# This script optimizes videos and images for better performance
+# This script optimizes images and videos for web performance.
 
-echo "🚀 Starting media optimization..."
+# Exit immediately if a command exits with a non-zero status.
+set -e
 
-# Create optimized directories
-mkdir -p images/optimized
-mkdir -p videos/optimized
+# --- Configuration ---
+IMAGE_SOURCE_DIR="images"
+IMAGE_DEST_DIR="images/optimized"
+VIDEO_SOURCE_DIR="."
+VIDEO_DEST_DIR="videos/optimized"
 
-# Function to check if ffmpeg is available
-check_ffmpeg() {
-    if ! command -v ffmpeg &> /dev/null; then
-        echo "❌ ffmpeg not found. Please install it first:"
-        echo "   brew install ffmpeg"
-        exit 1
-    fi
-}
+# --- Dependency Check & Installation ---
+echo "Checking for dependencies..."
 
-# Function to optimize videos
-optimize_video() {
-    local input="$1"
-    local output="$2"
-    local quality="$3"
-    
-    echo "📹 Optimizing video: $input"
-    
-    # Convert to MP4 with H.264 codec (max compatibility)
-    ffmpeg -i "$input" \
-        -c:v libx264 \
-        -preset medium \
-        -crf $quality \
-        -c:a aac \
-        -b:a 128k \
-        -movflags +faststart \
-        -y "$output"
-    
-    # Also create WebM version for modern browsers
-    local webm_output="${output%.mp4}.webm"
-    ffmpeg -i "$input" \
-        -c:v libvpx-vp9 \
-        -crf $quality \
-        -b:v 0 \
-        -c:a libopus \
-        -b:a 128k \
-        -y "$webm_output"
-}
+# Check for Node.js and npm
+if ! command -v npm &> /dev/null; then
+    echo "npm could not be found. Please install Node.js and npm."
+    exit 1
+fi
 
-# Function to optimize images
-optimize_image() {
-    local input="$1"
-    local output="$2"
-    
-    echo "🖼️  Optimizing image: $input"
-    
-    # Use sips for basic optimization (built into macOS)
-    sips -Z 1200 "$input" --out "$output"
-    
-    # If you have ImageOptim or similar tools, you can add them here
-    # For now, we'll use basic compression
-}
+# Check for ffmpeg
+if ! command -v ffmpeg &> /dev/null; then
+    echo "ffmpeg could not be found. Please install ffmpeg. (e.g., 'brew install ffmpeg')"
+    exit 1
+fi
 
-# Check dependencies
-check_ffmpeg
+# Install imagemin-cli and plugins if they are not already installed
+if ! npm list imagemin-cli &>/dev/null || ! npm list imagemin-webp &>/dev/null; then
+    echo "Installing imagemin-cli and imagemin-webp..."
+    npm install imagemin-cli imagemin-webp
+fi
 
-echo "📹 Optimizing videos..."
+echo "Dependencies are satisfied."
 
-# Optimize main videos (higher quality for background/hero)
-optimize_video "manga2.mp4" "videos/optimized/manga2.mp4" 23
-optimize_video "manga222.mp4" "videos/optimized/manga222.mp4" 23
-optimize_video "RECAP24.gif" "videos/optimized/RECAP24.mp4" 25
+# --- Optimization ---
 
-# Optimize About Me videos (lower quality for faster loading)
-optimize_video "images/vid1.MP4" "videos/optimized/vid1.mp4" 28
-optimize_video "images/vid2.MP4" "videos/optimized/vid2.mp4" 28
-optimize_video "images/proj.mp4" "videos/optimized/proj.mp4" 28
+# Create destination directories if they don't exist
+mkdir -p "$IMAGE_DEST_DIR"
+mkdir -p "$VIDEO_DEST_DIR"
 
-echo "🖼️  Optimizing images..."
-
-# Optimize large images
-optimize_image "images/habeby.png" "images/optimized/habeby.jpg"
-optimize_image "images/uzi.png" "images/optimized/uzi.jpg"
-optimize_image "images/me1.jpg" "images/optimized/me1.jpg"
-optimize_image "images/me2.JPG" "images/optimized/me2.jpg"
-optimize_image "images/donia.png" "images/optimized/donia.jpg"
-optimize_image "images/diana.png" "images/optimized/diana.jpg"
-
-echo "📊 Creating file size report..."
-
-# Generate size comparison report
-echo "=== FILE SIZE COMPARISON ===" > optimization_report.txt
-echo "Original vs Optimized:" >> optimization_report.txt
-echo "" >> optimization_report.txt
-
-# Video sizes
-echo "VIDEOS:" >> optimization_report.txt
-for file in manga2.mp4 manga222.mp4 images/vid1.MP4 images/vid2.MP4 images/proj.mp4; do
-    if [ -f "$file" ]; then
-        original_size=$(du -h "$file" | cut -f1)
-        optimized_file="videos/optimized/$(basename "$file" | sed 's/\.MP4$/.mp4/')"
-        if [ -f "$optimized_file" ]; then
-            optimized_size=$(du -h "$optimized_file" | cut -f1)
-            echo "$file: $original_size → $optimized_size" >> optimization_report.txt
-        fi
-    fi
+# Optimize Images
+echo "Optimizing images and converting to WebP..."
+# Use find to avoid issues with spaces in filenames and to exclude the destination directory
+find "$IMAGE_SOURCE_DIR" -maxdepth 1 -type f \( -name "*.png" -o -name "*.jpg" -o -name "*.jpeg" \) -print0 | while IFS= read -r -d $'\0' file; do
+    echo "Processing image: $file"
+    npx imagemin "$file" --plugin=webp --out-dir="$IMAGE_DEST_DIR"
+    # Also copy and optimize the original file type
+    npx imagemin "$file" --out-dir="$IMAGE_DEST_DIR"
 done
 
-echo "" >> optimization_report.txt
-echo "IMAGES:" >> optimization_report.txt
-for file in images/habeby.png images/uzi.png images/me1.jpg images/me2.JPG images/donia.png images/diana.png; do
-    if [ -f "$file" ]; then
-        original_size=$(du -h "$file" | cut -f1)
-        optimized_file="images/optimized/$(basename "$file" | sed 's/\.JPG$/.jpg/')"
-        if [ -f "$optimized_file" ]; then
-            optimized_size=$(du -h "$optimized_file" | cut -f1)
-            echo "$file: $original_size → $optimized_size" >> optimization_report.txt
-        fi
-    fi
+# Optimize Videos
+echo "Optimizing videos and converting to WebM..."
+
+# Videos in root
+find "$VIDEO_SOURCE_DIR" -maxdepth 1 -type f \( -name "*.mp4" -o -name "*.mov" \) -print0 | while IFS= read -r -d $'\0' file; do
+    filename=$(basename -- "$file")
+    filename_noext="${filename%.*}"
+    echo "Processing video: $file"
+    # Optimize MP4
+    ffmpeg -i "$file" -vcodec libx264 -crf 28 -preset veryslow "$VIDEO_DEST_DIR/$filename_noext.mp4" -y
+    # Convert to WebM
+    ffmpeg -i "$file" -c:v libvpx-vp9 -crf 30 -b:v 0 -b:a 128k -threads 8 "$VIDEO_DEST_DIR/$filename_noext.webm" -y
 done
 
-echo "✅ Optimization complete!"
-echo "📄 Check optimization_report.txt for size comparisons"
-echo ""
-echo "🔧 Next steps:"
-echo "1. Replace original files with optimized versions"
-echo "2. Update HTML to use .webm fallbacks"
-echo "3. Test in Chrome, Brave, Safari, Firefox"
-echo ""
-echo "💡 Tips:"
-echo "- Keep original files as backup"
-echo "- Test video playback on different devices"
-echo "- Consider using a CDN for faster delivery" 
+# Videos in images/ directory (like vid1.MP4, vid2.MP4)
+find "$IMAGE_SOURCE_DIR" -maxdepth 1 -type f \( -name "*.mp4" -o -name "*.MP4" -o -name "*.mov" \) -print0 | while IFS= read -r -d $'\0' file; do
+    filename=$(basename -- "$file")
+    filename_noext="${filename%.*}"
+    echo "Processing video from images/: $file"
+    # Optimize MP4
+    ffmpeg -i "$file" -vcodec libx264 -crf 28 -preset veryslow "$VIDEO_DEST_DIR/$filename_noext.mp4" -y
+    # Convert to WebM
+    ffmpeg -i "$file" -c:v libvpx-vp9 -crf 30 -b:v 0 -b:a 128k -threads 8 "$VIDEO_DEST_DIR/$filename_noext.webm" -y
+done
+
+echo "\nOptimization complete!"
+echo "Optimized images are in: $IMAGE_DEST_DIR"
+echo "Optimized videos are in: $VIDEO_DEST_DIR"
+echo "\nNext steps:"
+echo "1. Update your HTML files (<img src=...>, <video source=...>) to point to the new files in the optimized directories."
+echo "2. Use the <picture> element to serve WebP images with a fallback to JPG/PNG for older browsers."
