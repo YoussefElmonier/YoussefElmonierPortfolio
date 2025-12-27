@@ -9,9 +9,12 @@
     
     <!-- Preload critical resources -->
     <link rel="preload" href="css/cleaned.css" as="style">
-    <link rel="preload" href="manga2.mp4" as="video" type="video/mp4">
     <link rel="preload" href="FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="FONTS/TuskerGrotesk-5500Medium.ttf" as="font" type="font/ttf" crossorigin>
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://assets.codepen.io">
     
     <link rel="stylesheet" href="css/cleaned.css">
     
@@ -31,31 +34,31 @@
         }
     </style>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer async></script>
 </head>
 
 <body id="vertical">
     <div class="sidebar">
         <div class="icon-container">
             <a href="https://www.instagram.com/jou.png/" target="_blank">
-                <img src="/images/insta.png" alt="Instagram">
+                <img src="/images/insta.png" alt="Instagram" loading="lazy" decoding="async" width="24" height="24">
             </a>
             <a href="https://www.behance.net/youssefelmonier" target="_blank">
-                <img src="/images/behance.png" alt="Behance">
+                <img src="/images/behance.png" alt="Behance" loading="lazy" decoding="async" width="24" height="24">
             </a>
             <a href="https://www.linkedin.com/in/youssef-elmonier-1a670020b/" target="_blank">
-                <img src="/images/linked.png" alt="linked">
+                <img src="/images/linked.png" alt="linked" loading="lazy" decoding="async" width="24" height="24">
             </a>
             <a href="mailto:youssifelmonier66@gmail.com" target="_blank">
-                <img src="/images/email.png" alt="email">
+                <img src="/images/email.png" alt="email" loading="lazy" decoding="async" width="24" height="24">
             </a>
             <a href="https://wa.me/qr/JZ3OAP5EOO3KI1" target="_blank">
-                <img src="/images/whats.png" alt="WhatsApp">
+                <img src="/images/whats.png" alt="WhatsApp" loading="lazy" decoding="async" width="24" height="24">
             </a>
             <a href="https://drive.google.com/file/d/1JoNpnwAB487Yxr2FptVaIxTPIW55sA3l/view?usp=sharing"
                 target="_blank">
-                <img src="/images/cv.png" alt="CV">
+                <img src="/images/cv.png" alt="CV" loading="lazy" decoding="async" width="24" height="24">
             </a>
         </div>
     </div>
@@ -67,7 +70,7 @@
             <div id="job" class="job hidden">I'm a <span class="highlight">Software Engineer </span>&<span class="gray-text">,3D Visualizer</span></div>
         </div>
     
-        <video autoplay loop muted playsinline webkit-playsinline class="background-clip">
+        <video autoplay loop muted playsinline webkit-playsinline class="background-clip" preload="metadata" loading="lazy">
             <source src="manga2.mp4" type="video/mp4">
             <source src="manga2.webm" type="video/webm">
             <source src="manga222.mp4" type="video/mp4" media="(max-width: 599px)">
@@ -104,13 +107,13 @@
             <p>3D Projects</p>
             <div class="projects-wrapper">
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/grr.png">
+                    <img src="/images/grr.png" loading="lazy" decoding="async" alt="Abyusif GRRR Project">
                     <div class="wrap">
                         <div class="title">
                             <h2>Abyusif</h2>
                             <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/198939571/Official-3D-Visuals-for-Abyusif-Grrr-Official-Artwork', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -123,12 +126,12 @@
                     </div>
                 </div>
                 <div class=" row vertical__item animation Proj-container">
-                    <img src="/images/MonalisaYTB.png">
+                    <img src="/images/MonalisaYTB.png" loading="lazy" decoding="async" alt="Moscow Monalisa Project">
                     <div class="wrap">
                         <div class="title">
                             <h2>Moscow</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/201141085/Moscow-Monalisa-Official-3D-Visualizer', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -144,12 +147,12 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/11.png">
+                    <img src="/images/11.png" loading="lazy" decoding="async" alt="PUBG Mobile Project">
                     <div class="wrap">
                         <div class="title">
                             <h2>Pubg</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/198939075/Official-3D-model-for-pubg-mobile', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -162,12 +165,12 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/uzi.png">
+                    <img src="/images/uzi.png" loading="lazy" decoding="async" alt="Dezel Uzi Project">
                     <div class="wrap">
                         <div class="title">
                             <h2>Dezel Uzi</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/198938963/Dezel-Uzi-EP-Cover-Using-3D-Blender', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -180,12 +183,12 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/3ab3az.jpg">
+                    <img src="/images/3ab3az.jpg" loading="lazy" decoding="async" alt="3ab3az Project">
                     <div class="wrap">
                         <div class="title">
                             <h2>3ab3az</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.youtube.com/watch?v=qHeQ29m_9v4', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -197,12 +200,12 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/bee.png">
+                    <img src="/images/bee.png" loading="lazy" decoding="async" alt="Bee Group Project">
                     <div class="wrap">
                         <div class="title">
                             <h2>Bee Group</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/201141333/Bee-Group-Eid-Ad-VFX', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -224,12 +227,12 @@
             <p>Graphic Design</p>
             <div class="projects-wrapper">
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/habeby.png" alt="Habebey Leah">
+                    <img src="/images/habeby.png" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>TUL8TE</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -242,12 +245,12 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container ">
-                    <img src="/images/LAY.jpg" alt="Habebey Leah">
+                    <img src="/images/LAY.jpg" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>TUL8TE</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.youtube.com/watch?v=M5ofvOP1Ybc', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -261,12 +264,12 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/alab.png" alt="alaab Moscow">
+                    <img src="/images/alab.png" alt="alaab Moscow" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Alaab</h2><button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/212643955/Alaab-Moscow-Official-Artwork?', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -280,12 +283,12 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/donia.png" alt="alaab Moscow">
+                    <img src="/images/donia.png" alt="alaab Moscow" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Ard El Nefaq Ep</h2><button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/212643955/Alaab-Moscow-Official-Artwork?', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -297,12 +300,12 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/myn.png" alt="alaab Moscow">
+                    <img src="/images/myn.png" alt="alaab Moscow" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>MYN </h2><button class="project-icon-button"
                                 onclick="window.open('https://www.youtube.com/watch?v=WPwWp-UeD1w&pp=0gcJCa0JAYcqIYzv', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -314,12 +317,12 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/diana.png" alt="alaab Moscow">
+                    <img src="/images/diana.png" alt="alaab Moscow" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Diana</h2><button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/213345783/Diana-Apotheke-Rebranding', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -333,12 +336,12 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container ">
-                    <img src="/images/m3.png" alt="Moments">
+                    <img src="/images/m3.png" alt="Moments" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Moments</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/198938759/Moments-brand-identity', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -351,12 +354,12 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container ">
-                    <img src="/images/des12.png" alt="Moments">
+                    <img src="/images/des12.png" alt="Moments" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Reda Haikal</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/198938759/Moments-brand-identity', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -367,12 +370,12 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/kufta.png" alt="Kufta w Tameya">
+                    <img src="/images/kufta.png" alt="Kufta w Tameya" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>K w T</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/205108417/Kufta-w-Tameya-Product-Design-and-packaging', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -391,7 +394,7 @@
 <section class="showreel-section">
     <div class="showreel-container">
         <div class="showreel-wrapper">
-            <video autoplay loop muted playsinline webkit-playsinline class="showreel-gif" style="width:100%;height:auto;border-radius:10px;">
+            <video autoplay loop muted playsinline webkit-playsinline class="showreel-gif" style="width:100%;height:auto;border-radius:10px;" preload="metadata" loading="lazy">
                 <source src="RECAP24.mp4" type="video/mp4">
                 <source src="videos/optimized/RECAP24.webm" type="video/webm">
                 Your browser does not support the video tag.
@@ -404,7 +407,7 @@
 <div class="profile">
   <div class="user">
     <div class="img">
-        <img src="images/logoW.png" alt="UI Image">
+        <img src="images/logoW.png" alt="UI Image" loading="lazy" decoding="async">
     </div>
     <div class="details">
       <div class="username">@jou.png</div>
@@ -445,13 +448,13 @@
             <p>UI & UX Design</p>
             <div class="projects-wrapper">
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/web14.png" alt="Habebey Leah">
+                    <img src="/images/web14.png" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Blue Berry</h2>
                             <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/219975245/Blue-Berry-Website?', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon">
+                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -463,7 +466,7 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/web15.jpeg" alt="Habebey Leah">
+                    <img src="/images/web15.jpeg" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Xtra Time</h2>
@@ -481,7 +484,7 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/web6.png" alt="Habebey Leah">
+                    <img src="/images/web6.png" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>FinFlow</h2>
@@ -499,7 +502,7 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/web12.png" alt="Habebey Leah">
+                    <img src="/images/web12.png" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Nomad Hub</h2>
@@ -518,7 +521,7 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/web11.png" alt="Habebey Leah">
+                    <img src="/images/web11.png" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>ClimaCheck</h2>
@@ -551,34 +554,34 @@
     <section id="certificates" class="certificates-section ">
         <div class="certificates-container">
             <div class="certificate-item animation">
-                <img src="images/ui.png" alt="Certificate 1" />
+                <img src="images/ui.png" alt="Certificate 1" loading="lazy" decoding="async" />
                 <h3>Introduction to UX Design </h3>
                 <p>(MDLPT-366) from IBM SkillsBuild</p>
                 <a href="/images/SkillsBuild.pdf" class="view-certificate-button" target="_blank">View Certificate</a>
             </div>
             <div class="certificate-item animation">
-                <img src="/images/webtest.png" alt="Certificate 2" />
+                <img src="/images/webtest.png" alt="Certificate 2" loading="lazy" decoding="async" />
                 <h3>Website Testing & Deployment </h3>
                 <p>(MDLPT-272) from IBM SkillsBuild</p>
                 <a href="/images/SkillsBuild WEB TEST.pdf" class="view-certificate-button" target="_blank">View
                     Certificate</a>
             </div>
             <div class="certificate-item animation">
-                <img src="/images/pm.png" alt="Certificate 2" />
+                <img src="/images/pm.png" alt="Certificate 2" loading="lazy" decoding="async" />
                 <h3>PM Fundamentals</h3>
                 <p> from IBM SkillsBuild </p>
                 <a href="/images/SkillsBuild PM .pdf" class="view-certificate-button" target="_blank">View
                     Certificate</a>
             </div>
             <div class="certificate-item animation">
-                <img src="images/agile.png" alt="Certificate 2" />
+                <img src="images/agile.png" alt="Certificate 2" loading="lazy" decoding="async" />
                 <h3>Agile Explorer </h3>
                 <p> from IBM SkillsBuild </p>
                 <a href="/images/SkillsBuild AGILE .pdf" class="view-certificate-button" target="_blank">View
                     Certificate</a>
             </div>
             <div class="certificate-item animation">
-                <img src="images/Ai.jpeg" alt="Certificate 2" />
+                <img src="images/Ai.jpeg" alt="Certificate 2" loading="lazy" decoding="async" />
                 <h3>AI Fundamentals </h3>
                 <p> from IBM SkillsBuild </p>
                 <a href="/images/Ai.jpeg" class="view-certificate-button" target="_blank">View
@@ -724,58 +727,75 @@
         <p>&copy; 2024 [Jou.png]. All rights reserved</p>
         <p>&copy;Banger Managment</p>
     </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"></script>
-    <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js"></script>
-    <script src="main.js"></script>
-    <script src="smooth-scrolling.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer async></script>
+    <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js" defer async></script>
+    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js" defer async></script>
+    <script src="main.js" defer></script>
+    <script src="smooth-scrolling.js" defer></script>
     <script>
         // Define the media query
         const mediaQuery = window.matchMedia('(min-width: 768px)');
 
         // Function that runs when the media query is met
         function handleMediaQueryChange(e) {
-            if (e.matches) {
-                // The viewport is 768 pixels wide or less
-                document.addEventListener('DOMContentLoaded', function () {
-                    // Select all elements with class 'Proj-container'
+            if (e.matches && typeof $ !== 'undefined' && $.fn.tilt) {
+                // Use requestIdleCallback for better performance
+                const scheduleWork = window.requestIdleCallback || ((cb) => setTimeout(cb, 100));
+                
+                scheduleWork(() => {
+                    // Select all elements with class 'animation'
                     const projectContainers = document.querySelectorAll('.animation');
 
                     // Initialize Tilt.js on each project container
                     projectContainers.forEach(container => {
-                        $(container).tilt({
-                            maxTilt: 5,
-                            scale: 1.02,
-                            speed: 300,
-                            glare: true,
-                            maxGlare: .2
-                        });
-                    })
+                        if ($(container).length) {
+                            $(container).tilt({
+                                maxTilt: 5,
+                                scale: 1.02,
+                                speed: 300,
+                                glare: true,
+                                maxGlare: .2
+                            });
+                        }
+                    });
                 });
-                // Place your code here for when the condition is true
-            } else {
-                // The viewport is wider than 768 pixels
-                console.log('The viewport is wider than 768px.');
-                // Place your code here for when the condition is false
             }
         }
 
-        // Initial check
-        handleMediaQueryChange(mediaQuery);
-
-        // Listen for changes in the media query state
-        mediaQuery.addListener(handleMediaQueryChange);
+        // Wait for DOM and jQuery to be ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => {
+                // Initial check after a short delay to ensure jQuery is loaded
+                setTimeout(() => {
+                    handleMediaQueryChange(mediaQuery);
+                    mediaQuery.addEventListener('change', handleMediaQueryChange);
+                }, 100);
+            });
+        } else {
+            setTimeout(() => {
+                handleMediaQueryChange(mediaQuery);
+                mediaQuery.addEventListener('change', handleMediaQueryChange);
+            }, 100);
+        }
     </script>
     <script>
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetClass = link.getAttribute('data-target');
-                const targetElement = document.querySelector(targetClass);
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
+        // Optimized nav-link handler with error checking
+        document.addEventListener('DOMContentLoaded', () => {
+            const navLinks = document.querySelectorAll('.nav-link');
+            if (navLinks.length > 0) {
+                navLinks.forEach(link => {
+                    link.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetClass = link.getAttribute('data-target');
+                        if (targetClass) {
+                            const targetElement = document.querySelector(targetClass);
+                            if (targetElement) {
+                                targetElement.scrollIntoView({ behavior: 'smooth' });
+                            }
+                        }
+                    });
+                });
+            }
         });
     </script>
     <style>

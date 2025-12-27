@@ -8,9 +8,10 @@
     
     <!-- Preload critical resources -->
     <link rel="preload" href="css/style.css" as="style">
-    <link rel="preload" href="manga2.mp4" as="video" type="video/mp4">
     <link rel="preload" href="FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="FONTS/TuskerGrotesk-5500Medium.ttf" as="font" type="font/ttf" crossorigin>
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     
     <link rel="stylesheet" href="css/style.css">
     
@@ -30,9 +31,9 @@
         }
     </style>
     
-    <!-- Minify css/style.css for better performance -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    <!-- Defer non-critical scripts for better performance -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer async></script>
 </head>
 
 <body>
@@ -52,19 +53,19 @@
             <p class="project-description fade-in">Exploring the journey from concept to final design through careful iteration</p>
             <div class="masonry-grid">
                 <div class="grid-item landscape">
-                    <img src="images/Creative-process-final-ba2a_01.jpg" alt="UI Design Process" loading="lazy" width="600" height="400">
+                    <img src="images/Creative-process-final-ba2a_01.jpg" alt="UI Design Process" loading="lazy" decoding="async" decoding="async" width="600" height="400">
                     <div class="item-description">Going Through The Design Process </div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/Creative-process-final-ba2a_02.jpg" alt="UI Components" loading="lazy" width="400" height="600">
+                    <img src="images/Creative-process-final-ba2a_02.jpg" alt="UI Components" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description"> Typography  </div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/Creative-process-final-ba2a_03.jpg" alt="UI Design" loading="lazy" width="400" height="600">
+                    <img src="images/Creative-process-final-ba2a_03.jpg" alt="UI Design" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description">Possible Versions & Drafts</div>
                 </div>
                 <div class="grid-item landscape">
-                    <img src="images/Creative-process-final-ba2a_04.jpg" alt="UI Testing" loading="lazy" width="600" height="400">
+                    <img src="images/Creative-process-final-ba2a_04.jpg" alt="UI Testing" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description">Alaab Production Team </div>
                 </div>
             </div>
@@ -75,19 +76,19 @@
             <p class="project-description fade-in">Crafting smooth, meaningful animations that enhance user experience and brand storytelling.</p>
             <div class="masonry-grid">
                 <div class="grid-item landscape">
-                    <img src="images/Creative-processard_02.jpg" alt="Motion Design" loading="lazy" width="600" height="400">
+                    <img src="images/Creative-processard_02.jpg" alt="Motion Design" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description">Main Artwork </div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/Creative-processard_03.jpg" alt="Motion Graphics" loading="lazy" width="400" height="600">
+                    <img src="images/Creative-processard_03.jpg" alt="Motion Graphics" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description">Typography</div>
                 </div>
                 <div class="grid-item landscape">
-                    <img src="images/Creative-processard_04.jpg" alt="Motion Effects" loading="lazy" width="600" height="400">
+                    <img src="images/Creative-processard_04.jpg" alt="Motion Effects" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description">Possible Versions</div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/Creative-processard_05.jpg" alt="Animation Process" loading="lazy" width="400" height="600">
+                    <img src="images/Creative-processard_05.jpg" alt="Animation Process" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description">Could have been official</div>
                 </div>
             </div>
@@ -98,19 +99,19 @@
             <p class="project-description fade-in">Crafting unique and memorable brand identities through iterative design exploration.</p>
             <div class="masonry-grid">
                 <div class="grid-item landscape">
-                    <img src="images/diana1.png" alt="Brand Identity" loading="lazy" width="600" height="400">
+                    <img src="images/diana1.png" alt="Brand Identity" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description">Brand Guidelines</div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/diana.png" alt="Brand Applications" loading="lazy" width="400" height="600">
+                    <img src="images/diana.png" alt="Brand Applications" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description">Product Mockup </div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/diana2.jpeg" alt="Brand Guidelines" loading="lazy" width="400" height="600">
+                    <img src="images/diana2.jpeg" alt="Brand Guidelines" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description">Product Mockup</div>
                 </div>
                 <div class="grid-item landscape">
-                    <img src="images/diana4.png" alt="Brand Implementation" loading="lazy" width="600" height="400">
+                    <img src="images/diana4.png" alt="Brand Implementation" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description">Brand Guidelines</div>
                 </div>
             </div>
@@ -120,19 +121,19 @@
             <p class="project-description fade-in">Crafting unique and memorable brand identities through iterative design exploration.</p>
             <div class="masonry-grid">
                 <div class="grid-item landscape">
-                    <img src="images/kufta2.png" alt="Brand Identity" loading="lazy" width="600" height="400">
+                    <img src="images/kufta2.png" alt="Brand Identity" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description">Logo Refurbish</div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/kufta6.jpeg" alt="Brand Applications" loading="lazy" width="400" height="600">
+                    <img src="images/kufta6.jpeg" alt="Brand Applications" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description">Product Mockup </div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/kufta3.jpeg" alt="Brand Guidelines" loading="lazy" width="400" height="600">
+                    <img src="images/kufta3.jpeg" alt="Brand Guidelines" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description">Product Mockup</div>
                 </div>
                 <div class="grid-item landscape">
-                    <img src="images/kufta7.jpeg" alt="Brand Implementation" loading="lazy" width="600" height="400">
+                    <img src="images/kufta7.jpeg" alt="Brand Implementation" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description">Product Mockup</div>
                 </div>
             </div>
@@ -142,19 +143,19 @@
             <p class="project-description fade-in">Crafting unique and memorable brand identities through iterative design exploration.</p>
             <div class="masonry-grid">
                 <div class="grid-item landscape">
-                    <img src="images/mona1.jpeg" alt="Brand Identity" loading="lazy" width="600" height="400">
+                    <img src="images/mona1.jpeg" alt="Brand Identity" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description">Main Scene</div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/mona2.jpeg" alt="Brand Applications" loading="lazy" width="400" height="600">
+                    <img src="images/mona2.jpeg" alt="Brand Applications" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description"> 3D Props </div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/mona3.jpeg" alt="Brand Guidelines" loading="lazy" width="400" height="600">
+                    <img src="images/mona3.jpeg" alt="Brand Guidelines" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description">Secondary Scene</div>
                 </div>
                 <div class="grid-item landscape">
-                    <img src="images/mona4.jpeg" alt="Brand Implementation" loading="lazy" width="600" height="400">
+                    <img src="images/mona4.jpeg" alt="Brand Implementation" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description">Scene Environment</div>
                 </div>
             </div>
@@ -164,19 +165,19 @@
             <p class="project-description fade-in">Crafting unique and memorable brand identities through iterative design exploration.</p>
             <div class="masonry-grid">
                 <div class="grid-item landscape">
-                    <img src="images/pubg2.jpeg" alt="Brand Identity" loading="lazy" width="600" height="400">
+                    <img src="images/pubg2.jpeg" alt="Brand Identity" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description">3D Props</div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/pubg1.png" alt="Brand Applications" loading="lazy" width="400" height="600">
+                    <img src="images/pubg1.png" alt="Brand Applications" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description">Blender Procces</div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/pubg3.jpeg" alt="Brand Guidelines" loading="lazy" width="400" height="600">
+                    <img src="images/pubg3.jpeg" alt="Brand Guidelines" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description">Another Angle</div>
                 </div>
                 <div class="grid-item landscape">
-                    <img src="images/pubg4.jpeg" alt="Brand Implementation" loading="lazy" width="600" height="400">
+                    <img src="images/pubg4.jpeg" alt="Brand Implementation" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description">Another Angle</div>
                 </div>
             </div>
@@ -187,19 +188,19 @@
                 seamless and user-friendly experience.</p>
             <div class="masonry-grid">
                 <div class="grid-item landscape">
-                    <img src="images/web15.jpeg" alt="Brand Identity" loading="lazy" width="600" height="400">
+                    <img src="images/web15.jpeg" alt="Brand Identity" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description">Main Section </div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/web151.png" alt="Brand Applications" loading="lazy" width="400" height="600">
+                    <img src="images/web151.png" alt="Brand Applications" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description">League Table </div>
                 </div>
                 <div class="grid-item portrait">
-                    <img src="images/web153.png" alt="Brand Guidelines" loading="lazy" width="400" height="600">
+                    <img src="images/web153.png" alt="Brand Guidelines" loading="lazy" decoding="async" width="400" height="600">
                     <div class="item-description">Todays Match </div>
                 </div>
                 <div class="grid-item landscape">
-                    <img src="images/web154.png" alt="Brand Implementation" loading="lazy" width="600" height="400">
+                    <img src="images/web154.png" alt="Brand Implementation" loading="lazy" decoding="async" width="600" height="400">
                     <div class="item-description"> News </div>
                 </div>
             </div>
@@ -211,7 +212,7 @@
             <p class="project-description fade-in">Showcasing dynamic video content and motion graphics work.</p>
             <div class="reels-grid">
                 <div class="reel-item fade-in">
-                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" width="400" height="300">
+                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" decoding="async" preload="metadata" width="400" height="300">
                         <source src="manga2.mp4" type="video/mp4">
                         <source src="manga2.webm" type="video/webm">
                         Your browser does not support the video tag.
@@ -222,7 +223,7 @@
                     </div>
                 </div>
                 <div class="reel-item fade-in">
-                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" width="400" height="300">
+                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" decoding="async" preload="metadata" width="400" height="300">
                         <source src="manga222.mp4" type="video/mp4">
                         <source src="manga222.webm" type="video/webm">
                         Your browser does not support the video tag.
@@ -233,7 +234,7 @@
                     </div>
                 </div>
                 <div class="reel-item fade-in">
-                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" width="400" height="300">
+                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" decoding="async" preload="metadata" width="400" height="300">
                         <source src="images/proj.mp4" type="video/mp4">
                         <source src="images/proj.webm" type="video/webm">
                         Your browser does not support the video tag.
@@ -244,7 +245,7 @@
                     </div>
                 </div>
                 <div class="reel-item fade-in">
-                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" width="400" height="300">
+                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" decoding="async" preload="metadata" width="400" height="300">
                         <source src="images/proj.mp4" type="video/mp4">
                         <source src="images/proj.webm" type="video/webm">
                         Your browser does not support the video tag.
@@ -255,7 +256,7 @@
                     </div>
                 </div>
                 <div class="reel-item fade-in">
-                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" width="400" height="300">
+                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" decoding="async" preload="metadata" width="400" height="300">
                         <source src="images/proj.mp4" type="video/mp4">
                         <source src="images/proj.webm" type="video/webm">
                         Your browser does not support the video tag.
@@ -266,7 +267,7 @@
                     </div>
                 </div>
                 <div class="reel-item fade-in">
-                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" width="400" height="300">
+                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" decoding="async" preload="metadata" width="400" height="300">
                         <source src="images/proj.mp4" type="video/mp4">
                         <source src="images/proj.webm" type="video/webm">
                         Your browser does not support the video tag.
@@ -571,35 +572,45 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            // Initial animation for the title
-            setTimeout(() => {
-                document.querySelector('.text-process').classList.add('active');
-            }, 300);
+            // Use requestIdleCallback for better performance
+            const scheduleWork = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+            
+            scheduleWork(() => {
+                // Initial animation for the title
+                setTimeout(() => {
+                    const titleEl = document.querySelector('.text-process');
+                    if (titleEl) titleEl.classList.add('active');
+                }, 300);
 
-            // Intersection Observer for scroll animations
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                        
-                        // Animate grid items with stagger
-                        if (entry.target.classList.contains('project-section')) {
-                            const gridItems = entry.target.querySelectorAll('.grid-item, .reel-item');
-                            gridItems.forEach((item, index) => {
-                                setTimeout(() => {
-                                    item.classList.add('active');
-                                }, index * 200);
-                            });
+                // Intersection Observer for scroll animations with performance optimizations
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('active');
+                            
+                            // Animate grid items with stagger
+                            if (entry.target.classList.contains('project-section')) {
+                                const gridItems = entry.target.querySelectorAll('.grid-item, .reel-item');
+                                gridItems.forEach((item, index) => {
+                                    setTimeout(() => {
+                                        item.classList.add('active');
+                                    }, index * 100); // Reduced delay for faster animation
+                                });
+                            }
+                            
+                            // Stop observing once animated
+                            observer.unobserve(entry.target);
                         }
-                    }
+                    });
+                }, {
+                    threshold: 0.1, // Reduced threshold for earlier triggering
+                    rootMargin: '50px' // Start loading slightly before viewport
                 });
-            }, {
-                threshold: 0.2
-            });
 
-            // Observe all animated elements
-            document.querySelectorAll('.fade-up, .fade-in, .slide-in, .project-section').forEach(el => {
-                observer.observe(el);
+                // Observe all animated elements
+                document.querySelectorAll('.fade-up, .fade-in, .slide-in, .project-section').forEach(el => {
+                    observer.observe(el);
+                });
             });
         });
     </script>
