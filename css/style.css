@@ -149,6 +149,7 @@ body {
     color: gray;
     padding-right: 85%;
     padding-bottom: 1%;
+    padding-top: 2%;
 }
 
 .name6 {
@@ -558,6 +559,14 @@ button:hover {
 .about-me p {
     font-size: 1.2em;
     color: #555;
+}
+
+.about-gallery img:hover {
+    filter: grayscale(0%) contrast(1.1);
+}
+
+.about-gallery-section {
+    margin-top: 70px;
 }
 
 .nav-links {
@@ -1346,6 +1355,7 @@ footer {
         text-align: left;
         padding-left: 3%;
         padding-right: 0;
+        padding-top: 2%;
     }
     .navs{
         padding-bottom: 15%;
@@ -1520,6 +1530,21 @@ footer {
             font-size: 14px;
             color: #555;
         }
+
+        @media (max-width: 1000px) {
+            .about-image {
+                width: 100%;
+                max-width: 320px;
+                height: 340px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .about-image {
+                justify-content: center;
+            }
+        }
+
         .about-me {
     text-align: center;
     width: 100%;
