@@ -2,7 +2,7 @@
 
 ## ✅ Optimizations Applied
 
-### 1. **Main Hero Image** (`images/me66.JPG`)
+### 1. **Main Hero Image** (`images/eljojj.png`)
 - ✅ Added explicit `width="320"` and `height="400"` attributes
 - ✅ Added `fetchpriority="high"` for above-the-fold image
 - ✅ Added `aspect-ratio` CSS property to prevent layout shift
@@ -14,7 +14,7 @@
 - Faster initial render with preload
 - Better Core Web Vitals score
 
-### 2. **Education Image** (`images/edu2.png`)
+### 2. **Education Image** (`images/me67.jpg`)
 - ✅ Added explicit `width="320"` and `height="400"` attributes
 - ✅ Added `aspect-ratio` CSS property
 - ✅ Maintained `loading="lazy"` and `decoding="async"`
