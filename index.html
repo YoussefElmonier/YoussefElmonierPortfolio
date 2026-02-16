@@ -6,59 +6,55 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio</title>
-    
+
     <!-- Preload critical resources -->
     <link rel="preload" href="css/cleaned.css" as="style">
+    <link rel="preload" href="css/custom.css" as="style">
     <link rel="preload" href="FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="FONTS/TuskerGrotesk-5500Medium.ttf" as="font" type="font/ttf" crossorigin>
     <!-- DNS prefetch for external resources -->
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
     <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
     <link rel="dns-prefetch" href="https://assets.codepen.io">
-    
+
     <link rel="stylesheet" href="css/cleaned.css">
-    
-    <!-- Preload critical fonts -->
-    <style>
-        @font-face {
-            font-family: 'Aspekta';
-            src: url('FONTS/Aspekta-400.ttf') format('truetype');
-            font-weight: 400;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Tusker GroteskMed';
-            src: url('FONTS/TuskerGrotesk-5500Medium.ttf') format('truetype');
-            font-weight: 500;
-            font-display: swap;
-        }
-    </style>
-    
+    <link rel="stylesheet" href="css/custom.css">
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer async></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer async></script>
 </head>
 
 <body id="vertical">
+        <nav class="navs section-nav">
+        <div class="nav-links">
+            <a href="index.html" class="nav-item active">Home</a>
+            <a href="process.html" class="nav-item">Creative Process</a>
+            <a href="AboutMe.html" class="nav-item">About Me</a>
+        </div>
+    </nav>
     <div class="sidebar">
         <div class="icon-container">
             <a href="https://www.instagram.com/jou.png/" target="_blank">
-                <img src="/images/insta.png" alt="Instagram" loading="lazy" decoding="async" width="24" height="24">
+                <img src="/images/webp/insta.webp" alt="Instagram" loading="lazy" decoding="async" width="24"
+                    height="24">
             </a>
             <a href="https://www.behance.net/youssefelmonier" target="_blank">
-                <img src="/images/behance.png" alt="Behance" loading="lazy" decoding="async" width="24" height="24">
+                <img src="/images/webp/behance.webp" alt="Behance" loading="lazy" decoding="async" width="24"
+                    height="24">
             </a>
             <a href="https://www.linkedin.com/in/youssef-elmonier-1a670020b/" target="_blank">
-                <img src="/images/linked.png" alt="linked" loading="lazy" decoding="async" width="24" height="24">
+                <img src="/images/webp/linked.webp" alt="linked" loading="lazy" decoding="async" width="24" height="24">
             </a>
             <a href="mailto:youssifelmonier66@gmail.com" target="_blank">
-                <img src="/images/email.png" alt="email" loading="lazy" decoding="async" width="24" height="24">
+                <img src="/images/webp/email.webp" alt="email" loading="lazy" decoding="async" width="24" height="24">
             </a>
             <a href="https://wa.me/qr/JZ3OAP5EOO3KI1" target="_blank">
-                <img src="/images/whats.png" alt="WhatsApp" loading="lazy" decoding="async" width="24" height="24">
+                <img src="/images/webp/whats.webp" alt="WhatsApp" loading="lazy" decoding="async" width="24"
+                    height="24">
             </a>
             <a href="https://drive.google.com/file/d/1JoNpnwAB487Yxr2FptVaIxTPIW55sA3l/view?usp=sharing"
                 target="_blank">
-                <img src="/images/cv.png" alt="CV" loading="lazy" decoding="async" width="24" height="24">
+                <img src="/images/webp/cv.webp" alt="CV" loading="lazy" decoding="async" width="24" height="24">
             </a>
         </div>
     </div>
@@ -67,10 +63,12 @@
         <div class="container">
             <div id="hello" class="hello hidden"><span class="highlight">HELLO </span> I'AM</div>
             <div id="name" class="name6 hidden">YOUSSEF <br> ELMONIER</div>
-            <div id="job" class="job hidden">I'm a <span class="highlight">Software Engineer </span>&<span class="gray-text">,3D Visualizer</span></div>
+            <div id="job" class="job hidden">I'm a <span class="highlight">Software Engineer </span>&<span
+                    class="gray-text">,3D Visualizer</span></div>
         </div>
-    
-        <video autoplay loop muted playsinline webkit-playsinline class="background-clip" preload="metadata" loading="lazy">
+
+        <video autoplay loop muted playsinline webkit-playsinline class="background-clip" preload="metadata"
+            loading="lazy">
             <source src="manga2.mp4" type="video/mp4">
             <source src="manga2.webm" type="video/webm">
             <source src="manga222.mp4" type="video/mp4" media="(max-width: 599px)">
@@ -78,134 +76,141 @@
         </video>
         <div class="skills-section">
             <div class="cardSkill animation">
-                <h3>Web Design</h3>
-                <p>"Proficient in HTML, CSS, and JavaScript for creating engaging websites. Expanding into AI and machine learning development."</p>
-                </div>
-                <div class="cardSkill animation">
-                    <h3>Additional Skills</h3>
-                    <p>"Experienced in React, Git, Cypress, manual testing, and integration testing, 
-                        ensuring software quality through validation and automation."</p>
-                </div>
+                <h3>Software Engineering</h3>
+                <p>"Proficient in HTML, CSS, and JavaScript for creating engaging websites. Expanding into AI and
+                    machine learning development."</p>
+            </div>
             <div class="cardSkill animation">
                 <h3>3D & Graphic Design</h3>
-                <p>"Have a good experience in Photoshop and 3D Blender , and  in DaVinci Resolve and Adobe Premiere , 
+                <p>"Have a good experience in Photoshop and 3D Blender ,figma ,Rive,and in DaVinci Resolve and Adobe
+                    Premiere ,
                     crafting stunning visuals for branding and music visuals."</p>
             </div>
         </div>
         <!-- </div> -->
     </section>
-    <nav class="navs section-nav">
-        <div class="nav-links">
-            <a href="index.html" class="nav-item active">Home</a>
-            <a href="process.html" class="nav-item">Creative Process</a>
-            <a href="AboutMe.html" class="nav-item">About Me</a>
-        </div>
-    </nav>
+
     <!-- </section> -->
     <section class="project">
         <div class="Projects">
             <p>3D Projects</p>
             <div class="projects-wrapper">
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/grr.png" loading="lazy" decoding="async" alt="Abyusif GRRR Project">
+                    <img src="/images/webp/grr.webp" loading="lazy" decoding="async" alt="Abyusif GRRR Project">
                     <div class="wrap">
                         <div class="title">
                             <h2>Abyusif</h2>
                             <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/198939571/Official-3D-Visuals-for-Abyusif-Grrr-Official-Artwork', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
                             <h3>GRRR</h3>
                             <h4>Official 3D Visualizer</h4>
-                            <p3>"Created a fully immersive 3D visualizer for Egyptian rap legend Abyusif, utilizing
+                            <p3>"Created a fully immersive 3D visualizer for Egyptian
+                                rap legend Abyusif, utilizing
                                 Blender for
                                 the 3D modeling and Adobe Premiere for post-production and editing."</p3>
                         </div>
                     </div>
                 </div>
                 <div class=" row vertical__item animation Proj-container">
-                    <img src="/images/MonalisaYTB.png" loading="lazy" decoding="async" alt="Moscow Monalisa Project">
+                    <img src="/images/webp/MonalisaYTB.webp" loading="lazy" decoding="async"
+                        alt="Moscow Monalisa Project">
                     <div class="wrap">
                         <div class="title">
                             <h2>Moscow</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/201141085/Moscow-Monalisa-Official-3D-Visualizer', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
                             <h3>Monalisa</h3>
                             <h4>Official 3D Visualizer</h4>
-                            <p3>"Designed a dynamic 3D scene for Moscow's track 'Monalisa' using Blender. The scene
+                            <p3>"Designed a dynamic 3D scene for Moscow's track 'Monalisa' using Blender.
+                                The scene
                                 features
                                 two
-                                contrasting parts: one with a vintage aesthetic and the other with a futuristic vibe,
+                                contrasting parts: one with a vintage aesthetic and the other
+                                with a futuristic vibe,
                                 blending
                                 both styles seamlessly."</p3>
                         </div>
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/11.png" loading="lazy" decoding="async" alt="PUBG Mobile Project">
+                    <img src="/images/webp/11.webp" loading="lazy" decoding="async" alt="PUBG Mobile Project">
                     <div class="wrap">
                         <div class="title">
                             <h2>Pubg</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/198939075/Official-3D-model-for-pubg-mobile', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
                             <h3>Pubg Mobile</h3>
                             <h4>Official 3D Intro</h4>
-                            <p3>"Crafted a high-energy 3D intro for the PUBG series 'Victor Adventures' using Blender,
-                                delivering a visually engaging opening sequence that sets the tone for the action-packed
+                            <p3>"Crafted a high-energy 3D intro for the PUBG series
+                                'Victor Adventures' using Blender,
+                                delivering a visually engaging opening sequence
+                                that sets the tone for the action-packed
                                 series."</p3>
                         </div>
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/uzi.png" loading="lazy" decoding="async" alt="Dezel Uzi Project">
+                    <img src="/images/webp/uzi.webp" loading="lazy" decoding="async" alt="Dezel Uzi Project">
                     <div class="wrap">
                         <div class="title">
                             <h2>Dezel Uzi</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/198938963/Dezel-Uzi-EP-Cover-Using-3D-Blender', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
                             <h3>Mourad EP</h3>
                             <h4>3D Visuals & Artwork</h4>
-                            <p3>"Created a captivating 3D museum environment for Dezel Uzi's album 'Mourad' using
+                            <p3>"Created a captivating 3D museum environment
+                                for Dezel Uzi's album 'Mourad' using
                                 Blender,
-                                offering an artistic space that visually represents the album's themes and mood."</p3>
+                                offering an artistic space that visually
+                                represents the album's themes and mood."</p3>
                         </div>
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/3ab3az.jpg" loading="lazy" decoding="async" alt="3ab3az Project">
+                    <img src="/images/webp/3ab3az.webp" loading="lazy" decoding="async" alt="3ab3az Project">
                     <div class="wrap">
                         <div class="title">
                             <h2>3ab3az</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.youtube.com/watch?v=qHeQ29m_9v4', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
                             <h3>Feen El E7sas EP</h3>
                             <h4>3D CGI and VFX</h4>
-                            <p3>"Integrated CGI and 3D plushies into real footage for 3abaz's music video,
-                                 seamlessly blending digital creations with live-action using advanced CGI techniques."</p3>
+                            <p3>"Integrated CGI and 3D plushies into real
+                                footage for 3abaz's music video,
+                                seamlessly blending digital creations
+                                with live-action using advanced CGI techniques."</p3>
                         </div>
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/bee.png" loading="lazy" decoding="async" alt="Bee Group Project">
+                    <img src="/images/webp/bee.webp" loading="lazy" decoding="async" alt="Bee Group Project">
                     <div class="wrap">
                         <div class="title">
                             <h2>Bee Group</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/201141333/Bee-Group-Eid-Ad-VFX', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -227,12 +232,13 @@
             <p>Graphic Design</p>
             <div class="projects-wrapper">
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/habeby.png" alt="Habebey Leah" loading="lazy" decoding="async">
+                    <img src="/images/webp/habeby.webp" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>TUL8TE</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -245,12 +251,13 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container ">
-                    <img src="/images/LAY.jpg" alt="Habebey Leah" loading="lazy" decoding="async">
+                    <img src="/images/webp/LAY.webp" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>TUL8TE</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.youtube.com/watch?v=M5ofvOP1Ybc', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -264,12 +271,13 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/alab.png" alt="alaab Moscow" loading="lazy" decoding="async">
+                    <img src="/images/webp/alab.webp" alt="alaab Moscow" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Alaab</h2><button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/212643955/Alaab-Moscow-Official-Artwork?', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -283,12 +291,13 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/donia.png" alt="alaab Moscow" loading="lazy" decoding="async">
+                    <img src="/images/webp/donia.webp" alt="alaab Moscow" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Ard El Nefaq Ep</h2><button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/212643955/Alaab-Moscow-Official-Artwork?', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -300,46 +309,49 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/myn.png" alt="alaab Moscow" loading="lazy" decoding="async">
+                    <img src="/images/webp/myn.webp" alt="alaab Moscow" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>MYN </h2><button class="project-icon-button"
                                 onclick="window.open('https://www.youtube.com/watch?v=WPwWp-UeD1w&pp=0gcJCa0JAYcqIYzv', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
                             <h3>Meen Ytafy Nary - Moscow X Nasser</h3>
                             <h4> Official Stop Motion Visualizer </h4>
                             <p3>"Made the Stop motion visualizer using set of sequence images made with ai &
-                             also the spotify canvas vertical video.<p3>
+                                also the spotify canvas vertical video.<p3>
                         </div>
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/Jadduuuuu.jpg" alt="  Jaadu Jealousy" loading="lazy" decoding="async">
+                    <img src="/images/webp/Jadduuuuu.webp" alt="  Jaadu Jealousy" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Jealousy </h2><button class="project-icon-button"
                                 onclick="window.open('https://www.youtube.com/watch?v=Jac53Z8Doi0&list=RDJac53Z8Doi0&start_radio=1', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
                             <h3>Jealousy - Jaadu X Moaa</h3>
                             <h4> Official Artwork remake </h4>
-                            <p3>Manipulated the original artwork 
-                            to include the remix artists and give it a more Egyptian-inspired style.<p3>
+                            <p3>Manipulated the original artwork
+                                to include the remix artists and give it a more Egyptian-inspired style.<p3>
                         </div>
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/diana.png" alt="alaab Moscow" loading="lazy" decoding="async">
+                    <img src="/images/webp/diana.webp" alt="alaab Moscow" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Diana</h2><button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/213345783/Diana-Apotheke-Rebranding', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -353,12 +365,13 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container ">
-                    <img src="/images/m3.png" alt="Moments" loading="lazy" decoding="async">
+                    <img src="/images/webp/m3.webp" alt="Moments" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Moments</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/198938759/Moments-brand-identity', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -371,28 +384,31 @@
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container ">
-                    <img src="/images/des12.png" alt="Moments" loading="lazy" decoding="async">
+                    <img src="/images/webp/des12.webp" alt="Moments" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Reda Haikal</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/198938759/Moments-brand-identity', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
                             <h3>Banger Ath</h3>
                             <h4>New Season Design </h4>
-                            <p3>"Designed New Season Poster for Reda haikal Egyptian Nationak Team Volleyball Player "</p3>
+                            <p3>"Designed New Season Poster for Reda haikal Egyptian Nationak Team Volleyball Player "
+                            </p3>
                         </div>
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/kufta.png" alt="Kufta w Tameya" loading="lazy" decoding="async">
+                    <img src="/images/webp/kufta.webp" alt="Kufta w Tameya" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>K w T</h2> <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/205108417/Kufta-w-Tameya-Product-Design-and-packaging', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
@@ -407,159 +423,158 @@
             </div>
         </div>
     </section>
-</section>
-<section class="showreel-section">
-    <div class="showreel-container">
-        <div class="showreel-wrapper">
-            <video autoplay loop muted playsinline webkit-playsinline class="showreel-gif" style="width:100%;height:auto;border-radius:10px;" preload="metadata" loading="lazy">
-                <source src="RECAP24.mp4" type="video/mp4">
-                <source src="videos/optimized/RECAP24.webm" type="video/webm">
-                Your browser does not support the video tag.
-            </video>
-            <h2 class="showreel-title">JPNG 2024
-                RECAP</h2>
+    </section>
+    <section class="showreel-section">
+        <div class="showreel-container">
+            <div class="showreel-wrapper">
+                <video autoplay loop muted playsinline webkit-playsinline class="showreel-gif"
+                    style="width:100%;height:auto;border-radius:10px;" preload="metadata" loading="lazy">
+                    <source src="RECAP24.mp4" type="video/mp4">
+                    <source src="videos/optimized/RECAP24.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+                <h2 class="showreel-title">JPNG 2024
+                    RECAP</h2>
+            </div>
+            <div class="tooltip-container">
+                <div class="tooltip">
+                    <div class="profile">
+                        <div class="user">
+                            <div class="img">
+                                <img src="images/webp/logoW.webp" alt="UI Image" loading="lazy" decoding="async">
+                            </div>
+                            <div class="details">
+                                <div class="username">@jou.png</div>
+                                <div class="about">1400+Followers</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="text">
+                    <a class="icon" href="https://www.instagram.com/jou.png/reel/DENf7ZwIr05/" target="_blank">
+                        <div class="layer">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                            <span class="instagramSVG">
+                                <svg fill="white" class="svgIcon" viewBox="0 0 448 512" height="1.5em"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
+                                    </path>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
         </div>
-<div class="tooltip-container">
-<div class="tooltip">
-<div class="profile">
-  <div class="user">
-    <div class="img">
-        <img src="images/logoW.png" alt="UI Image" loading="lazy" decoding="async">
-    </div>
-    <div class="details">
-      <div class="username">@jou.png</div>
-      <div class="about">1400+Followers</div>
-    </div>
-  </div>
-</div>
-</div>
-<div class="text">
-<a class="icon" href="https://www.instagram.com/jou.png/reel/DENf7ZwIr05/" target="_blank">
-  <div class="layer">
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span class="instagramSVG">
-      <svg
-        fill="white"
-        class="svgIcon"
-        viewBox="0 0 448 512"
-        height="1.5em"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"
-        ></path>
-      </svg>
-    </span>
-  </div>
-</a>
-</div>
-</div>
-    </div>
-    
-</section>
+
+    </section>
     <section>
         <div class="Projects">
             <p>UI & UX Design</p>
             <div class="projects-wrapper">
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/web14.png" alt="Habebey Leah" loading="lazy" decoding="async">
+                    <img src="/images/webp/web14.webp" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Blue Berry</h2>
                             <button class="project-icon-button"
                                 onclick="window.open('https://www.behance.net/gallery/219975245/Blue-Berry-Website?', '_blank');">
-                                <img src="images/play-button.png" alt="View Project" class="project-icon" loading="lazy" decoding="async" width="24" height="24">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
+                                    loading="lazy" decoding="async" width="24" height="24">
                             </button>
                         </div>
                         <div class="details">
                             <h3>Blue Berry</h3>
                             <h4>UI & UX Design</h4>
-                            <p3>Designed the complete UI and UX for Blue Berry Clothing's website, focusing on delivering a
+                            <p3>Designed the complete UI and UX for Blue Berry Clothing's website, focusing on
+                                delivering a
                                 seamless and user-friendly experience.</p3>
                         </div>
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/web15.jpeg" alt="Habebey Leah" loading="lazy" decoding="async">
+                    <img src="/images/webp/web15.webp" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Xtra Time</h2>
                             <button class="project-icon-button"
-                            onclick="window.open('https://www.behance.net/gallery/237853897/Xtra-Time-Website', '_blank');">
-                            <img src="images/play-button.png" alt="View Project" class="project-icon">
-                        </button>
-                    </div>
+                                onclick="window.open('https://www.behance.net/gallery/237853897/Xtra-Time-Website', '_blank');">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon">
+                            </button>
+                        </div>
                         <div class="details">
                             <h3>Xtra Time</h3>
                             <h4>UI & UX & Implementation</h4>
-                            <p3>Designed the complete Website ,UI ,and UX for Xtra Time website, focusing on delivering a
+                            <p3>Designed the complete Website ,UI ,and UX for Xtra Time website, focusing on delivering
+                                a
                                 seamless and user-friendly experience.</p3>
                         </div>
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/web6.png" alt="Habebey Leah" loading="lazy" decoding="async">
+                    <img src="/images/webp/web6.webp" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>FinFlow</h2>
                             <button class="project-icon-button"
-                            onclick="window.open('https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album', '_blank');">
-                            <img src="images/play-button.png" alt="View Project" class="project-icon">
-                        </button>
-                    </div>
-                    <div class="details">
-                        <h3>FinFlow</h3>
-                        <h4>UI & UX Design</h4>
-                        <p3>Designed the complete UI and UX for FinFlow banking app, creating an intuitive and
-                            visually engaging shopping experience.</p3>
+                                onclick="window.open('https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album', '_blank');">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon">
+                            </button>
+                        </div>
+                        <div class="details">
+                            <h3>FinFlow</h3>
+                            <h4>UI & UX Design</h4>
+                            <p3>Designed the complete UI and UX for FinFlow banking app, creating an intuitive and
+                                visually engaging shopping experience.</p3>
                         </div>
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/web12.png" alt="Habebey Leah" loading="lazy" decoding="async">
+                    <img src="/images/webp/web12.webp" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>Nomad Hub</h2>
                             <button class="project-icon-button"
-                            onclick="window.open('https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album', '_blank');">
-                            <img src="images/play-button.png" alt="View Project" class="project-icon">
-                        </button>
-                    </div>
-                    <div class="details">
-                        <h3>Nomad Hub</h3>
-                        <h4>UI & UX Design</h4>
-                        <p3>Crafted a seamless UI and UX for Digital Nomad Hub,
-                            offering an inspiring and user-friendly platform for remote workers to explore, connect,
-                            and thrive.</p3>
+                                onclick="window.open('https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album', '_blank');">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon">
+                            </button>
+                        </div>
+                        <div class="details">
+                            <h3>Nomad Hub</h3>
+                            <h4>UI & UX Design</h4>
+                            <p3>Crafted a seamless UI and UX for Digital Nomad Hub,
+                                offering an inspiring and user-friendly platform for remote workers to explore, connect,
+                                and thrive.</p3>
                         </div>
                     </div>
                 </div>
                 <div class="row vertical__item animation Proj-container">
-                    <img src="/images/web11.png" alt="Habebey Leah" loading="lazy" decoding="async">
+                    <img src="/images/webp/web11.webp" alt="Habebey Leah" loading="lazy" decoding="async">
                     <div class="wrap">
                         <div class="title">
                             <h2>ClimaCheck</h2>
                             <button class="project-icon-button"
-                            onclick="window.open('https://clima-check-five.vercel.app/','_blank');">
-                            <img src="images/play-button.png" alt="View Project" class="project-icon">
-                        </button>
-                    </div>
-                    <div class="details">
-                        <h3>ClimaCheck</h3>
-                        <h4>Web Design</h4>
-                        <p3>Created a dynamic and visually appealing weather forecast website using Tailwind CSS,
-                            JavaScript,
-                            and HTML, providing an intuitive and engaging experience for users to stay informed
-                            about the latest weather conditions.</p3>
+                                onclick="window.open('https://clima-check-five.vercel.app/','_blank');">
+                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon">
+                            </button>
+                        </div>
+                        <div class="details">
+                            <h3>ClimaCheck</h3>
+                            <h4>Web Design</h4>
+                            <p3>Created a dynamic and visually appealing weather forecast website using Tailwind CSS,
+                                JavaScript,
+                                and HTML, providing an intuitive and engaging experience for users to stay informed
+                                about the latest weather conditions.</p3>
                         </div>
                     </div>
                 </div>
-                    </div>
-                </div>
             </div>
+        </div>
+        </div>
         </div>
     </section>
     </section>
@@ -571,306 +586,152 @@
     <section id="certificates" class="certificates-section ">
         <div class="certificates-container">
             <div class="certificate-item animation">
-                <img src="images/ui.png" alt="Certificate 1" loading="lazy" decoding="async" />
+                <img src="images/webp/ui.webp" alt="Certificate 1" loading="lazy" decoding="async" />
                 <h3>Introduction to UX Design </h3>
                 <p>(MDLPT-366) from IBM SkillsBuild</p>
                 <a href="/images/SkillsBuild.pdf" class="view-certificate-button" target="_blank">View Certificate</a>
             </div>
             <div class="certificate-item animation">
-                <img src="/images/webtest.png" alt="Certificate 2" loading="lazy" decoding="async" />
+                <img src="images/webp/webtest.webp" alt="Certificate 2" loading="lazy" decoding="async" />
                 <h3>Website Testing & Deployment </h3>
                 <p>(MDLPT-272) from IBM SkillsBuild</p>
                 <a href="/images/SkillsBuild WEB TEST.pdf" class="view-certificate-button" target="_blank">View
                     Certificate</a>
             </div>
             <div class="certificate-item animation">
-                <img src="/images/pm.png" alt="Certificate 2" loading="lazy" decoding="async" />
+                <img src="images/webp/pm.webp" alt="Certificate 2" loading="lazy" decoding="async" />
                 <h3>PM Fundamentals</h3>
                 <p> from IBM SkillsBuild </p>
                 <a href="/images/SkillsBuild PM .pdf" class="view-certificate-button" target="_blank">View
                     Certificate</a>
             </div>
             <div class="certificate-item animation">
-                <img src="images/agile.png" alt="Certificate 2" loading="lazy" decoding="async" />
+                <img src="images/webp/agile.webp" alt="Certificate 2" loading="lazy" decoding="async" />
                 <h3>Agile Explorer </h3>
                 <p> from IBM SkillsBuild </p>
                 <a href="/images/SkillsBuild AGILE .pdf" class="view-certificate-button" target="_blank">View
                     Certificate</a>
             </div>
             <div class="certificate-item animation">
-                <img src="images/Ai.jpeg" alt="Certificate 2" loading="lazy" decoding="async" />
+                <img src="images/webp/Ai.webp" alt="Certificate 2" loading="lazy" decoding="async" />
                 <h3>AI Fundamentals </h3>
                 <p> from IBM SkillsBuild </p>
                 <a href="/images/Ai.jpeg" class="view-certificate-button" target="_blank">View
                     Certificate</a>
             </div>
         </div>
-    <section id="contact" class="contact-section">
-        <div class="text-with-lines">Contact Me</div>
-        <div class="contact-container">
+        <section id="contact" class="contact-section">
+            <div class="text-with-lines">Contact Me</div>
+            <div class="contact-container">
 
-            <form id="contactForm" action="https://formspree.io/f/mkgnybgv" method="POST">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                </div>
+                <form id="contactForm" action="https://formspree.io/f/mkgnybgv" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
+                    </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
+                    </div>
 
-                <div class="form-group">
-                    <label for="purpose">Purpose of Contact</label>
-                    <select id="purpose" name="purpose" required>
-                        <option value="">Select a purpose</option>
-                        <option value="project_inquiry">Project Inquiry</option>
-                        <option value="design_consultation">Design Consultation</option>
-                        <option value="collaboration">Collaboration Request</option>
-                        <option value="job_opportunity">Job Opportunity</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
+                    <div class="form-group">
+                        <label for="purpose">Purpose of Contact</label>
+                        <select id="purpose" name="purpose" required>
+                            <option value="">Select a purpose</option>
+                            <option value="project_inquiry">Project Inquiry</option>
+                            <option value="design_consultation">Design Consultation</option>
+                            <option value="collaboration">Collaboration Request</option>
+                            <option value="job_opportunity">Job Opportunity</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
 
-                <div class="form-group">
-                    <label for="message">Your Message</label>
-                    <textarea id="message" name="message" required placeholder="Write your message here..."
-                        rows="5"></textarea>
-                </div>
-                <div id="notification"
-                    style="display: none; background-color: #4CAF50; color: white; padding: 15px; position: fixed; top: 10px; right: 10px; border-radius: 5px;">
-                    Your message has been sent successfully!
-                </div>
-                <div class="button-container">
-                    <button id="submitButton" type="submit" class="button">
-                        <div class="outline"></div>
-                        <div class="state state--default">
-                            <div class="icon">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="1.2em"
-                                    width="1.2em">
-                                    <g style="filter: url(#shadow)">
-                                        <path fill="currentColor"
-                                            d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63ZM7.63988 7.03001C4.85988 7.96001 3.86988 9.06001 3.86988 9.78001C3.86988 10.5 4.85988 11.6 7.63988 12.52L10.1599 13.36C10.3799 13.43 10.5599 13.61 10.6299 13.83L11.4699 16.35C12.3899 19.13 13.4999 20.12 14.2199 20.12C14.9399 20.12 16.0399 19.13 16.9699 16.35L19.7999 7.86001C20.3099 6.32001 20.2199 5.06001 19.5699 4.41001C18.9199 3.76001 17.6599 3.68001 16.1299 4.19001L7.63988 7.03001Z">
-                                        </path>
-                                        <path fill="currentColor"
-                                            d="M10.11 14.4C9.92005 14.4 9.73005 14.33 9.58005 14.18C9.29005 13.89 9.29005 13.41 9.58005 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z">
-                                        </path>
-                                    </g>
-                                    <defs>
-                                        <filter id="shadow">
-                                            <fedropshadow flood-opacity="0.6" stdDeviation="0.8" dy="1" dx="0">
-                                            </fedropshadow>
-                                        </filter>
-                                    </defs>
-                                </svg>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" required placeholder="Write your message here..."
+                            rows="5"></textarea>
+                    </div>
+                    <div id="notification"
+                        style="display: none; background-color: #4CAF50; color: white; padding: 15px; position: fixed; top: 10px; right: 10px; border-radius: 5px;">
+                        Your message has been sent successfully!
+                    </div>
+                    <div class="button-container">
+                        <button id="submitButton" type="submit" class="button">
+                            <div class="outline"></div>
+                            <div class="state state--default">
+                                <div class="icon">
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                                        height="1.2em" width="1.2em">
+                                        <g style="filter: url(#shadow)">
+                                            <path fill="currentColor"
+                                                d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63ZM7.63988 7.03001C4.85988 7.96001 3.86988 9.06001 3.86988 9.78001C3.86988 10.5 4.85988 11.6 7.63988 12.52L10.1599 13.36C10.3799 13.43 10.5599 13.61 10.6299 13.83L11.4699 16.35C12.3899 19.13 13.4999 20.12 14.2199 20.12C14.9399 20.12 16.0399 19.13 16.9699 16.35L19.7999 7.86001C20.3099 6.32001 20.2199 5.06001 19.5699 4.41001C18.9199 3.76001 17.6599 3.68001 16.1299 4.19001L7.63988 7.03001Z">
+                                            </path>
+                                            <path fill="currentColor"
+                                                d="M10.11 14.4C9.92005 14.4 9.73005 14.33 9.58005 14.18C9.29005 13.89 9.29005 13.41 9.58005 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z">
+                                            </path>
+                                        </g>
+                                        <defs>
+                                            <filter id="shadow">
+                                                <fedropshadow flood-opacity="0.6" stdDeviation="0.8" dy="1" dx="0">
+                                                </fedropshadow>
+                                            </filter>
+                                        </defs>
+                                    </svg>
+                                </div>
+                                <p>
+                                    <span style="--i:0">S</span>
+                                    <span style="--i:1">e</span>
+                                    <span style="--i:2">n</span>
+                                    <span style="--i:3">d</span>
+                                    <span style="--i:4"> </span>
+                                    <span style="--i:5">M</span>
+                                    <span style="--i:6">e</span>
+                                    <span style="--i:7">s</span>
+                                    <span style="--i:8">s</span>
+                                    <span style="--i:9">a</span>
+                                    <span style="--i:10">g</span>
+                                    <span style="--i:11">e</span>
+                                </p>
                             </div>
-                            <p>
-                                <span style="--i:0">S</span>
-                                <span style="--i:1">e</span>
-                                <span style="--i:2">n</span>
-                                <span style="--i:3">d</span>
-                                <span style="--i:4"> </span>
-                                <span style="--i:5">M</span>
-                                <span style="--i:6">e</span>
-                                <span style="--i:7">s</span>
-                                <span style="--i:8">s</span>
-                                <span style="--i:9">a</span>
-                                <span style="--i:10">g</span>
-                                <span style="--i:11">e</span>
-                            </p>
-                        </div>
-                        <div class="state state--sent">
-                            <div class="icon">
-                                <svg stroke="black" stroke-width="0.5px" width="1.2em" height="1.2em"
-                                    viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <g style="filter: url(#shadow)">
-                                        <path
-                                            d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"
-                                            fill="currentColor"></path>
-                                        <path
-                                            d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z"
-                                            fill="currentColor"></path>
-                                    </g>
-                                </svg>
+                            <div class="state state--sent">
+                                <div class="icon">
+                                    <svg stroke="black" stroke-width="0.5px" width="1.2em" height="1.2em"
+                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g style="filter: url(#shadow)">
+                                            <path
+                                                d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"
+                                                fill="currentColor"></path>
+                                            <path
+                                                d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z"
+                                                fill="currentColor"></path>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <p>
+                                    <span style="--i:5">S</span>
+                                    <span style="--i:6">e</span>
+                                    <span style="--i:7">n</span>
+                                    <span style="--i:8">t</span>
+                                    <span style="--i:9">!</span>
+                                </p>
                             </div>
-                            <p>
-                                <span style="--i:5">S</span>
-                                <span style="--i:6">e</span>
-                                <span style="--i:7">n</span>
-                                <span style="--i:8">t</span>
-                                <span style="--i:9">!</span>
-                            </p>
-                        </div>
-                    </button>
+                        </button>
 
-                </div>
-            </form>
-        </div>
-    </section>
-    <script>
-        document.getElementById('contactForm').addEventListener('submit', function (event) {
-            event.preventDefault();  // Prevent default form submission
+                    </div>
+                </form>
+            </div>
+        </section>
 
-            const purposeSelect = document.getElementById('purpose');
-            const submitButton = document.getElementById('submitButton');
-
-            // Check if purpose is selected
-            if (purposeSelect.value === '') {
-                alert('Please select a purpose for your contact.');
-            } else {
-                // Change button state to "Sent!"
-                const stateDefault = submitButton.querySelector('.state--default');
-                const stateSent = submitButton.querySelector('.state--sent');
-
-                stateDefault.style.display = 'none'; // Hide default state
-                stateSent.style.display = 'block';   // Show sent state
-
-                // Submit the form after changing the button state
-                setTimeout(function () {
-                    document.getElementById('contactForm').submit();
-                }, 1000);  // Delay to show the "Sent!" state for 1 second before submitting
-            }
-        });
-
-    </script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            setTimeout(() => document.getElementById("hello").classList.add("show"), 500);
-            setTimeout(() => document.getElementById("name").classList.add("show"), 1500);
-            setTimeout(() => document.getElementById("job").classList.add("show"), 2500);
-        });
-    </script>
-    <footer>
-        <p>&copy; 2024 [Jou.png]. All rights reserved</p>
-        <p>&copy;Banger Managment</p>
-    </footer>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer async></script>
-    <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js" defer async></script>
-    <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js" defer async></script>
-    <script src="main.js" defer></script>
-    <script src="smooth-scrolling.js" defer></script>
-    <script>
-        // Define the media query
-        const mediaQuery = window.matchMedia('(min-width: 768px)');
-
-        // Function that runs when the media query is met
-        function handleMediaQueryChange(e) {
-            if (e.matches && typeof $ !== 'undefined' && $.fn.tilt) {
-                // Use requestIdleCallback for better performance
-                const scheduleWork = window.requestIdleCallback || ((cb) => setTimeout(cb, 100));
-                
-                scheduleWork(() => {
-                    // Select all elements with class 'animation'
-                    const projectContainers = document.querySelectorAll('.animation');
-
-                    // Initialize Tilt.js on each project container
-                    projectContainers.forEach(container => {
-                        if ($(container).length) {
-                            $(container).tilt({
-                                maxTilt: 5,
-                                scale: 1.02,
-                                speed: 300,
-                                glare: true,
-                                maxGlare: .2
-                            });
-                        }
-                    });
-                });
-            }
-        }
-
-        // Wait for DOM and jQuery to be ready
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', () => {
-                // Initial check after a short delay to ensure jQuery is loaded
-                setTimeout(() => {
-                    handleMediaQueryChange(mediaQuery);
-                    mediaQuery.addEventListener('change', handleMediaQueryChange);
-                }, 100);
-            });
-        } else {
-            setTimeout(() => {
-                handleMediaQueryChange(mediaQuery);
-                mediaQuery.addEventListener('change', handleMediaQueryChange);
-            }, 100);
-        }
-    </script>
-    <script>
-        // Optimized nav-link handler with error checking
-        document.addEventListener('DOMContentLoaded', () => {
-            const navLinks = document.querySelectorAll('.nav-link');
-            if (navLinks.length > 0) {
-                navLinks.forEach(link => {
-                    link.addEventListener('click', (e) => {
-                        e.preventDefault();
-                        const targetClass = link.getAttribute('data-target');
-                        if (targetClass) {
-                            const targetElement = document.querySelector(targetClass);
-                            if (targetElement) {
-                                targetElement.scrollIntoView({ behavior: 'smooth' });
-                            }
-                        }
-                    });
-                });
-            }
-        });
-    </script>
-    <style>
-        nav.navs.section-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            z-index: 1000;
-            /* background: #111; */ /* Remove background for transparency */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 24px;
-            min-height: 48px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
-            margin: 0;
-        }
-        .container, .main-content, .about-container {
-            margin-top: 70px;
-        }
-        .nav-links {
-            position: static !important;
-            left: unset !important;
-            top: unset !important;
-            transform: none !important;
-            display: flex;
-            gap: 18px;
-            justify-content: center;
-            width: auto;
-        }
-        .text-with-lines {
-            margin-top: 48px;
-        }
-        .skills-section {
-            margin-bottom: 48px;
-        }
-        @media (max-width: 600px) {
-            nav.navs.section-nav {
-                min-height: 44px;
-                padding: 8px 16px;
-                /* background: #111; */ /* Remove background for transparency */
-            }
-            .container, .main-content, .about-container {
-                margin-top: 56px;
-            }
-            .nav-links {
-                gap: 10px;
-                justify-content: center;
-            }
-            .text-with-lines {
-                margin-top: 32px;
-            }
-            .skills-section {
-                margin-bottom: 32px;
-            }
-        }
-    </style>
+        <footer>
+            <p>&copy; 2024 [Jou.png]. All rights reserved</p>
+            <p>&copy;Banger Managment</p>
+        </footer>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer async></script>
+        <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js" defer async></script>
+        <script src="https://cdn.jsdelivr.net/gh/studio-freight/lenis@latest/bundled/lenis.js" defer async></script>
+        <script src="main.js" defer></script>
+        <script src="js/scripts.js" defer></script>
 </body>
 
 </html>

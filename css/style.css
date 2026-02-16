@@ -436,6 +436,7 @@ nav ul li a {
     border-top: 1px solid rgba(255, 255, 255, 0.1);
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     padding: 30px 20px;
+    align-items: center;
 }
 .icon-container {
     display: flex;
@@ -570,9 +571,9 @@ button:hover {
 }
 
 .nav-links {
-    position: absolute;
-    left: 50px;
-    top: 100%;
+    align-items: center;
+    bottom: 10%;
+    left: 50%;
     transform: translateY(-50%);
     display: flex;
     gap: 30px;
@@ -958,6 +959,7 @@ footer {
     font-family: askerM;
     display: block;
     margin-bottom: 15px;
+    margin-left: auto;
     font-size: 14px;
     line-height: 1.4;
     text-align: left;
@@ -1307,6 +1309,7 @@ footer {
 .skills-section {
     padding: 20px;
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
@@ -1326,17 +1329,13 @@ footer {
     transform-style: preserve-3d;
     transform: perspective(1000px);
     transition: all 0.3s ease;
-    height: 15em;
+    min-height: 12em;
     align-items: start;
     text-align: left;
-    opacity: 0;
-    -webkit-animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-    animation: tracking-in-expand 0.7s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
-    animation-delay: 2s;
     margin-bottom: 24px;
 }  
     .cardSkill h3 {
-        font-size: 24px;
+        font-size: 16px;
         margin-bottom: 5px;
     }
     
@@ -1436,9 +1435,10 @@ footer {
         margin-bottom: 1px;
     }
     .Projects p3{
-        font-size: 10px;
+        font-size: 8px;
         margin-top: -5px;
         text-align: left;
+        margin-right: auto;
     }
     .text-with-lines {
         position: relative;
