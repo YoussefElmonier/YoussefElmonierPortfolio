@@ -22,6 +22,21 @@
             initTextAnimation();
             initGSAPAnimations();
             initMagneticNav();
+            preloadProjectImages();
+        });
+    }
+
+    // Preload images inside collapsed project sections so they're ready on expand
+    function preloadProjectImages() {
+        var imgs = document.querySelectorAll('.projects-wrapper img[loading="lazy"]');
+        imgs.forEach(function (img) {
+            // Remove lazy so the browser starts fetching immediately
+            img.removeAttribute('loading');
+            // Force the browser to download by creating an Image object
+            if (img.src) {
+                var preload = new Image();
+                preload.src = img.src;
+            }
         });
     }
 
@@ -185,8 +200,6 @@ var projectRevealObserver = null;
 
     function setupScrollReveal() {
         // Only observe elements that are NOT inside collapsed wrappers.
-        // Proj-containers inside collapsed wrappers won't intersect on real mobile
-        // because the parent has overflow:hidden + max-height:0.
         var headers = document.querySelectorAll('.projects-header');
         if (!headers.length) return;
 
@@ -196,6 +209,38 @@ var projectRevealObserver = null;
             thresholds.push(i / 20);
         }
 
+        // Helper: apply reveal value as direct inline styles (Safari-safe)
+        function applyReveal(el, reveal, isHeader) {
+            var blurMax = isHeader ? 8 : 12;
+            var translateMax = isHeader ? 30 : 40;
+            var blurVal = ((1 - reveal) * blurMax).toFixed(1);
+            var translateVal = ((1 - reveal) * translateMax).toFixed(1);
+            var scaleVal = isHeader ? '1' : (0.96 + reveal * 0.04).toFixed(4);
+
+            el.style.opacity = reveal.toFixed(3);
+            el.style.webkitFilter = 'blur(' + blurVal + 'px)';
+            el.style.filter = 'blur(' + blurVal + 'px)';
+            if (isHeader) {
+                el.style.webkitTransform = 'translateY(' + translateVal + 'px)';
+                el.style.transform = 'translateY(' + translateVal + 'px)';
+            } else {
+                el.style.webkitTransform = 'translateY(' + translateVal + 'px) scale(' + scaleVal + ')';
+                el.style.transform = 'translateY(' + translateVal + 'px) scale(' + scaleVal + ')';
+            }
+        }
+
+        // Helper: clear all inline reveal styles
+        function clearRevealStyles(el) {
+            el.style.opacity = '';
+            el.style.webkitFilter = '';
+            el.style.filter = '';
+            el.style.webkitTransform = '';
+            el.style.transform = '';
+        }
+
+        // Store helpers on window for toggleProjects to use
+        window._revealHelpers = { applyReveal: applyReveal, clearRevealStyles: clearRevealStyles };
+
         projectRevealObserver = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 var el = entry.target;
@@ -203,30 +248,27 @@ var projectRevealObserver = null;
                 // Skip already-done elements
                 if (el.classList.contains('proj-done')) return;
 
+                var isHeader = el.classList.contains('projects-header');
+
                 if (entry.isIntersecting) {
-                    // Map ratio to a smoother curve (ease-out)
                     var ratio = entry.intersectionRatio;
-                    // Slower reveal: needs more scroll to fully appear
                     var reveal = Math.min(1, ratio * 1.2);
-                    // Apply smooth easing
                     reveal = 1 - Math.pow(1 - reveal, 2);
 
-                    el.style.setProperty('--reveal', reveal.toFixed(3));
+                    applyReveal(el, reveal, isHeader);
 
                     // Once fully revealed, lock it in and stop observing
                     if (reveal >= 0.99) {
-                        el.style.setProperty('--reveal', '1');
-                        // Small delay to let the final frame render, then clean up
+                        applyReveal(el, 1, isHeader);
                         setTimeout(function () {
                             el.classList.add('proj-done');
-                            el.style.removeProperty('--reveal');
+                            clearRevealStyles(el);
                             projectRevealObserver.unobserve(el);
                         }, 100);
                     }
                 } else {
-                    // Only reset if element hasn't been fully revealed yet
                     if (!el.classList.contains('proj-done')) {
-                        el.style.setProperty('--reveal', '0');
+                        applyReveal(el, 0, isHeader);
                     }
                 }
             });
@@ -235,14 +277,10 @@ var projectRevealObserver = null;
             rootMargin: '0px 0px -30px 0px'
         });
 
-        // Only observe headers initially - they are always visible (not inside collapsed wrappers)
+        // Only observe headers initially
         headers.forEach(function (el) {
             projectRevealObserver.observe(el);
         });
-
-        // Do NOT observe Proj-containers here - they are inside collapsed wrappers
-        // and IntersectionObserver won't work on real mobile devices for hidden elements.
-        // They will be revealed directly when their section is expanded (see toggleProjects).
     }
 })();
 
@@ -262,19 +300,42 @@ function toggleProjects(headerEl) {
         headerEl.classList.add('expanded');
         wrapper.classList.add('expanded');
 
-        // Directly reveal cards with a staggered animation.
-        // We can't rely on IntersectionObserver inside the wrapper because
-        // on real mobile devices, overflow:hidden containers prevent intersection detection.
+        // Directly reveal cards with a staggered animation (Safari-safe).
         var cards = wrapper.querySelectorAll('.Proj-container:not(.proj-done)');
+        var helpers = window._revealHelpers;
+
         cards.forEach(function (card, index) {
-            // Small staggered delay for each card for a nice cascade effect
+            // First ensure the card starts from hidden state (inline)
+            if (helpers) {
+                helpers.applyReveal(card, 0, false);
+            }
+
             setTimeout(function () {
-                card.style.setProperty('--reveal', '1');
-                // Mark as done after the transition completes
+                // Set to fully revealed — CSS transition will animate it
+                if (helpers) {
+                    helpers.applyReveal(card, 1, false);
+                } else {
+                    // Fallback if helpers not ready
+                    card.style.opacity = '1';
+                    card.style.webkitFilter = 'blur(0px)';
+                    card.style.filter = 'blur(0px)';
+                    card.style.webkitTransform = 'translateY(0px) scale(1)';
+                    card.style.transform = 'translateY(0px) scale(1)';
+                }
+
+                // Mark as done after the CSS transition completes
                 setTimeout(function () {
                     card.classList.add('proj-done');
-                    card.style.removeProperty('--reveal');
-                }, 500);
+                    if (helpers) {
+                        helpers.clearRevealStyles(card);
+                    } else {
+                        card.style.opacity = '';
+                        card.style.webkitFilter = '';
+                        card.style.filter = '';
+                        card.style.webkitTransform = '';
+                        card.style.transform = '';
+                    }
+                }, 600);
             }, index * 120); // 120ms stagger between each card
         });
     }

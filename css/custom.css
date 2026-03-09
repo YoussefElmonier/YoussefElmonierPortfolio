@@ -543,42 +543,52 @@ html.lenis body {
 /* ============================================
    Scroll Reveal - Progressive Blur Effect
    ============================================ */
+/*
+ * Safari does NOT support calc() inside filter: blur() with CSS variables.
+ * So we set the initial hidden state with plain values here,
+ * and JS sets the actual computed inline styles directly.
+ */
 
-/* --reveal: 0 (hidden) → 1 (fully visible), driven by JS */
-.Proj-container {
-    --reveal: 0;
-    opacity: var(--reveal) !important;
-    filter: blur(calc((1 - var(--reveal)) * 12px)) !important;
-    -webkit-filter: blur(calc((1 - var(--reveal)) * 12px)) !important;
-    transform: translateY(calc((1 - var(--reveal)) * 40px)) scale(calc(0.96 + var(--reveal) * 0.04));
+/* Initial hidden state — JS will override with inline styles */
+.Proj-container:not(.proj-done) {
+    opacity: 0 !important;
+    -webkit-filter: blur(12px) !important;
+    filter: blur(12px) !important;
+    -webkit-transform: translateY(40px) scale(0.96);
+    transform: translateY(40px) scale(0.96);
     will-change: opacity, filter, transform;
-    /* Smooth transition for when JS directly sets --reveal (e.g. on expand) */
-    transition: opacity 0.5s ease, filter 0.5s ease, -webkit-filter 0.5s ease, transform 0.5s ease;
+    -webkit-transition: opacity 0.5s ease, -webkit-filter 0.5s ease, -webkit-transform 0.5s ease;
+    transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease;
 }
 
 /* Once fully revealed, clean up for tilt.js */
 .Proj-container.proj-done {
     opacity: 1 !important;
-    filter: none !important;
     -webkit-filter: none !important;
+    filter: none !important;
+    -webkit-transform: none;
     transform: none;
     will-change: auto;
+    -webkit-transition: none;
+    transition: none;
 }
 
-/* Also reveal the section headers on scroll */
-.projects-header {
-    --reveal: 0;
-    opacity: var(--reveal) !important;
-    filter: blur(calc((1 - var(--reveal)) * 8px)) !important;
-    -webkit-filter: blur(calc((1 - var(--reveal)) * 8px)) !important;
-    transform: translateY(calc((1 - var(--reveal)) * 30px));
-    transition: opacity 0.5s ease, filter 0.5s ease, -webkit-filter 0.5s ease, transform 0.5s ease, background 0.3s ease;
+/* Initial hidden state for section headers — JS will override */
+.projects-header:not(.proj-done) {
+    opacity: 0 !important;
+    -webkit-filter: blur(8px) !important;
+    filter: blur(8px) !important;
+    -webkit-transform: translateY(30px);
+    transform: translateY(30px);
+    -webkit-transition: opacity 0.5s ease, -webkit-filter 0.5s ease, -webkit-transform 0.5s ease, background 0.3s ease;
+    transition: opacity 0.5s ease, filter 0.5s ease, transform 0.5s ease, background 0.3s ease;
 }
 
 .projects-header.proj-done {
     opacity: 1 !important;
-    filter: none !important;
     -webkit-filter: none !important;
+    filter: none !important;
+    -webkit-transform: none;
     transform: none;
 }
 
@@ -586,10 +596,10 @@ html.lenis body {
 @media (prefers-reduced-motion: reduce) {
     .Proj-container,
     .projects-header {
-        --reveal: 1 !important;
         opacity: 1 !important;
-        filter: none !important;
         -webkit-filter: none !important;
+        filter: none !important;
+        -webkit-transform: none !important;
         transform: none !important;
     }
 }
