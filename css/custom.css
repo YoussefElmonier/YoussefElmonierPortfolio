@@ -603,3 +603,28 @@ html.lenis body {
         transform: none !important;
     }
 }
+
+/* ============================================
+   Safari Override — No collapse/expand, no reveal
+   ============================================ */
+.safari-browser .Proj-container,
+.safari-browser .projects-header {
+    opacity: 1 !important;
+    -webkit-filter: none !important;
+    filter: none !important;
+    -webkit-transform: none !important;
+    transform: none !important;
+    -webkit-transition: none !important;
+    transition: none !important;
+}
+
+.safari-browser .Projects .projects-wrapper {
+    max-height: none !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    padding-top: 20px !important;
+}
+
+.safari-browser .projects-header {
+    cursor: default !important;
+}

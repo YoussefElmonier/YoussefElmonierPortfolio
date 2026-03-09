@@ -191,6 +191,9 @@
 // Scroll Reveal - Progressive blur-to-clear effect
 var projectRevealObserver = null;
 
+// Safari detection — Safari has unique bugs with filter+calc+CSS variables
+var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+
 (function initScrollReveal() {
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', setupScrollReveal);
@@ -199,17 +202,56 @@ var projectRevealObserver = null;
     }
 
     function setupScrollReveal() {
-        // Only observe elements that are NOT inside collapsed wrappers.
+        // --- SAFARI: skip all reveal/collapse logic, show everything ---
+        if (isSafari) {
+            document.body.classList.add('safari-browser');
+
+            // Expand all wrappers and headers immediately
+            var allHeaders = document.querySelectorAll('.projects-header');
+            var allWrappers = document.querySelectorAll('.projects-wrapper');
+
+            allHeaders.forEach(function (h) {
+                h.classList.add('expanded', 'proj-done');
+                h.style.opacity = '';
+                h.style.filter = '';
+                h.style.webkitFilter = '';
+                h.style.transform = '';
+                h.style.webkitTransform = '';
+            });
+
+            allWrappers.forEach(function (w) {
+                w.classList.add('expanded');
+            });
+
+            // Mark all cards as done — fully visible
+            var allCards = document.querySelectorAll('.Proj-container');
+            allCards.forEach(function (card) {
+                card.classList.add('proj-done');
+                card.style.opacity = '';
+                card.style.filter = '';
+                card.style.webkitFilter = '';
+                card.style.transform = '';
+                card.style.webkitTransform = '';
+            });
+
+            // Hide all chevrons on Safari since sections aren't toggleable
+            var chevrons = document.querySelectorAll('.projects-chevron');
+            chevrons.forEach(function (c) {
+                c.style.display = 'none';
+            });
+
+            return; // Skip observer setup entirely
+        }
+
+        // --- NON-SAFARI: normal reveal logic ---
         var headers = document.querySelectorAll('.projects-header');
         if (!headers.length) return;
 
-        // Build thresholds: 0, 0.05, 0.10, ..., 1.0 (21 steps)
         var thresholds = [];
         for (var i = 0; i <= 20; i++) {
             thresholds.push(i / 20);
         }
 
-        // Helper: apply reveal value as direct inline styles (Safari-safe)
         function applyReveal(el, reveal, isHeader) {
             var blurMax = isHeader ? 8 : 12;
             var translateMax = isHeader ? 30 : 40;
@@ -229,7 +271,6 @@ var projectRevealObserver = null;
             }
         }
 
-        // Helper: clear all inline reveal styles
         function clearRevealStyles(el) {
             el.style.opacity = '';
             el.style.webkitFilter = '';
@@ -238,14 +279,11 @@ var projectRevealObserver = null;
             el.style.transform = '';
         }
 
-        // Store helpers on window for toggleProjects to use
         window._revealHelpers = { applyReveal: applyReveal, clearRevealStyles: clearRevealStyles };
 
         projectRevealObserver = new IntersectionObserver(function (entries) {
             entries.forEach(function (entry) {
                 var el = entry.target;
-
-                // Skip already-done elements
                 if (el.classList.contains('proj-done')) return;
 
                 var isHeader = el.classList.contains('projects-header');
@@ -257,7 +295,6 @@ var projectRevealObserver = null;
 
                     applyReveal(el, reveal, isHeader);
 
-                    // Once fully revealed, lock it in and stop observing
                     if (reveal >= 0.99) {
                         applyReveal(el, 1, isHeader);
                         setTimeout(function () {
@@ -277,7 +314,6 @@ var projectRevealObserver = null;
             rootMargin: '0px 0px -30px 0px'
         });
 
-        // Only observe headers initially
         headers.forEach(function (el) {
             projectRevealObserver.observe(el);
         });
@@ -286,36 +322,33 @@ var projectRevealObserver = null;
 
 // Toggle expandable project sections
 function toggleProjects(headerEl) {
+    // Safari: sections are always expanded, no toggle
+    if (isSafari) return;
+
     var wrapper = headerEl.nextElementSibling;
     if (!wrapper) return;
 
     var isExpanded = headerEl.classList.contains('expanded');
 
     if (isExpanded) {
-        // Collapse
         headerEl.classList.remove('expanded');
         wrapper.classList.remove('expanded');
     } else {
-        // Expand
         headerEl.classList.add('expanded');
         wrapper.classList.add('expanded');
 
-        // Directly reveal cards with a staggered animation (Safari-safe).
         var cards = wrapper.querySelectorAll('.Proj-container:not(.proj-done)');
         var helpers = window._revealHelpers;
 
         cards.forEach(function (card, index) {
-            // First ensure the card starts from hidden state (inline)
             if (helpers) {
                 helpers.applyReveal(card, 0, false);
             }
 
             setTimeout(function () {
-                // Set to fully revealed — CSS transition will animate it
                 if (helpers) {
                     helpers.applyReveal(card, 1, false);
                 } else {
-                    // Fallback if helpers not ready
                     card.style.opacity = '1';
                     card.style.webkitFilter = 'blur(0px)';
                     card.style.filter = 'blur(0px)';
@@ -323,7 +356,6 @@ function toggleProjects(headerEl) {
                     card.style.transform = 'translateY(0px) scale(1)';
                 }
 
-                // Mark as done after the CSS transition completes
                 setTimeout(function () {
                     card.classList.add('proj-done');
                     if (helpers) {
@@ -336,7 +368,7 @@ function toggleProjects(headerEl) {
                         card.style.transform = '';
                     }
                 }, 600);
-            }, index * 120); // 120ms stagger between each card
+            }, index * 120);
         });
     }
 }
