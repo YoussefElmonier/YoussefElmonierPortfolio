@@ -15,8 +15,8 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/cleaned.css">
+    <link rel="stylesheet" href="css/custom.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script>
@@ -312,349 +312,320 @@
         </div>fi
     </div> -->
 
-    <style>
-        .text-process {
-            font-family: 'New', sans-serif;
-            color: #fff;
-            text-align: center;
-            font-size: 6rem;
-            margin: 0;
-            padding-top: 140px;
-            padding-bottom: 40px;
-            position: relative;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-        }
-
-        .text-with-lines::before,
-        .text-with-lines::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 200px;
-            height: 2px;
-            background: #fff;
-        }
-
-        .text-with-lines::before {
-            right: calc(50% + 180px);
-        }
-
-        .text-with-lines::after {
-            left: calc(50% + 180px);
-        }
-
-        @media (max-width: 768px) {
-            .text-with-lines {
-                font-size: 4rem;
+        <style>
+            .text-process {
+                font-family: 'New', sans-serif;
+                color: #fff;
+                text-align: center;
+                font-size: 6rem;
+                margin: 0;
+                padding-top: 140px;
+                padding-bottom: 40px;
+                position: relative;
+                letter-spacing: 4px;
+                text-transform: uppercase;
             }
 
             .text-with-lines::before,
             .text-with-lines::after {
-                width: 60px;
-            }
-        }
-
-        /* Reels Grid Styling */
-        .reels-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(2, auto);
-            gap: 20px;
-        }
-    </style>
-
-    <style>
-        body {
-            background: #000;
-            color: #fff;
-            margin: 0;
-            padding: 20px;
-            font-family: 'Aspekta', sans-serif;
-        }
-
-
-        .text-with-lines::before,
-        .text-with-lines::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            width: 100px;
-            height: 1px;
-            background: #fff;
-        }
-
-        .text-with-lines::before {
-            right: calc(50% + 100px);
-        }
-
-        .text-with-lines::after {
-            left: calc(50% + 100px);
-        }
-
-        .projects-container {
-            max-width: 1600px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .project-section {
-            margin-bottom: 4rem;
-        }
-
-        .project-section h2 {
-            color: #fff;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-description {
-            color: #aaa;
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            max-width: 800px;
-        }
-
-        .masonry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            grid-auto-rows: 300px;
-            grid-auto-flow: dense;
-            gap: 20px;
-        }
-
-        .grid-item {
-            position: relative;
-            overflow: hidden;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .grid-item:hover {
-            transform: scale(1.02);
-            scale: 1.06;
-        }
-
-        .grid-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%);
-            transition: filter 0.3s ease;
-        }
-
-        .grid-item:hover img {
-            filter: grayscale(0%);
-
-        }
-
-        .item-description {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            padding: 15px;
-            background: rgba(0, 0, 0, 0.7);
-            color: #fff;
-            font-size: 0.9rem;
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .grid-item:hover .item-description {
-            transform: translateY(0);
-        }
-
-        .landscape {
-            grid-column: span;
-        }
-
-        .portrait {
-            grid-row: span;
-        }
-
-        @media (max-width: 768px) {
-            .masonry-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .landscape {
-                grid-column: span 1;
-            }
-
-            .portrait {
-                grid-row: span 1;
-            }
-
-            .text-with-lines::before,
-            .text-with-lines::after {
-                width: 50px;
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 200px;
+                height: 2px;
+                background: #fff;
             }
 
             .text-with-lines::before {
-                right: calc(50% + 60px);
+                right: calc(50% + 180px);
             }
 
             .text-with-lines::after {
-                left: calc(50% + 60px);
+                left: calc(50% + 180px);
             }
-        }
-    </style>
 
-    <style>
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
+            @media (max-width: 768px) {
+                .text-process {
+                    font-size: 3rem;
+                    padding-top: 100px;
+                    padding-bottom: 20px;
+                }
 
-        .fade-in.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+                .text-with-lines {
+                    font-size: 4rem;
+                }
 
-        .fade-up {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: all 0.8s ease;
-        }
+                .text-with-lines::before,
+                .text-with-lines::after {
+                    width: 60px;
+                }
+            }
 
-        .fade-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+            /* Reels Grid Styling */
+            .reels-grid {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                grid-template-rows: repeat(2, auto);
+                gap: 20px;
+            }
+        </style>
 
-        .slide-in {
-            opacity: 0;
-            transform: translateX(-50px);
-            transition: all 0.6s ease;
-        }
+        <style>
+            body {
+                background: #000;
+                color: #fff;
+                margin: 0;
+                padding: 20px;
+                font-family: 'Aspekta', sans-serif;
+            }
 
-        .slide-in.active {
-            opacity: 1;
-            transform: translateX(0);
-        }
 
-        .project-description {
-            transition-delay: 0.2s;
-        }
+            .text-with-lines::before,
+            .text-with-lines::after {
+                content: '';
+                position: absolute;
+                top: 50%;
+                width: 100px;
+                height: 1px;
+                background: #fff;
+            }
 
-        .grid-item {
-            opacity: 0;
-            transform: scale(0.95);
-            transition: all 0.6s ease;
-        }
+            .text-with-lines::before {
+                right: calc(50% + 100px);
+            }
 
-        .grid-item.active {
-            opacity: 1;
-            transform: scale(1);
-        }
+            .text-with-lines::after {
+                left: calc(50% + 100px);
+            }
 
-        /* Reel item animations */
-        .reel-item {
-            transition-delay: 0.3s;
-        }
+            .projects-container {
+                max-width: 1600px;
+                margin: 0 auto;
+                padding: 2rem;
+            }
 
-        nav.navs.section-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 24px;
-            min-height: 48px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
-            margin: 0;
-        }
+            .project-section {
+                margin-bottom: 4rem;
+            }
 
-        .projects-container,
-        .main-content,
-        .about-container {
-            margin-top: 120px;
-        }
+            .project-section h2 {
+                color: #fff;
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
 
-        .nav-links {
-            position: static !important;
-            left: unset !important;
-            top: unset !important;
-            transform: none !important;
-            display: flex;
-            gap: 18px;
-            justify-content: center;
-            width: auto;
-        }
+            .project-description {
+                color: #aaa;
+                font-size: 1.1rem;
+                margin-bottom: 2rem;
+                max-width: 800px;
+            }
 
-        @media (max-width: 600px) {
-            nav.navs.section-nav {
-                min-height: 44px;
-                padding: 8px 16px;
+            .masonry-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+                grid-auto-rows: 300px;
+                grid-auto-flow: dense;
+                gap: 20px;
+            }
+
+            .grid-item {
+                position: relative;
+                overflow: hidden;
+                border-radius: 10px;
+                transition: transform 0.3s ease;
+            }
+
+            .grid-item:hover {
+                transform: scale(1.02);
+                scale: 1.06;
+            }
+
+            .grid-item img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                filter: grayscale(100%);
+                transition: filter 0.3s ease;
+            }
+
+            .grid-item:hover img {
+                filter: grayscale(0%);
+
+            }
+
+            .item-description {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                padding: 15px;
+                background: rgba(0, 0, 0, 0.7);
+                color: #fff;
+                font-size: 0.9rem;
+                transform: translateY(100%);
+                transition: transform 0.3s ease;
+            }
+
+            .grid-item:hover .item-description {
+                transform: translateY(0);
+            }
+
+            .landscape {
+                grid-column: span;
+            }
+
+            .portrait {
+                grid-row: span;
+            }
+
+            @media (max-width: 768px) {
+                .masonry-grid {
+                    grid-template-columns: 1fr;
+                }
+
+                .landscape {
+                    grid-column: span 1;
+                }
+
+                .portrait {
+                    grid-row: span 1;
+                }
+
+                .text-with-lines::before,
+                .text-with-lines::after {
+                    width: 50px;
+                }
+
+                .text-with-lines::before {
+                    right: calc(50% + 60px);
+                }
+
+                .text-with-lines::after {
+                    left: calc(50% + 60px);
+                }
+            }
+        </style>
+
+        <style>
+            .fade-in {
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.6s ease, transform 0.6s ease;
+            }
+
+            .fade-in.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .fade-up {
+                opacity: 0;
+                transform: translateY(40px);
+                transition: all 0.8s ease;
+            }
+
+            .fade-up.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            .slide-in {
+                opacity: 0;
+                transform: translateX(-50px);
+                transition: all 0.6s ease;
+            }
+
+            .slide-in.active {
+                opacity: 1;
+                transform: translateX(0);
+            }
+
+            .project-description {
+                transition-delay: 0.2s;
+            }
+
+            .grid-item {
+                opacity: 0;
+                transform: scale(0.95);
+                transition: all 0.6s ease;
+            }
+
+            .grid-item.active {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            /* Reel item animations */
+            .reel-item {
+                transition-delay: 0.3s;
             }
 
             .projects-container,
             .main-content,
             .about-container {
-                margin-top: 90px;
+                margin-top: 120px;
             }
 
-            .nav-links {
-                gap: 10px;
-                justify-content: center;
+            @media (max-width: 600px) {
+
+                .projects-container,
+                .main-content,
+                .about-container {
+                    margin-top: 90px;
+                }
             }
-        }
-    </style>
+        </style>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // Use requestIdleCallback for better performance
-            const scheduleWork = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                // Use requestIdleCallback for better performance
+                const scheduleWork = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
 
-            scheduleWork(() => {
-                // Initial animation for the title
-                setTimeout(() => {
-                    const titleEl = document.querySelector('.text-process');
-                    if (titleEl) titleEl.classList.add('active');
-                }, 300);
+                scheduleWork(() => {
+                    // Initial animation for the title
+                    setTimeout(() => {
+                        const titleEl = document.querySelector('.text-process');
+                        if (titleEl) titleEl.classList.add('active');
+                    }, 300);
 
-                // Intersection Observer for scroll animations with performance optimizations
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('active');
+                    // Intersection Observer for scroll animations with performance optimizations
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('active');
 
-                            // Animate grid items with stagger
-                            if (entry.target.classList.contains('project-section')) {
-                                const gridItems = entry.target.querySelectorAll('.grid-item, .reel-item');
-                                gridItems.forEach((item, index) => {
-                                    setTimeout(() => {
-                                        item.classList.add('active');
-                                    }, index * 100); // Reduced delay for faster animation
-                                });
+                                // Animate grid items with stagger
+                                if (entry.target.classList.contains('project-section')) {
+                                    const gridItems = entry.target.querySelectorAll('.grid-item, .reel-item');
+                                    gridItems.forEach((item, index) => {
+                                        setTimeout(() => {
+                                            item.classList.add('active');
+                                        }, index * 100); // Reduced delay for faster animation
+                                    });
+                                }
+
+                                // Stop observing once animated
+                                observer.unobserve(entry.target);
                             }
-
-                            // Stop observing once animated
-                            observer.unobserve(entry.target);
-                        }
+                        });
+                    }, {
+                        threshold: 0.1, // Reduced threshold for earlier triggering
+                        rootMargin: '50px' // Start loading slightly before viewport
                     });
-                }, {
-                    threshold: 0.1, // Reduced threshold for earlier triggering
-                    rootMargin: '50px' // Start loading slightly before viewport
-                });
 
-                // Observe all animated elements
-                document.querySelectorAll('.fade-up, .fade-in, .slide-in, .project-section').forEach(el => {
-                    observer.observe(el);
+                    // Observe all animated elements
+                    document.querySelectorAll('.fade-up, .fade-in, .slide-in, .project-section').forEach(el => {
+                        observer.observe(el);
+                    });
                 });
             });
-        });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer async></script>
-    <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js" defer async></script>
-    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-    <script src="JavaScript/main.js" defer></script>
-    <script src="js/scripts.js" defer></script>
+        </script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer async></script>
+        <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js" defer async></script>
+        <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+        <script src="JavaScript/main.js" defer></script>
+        <script src="js/scripts.js" defer></script>
 </body>
 
 </html>

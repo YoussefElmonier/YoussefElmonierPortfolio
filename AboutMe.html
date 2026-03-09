@@ -15,8 +15,8 @@
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="css/cleaned.css">
+    <link rel="stylesheet" href="css/custom.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script>
@@ -81,10 +81,11 @@
         }
 
         .about-text p {
-            color: #868686;
-            font-size: 1.1rem;
+            color: #b0b0b0;
+            font-size: 1.15rem;
             margin-bottom: 1.5rem;
             font-weight: 300;
+            line-height: 1.6;
         }
 
         .about-stats {
@@ -162,10 +163,11 @@
         }
 
         .about-info p {
-            color: #868686;
-            font-size: 1.1rem;
+            color: #b0b0b0;
+            font-size: 1.15rem;
             margin-bottom: 2rem;
             font-weight: 300;
+            line-height: 1.6;
         }
 
         .about-buttons {
@@ -261,11 +263,6 @@
 
             .about-container {
                 padding-top: 0;
-            }
-
-            nav.navs.section-nav {
-                padding: 8px 0 8px 0;
-                min-height: 36px;
             }
 
             .about-container {
@@ -376,33 +373,6 @@
                 height: auto;
                 border-radius: 0 !important;
                 display: block;
-            }
-
-            nav.navs.section-nav {
-                padding: 18px 0 18px 0;
-                background: #111;
-                border-radius: 0 0 18px 18px;
-                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
-                display: flex;
-                align-items: center;
-                justify-content: flex-start;
-                min-height: 48px;
-            }
-
-            .nav-links {
-                display: flex;
-                flex-direction: row;
-                justify-content: flex-start;
-                gap: 18px;
-                width: auto;
-            }
-
-            .nav-item {
-                font-size: 0.9rem;
-                padding: 0 8px;
-                line-height: 1.2;
-                height: 50px;
-                display: flex;
             }
 
             .logo {
@@ -632,15 +602,6 @@
                 min-height: 220px;
             }
 
-            nav.navs.section-nav {
-                padding: 8px 0 8px 0;
-                min-height: 36px;
-            }
-
-            .nav-links {
-                gap: 8px;
-            }
-
             .logo {
                 width: 26px;
                 margin-left: 0;
@@ -650,14 +611,19 @@
 
         .shiny-text {
             display: inline-block;
-            background: linear-gradient(90deg, #fff 20%, #e0e0e0 40%, #b3b3b3 60%, #fff 80%);
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.7) 0%,
+                    rgba(255, 255, 255, 0.9) 25%,
+                    rgba(255, 255, 255, 1) 50%,
+                    rgba(255, 255, 255, 0.9) 75%,
+                    rgba(255, 255, 255, 0.7) 100%);
             background-size: 200% auto;
             color: #fff;
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: shine 2.5s linear infinite;
-            font-weight: 900;
+            animation: shine 3.5s linear infinite;
+            font-weight: 400;
             position: relative;
         }
 
@@ -815,72 +781,35 @@
             }
         }
 
-        nav.navs.section-nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            z-index: 1000;
-            /* background: #111; */
-            /* Remove background for transparency */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 12px 24px;
-            min-height: 48px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
-            margin: 0;
-        }
-
         .about-container {
             margin-top: 70px;
         }
 
-        .nav-links {
-            position: static !important;
-            left: unset !important;
-            top: unset !important;
-            transform: none !important;
-            display: flex;
-            gap: 18px;
-            justify-content: center;
-            width: auto;
-        }
-
         @media (max-width: 600px) {
-            nav.navs.section-nav {
-                min-height: 44px;
-                padding: 8px 16px;
-                /* background: #111; */
-                /* Remove background for transparency */
-            }
-
             .about-container {
                 margin-top: 56px;
-            }
-
-            .nav-links {
-                gap: 10px;
-                justify-content: center;
             }
         }
 
         /* Glass Card Effect */
         .glass-card {
-            width: auto;
-            height: auto;
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(9px);
-            -webkit-backdrop-filter: blur(9px);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(18, 18, 20, 0.4);
+            backdrop-filter: blur(28px) saturate(180%);
+            -webkit-backdrop-filter: blur(28px) saturate(180%);
+            border-radius: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
             box-shadow:
-                0 8px 32px rgba(0, 0, 0, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.5),
-                inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-                inset 0 0 8px 4px rgba(255, 255, 255, 0.4);
+                0 15px 45px rgba(0, 0, 0, 0.35),
+                inset 0 0 0 1px rgba(255, 255, 255, 0.04),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
             position: relative;
             overflow: hidden;
+            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s ease, border 0.4s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(22, 22, 24, 0.45);
+            border-color: rgba(255, 255, 255, 0.12);
         }
 
         .glass-card::before {
@@ -889,24 +818,26 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 1px;
-            background: linear-gradient(90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.8),
-                    transparent);
+            height: 100%;
+            background: radial-gradient(circle at 50% 0%,
+                    rgba(255, 255, 255, 0.08) 0%,
+                    transparent 70%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         .glass-card::after {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 1px;
-            height: 100%;
-            background: linear-gradient(180deg,
-                    rgba(255, 255, 255, 0.8),
+            top: 1px;
+            left: 5%;
+            width: 90%;
+            height: 1px;
+            background: linear-gradient(90deg,
                     transparent,
-                    rgba(255, 255, 255, 0.3));
+                    rgba(255, 255, 255, 0.3),
+                    transparent);
+            z-index: 1;
         }
 
         .about-bg-video-wrapper {
@@ -989,7 +920,7 @@
             <div class="about-bg-video-wrapper"
                 style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;">
                 <video class="about-bg-video" autoplay loop muted playsinline webkit-playsinline loading="lazy"
-                    style="width:100%;height:100%;object-fit:cover;filter:brightness(0.25) blur(2px);background:#000;"
+                    style="width:100%;height:100%;object-fit:cover;filter:brightness(0.35);background:#000;"
                     preload="metadata" poster="images/me1.jpg" width="320" height="400">
                     <source src="images/vid2.MP4" type="video/mp4">
                     <source src="images/vid2.webm" type="video/webm">
@@ -997,7 +928,7 @@
                 </video>
             </div>
             <div class="glass-card about-hero-glass"
-                style="position:relative;z-index:1;padding:32px 18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
+                style="position:relative;z-index:1;padding:60px 40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;border-radius:40px !important;">
                 <div class="about-text">
                     <h1 class="scroll-reveal">THIS IS ABOUT ME<br>AND HOW I'VE DONE THIS.</h1>
                     <p class="shiny-text scroll-reveal">I'm Youssef Elmonier, a passionate software engineer, 3D
@@ -1007,11 +938,11 @@
                         innovation. My work tells stories, solves problems, and leaves a lasting impression.</p>
                     <div class="about-stats scroll-reveal">
                         <div class="stat">
-                            <strong>50+</strong>
+                            <strong>70M+</strong>
                             <span>Projects Completed</span>
                         </div>
                         <div class="stat">
-                            <strong>35M+</strong>
+                            <strong>50M+</strong>
                             <span>Views</span>
                         </div>
                         <div class="stat">
@@ -1027,46 +958,56 @@
             </div>
         </div>
         <hr class="section-separator scroll-reveal">
-        <div class="about-section"
-            style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
-            <div class="about-video-wrapper"
-                style="flex:0 0 320px;display:flex;justify-content:center;align-items:center;">
-                <video class="scroll-reveal about-section-video" autoplay loop muted playsinline webkit-playsinline
-                    loading="lazy" preload="metadata" style="width:100%;height:100%;background:#000;"
-                    poster="images/me4.jpg" width="320" height="400">
-                    <source src="images/vid1.MP4" type="video/mp4">
-                    <source src="images/vid1.webm" type="video/webm">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="about-info scroll-reveal" style="flex:1 1 400px;display:flex;flex-direction:column;gap:24px;">
-                <h2 class="scroll-reveal">WHERE THE MAGIC HAPPENS.</h2>
-                <p class="shiny-text scroll-reveal">A heaven for creativity. Whether you're a client looking to enhance
-                    your brand or an individual seeking to immortalize a special moment, I provide a professional and
-                    personalized experience tailored to your unique vision.</p>
-                <div class="about-buttons scroll-reveal">
-                    <a href="index.html#contact" class="primary">Start a Project &rarr;</a>
-                    <a href="index.html#portfolio">My Portfolio</a>
-                    <a href="#more">Learn More &rarr;</a>
+        <div class="glass-card about-section" style="padding: 32px; margin-top: 40px;">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
+                <div class="about-video-wrapper"
+                    style="flex:0 0 320px;display:flex;justify-content:center;align-items:center;">
+                    <video class="scroll-reveal about-section-video" autoplay loop muted playsinline webkit-playsinline
+                        loading="lazy" preload="metadata"
+                        style="width:100%;height:100%;background:#000;border-radius:24px;" poster="images/me4.jpg"
+                        width="320" height="400">
+                        <source src="images/vid1.MP4" type="video/mp4">
+                        <source src="images/vid1.webm" type="video/webm">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="about-info scroll-reveal"
+                    style="flex:1 1 400px;display:flex;flex-direction:column;gap:24px;">
+                    <h2 class="scroll-reveal">WHERE THE MAGIC HAPPENS.</h2>
+                    <p class="shiny-text scroll-reveal">A heaven for creativity. Whether you're a client looking to
+                        enhance
+                        your brand or an individual seeking to immortalize a special moment, I provide a professional
+                        and
+                        personalized experience tailored to your unique vision.</p>
+                    <div class="about-buttons scroll-reveal">
+                        <a href="index.html#contact" class="primary">Start a Project &rarr;</a>
+                        <a href="index.html#portfolio">My Portfolio</a>
+                        <a href="#more">Learn More &rarr;</a>
+                    </div>
                 </div>
             </div>
         </div>
         <hr class="section-separator scroll-reveal">
         <!-- Education & Background Section -->
-        <div class="education-hero">
-            <div class="education-text">
-                <h1 class="scroll-reveal">EDUCATION & BACKGROUND</h1>
-                <p class="shiny-text scroll-reveal">Bachelor in Software Engineering from Arab Academy for Science and
-                    Technology and Maritime Transport, Alexandria, Egypt., Minor in Multimedia and Graphic Design,
-                    creative technology, and digital design. Passionate about blending technical skills with artistic
-                    vision to create impactful digital experiences.</p>
-                <div class="certifications scroll-reveal">
-                    <strong>Certifications:</strong> IBM SkillsBuild, Web Design, Agile, Project Management
+        <div class="glass-card education-hero" style="padding: 32px; margin-top: 40px;">
+            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
+                <div class="education-text">
+                    <h1 class="scroll-reveal">EDUCATION & BACKGROUND</h1>
+                    <p class="shiny-text scroll-reveal">Bachelor in Software Engineering from Arab Academy for Science
+                        and
+                        Technology and Maritime Transport, Alexandria, Egypt., Minor in Multimedia and Graphic Design,
+                        creative technology, and digital design. Passionate about blending technical skills with
+                        artistic
+                        vision to create impactful digital experiences.</p>
+                    <div class="certifications scroll-reveal" style="color: #ccc; font-weight: 500;">
+                        <strong style="color: #fff;">Certifications:</strong> IBM SkillsBuild, Web Design, Agile,
+                        Project Management
+                    </div>
                 </div>
-            </div>
-            <div class="education-image scroll-reveal">
-                <img src="images/me67.jpg" alt="Youssef Elmonier Education" loading="lazy" decoding="async" width="320"
-                    height="400" />
+                <div class="education-image scroll-reveal">
+                    <img src="images/me67.jpg" alt="Youssef Elmonier Education" loading="lazy" decoding="async"
+                        width="320" height="400" style="border-radius: 20px;" />
+                </div>
             </div>
         </div>
     </div>
