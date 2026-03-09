@@ -16,23 +16,10 @@
 
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/custom.css">
+    <link rel="stylesheet" href="css/cleaned.css">
 
-    <!-- Preload critical fonts -->
-    <style>
-        @font-face {
-            font-family: 'Aspekta';
-            src: url('FONTS/Aspekta-400.ttf') format('truetype');
-            font-weight: 400;
-            font-display: swap;
-        }
-
-        @font-face {
-            font-family: 'Tusker GroteskMed';
-            src: url('FONTS/TuskerGrotesk-5500Medium.ttf') format('truetype');
-            font-weight: 500;
-            font-display: swap;
-        }
-    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script>
 
     <!-- Defer non-critical scripts for better performance -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer async></script>
@@ -41,9 +28,9 @@
 
 <body>
     <nav class="navs section-nav">
-        <div class="nav-links">
+        <div class="nav-pill">
             <a href="index.html" class="nav-item">Home</a>
-            <a href="process.html" class="nav-item active">Process</a>
+            <a href="process.html" class="nav-item active">Creative Process</a>
             <a href="AboutMe.html" class="nav-item">About Me</a>
         </div>
     </nav>
@@ -244,7 +231,7 @@
             </div>
         </div>
 
-        <!-- New Reels Section -->
+        <!-- New Reels Section
         <div class="project-section fade-up">
             <h2 class="slide-in">Reels</h2>
             <p class="project-description fade-in">Showcasing dynamic video content and motion graphics work.</p>
@@ -322,16 +309,18 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </div>fi
+    </div> -->
 
     <style>
         .text-process {
-            font-family: 'Tusker GroteskMed';
-            color: #cec6c6;
+            font-family: 'New', sans-serif;
+            color: #fff;
             text-align: center;
             font-size: 6rem;
-            margin: 4rem 0;
+            margin: 0;
+            padding-top: 140px;
+            padding-bottom: 40px;
             position: relative;
             letter-spacing: 4px;
             text-transform: uppercase;
@@ -384,13 +373,6 @@
             font-family: 'Aspekta', sans-serif;
         }
 
-        .text-process {
-            color: #fff;
-            text-align: center;
-            font-size: 6rem;
-            margin: 2rem 0;
-            position: relative;
-        }
 
         .text-with-lines::before,
         .text-with-lines::after {
@@ -591,7 +573,7 @@
         .projects-container,
         .main-content,
         .about-container {
-            margin-top: 70px;
+            margin-top: 120px;
         }
 
         .nav-links {
@@ -614,7 +596,7 @@
             .projects-container,
             .main-content,
             .about-container {
-                margin-top: 56px;
+                margin-top: 90px;
             }
 
             .nav-links {
@@ -668,6 +650,11 @@
             });
         });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer async></script>
+    <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js" defer async></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="JavaScript/main.js" defer></script>
+    <script src="js/scripts.js" defer></script>
 </body>
 
 </html>

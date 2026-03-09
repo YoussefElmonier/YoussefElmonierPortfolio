@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="icon" type="image/png" href="/images/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me - Youssef Elmonier</title>
-    
+
     <!-- Preload critical resources -->
     <link rel="preload" href="css/style.css" as="style">
     <link rel="preload" href="FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
     <!-- Preload critical above-the-fold image -->
     <link rel="preload" href="images/eljojj.png" as="image" fetchpriority="high">
     <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/custom.css">
-    
+    <link rel="stylesheet" href="css/cleaned.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script>
+
     <!-- Preload critical fonts -->
     <style>
         @font-face {
@@ -24,12 +29,14 @@
             font-weight: 400;
             font-display: swap;
         }
+
         @font-face {
             font-family: 'Tusker GroteskMed';
             src: url('FONTS/TuskerGrotesk-5500Medium.ttf') format('truetype');
             font-weight: 500;
             font-display: swap;
         }
+
         body {
             background: #111;
             color: #fff;
@@ -37,18 +44,23 @@
             margin: 0;
             padding: 0;
         }
+
         .about-container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 40px 20px 0 20px;
-            margin-top: 70px;
+            margin-top: 120px;
         }
-        .about-hero, .about-section, .education-hero {
+
+        .about-hero,
+        .about-section,
+        .education-hero {
             border-radius: 38px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
             padding: 32px 18px;
             margin-bottom: 40px;
         }
+
         .about-hero {
             display: flex;
             flex-wrap: wrap;
@@ -56,51 +68,61 @@
             justify-content: space-between;
             gap: 40px;
         }
+
         .about-text {
             flex: 1 1 400px;
         }
+
         .about-text h1 {
             font-size: 2.8rem;
             font-weight: 900;
             margin-bottom: 1.2rem;
             line-height: 1.1;
         }
+
         .about-text p {
             color: #868686;
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             font-weight: 300;
         }
+
         .about-stats {
             display: flex;
             gap: 40px;
             margin-top: 2rem;
         }
+
         .stat {
             text-align: center;
         }
+
         .stat strong {
             font-size: 2.2rem;
             font-weight: 800;
             display: block;
             color: #fff;
         }
+
         .stat span {
             color: #ffffff;
             font-size: 1rem;
         }
+
         .about-image {
             flex: 0 0 320px;
             display: flex;
             justify-content: center;
         }
+
         .about-image img {
             width: 320px;
             height: 400px;
             object-fit: cover;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
             aspect-ratio: 320 / 400;
         }
+
         .about-section {
             display: flex;
             flex-wrap: wrap;
@@ -109,6 +131,7 @@
             gap: 40px;
             margin-top: 60px;
         }
+
         .about-video {
             flex: 1 1 420px;
             background: #181818;
@@ -120,30 +143,37 @@
             min-height: 320px;
             position: relative;
         }
-        .about-video video, .about-video img {
+
+        .about-video video,
+        .about-video img {
             width: 100%;
             height: 100%;
             object-fit: cover;
         }
+
         .about-info {
             flex: 1 1 320px;
         }
+
         .about-info h2 {
             font-size: 3rem;
             font-weight: 800;
             margin-bottom: 1rem;
         }
+
         .about-info p {
             color: #868686;
             font-size: 1.1rem;
             margin-bottom: 2rem;
             font-weight: 300;
         }
+
         .about-buttons {
             display: flex;
             gap: 18px;
             flex-wrap: wrap;
         }
+
         .about-buttons a {
             padding: 12px 32px;
             border-radius: 30px;
@@ -158,23 +188,28 @@
             align-items: center;
             gap: 8px;
         }
+
         .about-buttons a.primary {
             background: #fff;
             color: #111;
             border: none;
         }
+
         .about-buttons a:hover {
             background: #333;
             color: #fff;
         }
+
         .about-gallery-section {
             margin-top: 70px;
         }
+
         .about-gallery {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             gap: 18px;
         }
+
         .about-gallery img {
             width: 100%;
             height: 320px;
@@ -183,52 +218,68 @@
             filter: grayscale(100%) contrast(1.1);
             transition: filter 0.3s;
         }
+
         .about-gallery img:hover {
             filter: grayscale(0%) contrast(1.1);
         }
+
         @media (max-width: 1000px) {
-            .about-hero, .about-section {
+
+            .about-hero,
+            .about-section {
                 flex-direction: column;
                 align-items: flex-start;
             }
+
             .about-image {
                 width: 100%;
                 justify-content: flex-start;
             }
+
             .about-image img {
                 width: 100%;
                 max-width: 320px;
                 height: 340px;
                 aspect-ratio: 320 / 400;
             }
+
             .about-gallery {
                 grid-template-columns: repeat(2, 1fr);
             }
+
             .about-stats {
                 gap: 18px;
                 flex-wrap: wrap;
             }
         }
+
         @media (max-width: 600px) {
             body {
                 margin: 0;
                 padding: 0;
             }
+
             .about-container {
                 padding-top: 0;
             }
+
             nav.navs.section-nav {
                 padding: 8px 0 8px 0;
                 min-height: 36px;
             }
+
             .about-container {
                 padding: 16px 4vw 0 4vw;
             }
-            .about-hero, .about-section, .education-hero {
+
+            .about-hero,
+            .about-section,
+            .education-hero {
                 padding: 18px 4vw;
                 margin-bottom: 24px;
                 border-radius: 28px;
             }
+
             .about-text h1 {
                 font-size: 2.1rem;
                 line-height: 1.18;
@@ -236,20 +287,25 @@
                 text-align: left;
                 letter-spacing: 0.5px;
             }
-            .about-text p, .about-info p {
+
+            .about-text p,
+            .about-info p {
                 font-size: 1.08rem;
                 margin-bottom: 1.2rem;
                 line-height: 1.6;
             }
+
             .about-info h2 {
                 font-size: 1.3rem;
                 margin-bottom: 0.7rem;
             }
+
             .about-image {
                 width: 100%;
                 justify-content: center;
                 margin-bottom: 18px;
             }
+
             .about-image img {
                 width: 90vw;
                 max-width: 320px;
@@ -258,11 +314,13 @@
                 margin: 0 auto;
                 display: block;
             }
+
             .about-buttons {
                 flex-direction: column;
                 gap: 12px;
                 margin-top: 1.2rem;
             }
+
             .about-buttons a {
                 width: 100%;
                 justify-content: center;
@@ -270,6 +328,7 @@
                 padding: 12px 0;
                 border-radius: 18px;
             }
+
             .about-stats {
                 flex-direction: row;
                 gap: 0;
@@ -278,50 +337,58 @@
                 background: #181818;
                 border-radius: 14px;
                 padding: 18px 8px;
-                box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
             }
+
             .stat {
                 flex: 1 1 0;
                 text-align: center;
                 margin: 0 2px;
             }
+
             .stat strong {
                 font-size: 1.4rem;
                 display: block;
                 margin-bottom: 0.2rem;
                 color: #fff;
             }
+
             .stat span {
                 font-size: 1.01rem;
             }
+
             .about-section {
                 padding-left: 4vw;
                 padding-right: 4vw;
                 border-radius: 0;
                 box-sizing: border-box;
             }
+
             .about-video {
                 padding-left: 0;
                 padding-right: 0;
                 border-radius: 0;
                 box-sizing: border-box;
             }
+
             .about-video video {
                 width: 100%;
                 height: auto;
                 border-radius: 0 !important;
                 display: block;
             }
+
             nav.navs.section-nav {
                 padding: 18px 0 18px 0;
                 background: #111;
                 border-radius: 0 0 18px 18px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
                 display: flex;
                 align-items: center;
                 justify-content: flex-start;
                 min-height: 48px;
             }
+
             .nav-links {
                 display: flex;
                 flex-direction: row;
@@ -329,6 +396,7 @@
                 gap: 18px;
                 width: auto;
             }
+
             .nav-item {
                 font-size: 0.9rem;
                 padding: 0 8px;
@@ -336,20 +404,24 @@
                 height: 50px;
                 display: flex;
             }
+
             .logo {
                 width: 32px;
                 height: auto;
                 margin-left: 0;
                 margin-right: 12px;
             }
+
             footer {
                 font-size: 0.98rem;
                 margin: 30px 0 10px 0;
             }
         }
+
         .dashboard-section {
             margin-top: 70px;
         }
+
         .dashboard-grid {
             display: grid;
             grid-template-columns: 2fr 1.2fr;
@@ -359,31 +431,36 @@
                 "main table"
                 "highlight1 toplist";
         }
+
         .dashboard-card {
             background: #181818;
             border-radius: 22px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
             padding: 28px 24px;
             color: #fff;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
         }
+
         .dashboard-main {
             grid-area: main;
             position: relative;
             min-height: 320px;
         }
+
         .dashboard-title {
             font-size: 1.7rem;
             font-weight: 800;
             margin-bottom: 18px;
         }
+
         .dashboard-icons {
             display: flex;
             gap: 18px;
             margin-bottom: 18px;
         }
+
         .dashboard-icon-img {
             width: 60px;
             height: 60px;
@@ -393,6 +470,7 @@
             background: #222;
             border: 2px solid #222;
         }
+
         .dashboard-top-item {
             position: absolute;
             top: 24px;
@@ -401,18 +479,21 @@
             border-radius: 18px;
             padding: 18px 22px;
             min-width: 180px;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
         }
+
         .dashboard-top-label {
             font-size: 1.1rem;
             font-weight: 700;
             margin-bottom: 8px;
         }
+
         .dashboard-top-content {
             display: flex;
             align-items: center;
             gap: 12px;
         }
+
         .dashboard-top-img {
             width: 48px;
             height: 48px;
@@ -421,58 +502,70 @@
             filter: grayscale(100%);
             border: 2px solid #333;
         }
+
         .dashboard-top-title {
             font-weight: 700;
             font-size: 1.1rem;
         }
+
         .dashboard-top-desc {
             color: #bbb;
             font-size: 0.95rem;
         }
+
         .dashboard-table {
             grid-area: table;
         }
+
         .dashboard-table-title {
             font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 12px;
         }
+
         .dashboard-table-content {
             width: 100%;
             border-collapse: collapse;
             color: #fff;
             font-size: 1rem;
         }
-        .dashboard-table-content th, .dashboard-table-content td {
+
+        .dashboard-table-content th,
+        .dashboard-table-content td {
             padding: 7px 10px;
             border-bottom: 1px solid #333;
             text-align: left;
         }
+
         .dashboard-table-content th {
             color: #bbb;
             font-weight: 600;
         }
+
         .dashboard-highlight {
             background: #181818;
             border-radius: 22px;
-            box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
             padding: 24px 18px;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             min-width: 0;
         }
+
         .dashboard-highlight-score {
             font-size: 2rem;
             font-weight: 800;
             color: #fff;
             margin-bottom: 10px;
         }
+
         .dashboard-highlight-content {
             display: flex;
             align-items: center;
             gap: 14px;
         }
+
         .dashboard-highlight-img {
             width: 44px;
             height: 44px;
@@ -481,28 +574,34 @@
             filter: grayscale(100%);
             border: 2px solid #222;
         }
+
         .dashboard-highlight-title {
             font-weight: 700;
             font-size: 1.05rem;
         }
+
         .dashboard-highlight-desc {
             color: #bbb;
             font-size: 0.95rem;
         }
+
         .dashboard-toplist {
             grid-area: toplist;
         }
+
         .dashboard-toplist-title {
             font-size: 1.2rem;
             font-weight: 700;
             margin-bottom: 12px;
         }
+
         .dashboard-toplist-item {
             display: flex;
             align-items: center;
             gap: 10px;
             margin-bottom: 10px;
         }
+
         .dashboard-toplist-img {
             width: 32px;
             height: 32px;
@@ -511,6 +610,7 @@
             filter: grayscale(100%);
             border: 2px solid #333;
         }
+
         @media (max-width: 1000px) {
             .dashboard-grid {
                 grid-template-columns: 1fr;
@@ -522,26 +622,32 @@
                     "toplist";
             }
         }
+
         @media (max-width: 600px) {
             .dashboard-card {
                 padding: 14px 8px;
             }
+
             .dashboard-main {
                 min-height: 220px;
             }
+
             nav.navs.section-nav {
                 padding: 8px 0 8px 0;
                 min-height: 36px;
             }
+
             .nav-links {
                 gap: 8px;
             }
+
             .logo {
                 width: 26px;
                 margin-left: 0;
                 margin-right: 8px;
             }
         }
+
         .shiny-text {
             display: inline-block;
             background: linear-gradient(90deg, #fff 20%, #e0e0e0 40%, #b3b3b3 60%, #fff 80%);
@@ -554,11 +660,13 @@
             font-weight: 900;
             position: relative;
         }
+
         @keyframes shine {
             to {
                 background-position: 200% center;
             }
         }
+
         .section-separator {
             border: none;
             border-top: 2px solid #232323;
@@ -566,16 +674,19 @@
             width: 100%;
             opacity: 0.7;
         }
+
         .scroll-reveal {
             opacity: 0;
             transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(.77,0,.18,1), transform 0.8s cubic-bezier(.77,0,.18,1);
+            transition: opacity 0.8s cubic-bezier(.77, 0, .18, 1), transform 0.8s cubic-bezier(.77, 0, .18, 1);
             will-change: opacity, transform;
         }
+
         .scroll-reveal.revealed {
             opacity: 1;
             transform: none;
         }
+
         .education-hero {
             display: flex;
             flex-wrap: wrap;
@@ -586,122 +697,145 @@
             border-radius: 16px;
             padding: 32px 18px;
             margin: 40px 0 0 0;
-            box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
             color: #fff;
             max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
+
         .education-text {
             flex: 1 1 400px;
         }
+
         .education-text h1 {
             font-size: 2.8rem;
             font-weight: 900;
             margin-bottom: 1.2rem;
             line-height: 1.1;
         }
+
         .education-text p {
             color: #868686;
             font-size: 1.1rem;
             margin-bottom: 1.5rem;
             font-weight: 300;
         }
+
         .education-stats {
             display: flex;
             gap: 40px;
             margin-top: 2rem;
         }
+
         .education-stats .stat {
             text-align: center;
         }
+
         .education-stats .stat strong {
             font-size: 2.2rem;
             font-weight: 800;
             display: block;
             color: #fff;
         }
+
         .education-stats .stat span {
             color: #858282;
             font-size: 1rem;
         }
+
         .education-image {
             flex: 0 0 320px;
             display: flex;
             justify-content: center;
         }
+
         .education-image img {
             width: 320px;
             height: 400px;
             object-fit: cover;
             filter: grayscale(100%);
-            box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
             aspect-ratio: 320 / 400;
         }
+
         @media (max-width: 1000px) {
             .education-hero {
                 flex-direction: column;
                 align-items: flex-start;
             }
+
             .education-image {
                 width: 100%;
                 justify-content: flex-start;
             }
+
             .education-image img {
                 width: 100%;
                 max-width: 320px;
                 height: 340px;
             }
+
             .education-stats {
                 gap: 18px;
                 flex-wrap: wrap;
             }
         }
+
         @media (max-width: 600px) {
             .education-hero {
                 padding: 18px 4vw;
                 gap: 18px;
             }
+
             .education-text h1 {
                 font-size: 2rem;
             }
+
             .education-image img {
                 width: 100%;
                 max-width: 100vw;
                 height: auto;
                 aspect-ratio: 320 / 400;
             }
+
             .education-stats {
                 flex-direction: column;
                 gap: 10px;
                 align-items: flex-start;
             }
+
             .education-stats .stat strong {
                 font-size: 1.2rem;
                 color: #fff;
             }
+
             .education-stats .stat span {
                 font-size: 0.95rem;
             }
         }
+
         nav.navs.section-nav {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             z-index: 1000;
-            /* background: #111; */ /* Remove background for transparency */
+            /* background: #111; */
+            /* Remove background for transparency */
             display: flex;
             align-items: center;
             justify-content: center;
             padding: 12px 24px;
             min-height: 48px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.10);
             margin: 0;
         }
+
         .about-container {
             margin-top: 70px;
         }
+
         .nav-links {
             position: static !important;
             left: unset !important;
@@ -712,77 +846,83 @@
             justify-content: center;
             width: auto;
         }
+
         @media (max-width: 600px) {
             nav.navs.section-nav {
                 min-height: 44px;
                 padding: 8px 16px;
-                /* background: #111; */ /* Remove background for transparency */
+                /* background: #111; */
+                /* Remove background for transparency */
             }
+
             .about-container {
                 margin-top: 56px;
             }
+
             .nav-links {
                 gap: 10px;
                 justify-content: center;
             }
         }
+
         /* Glass Card Effect */
         .glass-card {
-          width: auto;
-          height: auto;
-          background: rgba(255, 255, 255, 0.07);
-          backdrop-filter: blur(9px);
-          -webkit-backdrop-filter: blur(9px);
-          border-radius: 20px;
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          box-shadow:
-            0 8px 32px rgba(0, 0, 0, 0.1),
-            inset 0 1px 0 rgba(255, 255, 255, 0.5),
-            inset 0 -1px 0 rgba(255, 255, 255, 0.1),
-            inset 0 0 8px 4px rgba(255, 255, 255, 0.4);
-          position: relative;
-          overflow: hidden;
+            width: auto;
+            height: auto;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(9px);
+            -webkit-backdrop-filter: blur(9px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5),
+                inset 0 -1px 0 rgba(255, 255, 255, 0.1),
+                inset 0 0 8px 4px rgba(255, 255, 255, 0.4);
+            position: relative;
+            overflow: hidden;
         }
+
         .glass-card::before {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          height: 1px;
-          background: linear-gradient(
-            90deg,
-            transparent,
-            rgba(255, 255, 255, 0.8),
-            transparent
-          );
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg,
+                    transparent,
+                    rgba(255, 255, 255, 0.8),
+                    transparent);
         }
+
         .glass-card::after {
-          content: '';
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 1px;
-          height: 100%;
-          background: linear-gradient(
-            180deg,
-            rgba(255, 255, 255, 0.8),
-            transparent,
-            rgba(255, 255, 255, 0.3)
-          );
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1px;
+            height: 100%;
+            background: linear-gradient(180deg,
+                    rgba(255, 255, 255, 0.8),
+                    transparent,
+                    rgba(255, 255, 255, 0.3));
         }
+
         .about-bg-video-wrapper {
             display: flex;
             align-items: center;
             justify-content: center;
         }
+
         .about-bg-video {
             width: 320px;
             height: 400px;
             object-fit: cover;
             border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.7);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
         }
+
         @media (max-width: 1000px) {
             .about-bg-video {
                 width: 100%;
@@ -790,6 +930,7 @@
                 height: 340px;
             }
         }
+
         @media (max-width: 600px) {
             .about-bg-video {
                 width: 100%;
@@ -798,7 +939,7 @@
                 border-radius: 14px;
             }
         }
-        
+
         /* iOS Safari specific fixes */
         @supports (-webkit-touch-callout: none) {
             video {
@@ -807,23 +948,23 @@
                 -webkit-backface-visibility: hidden;
                 backface-visibility: hidden;
             }
-            
+
             .about-bg-video {
                 -webkit-transform: translateZ(0);
                 transform: translateZ(0);
             }
-            
+
             .about-section-video {
                 -webkit-transform: translateZ(0);
                 transform: translateZ(0);
             }
-            
+
             #intro-video {
                 -webkit-transform: translateZ(0);
                 transform: translateZ(0);
             }
         }
-        
+
         /* iOS Safari video container fixes */
         @media screen and (-webkit-min-device-pixel-ratio: 0) {
             video {
@@ -833,9 +974,10 @@
         }
     </style>
 </head>
+
 <body>
-    <nav class="navs section-nav" style="background:#111;">
-        <div class="nav-links">
+    <nav class="navs section-nav">
+        <div class="nav-pill">
             <a href="index.html" class="nav-item">Home</a>
             <a href="process.html" class="nav-item">Creative Process</a>
             <a href="AboutMe.html" class="nav-item active">About Me</a>
@@ -844,18 +986,25 @@
     <div class="about-container">
         <!-- Hero Section with Video BG -->
         <div class="about-hero" style="position:relative;overflow:hidden;">
-            <div class="about-bg-video-wrapper" style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;">
-                <video class="about-bg-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" style="width:100%;height:100%;object-fit:cover;filter:brightness(0.25) blur(2px);background:#000;" preload="metadata" poster="images/me1.jpg" width="320" height="400">
+            <div class="about-bg-video-wrapper"
+                style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;">
+                <video class="about-bg-video" autoplay loop muted playsinline webkit-playsinline loading="lazy"
+                    style="width:100%;height:100%;object-fit:cover;filter:brightness(0.25) blur(2px);background:#000;"
+                    preload="metadata" poster="images/me1.jpg" width="320" height="400">
                     <source src="images/vid2.MP4" type="video/mp4">
                     <source src="images/vid2.webm" type="video/webm">
                     Your browser does not support the video tag.
                 </video>
             </div>
-            <div class="glass-card about-hero-glass" style="position:relative;z-index:1;padding:32px 18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
+            <div class="glass-card about-hero-glass"
+                style="position:relative;z-index:1;padding:32px 18px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
                 <div class="about-text">
                     <h1 class="scroll-reveal">THIS IS ABOUT ME<br>AND HOW I'VE DONE THIS.</h1>
-                    <p class="shiny-text scroll-reveal">I'm Youssef Elmonier, a passionate software engineer, 3D visualizer, and designer. I specialize in blending technology and creativity to deliver unique digital experiences, from web development to 3D and graphic design.<br><br>
-                    Every project is a journey—combining technical expertise, artistic vision, and a drive for innovation. My work tells stories, solves problems, and leaves a lasting impression.</p>
+                    <p class="shiny-text scroll-reveal">I'm Youssef Elmonier, a passionate software engineer, 3D
+                        visualizer, and designer. I specialize in blending technology and creativity to deliver unique
+                        digital experiences, from web development to 3D and graphic design.<br><br>
+                        Every project is a journey—combining technical expertise, artistic vision, and a drive for
+                        innovation. My work tells stories, solves problems, and leaves a lasting impression.</p>
                     <div class="about-stats scroll-reveal">
                         <div class="stat">
                             <strong>50+</strong>
@@ -872,20 +1021,19 @@
                     </div>
                 </div>
                 <div class="about-image scroll-reveal">
-                    <img src="images/eljojj.png" 
-                         alt="Youssef Elmonier" 
-                         loading="lazy" 
-                         decoding="async"
-                         width="320" 
-                         height="400"
-                         fetchpriority="high">
+                    <img src="images/eljojj.png" alt="Youssef Elmonier" loading="lazy" decoding="async" width="320"
+                        height="400" fetchpriority="high">
                 </div>
             </div>
         </div>
         <hr class="section-separator scroll-reveal">
-        <div class="about-section" style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
-            <div class="about-video-wrapper" style="flex:0 0 320px;display:flex;justify-content:center;align-items:center;">
-                <video class="scroll-reveal about-section-video" autoplay loop muted playsinline webkit-playsinline loading="lazy" preload="metadata" style="width:100%;height:100%;background:#000;" poster="images/me4.jpg" width="320" height="400">
+        <div class="about-section"
+            style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
+            <div class="about-video-wrapper"
+                style="flex:0 0 320px;display:flex;justify-content:center;align-items:center;">
+                <video class="scroll-reveal about-section-video" autoplay loop muted playsinline webkit-playsinline
+                    loading="lazy" preload="metadata" style="width:100%;height:100%;background:#000;"
+                    poster="images/me4.jpg" width="320" height="400">
                     <source src="images/vid1.MP4" type="video/mp4">
                     <source src="images/vid1.webm" type="video/webm">
                     Your browser does not support the video tag.
@@ -893,7 +1041,9 @@
             </div>
             <div class="about-info scroll-reveal" style="flex:1 1 400px;display:flex;flex-direction:column;gap:24px;">
                 <h2 class="scroll-reveal">WHERE THE MAGIC HAPPENS.</h2>
-                <p class="shiny-text scroll-reveal">A heaven for creativity. Whether you're a client looking to enhance your brand or an individual seeking to immortalize a special moment, I provide a professional and personalized experience tailored to your unique vision.</p>
+                <p class="shiny-text scroll-reveal">A heaven for creativity. Whether you're a client looking to enhance
+                    your brand or an individual seeking to immortalize a special moment, I provide a professional and
+                    personalized experience tailored to your unique vision.</p>
                 <div class="about-buttons scroll-reveal">
                     <a href="index.html#contact" class="primary">Start a Project &rarr;</a>
                     <a href="index.html#portfolio">My Portfolio</a>
@@ -906,18 +1056,17 @@
         <div class="education-hero">
             <div class="education-text">
                 <h1 class="scroll-reveal">EDUCATION & BACKGROUND</h1>
-                <p class="shiny-text scroll-reveal">Bachelor in Software Engineering from Arab Academy for Science and Technology and Maritime Transport, Alexandria, Egypt., Minor in Multimedia and Graphic Design, creative technology, and digital design. Passionate about blending technical skills with artistic vision to create impactful digital experiences.</p>
+                <p class="shiny-text scroll-reveal">Bachelor in Software Engineering from Arab Academy for Science and
+                    Technology and Maritime Transport, Alexandria, Egypt., Minor in Multimedia and Graphic Design,
+                    creative technology, and digital design. Passionate about blending technical skills with artistic
+                    vision to create impactful digital experiences.</p>
                 <div class="certifications scroll-reveal">
                     <strong>Certifications:</strong> IBM SkillsBuild, Web Design, Agile, Project Management
                 </div>
             </div>
             <div class="education-image scroll-reveal">
-                <img src="images/me67.jpg" 
-                     alt="Youssef Elmonier Education" 
-                     loading="lazy" 
-                     decoding="async"
-                     width="320" 
-                     height="400" />
+                <img src="images/me67.jpg" alt="Youssef Elmonier Education" loading="lazy" decoding="async" width="320"
+                    height="400" />
             </div>
         </div>
     </div>
@@ -925,62 +1074,68 @@
         &copy; 2026 Youssef Elmonier. All rights reserved.
     </footer>
     <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const revealElements = document.querySelectorAll('.scroll-reveal');
-        
-        // Use requestIdleCallback for better performance, fallback to setTimeout
-        const scheduleWork = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
-        
-        scheduleWork(() => {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                        observer.unobserve(entry.target); // Stop observing once revealed
-                    }
-                });
-            }, { threshold: 0.1, rootMargin: '50px' });
-            
-            revealElements.forEach(el => observer.observe(el));
+        document.addEventListener('DOMContentLoaded', () => {
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+
+            // Use requestIdleCallback for better performance, fallback to setTimeout
+            const scheduleWork = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+
+            scheduleWork(() => {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.style.opacity = '1';
+                            entry.target.style.transform = 'translateY(0)';
+                            observer.unobserve(entry.target); // Stop observing once revealed
+                        }
+                    });
+                }, { threshold: 0.1, rootMargin: '50px' });
+
+                revealElements.forEach(el => observer.observe(el));
+            });
         });
-    });
     </script>
-    
+
     <!-- Optimized Video Error Handling -->
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // iOS Safari detection
-        const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-        const isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
-        const isIOSSafari = isIOS && isSafari;
-        
-        // Hero background video error handling
-        const bgVideo = document.querySelector('.about-bg-video');
-        if (bgVideo) {
-            // iOS Safari specific handling for background video
-            if (isIOSSafari) {
-                const startBgVideoOnInteraction = () => {
-                    bgVideo.play().catch(() => {});
-                };
-                document.addEventListener('touchstart', startBgVideoOnInteraction, { once: true });
-                document.addEventListener('click', startBgVideoOnInteraction, { once: true });
+        document.addEventListener('DOMContentLoaded', function () {
+            // iOS Safari detection
+            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+            const isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
+            const isIOSSafari = isIOS && isSafari;
+
+            // Hero background video error handling
+            const bgVideo = document.querySelector('.about-bg-video');
+            if (bgVideo) {
+                // iOS Safari specific handling for background video
+                if (isIOSSafari) {
+                    const startBgVideoOnInteraction = () => {
+                        bgVideo.play().catch(() => { });
+                    };
+                    document.addEventListener('touchstart', startBgVideoOnInteraction, { once: true });
+                    document.addEventListener('click', startBgVideoOnInteraction, { once: true });
+                }
             }
-        }
-        
-        // About section video error handling
-        const aboutVideo = document.querySelector('.about-section-video');
-        if (aboutVideo) {
-            // iOS Safari specific handling for about section video
-            if (isIOSSafari) {
-                const startAboutVideoOnInteraction = () => {
-                    aboutVideo.play().catch(() => {});
-                };
-                document.addEventListener('touchstart', startAboutVideoOnInteraction, { once: true });
-                document.addEventListener('click', startAboutVideoOnInteraction, { once: true });
+
+            // About section video error handling
+            const aboutVideo = document.querySelector('.about-section-video');
+            if (aboutVideo) {
+                // iOS Safari specific handling for about section video
+                if (isIOSSafari) {
+                    const startAboutVideoOnInteraction = () => {
+                        aboutVideo.play().catch(() => { });
+                    };
+                    document.addEventListener('touchstart', startAboutVideoOnInteraction, { once: true });
+                    document.addEventListener('click', startAboutVideoOnInteraction, { once: true });
+                }
             }
-        }
-    });
+        });
     </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer async></script>
+    <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js" defer async></script>
+    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+    <script src="JavaScript/main.js" defer></script>
+    <script src="js/scripts.js" defer></script>
 </body>
+
 </html>

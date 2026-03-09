@@ -4,14 +4,49 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => document.getElementById("name")?.classList.add("show"), 1500);
     setTimeout(() => document.getElementById("job")?.classList.add("show"), 2500);
 
-    // Initial check after a short delay to ensure jQuery is loaded for Tilt.js
-    setTimeout(() => {
-        if (typeof mediaQuery !== 'undefined') {
-             handleMediaQueryChange(mediaQuery);
-             mediaQuery.addEventListener('change', handleMediaQueryChange);
+    // Robust initial check for Tilt.js
+    let attempts = 0;
+    const initTiltInterval = setInterval(() => {
+        attempts++;
+        if (typeof $ !== 'undefined' && $.fn.tilt) {
+            initAllTilts();
+            clearInterval(initTiltInterval);
         }
+        if (attempts > 100) clearInterval(initTiltInterval); // Stop after 10 seconds
     }, 100);
 });
+
+function initAllTilts() {
+    if (typeof $ === 'undefined' || !$.fn.tilt) {
+        console.warn('Tilt.js or jQuery not found. 3D effects disabled.');
+        return;
+    }
+
+    const tiltOptions = {
+        maxTilt: 15,
+        scale: 1.05,
+        speed: 800,
+        glare: true,
+        maxGlare: 0.4,
+        perspective: 1000,
+        easing: "cubic-bezier(.03,.98,.52,.99)"
+    };
+
+    const targetSelectors = '.Proj-container, .cardSkill, .certificate-item, .grid-item, .animation';
+
+    // Direct initialization
+    $(targetSelectors).tilt(tiltOptions);
+
+    // Secondary check on hover in case of late reveals
+    $(document).on('mouseenter', targetSelectors, function () {
+        if (!$(this).data('tilt-initialized')) {
+            $(this).tilt(tiltOptions);
+            $(this).data('tilt-initialized', true);
+        }
+    });
+
+    console.log('3D Tilt Effects (Tilt.js) Successfully Initialized');
+}
 
 // Contact Form Handling
 const contactForm = document.getElementById('contactForm');
@@ -43,29 +78,3 @@ if (contactForm) {
     });
 }
 
-// Media Query for Tilt.js
-const mediaQuery = window.matchMedia('(min-width: 768px)');
-function handleMediaQueryChange(e) {
-    if (e.matches && typeof $ !== 'undefined' && $.fn.tilt) {
-        // Use requestIdleCallback for better performance
-        const scheduleWork = window.requestIdleCallback || ((cb) => setTimeout(cb, 100));
-        
-        scheduleWork(() => {
-            // Select all elements with class 'animation'
-            const projectContainers = document.querySelectorAll('.animation');
-
-            // Initialize Tilt.js on each project container
-            projectContainers.forEach(container => {
-                if ($(container).length) {
-                    $(container).tilt({
-                        maxTilt: 5,
-                        scale: 1.02,
-                        speed: 300,
-                        glare: true,
-                        maxGlare: .2
-                    });
-                }
-            });
-        });
-    }
-}

@@ -87,7 +87,7 @@
     .row {
         flex-direction: column !important;
         height: auto !important;
-        border-radius: 15px !important;
+        border-radius: 25px !important;
         overflow: hidden !important;
         padding: 10px !important; /* Added padding to create space for the image from edge */
         background: linear-gradient(90deg, rgba(25, 26, 29, 0.8) 0%, rgba(30, 30, 33, 0.8) 100%) !important;
@@ -115,7 +115,7 @@
     }
 
     .title h2 {
-        font-size: 40px !important; /* Slightly smaller to fit better */
+        font-size: 34px !important; /* Slightly smaller to fit better */
     }
 
     .details h3 {
@@ -157,9 +157,221 @@
         max-height: 800px !important;
         position: relative !important;
         overflow: hidden !important;
+        padding-top: 80px !important;
     }
 
-    /* 4. Navbar Position Adjustment (Floating Bottom Nav) */
+    /* 5. Hide sidebar on mobile */
+    .sidebar {
+        display: none !important; 
+    }
+
+    /* 5. Hide sidebar on mobile */
+    .sidebar {
+        display: none !important; 
+    }
+}
+
+/* Premium UI Enhancements (Formerly Beams) */
+.background-clip {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+    background-color: #000;
+}
+
+@media (min-width: 769px) {
+    .navs.section-nav {
+        border: none !important;
+        background: transparent !important;
+        margin-top: 25px !important;
+        padding: 0 !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        display: flex !important;
+        justify-content: center !important;
+        z-index: 10000 !important;
+        backdrop-filter: none !important;
+    }
+
+    .nav-pill {
+        display: flex;
+        align-items: center;
+        background: rgba(10, 10, 10, 0.4);
+        backdrop-filter: blur(25px) saturate(200%);
+        -webkit-backdrop-filter: blur(25px) saturate(200%);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        padding: 6px;
+        border-radius: 100px;
+        gap: 4px;
+        box-shadow: 
+            0 10px 40px rgba(0, 0, 0, 0.6), 
+            inset 0 0 0 1px rgba(255, 255, 255, 0.05),
+            inset 0 10px 20px rgba(255, 255, 255, 0.02);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav-pill::before {
+        content: '';
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        top: calc(var(--mouse-y, 50%) - 75px);
+        left: calc(var(--mouse-x, 50%) - 75px);
+        border-radius: 50%;
+        background: radial-gradient(circle, rgba(147, 51, 234, 0.2) 0%, transparent 70%);
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+        z-index: 0;
+        filter: blur(20px);
+    }
+
+    .nav-pill:hover::before {
+        opacity: 1;
+    }
+
+    .nav-item {
+        padding: 10px 28px !important;
+        font-family: 'Aspekta', sans-serif !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        letter-spacing: 0.05em !important;
+        text-transform: uppercase !important;
+        color: rgba(255, 255, 255, 0.5) !important;
+        text-decoration: none !important;
+        border-radius: 100px !important;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+        position: relative !important;
+        z-index: 1 !important;
+        border: 1px solid transparent !important;
+    }
+
+    .nav-item:hover {
+        color: #fff !important;
+        background: rgba(255, 255, 255, 0.05) !important;
+        border-color: rgba(255, 255, 255, 0.05) !important;
+    }
+
+    .nav-item.active {
+        color: #fff !important;
+        background: rgba(255, 255, 255, 0.12) !important;
+        box-shadow: 
+            0 4px 15px rgba(0, 0, 0, 0.3),
+            inset 0 0 10px rgba(255, 255, 255, 0.05);
+        border-color: rgba(255, 255, 255, 0.1) !important;
+    }
+
+    .nav-item::after {
+        content: '';
+        position: absolute;
+        bottom: 6px;
+        left: 50%;
+        width: 4px;
+        height: 4px;
+        background: #fff;
+        border-radius: 50%;
+        transform: translateX(-50%) scale(0);
+        transition: transform 0.3s ease;
+        opacity: 0.8;
+        box-shadow: 0 0 10px #fff;
+    }
+
+    .nav-item.active::after {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+/* Lenis Smooth Scroll Essential Styles */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+/* 3D Tilt Effect Global Stabilization */
+.Proj-container, .cardSkill, .certificate-item, .grid-item, .animation {
+    transform-style: preserve-3d !important;
+    will-change: transform !important;
+    transition: transform 0s !important; /* Prevent CSS from fighting Tilt.js */
+}
+
+/* 3D Pop-out elements */
+.Proj-container .title, .cardSkill h3, .certificate-item h3 {
+    transform: translateZ(50px) !important;
+    z-index: 10;
+}
+
+/* Play Button Premium Styling (Global) */
+.project-icon-button {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 50% !important;
+    width: 42px !important;
+    height: 42px !important;
+    /* Use relative positioning for the circle container */
+    position: relative !important; 
+    display: inline-block !important;
+    padding: 0 !important;
+    margin-left: 15px !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    overflow: hidden !important;
+    backdrop-filter: blur(5px) !important;
+    vertical-align: middle !important;
+}
+
+.project-icon-button:hover {
+    transform: scale(1.1) translateZ(0px) !important;
+    background-color: #fff !important;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4) !important;
+}
+
+/* The Play Icon itself (Control size and position here) */
+.project-icon {
+    width: 18px !important;
+    height: 18px !important;
+    /* Absolute positioning for independent control */
+    position: absolute !important;
+    top: 50% !important;
+    left: 54% !important; /* Slightly nudged right for optical centering by default */
+    transform: translate(-50%, -50%) !important;
+    filter: brightness(0) !important;
+    display: block !important;
+    object-fit: contain !important;
+    margin: 0 !important;
+    transition: transform 0.3s ease !important;
+}
+
+.project-icon-button:hover .project-icon {
+    transform: translate(-50%, -50%) scale(1.1) !important; /* Keep it centered while scaling */
+}
+
+/* Navbar Position Adjustment (Floating Bottom Nav for Mobile) */
+@media (max-width: 768px) {
     .navs.section-nav {
         position: fixed !important;
         bottom: 10px !important;
@@ -203,40 +415,20 @@
         border-radius: 20px !important;
     }
 
-    /* Play Button Custom Styling */
+    /* ----------------------------------------- */
+    /* MASTER MOBILE CONTROLS (CIRCLE & ICON)    */
+    /* ----------------------------------------- */
     .project-icon-button {
-        background-color: #ffffff !important; /* White circle */
-        border-radius: 50% !important;
-        width: 36px !important; /* Slightly smaller button to balance */
-        height: 36px !important;
-        display: flex !important;
-        align-items: center !important;
-        justify-content: center !important;
-        padding: 0 !important;
+        width: 30px !important;  /* Mobile Circle Size */
+        height: 30px !important; /* Mobile Circle Size */
         margin-left: 10px !important;
-        border: none !important;
-        cursor: pointer !important;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
     }
-
-    .project-icon {
-        width: 16px !important; /* Slightly bugger as requested (was 12px) */
-        height: 16px !important;
-        max-width: 16px !important;
-        max-height: 16px !important;
-        margin: 0 auto !important;
-        filter: brightness(0) !important;
-        display: block !important;
-        object-fit: contain !important;
-    }
-
-    /* Hide sidebar on mobile */
-    .sidebar {
-        display: none !important; 
-    }
-
-    /* Show socials in footer or different layout if needed */
-    footer {
-        padding-bottom: 80px !important; /* Extra padding for bottom nav space */
+    
+    .project-icon-button .project-icon {
+        width: 14px !important;  /* Mobile Icon Size */
+        height: 14px !important; /* Mobile Icon Size */
+        top: 50% !important; 
+        left: 54% !important;
+        transform: translate(-50%, -50%) !important;
     }
 }

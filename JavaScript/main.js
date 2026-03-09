@@ -1,55 +1,113 @@
 // Optimized main.js with error handling and performance improvements
-(function() {
+(function () {
     'use strict';
-    
+
     // Wait for DOM to be ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
         init();
     }
-    
+
     function init() {
         // Use requestIdleCallback for non-critical initialization
         const scheduleWork = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
-        
+
         // Critical: Initialize smooth scrolling
         initSmoothScrolling();
-        
+
         // Non-critical: Initialize other features
         scheduleWork(() => {
             initViewProjectsBtn();
             initTextAnimation();
             initGSAPAnimations();
+            initMagneticNav();
         });
     }
-    
+
+    function initMagneticNav() {
+        const navPill = document.querySelector('.nav-pill');
+        const navItems = document.querySelectorAll('.nav-pill .nav-item');
+
+        if (navPill) {
+            navPill.addEventListener('mousemove', (e) => {
+                const rect = navPill.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                navPill.style.setProperty('--mouse-x', `${x}px`);
+                navPill.style.setProperty('--mouse-y', `${y}px`);
+            });
+        }
+
+        navItems.forEach(item => {
+            item.addEventListener('mousemove', (e) => {
+                const rect = item.getBoundingClientRect();
+                const x = e.clientX - rect.left - rect.width / 2;
+                const y = e.clientY - rect.top - rect.height / 2;
+
+                if (window.gsap) {
+                    gsap.to(item, {
+                        x: x * 0.3,
+                        y: y * 0.3,
+                        duration: 0.3,
+                        ease: "power2.out"
+                    });
+
+                    gsap.to(item, {
+                        scale: 1.05,
+                        duration: 0.3
+                    });
+                }
+            });
+
+            item.addEventListener('mouseleave', () => {
+                if (window.gsap) {
+                    gsap.to(item, {
+                        x: 0,
+                        y: 0,
+                        scale: 1,
+                        duration: 0.5,
+                        ease: "elastic.out(1, 0.3)"
+                    });
+                }
+            });
+        });
+    }
+
     function initViewProjectsBtn() {
         const btn = document.getElementById('viewProjectsBtn');
         const projects = document.getElementById('projects');
         if (btn && projects) {
-            btn.addEventListener('click', function() {
+            btn.addEventListener('click', function () {
                 projects.scrollIntoView({ behavior: 'smooth' });
             });
         }
     }
-    
+
     function initTextAnimation() {
         const line2 = document.querySelector('.line2');
         if (line2) {
             line2.textContent = "I'm Youssef";
         }
     }
-    
+
     function initSmoothScrolling() {
         // Check if Lenis is available
         if (typeof Lenis !== 'undefined') {
             try {
+                // Modern Lenis initialization (v1+)
                 const lenis = new Lenis({
                     duration: 1.2,
-                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t))
+                    easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+                    smoothWheel: true,
+                    wheelMultiplier: 1.0,
+                    touchMultiplier: 2
                 });
-                
+
+                // Expose to window for global access
+                window.lenis = lenis;
+
                 function raf(time) {
                     lenis.raf(time);
                     if (typeof ScrollTrigger !== 'undefined') {
@@ -57,28 +115,35 @@
                     }
                     requestAnimationFrame(raf);
                 }
-                
+
                 requestAnimationFrame(raf);
+
+                // Integration with ScrollTrigger
+                if (typeof ScrollTrigger !== 'undefined' && typeof gsap !== 'undefined') {
+                    lenis.on('scroll', ScrollTrigger.update);
+                }
+
+                console.log('Lenis Smooth Scroll Initialized');
             } catch (e) {
                 console.warn('Lenis initialization failed:', e);
             }
         }
     }
-    
+
     function initGSAPAnimations() {
         // Check if GSAP and ScrollTrigger are available
         if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') {
             return;
         }
-        
+
         try {
             const section_1 = document.getElementById("vertical");
             const col_left = document.querySelector(".col_left");
-            
+
             if (section_1 && col_left) {
                 const timeln = gsap.timeline({ paused: true });
-                timeln.fromTo(col_left, {y: 0}, {y: '170vh', duration: 1, ease: 'none'}, 0);
-                
+                timeln.fromTo(col_left, { y: 0 }, { y: '170vh', duration: 1, ease: 'none' }, 0);
+
                 ScrollTrigger.create({
                     animation: timeln,
                     trigger: section_1,
@@ -91,11 +156,11 @@
             console.warn('GSAP animation initialization failed:', e);
         }
     }
-    
+
     // Function to animate text (exported for potential use)
-    window.animateText = function(element, text) {
+    window.animateText = function (element, text) {
         if (!element || !text) return;
-        
+
         let index = 0;
         const intervalId = setInterval(() => {
             if (index < text.length) {

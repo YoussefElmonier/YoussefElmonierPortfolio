@@ -519,32 +519,6 @@ img {
 	animation: tracking-in-contract-bck-bottom 1s cubic-bezier(0.215, 0.610, 0.355, 1.000) both;
     animation-delay: 3s;
 }
-.project-icon-button {
-    padding-left: 5px;
-    object-fit: cover; /* Keeps the image properly scaled within the button */
-    margin-left: 10px; 
-  }
-  .project-icon{
-    width: 100% !important;
-  }
-  button {
-    background-color: #797979;
-    font-family: Anton;
-    color: rgb(0, 0, 0);
-    border: none;
-    border-radius: 50%; /* Makes the button circular */
-    cursor: pointer;
-    margin-top: 9px;
-    display: inline-block;
-    padding: 0; /* Remove padding to ensure the button is circular */
-    width: 35px; /* Adjust the size as needed */
-    height: 35px; /* Adjust the size as needed */
-    overflow: hidden; /* Ensures the image fits within the button */
-}
-button:hover {
-    transform: scale(1.05);
-    transition: all 150ms ease-in-out;
-}
 .about-me {
     text-align: center;
     width: 100%;
