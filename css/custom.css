@@ -78,7 +78,7 @@
         border-radius: 12px !important;
     }
 
-    .projects-wrapper {
+    .projects-wrapper.expanded {
         display: flex !important;
         flex-direction: column !important;
         gap: 15px !important; /* Reduced gap between project cards */
@@ -311,10 +311,16 @@ html.lenis body {
   pointer-events: none;
 }
 /* 3D Tilt Effect Global Stabilization */
-.Proj-container, .cardSkill, .certificate-item, .grid-item, .animation {
+.cardSkill, .certificate-item, .grid-item, .animation {
     transform-style: preserve-3d !important;
     will-change: transform !important;
     transition: transform 0s !important; /* Prevent CSS from fighting Tilt.js */
+}
+
+/* Proj-container: preserve-3d for tilt, but allow scroll-reveal transition first */
+.Proj-container {
+    transform-style: preserve-3d !important;
+    will-change: transform !important;
 }
 
 /* 3D Pop-out elements */
@@ -435,5 +441,152 @@ html.lenis body {
     .glass-card {
         border-radius: 24px !important;
         padding: 24px 18px !important;
+    }
+}
+
+/* ============================================
+   Expandable Projects Section
+   ============================================ */
+
+.projects-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    cursor: pointer;
+    padding: 10px 20px;
+    border-radius: 16px;
+    transition: background 0.3s ease, transform 0.2s ease;
+    user-select: none;
+    -webkit-user-select: none;
+    position: relative;
+}
+
+.projects-header:hover {
+    background: rgba(255, 255, 255, 0.04);
+    transform: scale(1.01);
+}
+
+.projects-header:active {
+    transform: scale(0.99);
+}
+
+.projects-header p {
+    margin: 0;
+}
+
+/* Chevron Icon */
+.projects-chevron {
+    width: 32px;
+    height: 32px;
+    color: #fff;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    flex-shrink: 0;
+}
+
+/* Rotated when expanded */
+.projects-header.expanded .projects-chevron {
+    transform: rotate(180deg);
+}
+
+/* Collapsed state (default) - !important to override cleaned.css */
+.Projects .projects-wrapper {
+    max-height: 0 !important;
+    overflow: hidden !important;
+    opacity: 0 !important;
+    transition: max-height 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.4s ease,
+                padding 0.4s ease;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+/* Expanded state */
+.Projects .projects-wrapper.expanded {
+    max-height: 8000px !important;
+    overflow: visible !important;
+    opacity: 1 !important;
+    padding-top: 20px !important;
+    transition: max-height 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+                opacity 0.5s ease 0.1s,
+                padding 0.4s ease;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+    .projects-chevron {
+        width: 24px;
+        height: 24px;
+    }
+
+    .projects-header {
+        gap: 10px;
+        padding: 8px 12px;
+    }
+
+    /* Tighten spacing between collapsed project sections */
+    .project,
+    section:has(> .Projects) {
+        padding: 10px 15px !important;
+    }
+
+    .Projects {
+        margin-top: 10px !important;
+        margin-bottom: 0 !important;
+    }
+
+    .Projects .projects-header p {
+        margin: 5px 0 !important;
+    }
+}
+
+/* ============================================
+   Scroll Reveal - Progressive Blur Effect
+   ============================================ */
+
+/* --reveal: 0 (hidden) → 1 (fully visible), driven by JS */
+.Proj-container {
+    --reveal: 0;
+    opacity: var(--reveal) !important;
+    filter: blur(calc((1 - var(--reveal)) * 12px)) !important;
+    -webkit-filter: blur(calc((1 - var(--reveal)) * 12px)) !important;
+    transform: translateY(calc((1 - var(--reveal)) * 40px)) scale(calc(0.96 + var(--reveal) * 0.04));
+    will-change: opacity, filter, transform;
+}
+
+/* Once fully revealed, clean up for tilt.js */
+.Proj-container.proj-done {
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    transform: none;
+    will-change: auto;
+}
+
+/* Also reveal the section headers on scroll */
+.projects-header {
+    --reveal: 0;
+    opacity: var(--reveal) !important;
+    filter: blur(calc((1 - var(--reveal)) * 8px)) !important;
+    -webkit-filter: blur(calc((1 - var(--reveal)) * 8px)) !important;
+    transform: translateY(calc((1 - var(--reveal)) * 30px));
+}
+
+.projects-header.proj-done {
+    opacity: 1 !important;
+    filter: none !important;
+    -webkit-filter: none !important;
+    transform: none;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+    .Proj-container,
+    .projects-header {
+        --reveal: 1 !important;
+        opacity: 1 !important;
+        filter: none !important;
+        -webkit-filter: none !important;
+        transform: none !important;
     }
 }

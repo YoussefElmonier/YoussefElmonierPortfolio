@@ -172,6 +172,99 @@
         }, 100);
     };
 })();
+
+// Scroll Reveal - Progressive blur-to-clear effect
+var projectRevealObserver = null;
+
+(function initScrollReveal() {
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', setupScrollReveal);
+    } else {
+        setupScrollReveal();
+    }
+
+    function setupScrollReveal() {
+        var revealTargets = document.querySelectorAll('.Proj-container, .projects-header');
+        if (!revealTargets.length) return;
+
+        // Build thresholds: 0, 0.05, 0.10, ..., 1.0 (21 steps)
+        var thresholds = [];
+        for (var i = 0; i <= 20; i++) {
+            thresholds.push(i / 20);
+        }
+
+        projectRevealObserver = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                var el = entry.target;
+
+                // Skip already-done elements
+                if (el.classList.contains('proj-done')) return;
+
+                if (entry.isIntersecting) {
+                    // Map ratio to a smoother curve (ease-out)
+                    var ratio = entry.intersectionRatio;
+                    // Slower reveal: needs more scroll to fully appear
+                    var reveal = Math.min(1, ratio * 1.2);
+                    // Apply smooth easing
+                    reveal = 1 - Math.pow(1 - reveal, 2);
+
+                    el.style.setProperty('--reveal', reveal.toFixed(3));
+
+                    // Once fully revealed, lock it in and stop observing
+                    if (reveal >= 0.99) {
+                        el.style.setProperty('--reveal', '1');
+                        // Small delay to let the final frame render, then clean up
+                        setTimeout(function () {
+                            el.classList.add('proj-done');
+                            el.style.removeProperty('--reveal');
+                            projectRevealObserver.unobserve(el);
+                        }, 100);
+                    }
+                } else {
+                    // Only reset if element hasn't been fully revealed yet
+                    if (!el.classList.contains('proj-done')) {
+                        el.style.setProperty('--reveal', '0');
+                    }
+                }
+            });
+        }, {
+            threshold: thresholds,
+            rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealTargets.forEach(function (el) {
+            projectRevealObserver.observe(el);
+        });
+    }
+})();
+
+// Toggle expandable project sections
+function toggleProjects(headerEl) {
+    var wrapper = headerEl.nextElementSibling;
+    if (!wrapper) return;
+
+    var isExpanded = headerEl.classList.contains('expanded');
+
+    if (isExpanded) {
+        // Collapse
+        headerEl.classList.remove('expanded');
+        wrapper.classList.remove('expanded');
+    } else {
+        // Expand
+        headerEl.classList.add('expanded');
+        wrapper.classList.add('expanded');
+
+        // Re-observe any un-revealed cards inside this section
+        if (projectRevealObserver) {
+            var cards = wrapper.querySelectorAll('.Proj-container:not(.proj-done)');
+            cards.forEach(function (card) {
+                projectRevealObserver.observe(card);
+            });
+        }
+    }
+}
+
+
 // function playAppropriateVideo() {
 //     const isMobile = window.matchMedia("(max-width: 768px)").matches; // Adjust the width as needed
 //     if (isMobile) {
