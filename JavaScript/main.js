@@ -184,8 +184,11 @@ var projectRevealObserver = null;
     }
 
     function setupScrollReveal() {
-        var revealTargets = document.querySelectorAll('.Proj-container, .projects-header');
-        if (!revealTargets.length) return;
+        // Only observe elements that are NOT inside collapsed wrappers.
+        // Proj-containers inside collapsed wrappers won't intersect on real mobile
+        // because the parent has overflow:hidden + max-height:0.
+        var headers = document.querySelectorAll('.projects-header');
+        if (!headers.length) return;
 
         // Build thresholds: 0, 0.05, 0.10, ..., 1.0 (21 steps)
         var thresholds = [];
@@ -232,9 +235,14 @@ var projectRevealObserver = null;
             rootMargin: '0px 0px -30px 0px'
         });
 
-        revealTargets.forEach(function (el) {
+        // Only observe headers initially - they are always visible (not inside collapsed wrappers)
+        headers.forEach(function (el) {
             projectRevealObserver.observe(el);
         });
+
+        // Do NOT observe Proj-containers here - they are inside collapsed wrappers
+        // and IntersectionObserver won't work on real mobile devices for hidden elements.
+        // They will be revealed directly when their section is expanded (see toggleProjects).
     }
 })();
 
@@ -254,13 +262,21 @@ function toggleProjects(headerEl) {
         headerEl.classList.add('expanded');
         wrapper.classList.add('expanded');
 
-        // Re-observe any un-revealed cards inside this section
-        if (projectRevealObserver) {
-            var cards = wrapper.querySelectorAll('.Proj-container:not(.proj-done)');
-            cards.forEach(function (card) {
-                projectRevealObserver.observe(card);
-            });
-        }
+        // Directly reveal cards with a staggered animation.
+        // We can't rely on IntersectionObserver inside the wrapper because
+        // on real mobile devices, overflow:hidden containers prevent intersection detection.
+        var cards = wrapper.querySelectorAll('.Proj-container:not(.proj-done)');
+        cards.forEach(function (card, index) {
+            // Small staggered delay for each card for a nice cascade effect
+            setTimeout(function () {
+                card.style.setProperty('--reveal', '1');
+                // Mark as done after the transition completes
+                setTimeout(function () {
+                    card.classList.add('proj-done');
+                    card.style.removeProperty('--reveal');
+                }, 500);
+            }, index * 120); // 120ms stagger between each card
+        });
     }
 }
 

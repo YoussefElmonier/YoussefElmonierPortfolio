@@ -552,6 +552,8 @@ html.lenis body {
     -webkit-filter: blur(calc((1 - var(--reveal)) * 12px)) !important;
     transform: translateY(calc((1 - var(--reveal)) * 40px)) scale(calc(0.96 + var(--reveal) * 0.04));
     will-change: opacity, filter, transform;
+    /* Smooth transition for when JS directly sets --reveal (e.g. on expand) */
+    transition: opacity 0.5s ease, filter 0.5s ease, -webkit-filter 0.5s ease, transform 0.5s ease;
 }
 
 /* Once fully revealed, clean up for tilt.js */
@@ -570,6 +572,7 @@ html.lenis body {
     filter: blur(calc((1 - var(--reveal)) * 8px)) !important;
     -webkit-filter: blur(calc((1 - var(--reveal)) * 8px)) !important;
     transform: translateY(calc((1 - var(--reveal)) * 30px));
+    transition: opacity 0.5s ease, filter 0.5s ease, -webkit-filter 0.5s ease, transform 0.5s ease, background 0.3s ease;
 }
 
 .projects-header.proj-done {
