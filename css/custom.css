@@ -379,22 +379,41 @@ html.lenis body {
 @media (max-width: 768px) {
     .navs.section-nav {
         top: auto !important;
-        bottom: 20px !important;
+        bottom: 16px !important;
         margin-top: 0 !important;
         width: 100% !important;
         display: flex !important;
         justify-content: center !important;
+        /* Prevent any child from forcing horizontal scroll */
+        overflow: hidden !important;
+        padding: 0 12px !important;
+        box-sizing: border-box !important;
     }
 
     .nav-pill {
-        gap: 2px !important;
+        /* Pill must shrink to fit the viewport */
+        max-width: calc(100vw - 24px) !important;
+        width: auto !important;
+        gap: 0px !important;
         padding: 4px !important;
+        /* Allow items to wrap if extremely narrow */
+        flex-wrap: nowrap !important;
+        /* Ensure box doesn't exceed its container */
+        box-sizing: border-box !important;
+        overflow: hidden !important;
     }
 
     .nav-item {
-        font-size: 11px !important;
-        padding: 8px 16px !important;
-        letter-spacing: 0.03em !important;
+        /* Fluid size: as small as 9px, scales with viewport, max 11px */
+        font-size: clamp(9px, 2.5vw, 11px) !important;
+        /* Minimal horizontal padding so all 4 items fit on a 390px screen */
+        padding: 8px clamp(8px, 2.5vw, 14px) !important;
+        letter-spacing: 0.02em !important;
+        white-space: nowrap !important;
+        /* Equally share available width */
+        flex: 1 1 0 !important;
+        text-align: center !important;
+        min-width: 0 !important;
     }
 
     /* ----------------------------------------- */
