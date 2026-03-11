@@ -195,6 +195,8 @@ html, body {
     filter: brightness(0.7);
 }
 
+
+
 /* ─── Overlay (play icon + CTA) ─── */
 .reel-overlay {
     position: absolute;
