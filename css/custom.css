@@ -392,28 +392,29 @@ html.lenis body {
 
     .nav-pill {
         /* Pill must shrink to fit the viewport */
-        max-width: calc(100vw - 24px) !important;
+        max-width: 95vw !important; /* Slightly more space */
         width: auto !important;
-        gap: 0px !important;
-        padding: 4px !important;
-        /* Allow items to wrap if extremely narrow */
+        gap: 8px !important; /* Increased gap for clear separation */
+        padding: 4px 12px !important; 
+        display: flex !important;
+        flex-direction: row !important;
         flex-wrap: nowrap !important;
-        /* Ensure box doesn't exceed its container */
+        justify-content: center !important;
+        align-items: center !important;
         box-sizing: border-box !important;
-        overflow: hidden !important;
+        overflow: visible !important; /* Allow natural flow */
     }
 
     .nav-item {
-        /* Fluid size: as small as 9px, scales with viewport, max 11px */
-        font-size: clamp(9px, 2.5vw, 11px) !important;
-        /* Minimal horizontal padding so all 4 items fit on a 390px screen */
-        padding: 8px clamp(8px, 2.5vw, 14px) !important;
+        font-family: 'askerM', sans-serif !important; /* Corrected from 'Aspekta' */
+        font-size: clamp(8px, 2.2vw, 10px) !important;
+        padding: 8px 6px !important; /* Fixed tight padding */
         letter-spacing: 0.02em !important;
         white-space: nowrap !important;
-        /* Equally share available width */
-        flex: 1 1 0 !important;
+        flex: 0 0 auto !important; /* No shrinking allowed */
         text-align: center !important;
         min-width: 0 !important;
+        display: inline-block !important;
     }
 
     /* ----------------------------------------- */
