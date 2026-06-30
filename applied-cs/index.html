@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Master's in Software Engineering — Candidate Dossier | Youssef Elmonier</title>
+    <meta name="description"
+        content="Candidate dossier for Master's in Software Engineering at University of Erfurt. Technical blueprint, institutional credentials, and core project showcase by Youssef Elmonier.">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* ═══════════════════════════════════════════════════════
+           DESIGN TOKENS
+           ═══════════════════════════════════════════════════════ */
+        :root {
+            --bg-primary: #000000;
+            --bg-panel: #0A0A0A;
+            --bg-elevated: #111111;
+            --text-primary: #FFFFFF;
+            --text-secondary: #A1A1AA;
+            --text-muted: #71717A;
+            --text-dim: #52525B;
+            --border-primary: #27272A;
+            --border-subtle: #1F1F1F;
+            --accent-green: #22C55E;
+            --accent-green-dim: rgba(34, 197, 94, 0.12);
+            --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+            --font-mono: 'JetBrains Mono', 'SF Mono', 'Fira Code', monospace;
+            --radius-sm: 3px;
+            --radius-md: 6px;
+            --spacing-xs: 8px;
+            --spacing-sm: 12px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            --spacing-4xl: 96px;
+            --max-width: 960px;
+            --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-base: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           RESET & BASE
+           ═══════════════════════════════════════════════════════ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 16px;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            text-rendering: optimizeLegibility;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-primary);
+            color: var(--text-secondary);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        a {
+            color: var(--text-primary);
+            text-decoration: none;
+            transition: color var(--transition-fast);
+        }
+
+        a:hover {
+            color: var(--text-secondary);
+        }
+
+        ::selection {
+            background: rgba(255, 255, 255, 0.08);
+            color: var(--text-primary);
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           LAYOUT
+           ═══════════════════════════════════════════════════════ */
+        .dossier-container {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-lg);
+        }
+
+        .dossier-section {
+            padding: var(--spacing-3xl) 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .dossier-section:last-child {
+            border-bottom: none;
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           NAVIGATION — BACK LINK
+           ═══════════════════════════════════════════════════════ */
+        .dossier-nav {
+            padding: var(--spacing-lg) 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .dossier-nav a {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+            transition: color var(--transition-fast);
+        }
+
+        .dossier-nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .dossier-nav a svg {
+            width: 14px;
+            height: 14px;
+            transition: transform var(--transition-fast);
+        }
+
+        .dossier-nav a:hover svg {
+            transform: translateX(-2px);
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           DOSSIER HEADER
+           ═══════════════════════════════════════════════════════ */
+        .dossier-header {
+            padding: var(--spacing-4xl) 0 var(--spacing-3xl);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .dossier-header__label {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .dossier-header__title {
+            font-size: clamp(28px, 4vw, 42px);
+            font-weight: 700;
+            color: var(--text-primary);
+            line-height: 1.15;
+            letter-spacing: -0.03em;
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .dossier-header__subtitle {
+            font-size: clamp(16px, 2vw, 20px);
+            font-weight: 300;
+            color: var(--text-muted);
+            line-height: 1.4;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .dossier-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 6px 14px;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            border-radius: var(--radius-md);
+            background: var(--accent-green-dim);
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--accent-green);
+            letter-spacing: 0.02em;
+        }
+
+        .dossier-badge__dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent-green);
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-dot {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.4;
+            }
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           SECTION TITLES
+           ═══════════════════════════════════════════════════════ */
+        .section-label {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-dim);
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+            margin-bottom: var(--spacing-xl);
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           TECHNICAL BLUEPRINT — SKILL GRID
+           ═══════════════════════════════════════════════════════ */
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+        }
+
+        .skill-column {
+            padding: var(--spacing-xl);
+            border-right: 1px solid var(--border-primary);
+        }
+
+        .skill-column:last-child {
+            border-right: none;
+        }
+
+        .skill-column__title {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: 0.01em;
+            margin-bottom: var(--spacing-md);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .skill-column__list {
+            list-style: none;
+        }
+
+        .skill-column__list li {
+            font-family: var(--font-mono);
+            font-size: 13px;
+            color: var(--text-secondary);
+            padding: 6px 0;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .skill-column__list li::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 4px;
+            border-radius: 50%;
+            background: var(--text-dim);
+            flex-shrink: 0;
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           INSTITUTIONAL CREDENTIALS
+           ═══════════════════════════════════════════════════════ */
+        .credentials-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .credential-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: baseline;
+            gap: var(--spacing-md);
+            padding: var(--spacing-md) 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .credential-item:first-child {
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .credential-item__title {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--text-primary);
+        }
+
+        .credential-item__meta {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            text-align: right;
+            white-space: nowrap;
+        }
+
+        .credential-item__description {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-top: 4px;
+            grid-column: 1 / -1;
+        }
+
+        .credential-item__authority {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            letter-spacing: 0.05em;
+            color: var(--text-dim);
+            text-transform: uppercase;
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           PROJECT CASE STUDIES
+           ═══════════════════════════════════════════════════════ */
+        .project-panel {
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-sm);
+            margin-bottom: var(--spacing-lg);
+            overflow: hidden;
+            transition: border-color var(--transition-base);
+        }
+
+        .project-panel:hover {
+            border-color: #3F3F46;
+        }
+
+        .project-panel__header {
+            padding: var(--spacing-xl) var(--spacing-xl) var(--spacing-md);
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: var(--spacing-md);
+        }
+
+        .project-panel__name {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.02em;
+        }
+
+        .project-panel__tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 10px;
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-sm);
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            color: var(--text-muted);
+            letter-spacing: 0.02em;
+            white-space: nowrap;
+            flex-shrink: 0;
+        }
+
+        .project-panel__body {
+            padding: 0 var(--spacing-xl) var(--spacing-md);
+        }
+
+        .project-panel__description {
+            font-size: 14px;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .project-panel__focus {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .focus-tag {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            font-weight: 500;
+            padding: 4px 10px;
+            border: 1px solid var(--border-subtle);
+            border-radius: var(--radius-sm);
+            color: var(--text-muted);
+            background: var(--bg-panel);
+        }
+
+        .project-panel__actions {
+            padding: var(--spacing-md) var(--spacing-xl) var(--spacing-xl);
+            display: flex;
+            gap: var(--spacing-sm);
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .action-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border: 1px solid var(--border-primary);
+            border-radius: var(--radius-sm);
+            background: transparent;
+            font-family: var(--font-mono);
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--text-secondary);
+            cursor: pointer;
+            text-decoration: none;
+            transition: all var(--transition-fast);
+            letter-spacing: 0.01em;
+        }
+
+        .action-btn:hover {
+            border-color: #3F3F46;
+            color: var(--text-primary);
+            background: var(--bg-elevated);
+        }
+
+        .action-btn svg {
+            width: 12px;
+            height: 12px;
+            flex-shrink: 0;
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           PROFESSIONAL EXPERIENCE
+           ═══════════════════════════════════════════════════════ */
+        .experience-list {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .experience-entry {
+            padding: var(--spacing-xl) 0;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .experience-entry:first-child {
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .experience-entry__header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: baseline;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .experience-entry__role {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-primary);
+            letter-spacing: -0.01em;
+        }
+
+        .experience-entry__date {
+            font-family: var(--font-mono);
+            font-size: 12px;
+            color: var(--text-dim);
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .experience-entry__org {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+            margin-bottom: var(--spacing-md);
+            flex-wrap: wrap;
+        }
+
+        .experience-entry__company {
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .experience-entry__location {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            letter-spacing: 0.02em;
+        }
+
+        .experience-entry__separator {
+            color: var(--text-dim);
+            font-size: 11px;
+            user-select: none;
+        }
+
+        .experience-entry__bullets {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .experience-entry__bullets li {
+            font-size: 13px;
+            color: #888888;
+            line-height: 1.7;
+            padding-left: 16px;
+            position: relative;
+        }
+
+        .experience-entry__bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 9px;
+            width: 5px;
+            height: 1px;
+            background: var(--text-dim);
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════════ */
+        .dossier-footer {
+            padding: var(--spacing-2xl) 0;
+            text-align: center;
+        }
+
+        .dossier-footer__text {
+            font-family: var(--font-mono);
+            font-size: 11px;
+            color: var(--text-dim);
+            letter-spacing: 0.05em;
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           ANIMATIONS
+           ═══════════════════════════════════════════════════════ */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .stagger-1 {
+            transition-delay: 0.05s;
+        }
+
+        .stagger-2 {
+            transition-delay: 0.1s;
+        }
+
+        .stagger-3 {
+            transition-delay: 0.15s;
+        }
+
+        .stagger-4 {
+            transition-delay: 0.2s;
+        }
+
+        .stagger-5 {
+            transition-delay: 0.25s;
+        }
+
+        /* ═══════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════ */
+        @media (max-width: 768px) {
+            .dossier-container {
+                padding: 0 var(--spacing-md);
+            }
+
+            .dossier-header {
+                padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+            }
+
+            .skill-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skill-column {
+                border-right: none;
+                border-bottom: 1px solid var(--border-primary);
+            }
+
+            .skill-column:last-child {
+                border-bottom: none;
+            }
+
+            .credential-item {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .credential-item__meta {
+                text-align: left;
+            }
+
+            .experience-entry__header {
+                grid-template-columns: 1fr;
+                gap: 4px;
+            }
+
+            .experience-entry__date {
+                text-align: left;
+            }
+
+            .project-panel__header {
+                flex-direction: column;
+                padding: var(--spacing-lg) var(--spacing-lg) var(--spacing-sm);
+            }
+
+            .project-panel__body {
+                padding: 0 var(--spacing-lg) var(--spacing-sm);
+            }
+
+            .project-panel__actions {
+                padding: var(--spacing-sm) var(--spacing-lg) var(--spacing-lg);
+                flex-direction: column;
+            }
+
+            .action-btn {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .dossier-header__title {
+                font-size: 24px;
+            }
+
+            .project-panel__name {
+                font-size: 18px;
+            }
+
+            .section-title {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="dossier-container">
+
+        <!-- ═══ NAVIGATION ═══ -->
+        <nav class="dossier-nav fade-in-up" aria-label="Back to portfolio">
+            <a href="/">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <path d="M19 12H5M12 19l-7-7 7-7" />
+                </svg>
+                Portfolio
+            </a>
+        </nav>
+
+        <!-- ═══ DOSSIER HEADER ═══ -->
+        <header class="dossier-header">
+            <span class="dossier-header__label fade-in-up">University of Erfurt — Candidate Dossier</span>
+            <h1 class="dossier-header__title fade-in-up stagger-1">
+                Master's in Software Engineering
+            </h1>
+            <p class="dossier-header__subtitle fade-in-up stagger-2">Candidate Dossier</p>
+            <div class="dossier-badge fade-in-up stagger-3">
+                <span class="dossier-badge__dot" aria-hidden="true"></span>
+                Eligible — 180/210 ECTS Bridge Program
+            </div>
+        </header>
+
+        <!-- ═══ TECHNICAL BLUEPRINT ═══ -->
+        <section class="dossier-section" id="technical-blueprint" aria-labelledby="blueprint-title">
+            <span class="section-label fade-in-up">01</span>
+            <h2 class="section-title fade-in-up stagger-1" id="blueprint-title">Technical Blueprint</h2>
+
+            <div class="skill-grid fade-in-up stagger-2">
+                <div class="skill-column">
+                    <div class="skill-column__title">Languages</div>
+                    <ul class="skill-column__list">
+                        <li>JavaScript / ES6+</li>
+                        <li>TypeScript</li>
+                        <li>HTML5</li>
+                        <li>CSS3</li>
+                    </ul>
+                </div>
+                <div class="skill-column">
+                    <div class="skill-column__title">Frameworks & Libraries</div>
+                    <ul class="skill-column__list">
+                        <li>React</li>
+                        <li>Next.js</li>
+                        <li>Tailwind CSS</li>
+                        <li>Node.js</li>
+                    </ul>
+                </div>
+                <div class="skill-column">
+                    <div class="skill-column__title">Prototyping & Systems</div>
+                    <ul class="skill-column__list">
+                        <li>Figma</li>
+                        <li>Component UI Architecture</li>
+                        <li>RESTful API Design</li>
+                        <li>Git / Version Control</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ INSTITUTIONAL CREDENTIALS ═══ -->
+        <section class="dossier-section" id="credentials" aria-labelledby="credentials-title">
+            <span class="section-label fade-in-up">02</span>
+            <h2 class="section-title fade-in-up stagger-1" id="credentials-title">Institutional Credentials</h2>
+
+            <div class="credentials-list">
+                <div class="credential-item fade-in-up stagger-2">
+                    <div>
+                        <div class="credential-item__title">Software Engineering — Frontend Development</div>
+                        <div class="credential-item__description">
+                            Professional certification covering modern frontend architecture, component-based development
+                            patterns, and production deployment workflows.
+                        </div>
+                    </div>
+                    <div class="credential-item__meta">
+                        <div class="credential-item__authority">IBM SkillsBuild</div>
+                    </div>
+                </div>
+                <div class="credential-item fade-in-up stagger-3">
+                    <div>
+                        <div class="credential-item__title">Introduction to UX Design</div>
+                        <div class="credential-item__description">
+                            User experience design principles, user research methodology, and interface design patterns.
+                            <span style="font-family: var(--font-mono); color: var(--text-dim);">MDLPT-366</span>
+                        </div>
+                    </div>
+                    <div class="credential-item__meta">
+                        <div class="credential-item__authority">IBM SkillsBuild</div>
+                    </div>
+                </div>
+                <div class="credential-item fade-in-up stagger-3">
+                    <div>
+                        <div class="credential-item__title">Website Testing & Deployment</div>
+                        <div class="credential-item__description">
+                            End-to-end testing strategies, CI/CD pipelines, and production deployment best practices.
+                            <span style="font-family: var(--font-mono); color: var(--text-dim);">MDLPT-272</span>
+                        </div>
+                    </div>
+                    <div class="credential-item__meta">
+                        <div class="credential-item__authority">IBM SkillsBuild</div>
+                    </div>
+                </div>
+                <div class="credential-item fade-in-up stagger-4">
+                    <div>
+                        <div class="credential-item__title">Project Management Fundamentals</div>
+                        <div class="credential-item__description">
+                            Project lifecycle management, resource allocation, and stakeholder communication frameworks.
+                        </div>
+                    </div>
+                    <div class="credential-item__meta">
+                        <div class="credential-item__authority">IBM SkillsBuild</div>
+                    </div>
+                </div>
+                <div class="credential-item fade-in-up stagger-4">
+                    <div>
+                        <div class="credential-item__title">Agile Explorer</div>
+                        <div class="credential-item__description">
+                            Agile methodology, Scrum framework, sprint planning, and iterative development practices.
+                        </div>
+                    </div>
+                    <div class="credential-item__meta">
+                        <div class="credential-item__authority">IBM SkillsBuild</div>
+                    </div>
+                </div>
+                <div class="credential-item fade-in-up stagger-5">
+                    <div>
+                        <div class="credential-item__title">AI Fundamentals</div>
+                        <div class="credential-item__description">
+                            Foundational AI/ML concepts, neural network architectures, and applied machine learning
+                            workflows.
+                        </div>
+                    </div>
+                    <div class="credential-item__meta">
+                        <div class="credential-item__authority">IBM SkillsBuild</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══ PROFESSIONAL EXPERIENCE ═══ -->
+        <section class="dossier-section" id="experience" aria-labelledby="experience-title">
+            <span class="section-label fade-in-up">03</span>
+            <h2 class="section-title fade-in-up stagger-1" id="experience-title">Professional Experience</h2>
+
+            <div class="experience-list">
+
+                <!-- Outlier -->
+                <div class="experience-entry fade-in-up stagger-2">
+                    <div class="experience-entry__header">
+                        <div class="experience-entry__role">AI Coding Trainer</div>
+                        <div class="experience-entry__date">Oct 2024 — Present</div>
+                    </div>
+                    <div class="experience-entry__org">
+                        <span class="experience-entry__company">Outlier</span>
+                        <span class="experience-entry__separator">·</span>
+                        <span class="experience-entry__location">Remote</span>
+                    </div>
+                    <ul class="experience-entry__bullets">
+                        <li>Evaluated and optimized AI-generated frontend architectures, verifying component lifecycle patterns, state mutations, and modern React frameworks.</li>
+                        <li>Provided highly structured algorithmic feedback to maximize code readability, architectural design pattern correctness, and runtime efficiency of LLM code outputs.</li>
+                    </ul>
+                </div>
+
+                <!-- Upwork / Fiverr -->
+                <div class="experience-entry fade-in-up stagger-3">
+                    <div class="experience-entry__header">
+                        <div class="experience-entry__role">Freelance UI/UX Designer & Frontend Developer</div>
+                        <div class="experience-entry__date">Jan 2019 — Present</div>
+                    </div>
+                    <div class="experience-entry__org">
+                        <span class="experience-entry__company">Upwork / Fiverr</span>
+                        <span class="experience-entry__separator">·</span>
+                        <span class="experience-entry__location">Remote</span>
+                    </div>
+                    <ul class="experience-entry__bullets">
+                        <li>Engineered and deployed 50+ international client applications, translating high-fidelity interactive design systems from Figma into modular, atomic, production-ready React components.</li>
+                        <li>Designed and built performance-optimized web interfaces using Tailwind CSS and modern JavaScript ecosystems, minimizing client-side rendering bottlenecks.</li>
+                    </ul>
+                </div>
+
+                <!-- 911 -->
+                <div class="experience-entry fade-in-up stagger-4">
+                    <div class="experience-entry__header">
+                        <div class="experience-entry__role">Software Tester — Internship</div>
+                        <div class="experience-entry__date">Sept 2023 — Oct 2023</div>
+                    </div>
+                    <div class="experience-entry__org">
+                        <span class="experience-entry__company">911</span>
+                        <span class="experience-entry__separator">·</span>
+                        <span class="experience-entry__location">Alexandria, Egypt</span>
+                    </div>
+                    <ul class="experience-entry__bullets">
+                        <li>Executed intensive automated and manual functional testing suites across distributed web platforms to track, document, and reproduce architectural defects.</li>
+                        <li>Managed cross-functional defect mitigation alongside development teams to ensure consistent cross-browser performance and layout verification.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══ CORE PROJECT SHOWCASE ═══ -->
+        <section class="dossier-section" id="projects" aria-labelledby="projects-title">
+            <span class="section-label fade-in-up">04</span>
+            <h2 class="section-title fade-in-up stagger-1" id="projects-title">Core Project Showcase</h2>
+
+            <!-- TRKR -->
+            <article class="project-panel fade-in-up stagger-2" id="project-trkr">
+                <div class="project-panel__header">
+                    <div class="project-panel__name">TRKR</div>
+                    <span class="project-panel__tag">Production App</span>
+                </div>
+                <div class="project-panel__body">
+                    <p class="project-panel__description">
+                        AI-driven application tracking platform engineered to streamline job search workflows.
+                        Full-stack system featuring a Chrome extension, Gmail auto-scanner, Kanban board interface,
+                        and an AI-powered cover letter generator. Built with a focus on scalable React state management
+                        and robust AI API integration patterns.
+                    </p>
+                    <div class="project-panel__focus">
+                        <span class="focus-tag">React State Management</span>
+                        <span class="focus-tag">AI API Handling</span>
+                        <span class="focus-tag">Chrome Extension</span>
+                        <span class="focus-tag">Full-Stack</span>
+                    </div>
+                </div>
+                <div class="project-panel__actions">
+                    <a href="https://trkr-job.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="action-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                        View Production Build
+                    </a>
+                    <a href="https://github.com/YoussefElmonier" target="_blank" rel="noopener noreferrer"
+                        class="action-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        Source Repository
+                    </a>
+                </div>
+            </article>
+
+            <!-- Receta -->
+            <article class="project-panel fade-in-up stagger-3" id="project-receta">
+                <div class="project-panel__header">
+                    <div class="project-panel__name">Receta</div>
+                    <span class="project-panel__tag">Hackathon / Competitive Entry</span>
+                </div>
+                <div class="project-panel__body">
+                    <p class="project-panel__description">
+                        Recipe extraction engine designed for rapid prototyping under competitive constraints.
+                        Parses and transforms raw recipe data into structured, user-friendly formats with an
+                        emphasis on clean data flow architecture and responsive frontend implementation.
+                    </p>
+                    <div class="project-panel__focus">
+                        <span class="focus-tag">Data Extraction</span>
+                        <span class="focus-tag">Rapid Prototyping</span>
+                        <span class="focus-tag">Tailwind CSS</span>
+                        <span class="focus-tag">JavaScript</span>
+                    </div>
+                </div>
+                <div class="project-panel__actions">
+                    <a href="https://reecta-r.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="action-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                        View Production Build
+                    </a>
+                    <a href="https://github.com/YoussefElmonier" target="_blank" rel="noopener noreferrer"
+                        class="action-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        Source Repository
+                    </a>
+                </div>
+            </article>
+
+            <!-- ClimaCheck -->
+            <article class="project-panel fade-in-up stagger-4" id="project-climacheck">
+                <div class="project-panel__header">
+                    <div class="project-panel__name">ClimaCheck</div>
+                    <span class="project-panel__tag">Live Application</span>
+                </div>
+                <div class="project-panel__body">
+                    <p class="project-panel__description">
+                        Live weather intelligence application delivering real-time meteorological data through
+                        a clean, responsive interface. Engineered with a focus on asynchronous API orchestration,
+                        real-time state mapping, and graceful error handling across multiple weather data endpoints.
+                    </p>
+                    <div class="project-panel__focus">
+                        <span class="focus-tag">Async API Orchestration</span>
+                        <span class="focus-tag">Real-Time State Mapping</span>
+                        <span class="focus-tag">Tailwind CSS</span>
+                        <span class="focus-tag">Responsive Design</span>
+                    </div>
+                </div>
+                <div class="project-panel__actions">
+                    <a href="https://clima-check-five.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="action-btn">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                            <polyline points="15 3 21 3 21 9" />
+                            <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                        View Production Build
+                    </a>
+                    <a href="https://github.com/YoussefElmonier" target="_blank" rel="noopener noreferrer"
+                        class="action-btn">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                        </svg>
+                        Source Repository
+                    </a>
+                </div>
+            </article>
+        </section>
+
+        <!-- ═══ FOOTER ═══ -->
+        <footer class="dossier-footer">
+            <p class="dossier-footer__text">
+                &copy; 2026 Youssef Elmonier — Candidate Dossier
+            </p>
+        </footer>
+
+    </div>
+
+    <!-- ═══ INTERSECTION OBSERVER — SCROLL ANIMATIONS ═══ -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                },
+                {
+                    threshold: 0.1,
+                    rootMargin: '0px 0px -40px 0px',
+                }
+            );
+
+            document.querySelectorAll('.fade-in-up').forEach((el) => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body>
+
+</html>
