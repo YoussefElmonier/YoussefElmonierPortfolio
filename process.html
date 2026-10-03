@@ -1,665 +1,317 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
-    <link rel="icon" type="image/png" href="/images/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Creative Process & Projects</title>
+    <title>Process &amp; Breakdowns — Youssef Elmonier (jou.png)</title>
+    <meta name="description"
+        content="Behind the work: 3D scene environments, visualizer breakdowns, typography exploration, and production workflows by Youssef Elmonier.">
+    <meta name="author" content="Youssef Elmonier">
+    <meta name="theme-color" content="#0b0a08">
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="css/style.css" as="style">
-    <link rel="preload" href="FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="FONTS/TuskerGrotesk-5500Medium.ttf" as="font" type="font/ttf" crossorigin>
-    <!-- DNS prefetch for external resources -->
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://youssefelmonier.com/process.html">
+    <meta property="og:title" content="Process &amp; Breakdowns — Youssef Elmonier (jou.png)">
+    <meta property="og:description"
+        content="Behind the scenes of official visualizers, 3D scenes, cover artwork, and digital products.">
+    <meta property="og:image" content="/images/og-cover.jpg">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cleaned.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Process &amp; Breakdowns — Youssef Elmonier (jou.png)">
+    <meta name="twitter:description"
+        content="Behind the scenes of official visualizers, 3D scenes, cover artwork, and digital products.">
+    <meta name="twitter:image" content="/images/og-cover.jpg">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="apple-touch-icon" href="/images/logo.png">
 
-    <!-- Defer non-critical scripts for better performance -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer async></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer async></script>
+    <!-- Preload fonts -->
+    <link rel="preload" href="/FONTS/TuskerGrotesk-5700Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/FONTS/Aspekta-600.ttf" as="font" type="font/ttf" crossorigin>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/site.css">
+    <style>
+        .process-case {
+            margin-bottom: clamp(64px, 8vw, 112px);
+        }
+
+        .process-case-head {
+            margin-bottom: 28px;
+        }
+
+        .process-case-head h2 {
+            font-family: var(--font-display);
+            text-transform: uppercase;
+            font-size: clamp(34px, 4.5vw, 60px);
+            line-height: 0.95;
+            margin-top: 8px;
+        }
+
+        .process-case-head p {
+            color: var(--muted);
+            font-size: 16px;
+            margin-top: 10px;
+            max-width: 60ch;
+        }
+
+        .process-masonry {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .process-shot {
+            position: relative;
+            border-radius: var(--radius-sm);
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: var(--surface);
+            aspect-ratio: 4 / 3;
+            transition: transform var(--t) var(--ease), border-color var(--t);
+        }
+
+        .process-shot.portrait {
+            aspect-ratio: 3 / 4;
+        }
+
+        .process-shot img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 700ms var(--ease);
+        }
+
+        .process-shot__caption {
+            position: absolute;
+            inset: auto 0 0 0;
+            padding: 12px 14px;
+            background: linear-gradient(180deg, transparent, rgba(11, 10, 8, 0.92) 80%);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--sand);
+        }
+
+        @media (hover: hover) {
+            .process-shot:hover {
+                transform: translateY(-4px);
+                border-color: var(--gold);
+            }
+
+            .process-shot:hover img {
+                transform: scale(1.04);
+            }
+        }
+
+        @media (max-width: 960px) {
+            .process-masonry {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 540px) {
+            .process-masonry {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navs section-nav">
-        <div class="nav-pill">
-            <a href="index.html" class="nav-item">Home</a>
-            <a href="process.html" class="nav-item active">Process</a>
-            <a href="reels.html" class="nav-item">Reels</a>
-            <a href="AboutMe.html" class="nav-item">About</a>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ── Floating Navigation ── -->
+    <nav class="site-nav" aria-label="Main navigation">
+        <div class="site-nav__inner">
+            <a href="index.html" class="site-nav__brand" aria-label="Youssef Elmonier Homepage">
+                <img src="/images/logo.png" alt="jou.png logo" width="22" height="22">
+                <span>jou.png</span>
+            </a>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="reels.html" class="nav-link">Reels</a>
+            <a href="process.html" class="nav-link" aria-current="page">Process</a>
+            <a href="AboutMe.html" class="nav-link">About</a>
+            <a href="index.html#contact" class="nav-cta">Let's Talk</a>
         </div>
     </nav>
 
-    <div class="text-process fade-in">Behind the Work</div>
+    <header class="page-head">
+        <div class="container">
+            <span class="eyebrow">Behind The Work</span>
+            <h1>CREATIVE <br><span class="text-grad">PROCESS</span></h1>
+            <p class="lead">
+                Iterative breakdowns, 3D viewport explorations, typography drafts, and asset pipelines from concept to final export.
+            </p>
+        </div>
+    </header>
 
-    <div class="projects-container">
-        <div class="project-section fade-up">
-            <h2 class="slide-in"> Alaab Artwork Design Process</h2>
-            <p class="project-description fade-in">Exploring the journey from concept to final design through careful
-                iteration</p>
-            <div class="masonry-grid">
-                <div class="grid-item landscape">
-                    <img src="images/Creative-process-final-ba2a_01.jpg" alt="UI Design Process" loading="lazy"
-                        decoding="async" decoding="async" width="600" height="400">
-                    <div class="item-description">Going Through The Design Process </div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/Creative-process-final-ba2a_02.jpg" alt="UI Components" loading="lazy"
-                        decoding="async" width="400" height="600">
-                    <div class="item-description"> Typography </div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/Creative-process-final-ba2a_03.jpg" alt="UI Design" loading="lazy" decoding="async"
-                        width="400" height="600">
-                    <div class="item-description">Possible Versions & Drafts</div>
-                </div>
-                <div class="grid-item landscape">
-                    <img src="images/Creative-process-final-ba2a_04.jpg" alt="UI Testing" loading="lazy"
-                        decoding="async" width="600" height="400">
-                    <div class="item-description">Alaab Production Team </div>
-                </div>
-            </div>
-        </div>
+    <main id="main" class="section" style="padding-top: clamp(48px, 6vw, 80px);">
+        <div class="container">
 
-        <div class="project-section fade-up">
-            <h2 class="slide-in">Ard El Nefaq Ep Cover Process </h2>
-            <p class="project-description fade-in">Crafting smooth, meaningful animations that enhance user experience
-                and brand storytelling.</p>
-            <div class="masonry-grid">
-                <div class="grid-item landscape">
-                    <img src="images/Creative-processard_02.jpg" alt="Motion Design" loading="lazy" decoding="async"
-                        width="600" height="400">
-                    <div class="item-description">Main Artwork </div>
+            <!-- CASE 1: Alaab -->
+            <article class="process-case reveal">
+                <div class="process-case-head">
+                    <span class="eyebrow">Cover Artwork &amp; Credits</span>
+                    <h2>Alaab Artwork Design Process</h2>
+                    <p>Exploring the journey from concept to final typography through careful iteration for Moscow's release.</p>
                 </div>
-                <div class="grid-item portrait">
-                    <img src="images/Creative-processard_03.jpg" alt="Motion Graphics" loading="lazy" decoding="async"
-                        width="400" height="600">
-                    <div class="item-description">Typography</div>
-                </div>
-                <div class="grid-item landscape">
-                    <img src="images/Creative-processard_04.jpg" alt="Motion Effects" loading="lazy" decoding="async"
-                        width="600" height="400">
-                    <div class="item-description">Possible Versions</div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/webp/Creative-processard_05.webp" alt="Animation Process" loading="lazy" decoding="async"
-                        width="400" height="600">
-                    <div class="item-description">Could have been official</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="project-section fade-up">
-            <h2 class="slide-in">Diana Apotheken Rebranding</h2>
-            <p class="project-description fade-in">Crafting unique and memorable brand identities through iterative
-                design exploration.</p>
-            <div class="masonry-grid">
-                <div class="grid-item landscape">
-                    <img src="images/diana1.png" alt="Brand Identity" loading="lazy" decoding="async" width="600"
-                        height="400">
-                    <div class="item-description">Brand Guidelines</div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/diana.png" alt="Brand Applications" loading="lazy" decoding="async" width="400"
-                        height="600">
-                    <div class="item-description">Product Mockup </div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/diana2.jpeg" alt="Brand Guidelines" loading="lazy" decoding="async" width="400"
-                        height="600">
-                    <div class="item-description">Product Mockup</div>
-                </div>
-                <div class="grid-item landscape">
-                    <img src="images/diana4.png" alt="Brand Implementation" loading="lazy" decoding="async" width="600"
-                        height="400">
-                    <div class="item-description">Brand Guidelines</div>
-                </div>
-            </div>
-        </div>
-        <div class="project-section fade-up">
-            <h2 class="slide-in">Kufta W Tameya Product Design & Packaging </h2>
-            <p class="project-description fade-in">Crafting unique and memorable brand identities through iterative
-                design exploration.</p>
-            <div class="masonry-grid">
-                <div class="grid-item landscape">
-                    <img src="images/kufta2.png" alt="Brand Identity" loading="lazy" decoding="async" width="600"
-                        height="400">
-                    <div class="item-description">Logo Refurbish</div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/kufta6.jpeg" alt="Brand Applications" loading="lazy" decoding="async" width="400"
-                        height="600">
-                    <div class="item-description">Product Mockup </div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/kufta3.jpeg" alt="Brand Guidelines" loading="lazy" decoding="async" width="400"
-                        height="600">
-                    <div class="item-description">Product Mockup</div>
-                </div>
-                <div class="grid-item landscape">
-                    <img src="images/kufta7.jpeg" alt="Brand Implementation" loading="lazy" decoding="async" width="600"
-                        height="400">
-                    <div class="item-description">Product Mockup</div>
-                </div>
-            </div>
-        </div>
-        <div class="project-section fade-up">
-            <h2 class="slide-in">Moscow Monalisa 3D Visualizer </h2>
-            <p class="project-description fade-in">Crafting unique and memorable brand identities through iterative
-                design exploration.</p>
-            <div class="masonry-grid">
-                <div class="grid-item landscape">
-                    <img src="images/mona1.jpeg" alt="Brand Identity" loading="lazy" decoding="async" width="600"
-                        height="400">
-                    <div class="item-description">Main Scene</div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/mona2.jpeg" alt="Brand Applications" loading="lazy" decoding="async" width="400"
-                        height="600">
-                    <div class="item-description"> 3D Props </div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/mona3.jpeg" alt="Brand Guidelines" loading="lazy" decoding="async" width="400"
-                        height="600">
-                    <div class="item-description">Secondary Scene</div>
-                </div>
-                <div class="grid-item landscape">
-                    <img src="images/mona4.jpeg" alt="Brand Implementation" loading="lazy" decoding="async" width="600"
-                        height="400">
-                    <div class="item-description">Scene Environment</div>
-                </div>
-            </div>
-        </div>
-        <div class="project-section fade-up">
-            <h2 class="slide-in">Pubg Mobile 3D Visualizer </h2>
-            <p class="project-description fade-in">Crafting unique and memorable brand identities through iterative
-                design exploration.</p>
-            <div class="masonry-grid">
-                <div class="grid-item landscape">
-                    <img src="images/pubg2.jpeg" alt="Brand Identity" loading="lazy" decoding="async" width="600"
-                        height="400">
-                    <div class="item-description">3D Props</div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/pubg1.png" alt="Brand Applications" loading="lazy" decoding="async" width="400"
-                        height="600">
-                    <div class="item-description">Blender Procces</div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/pubg3.jpeg" alt="Brand Guidelines" loading="lazy" decoding="async" width="400"
-                        height="600">
-                    <div class="item-description">Another Angle</div>
-                </div>
-                <div class="grid-item landscape">
-                    <img src="images/pubg4.jpeg" alt="Brand Implementation" loading="lazy" decoding="async" width="600"
-                        height="400">
-                    <div class="item-description">Another Angle</div>
-                </div>
-            </div>
-        </div>
-        <div class="project-section fade-up">
-            <h2 class="slide-in">Xtra Time Website </h2>
-            <p class="project-description fade-in">Designed the complete Website ,UI ,and UX for Xtra Time website,
-                focusing on delivering a
-                seamless and user-friendly experience.</p>
-            <div class="masonry-grid">
-                <div class="grid-item landscape">
-                    <img src="images/web15.jpeg" alt="Brand Identity" loading="lazy" decoding="async" width="600"
-                        height="400">
-                    <div class="item-description">Main Section </div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/web151.png" alt="Brand Applications" loading="lazy" decoding="async" width="400"
-                        height="600">
-                    <div class="item-description">League Table </div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/web153.png" alt="Brand Guidelines" loading="lazy" decoding="async" width="400"
-                        height="600">
-                    <div class="item-description">Todays Match </div>
-                </div>
-                <div class="grid-item landscape">
-                    <img src="images/webp/web154.webp" alt="Brand Implementation" loading="lazy" decoding="async" width="600"
-                        height="400">
-                    <div class="item-description"> News </div>
-                </div>
-            </div>
-        </div>
-        <div class="project-section fade-up">
-            <h2 class="slide-in">Receta Website & Product Design </h2>
-            <p class="project-description fade-in">Designed the complete Website ,Product Design for the app using Rive & Figma,and UX for Receta website,
-                focusing on delivering a
-                seamless and user-friendly experience.</p>
-            <div class="masonry-grid">
-                <div class="grid-item landscape">
-                    <img src="images/webp/m1final.webp" alt=" Mobile Mockups" loading="lazy" decoding="async" width="600"
-                        height="400">
-                    <div class="item-description">Recepie Section </div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/webp/m4final.webp" alt="Mobile Mockups" loading="lazy" decoding="async" width="400"
-                        height="600">
-                    <div class="item-description">App home  </div>
-                </div>
-                <div class="grid-item portrait">
-                    <img src="images/webp/m2final.webp" alt="Mobile Mockups" loading="lazy" decoding="async" width="400"
-                        height="600">
-                    <div class="item-description"> Mockups</div>
-                </div>
-                <div class="grid-item landscape">
-                    <img src="images/webp/receta.webp" alt="Landing page design" loading="lazy" decoding="async" width="600"
-                        height="400">
-                    <div class="item-description"> Receta Website  </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- New Reels Section
-        <div class="project-section fade-up">
-            <h2 class="slide-in">Reels</h2>
-            <p class="project-description fade-in">Showcasing dynamic video content and motion graphics work.</p>
-            <div class="reels-grid">
-                <div class="reel-item fade-in">
-                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy"
-                        decoding="async" preload="metadata" width="400" height="300">
-                        <source src="manga2.mp4" type="video/mp4">
-                        <source src="manga2.webm" type="video/webm">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="reel-info">
-                        <h3>Motion Graphics Reel</h3>
-                        <p>Creative motion graphics and animation showcase</p>
+                <div class="process-masonry">
+                    <div class="process-shot">
+                        <img src="/images/webp/Creative-process-final-ba2a_01.webp" alt="Design Process" loading="lazy" decoding="async" width="600" height="450">
+                        <div class="process-shot__caption">Design Exploration</div>
+                    </div>
+                    <div class="process-shot portrait">
+                        <img src="/images/webp/Creative-process-final-ba2a_02.webp" alt="Typography Exploration" loading="lazy" decoding="async" width="450" height="600">
+                        <div class="process-shot__caption">Custom Typography</div>
+                    </div>
+                    <div class="process-shot portrait">
+                        <img src="/images/webp/Creative-process-final-ba2a_03.webp" alt="Possible Versions" loading="lazy" decoding="async" width="450" height="600">
+                        <div class="process-shot__caption">Draft Versions</div>
+                    </div>
+                    <div class="process-shot">
+                        <img src="/images/webp/Creative-process-final-ba2a_04.webp" alt="Production Team" loading="lazy" decoding="async" width="600" height="450">
+                        <div class="process-shot__caption">Production Credits</div>
                     </div>
                 </div>
-                <div class="reel-item fade-in">
-                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy"
-                        decoding="async" preload="metadata" width="400" height="300">
-                        <source src="manga222.mp4" type="video/mp4">
-                        <source src="manga222.webm" type="video/webm">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="reel-info">
-                        <h3>Visual Effects Reel</h3>
-                        <p>Visual effects and compositing work</p>
+            </article>
+
+            <!-- CASE 2: Ard El Nefaq -->
+            <article class="process-case reveal">
+                <div class="process-case-head">
+                    <span class="eyebrow">EP Visual Identity</span>
+                    <h2>Ard El Nefaq EP Cover Process</h2>
+                    <p>Crafting dark atmospheric textures, bold typography, and mood explorations for Moscow's EP.</p>
+                </div>
+                <div class="process-masonry">
+                    <div class="process-shot">
+                        <img src="/images/webp/Creative-processard_02.webp" alt="Main Artwork" loading="lazy" decoding="async" width="600" height="450">
+                        <div class="process-shot__caption">Main Artwork Direction</div>
+                    </div>
+                    <div class="process-shot portrait">
+                        <img src="/images/webp/Creative-processard_03.webp" alt="Typography treatment" loading="lazy" decoding="async" width="450" height="600">
+                        <div class="process-shot__caption">Typography Treatment</div>
+                    </div>
+                    <div class="process-shot">
+                        <img src="/images/webp/Creative-processard_04.webp" alt="Draft versions" loading="lazy" decoding="async" width="600" height="450">
+                        <div class="process-shot__caption">Alternative Treatments</div>
+                    </div>
+                    <div class="process-shot portrait">
+                        <img src="/images/webp/Creative-processard_05.webp" alt="Alternative cover" loading="lazy" decoding="async" width="450" height="600">
+                        <div class="process-shot__caption">Alternative Cover Draft</div>
                     </div>
                 </div>
-                <div class="reel-item fade-in">
-                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy"
-                        decoding="async" preload="metadata" width="400" height="300">
-                        <source src="images/proj.mp4" type="video/mp4">
-                        <source src="images/proj.webm" type="video/webm">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="reel-info">
-                        <h3>Project Showcase</h3>
-                        <p>Highlights from recent project work</p>
+            </article>
+
+            <!-- CASE 3: Moscow Monalisa -->
+            <article class="process-case reveal">
+                <div class="process-case-head">
+                    <span class="eyebrow">3D CGI &amp; Environment</span>
+                    <h2>Moscow — Monalisa 3D Visualizer</h2>
+                    <p>Building two contrasting 3D scene aesthetics in Blender: a warm vintage computer desk and a futuristic neon corridor.</p>
+                </div>
+                <div class="process-masonry">
+                    <div class="process-shot">
+                        <img src="/images/webp/mona1.webp" alt="Main Scene" loading="lazy" decoding="async" width="600" height="450">
+                        <div class="process-shot__caption">Main Desktop Scene</div>
+                    </div>
+                    <div class="process-shot portrait">
+                        <img src="/images/webp/mona2.webp" alt="3D Props" loading="lazy" decoding="async" width="450" height="600">
+                        <div class="process-shot__caption">Vintage 3D Props Modeling</div>
+                    </div>
+                    <div class="process-shot portrait">
+                        <img src="/images/webp/mona3.webp" alt="Secondary Scene" loading="lazy" decoding="async" width="450" height="600">
+                        <div class="process-shot__caption">Secondary Environment Lighting</div>
+                    </div>
+                    <div class="process-shot">
+                        <img src="/images/webp/mona4.webp" alt="Scene Environment" loading="lazy" decoding="async" width="600" height="450">
+                        <div class="process-shot__caption">Final Volumetric Lighting</div>
                     </div>
                 </div>
-                <div class="reel-item fade-in">
-                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy"
-                        decoding="async" preload="metadata" width="400" height="300">
-                        <source src="images/proj.mp4" type="video/mp4">
-                        <source src="images/proj.webm" type="video/webm">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="reel-info">
-                        <h3>Animation Reel</h3>
-                        <p>Sample animation and character work</p>
+            </article>
+
+            <!-- CASE 4: PUBG Mobile -->
+            <article class="process-case reveal">
+                <div class="process-case-head">
+                    <span class="eyebrow">Game Franchise 3D</span>
+                    <h2>PUBG Mobile — Victor Adventures</h2>
+                    <p>High-energy 3D modeling, prop design, and cinematic angle tests crafted in Blender.</p>
+                </div>
+                <div class="process-masonry">
+                    <div class="process-shot">
+                        <img src="/images/webp/pubg2.webp" alt="3D Props" loading="lazy" decoding="async" width="600" height="450">
+                        <div class="process-shot__caption">3D Weapon &amp; Prop Models</div>
+                    </div>
+                    <div class="process-shot portrait">
+                        <img src="/images/webp/pubg1.webp" alt="Blender Process" loading="lazy" decoding="async" width="450" height="600">
+                        <div class="process-shot__caption">Blender Viewport Rigging</div>
+                    </div>
+                    <div class="process-shot portrait">
+                        <img src="/images/webp/pubg3.webp" alt="Camera Angles" loading="lazy" decoding="async" width="450" height="600">
+                        <div class="process-shot__caption">Camera Framing Angle A</div>
+                    </div>
+                    <div class="process-shot">
+                        <img src="/images/webp/pubg4.webp" alt="Camera Framing" loading="lazy" decoding="async" width="600" height="450">
+                        <div class="process-shot__caption">Camera Framing Angle B</div>
                     </div>
                 </div>
-                <div class="reel-item fade-in">
-                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy"
-                        decoding="async" preload="metadata" width="400" height="300">
-                        <source src="images/proj.mp4" type="video/mp4">
-                        <source src="images/proj.webm" type="video/webm">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="reel-info">
-                        <h3>Design Reel</h3>
-                        <p>Graphic design and branding highlights</p>
+            </article>
+
+            <!-- CASE 5: Receta -->
+            <article class="process-case reveal">
+                <div class="process-case-head">
+                    <span class="eyebrow">Product &amp; Motion Design</span>
+                    <h2>Receta App &amp; Web Platform</h2>
+                    <p>Interactive prototype and component design crafted with Rive, Figma, and Tailwind CSS.</p>
+                </div>
+                <div class="process-masonry">
+                    <div class="process-shot">
+                        <img src="/images/webp/m1final.webp" alt="Recipe Section Mockup" loading="lazy" decoding="async" width="600" height="450">
+                        <div class="process-shot__caption">Recipe Card Exploration</div>
+                    </div>
+                    <div class="process-shot portrait">
+                        <img src="/images/webp/m4final.webp" alt="App Home View" loading="lazy" decoding="async" width="450" height="600">
+                        <div class="process-shot__caption">Mobile App Home Screen</div>
+                    </div>
+                    <div class="process-shot portrait">
+                        <img src="/images/webp/m2final.webp" alt="Mockup Components" loading="lazy" decoding="async" width="450" height="600">
+                        <div class="process-shot__caption">Interactive Micro-States</div>
+                    </div>
+                    <div class="process-shot">
+                        <img src="/images/webp/receta.webp" alt="Receta Landing Page" loading="lazy" decoding="async" width="600" height="450">
+                        <div class="process-shot__caption">Responsive Web Landing Page</div>
                     </div>
                 </div>
-                <div class="reel-item fade-in">
-                    <video class="reel-video" autoplay loop muted playsinline webkit-playsinline loading="lazy"
-                        decoding="async" preload="metadata" width="400" height="300">
-                        <source src="images/proj.mp4" type="video/mp4">
-                        <source src="images/proj.webm" type="video/webm">
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="reel-info">
-                        <h3>Concept Art Reel</h3>
-                        <p>Concept art and visual development</p>
-                    </div>
-                </div>
+            </article>
+
+        </div>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <div>
+                <p>&copy; <span data-year>2026</span> Youssef Elmonier (@jou.png). All rights reserved.</p>
+                <p style="margin-top: 4px; color: var(--dim);">&copy; Banger Management</p>
             </div>
-        </div>fi
-    </div> -->
+            <ul class="socials" aria-label="Social and professional profiles">
+                <li><a href="https://www.instagram.com/jou.png/" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://www.behance.net/youssefelmonier" target="_blank" rel="noopener">Behance</a></li>
+                <li><a href="https://www.linkedin.com/in/youssef-elmonier-1a670020b/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://github.com/YoussefElmonier" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://wa.me/qr/JZ3OAP5EOO3KI1" target="_blank" rel="noopener">WhatsApp</a></li>
+                <li><a data-cv href="#" class="btn" style="min-height:36px;padding:6px 14px;">CV</a></li>
+            </ul>
+        </div>
+    </footer>
 
-        <style>
-            .text-process {
-                font-family:'aspekta';
-                font-weight:bolder;
-                color: #fff;
-                text-align: center;
-                font-size: 8rem;
-                margin: 0;
-                padding-top: 140px;
-                padding-bottom: 40px;
-                position: relative;
-                letter-spacing: 4px;
-                text-transform: uppercase;
-            }
-
-            .text-with-lines::before,
-            .text-with-lines::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                width: 200px;
-                height: 2px;
-                background: #fff;
-            }
-
-            .text-with-lines::before {
-                right: calc(50% + 180px);
-            }
-
-            .text-with-lines::after {
-                left: calc(50% + 180px);
-            }
-
-            @media (max-width: 768px) {
-                .text-process {
-                    font-family:'aspekta';
-                    font-size: 5rem;
-                    font-weight:bolder;
-                    padding-top: 100px;
-                    padding-bottom: 0px;
-                    margin: auto;
-                    line-height: 0.9;
-                }
-
-                .text-with-lines {
-                    font-size: 4rem;
-                }
-
-                .text-with-lines::before,
-                .text-with-lines::after {
-                    width: 60px;
-                }
-            }
-
-            /* Reels Grid Styling */
-            .reels-grid {
-                display: grid;
-                grid-template-columns: repeat(3, 1fr);
-                grid-template-rows: repeat(2, auto);
-                gap: 20px;
-            }
-        </style>
-
-        <style>
-            body {
-                background: #000;
-                color: #fff;
-                margin: 0;
-                padding: 20px;
-                font-family: 'Aspekta', sans-serif;
-            }
-
-
-            .text-with-lines::before,
-            .text-with-lines::after {
-                content: '';
-                position: absolute;
-                top: 50%;
-                width: 100px;
-                height: 1px;
-                background: #fff;
-            }
-
-            .text-with-lines::before {
-                right: calc(50% + 100px);
-            }
-
-            .text-with-lines::after {
-                left: calc(50% + 100px);
-            }
-
-            .projects-container {
-                max-width: 1600px;
-                margin: 0 auto;
-                padding: 2rem;
-            }
-
-            .project-section {
-                margin-bottom: 4rem;
-            }
-
-            .project-section h2 {
-                color: #fff;
-                font-size: 2rem;
-                margin-bottom: 1rem;
-            }
-
-            .project-description {
-                color: #aaa;
-                font-size: 1.1rem;
-                margin-bottom: 2rem;
-                max-width: 800px;
-            }
-
-            .masonry-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-                grid-auto-rows: 300px;
-                grid-auto-flow: dense;
-                gap: 20px;
-            }
-
-            .grid-item {
-                position: relative;
-                overflow: hidden;
-                border-radius: 10px;
-                transition: transform 0.3s ease;
-            }
-
-            .grid-item:hover {
-                transform: scale(1.02);
-                scale: 1.06;
-            }
-
-            .grid-item img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                filter: grayscale(100%);
-                transition: filter 0.3s ease;
-            }
-
-            .grid-item:hover img {
-                filter: grayscale(0%);
-
-            }
-
-            .item-description {
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                right: 0;
-                padding: 15px;
-                background: rgba(0, 0, 0, 0.7);
-                color: #fff;
-                font-size: 0.9rem;
-                transform: translateY(100%);
-                transition: transform 0.3s ease;
-            }
-
-            .grid-item:hover .item-description {
-                transform: translateY(0);
-            }
-
-            .landscape {
-                grid-column: span;
-            }
-
-            .portrait {
-                grid-row: span;
-            }
-
-            @media (max-width: 768px) {
-                .masonry-grid {
-                    grid-template-columns: 1fr;
-                }
-
-                .landscape {
-                    grid-column: span 1;
-                }
-
-                .portrait {
-                    grid-row: span 1;
-                }
-
-                .text-with-lines::before,
-                .text-with-lines::after {
-                    width: 50px;
-                }
-
-                .text-with-lines::before {
-                    right: calc(50% + 60px);
-                }
-
-                .text-with-lines::after {
-                    left: calc(50% + 60px);
-                }
-            }
-        </style>
-
-        <style>
-            .fade-in {
-                opacity: 0;
-                transform: translateY(20px);
-                transition: opacity 0.6s ease, transform 0.6s ease;
-            }
-
-            .fade-in.active {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            .fade-up {
-                opacity: 0;
-                transform: translateY(40px);
-                transition: all 0.8s ease;
-            }
-
-            .fade-up.active {
-                opacity: 1;
-                transform: translateY(0);
-            }
-
-            .slide-in {
-                opacity: 0;
-                transform: translateX(-50px);
-                transition: all 0.6s ease;
-            }
-
-            .slide-in.active {
-                opacity: 1;
-                transform: translateX(0);
-            }
-
-            .project-description {
-                transition-delay: 0.2s;
-            }
-
-            .grid-item {
-                opacity: 0;
-                transform: scale(0.95);
-                transition: all 0.6s ease;
-            }
-
-            .grid-item.active {
-                opacity: 1;
-                transform: scale(1);
-            }
-
-            /* Reel item animations */
-            .reel-item {
-                transition-delay: 0.3s;
-            }
-
-            .projects-container,
-            .main-content,
-            .about-container {
-                margin-top: 120px;
-            }
-
-            @media (max-width: 600px) {
-
-                .projects-container,
-                .main-content,
-                .about-container {
-                    margin-top: 90px;
-                }
-            }
-        </style>
-
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                // Use requestIdleCallback for better performance
-                const scheduleWork = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
-
-                scheduleWork(() => {
-                    // Initial animation for the title
-                    setTimeout(() => {
-                        const titleEl = document.querySelector('.text-process');
-                        if (titleEl) titleEl.classList.add('active');
-                    }, 300);
-
-                    // Intersection Observer for scroll animations with performance optimizations
-                    const observer = new IntersectionObserver((entries) => {
-                        entries.forEach(entry => {
-                            if (entry.isIntersecting) {
-                                entry.target.classList.add('active');
-
-                                // Animate grid items with stagger
-                                if (entry.target.classList.contains('project-section')) {
-                                    const gridItems = entry.target.querySelectorAll('.grid-item, .reel-item');
-                                    gridItems.forEach((item, index) => {
-                                        setTimeout(() => {
-                                            item.classList.add('active');
-                                        }, index * 100); // Reduced delay for faster animation
-                                    });
-                                }
-
-                                // Stop observing once animated
-                                observer.unobserve(entry.target);
-                            }
-                        });
-                    }, {
-                        threshold: 0.1, // Reduced threshold for earlier triggering
-                        rootMargin: '50px' // Start loading slightly before viewport
-                    });
-
-                    // Observe all animated elements
-                    document.querySelectorAll('.fade-up, .fade-in, .slide-in, .project-section').forEach(el => {
-                        observer.observe(el);
-                    });
-                });
-            });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer async></script>
-        <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js" defer async></script>
-        <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-        <script src="JavaScript/main.js" defer></script>
-        <script src="js/scripts.js" defer></script>
+    <!-- Scripts -->
+    <script src="js/content.js"></script>
+    <script src="js/site.js"></script>
 </body>
 
 </html>

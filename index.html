@@ -1,804 +1,622 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
-    <link rel="icon" type="image/png" href="/images/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Youssef Elmonier (jou.png) — AI Filmmaker & 3D Visualizer</title>
+    <meta name="description"
+        content="Egyptian-rooted AI video, CGI, and 3D visuals for music and culture. Director, AI filmmaker and 3D visualizer based in Egypt.">
+    <meta name="author" content="Youssef Elmonier">
+    <meta name="theme-color" content="#0b0a08">
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="css/cleaned.css" as="style">
-    <link rel="preload" href="css/custom.css" as="style">
-    <link rel="preload" href="/FONTS/oddlini-bold-ultra-expanded.ttf" as="font" type="font/ttf" crossorigin>
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://youssefelmonier.com/">
+    <meta property="og:title" content="Youssef Elmonier (jou.png) — AI Filmmaker & 3D Visualizer">
+    <meta property="og:description"
+        content="Egyptian-rooted AI video, CGI and visuals for music and culture. Official visuals for Abyusif, Moscow, 3abaz, Dezel Uzi, and more.">
+    <meta property="og:image" content="/images/og-cover.jpg">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Youssef Elmonier (jou.png) — AI Filmmaker & 3D Visualizer">
+    <meta name="twitter:description"
+        content="Egyptian-rooted AI video, CGI and visuals for music and culture. Official visuals for Abyusif, Moscow, 3abaz, Dezel Uzi, and more.">
+    <meta name="twitter:image" content="/images/og-cover.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="apple-touch-icon" href="/images/logo.png">
+
+    <!-- Preload core fonts & hero poster -->
+    <link rel="preload" href="/FONTS/TuskerGrotesk-5700Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
     <link rel="preload" href="/FONTS/Aspekta-600.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/FONTS/Aspekta-900.ttf" as="font" type="font/ttf" crossorigin>
-    <link rel="preload" href="/FONTS/TuskerGrotesk-5500Medium.ttf" as="font" type="font/ttf" crossorigin>
-    <!-- DNS prefetch for external resources -->
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
-    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
-    <link rel="dns-prefetch" href="https://assets.codepen.io">
+    <link rel="preload" href="/images/webp/hero-poster.webp" as="image">
 
-    <link rel="stylesheet" href="css/cleaned.css">
-    <link rel="stylesheet" href="css/custom.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script>
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/site.css">
 </head>
 
-<body id="vertical">
-    <nav class="navs section-nav">
-        <div class="nav-pill">
-            <a href="index.html" class="nav-item active">Home</a>
-            <a href="process.html" class="nav-item">Process</a>
-            <a href="reels.html" class="nav-item">Reels</a>
-            <a href="AboutMe.html" class="nav-item">About</a>
-            <a href="/applied-cs" class="nav-item">Dossier</a>
+<body>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ── Floating Navigation ── -->
+    <nav class="site-nav" aria-label="Main navigation">
+        <div class="site-nav__inner">
+            <a href="index.html" class="site-nav__brand" aria-label="Youssef Elmonier Homepage">
+                <img src="/images/logo.png" alt="jou.png logo" width="22" height="22">
+                <span>jou.png</span>
+            </a>
+            <a href="index.html" class="nav-link" aria-current="page">Home</a>
+            <a href="reels.html" class="nav-link">Reels</a>
+            <a href="process.html" class="nav-link">Process</a>
+            <a href="AboutMe.html" class="nav-link">About</a>
+            <a href="#contact" class="nav-cta">Let's Talk</a>
         </div>
     </nav>
-    <div class="sidebar">
-        <div class="icon-container">
-            <a href="https://www.instagram.com/jou.png/" target="_blank">
-                <img src="/images/webp/insta.webp" alt="Instagram" loading="lazy" decoding="async" width="24"
-                    height="24">
-            </a>
-            <a href="https://www.behance.net/youssefelmonier" target="_blank">
-                <img src="/images/webp/behance.webp" alt="Behance" loading="lazy" decoding="async" width="24"
-                    height="24">
-            </a>
-            <a href="https://www.linkedin.com/in/youssef-elmonier-1a670020b/" target="_blank">
-                <img src="/images/webp/linked.webp" alt="linked" loading="lazy" decoding="async" width="24" height="24">
-            </a>
-            <a href="mailto:youssifelmonier66@gmail.com" target="_blank">
-                <img src="/images/webp/email.webp" alt="email" loading="lazy" decoding="async" width="24" height="24">
-            </a>
-            <a href="https://wa.me/qr/JZ3OAP5EOO3KI1" target="_blank">
-                <img src="/images/webp/whats.webp" alt="WhatsApp" loading="lazy" decoding="async" width="24"
-                    height="24">
-            </a>
-            <a href="" target="https://drive.google.com/file/d/1rCvtq3se5HZGZ5EuYxnOCvA9tLct-zKs/view?usp=sharing">
-                <img src="/images/webp/cv.webp" alt="CV" loading="lazy" decoding="async" width="24" height="24">
-            </a>
+
+    <!-- ── Hero Section ── -->
+    <header class="hero">
+        <div class="hero__media">
+            <video data-hero-video data-src="videos/optimized/hero-loop.mp4"
+                data-src-mobile="videos/optimized/hero-loop-mobile.mp4" autoplay loop muted playsinline
+                poster="/images/webp/hero-poster.webp" aria-hidden="true" tabindex="-1">
+            </video>
         </div>
-    </div>
-    </div>
-    <section id="home">
         <div class="container">
-            <div id="hello" class="hello hidden"><span class="highlight">HELLO </span> I'AM</div>
-            <div id="name" class="name6 hidden">YOUSSEF <br> ELMONIER</div>
-            <div id="job" class="job hidden">I'm a <span class="highlight">Software Engineer </span>&<span
-                    class="gray-text">,3D Visualizer</span></div>
-        </div>
-
-        <video autoplay loop muted playsinline webkit-playsinline class="background-clip" preload="metadata"
-            loading="lazy">
-            <source src="videos/optimized/manga2.mp4" type="video/mp4">
-            <source src="videos/optimized/manga2.webm" type="video/webm">
-            <source src="videos/optimized/manga222.mp4" type="video/mp4" media="(max-width: 599px)">
-            <source src="videos/optimized/manga222.webm" type="video/webm" media="(max-width: 599px)">
-        </video>
-        <div class="skills-section">
-            <div class="cardSkill animation">
-                <h3>Software Engineering</h3>
-                <p>"Have a good experience in React HTML, CSS(Tailwind), and JavaScript for creating engaging websites.
-                    Expanding into AI and
-                    machine learning development."</p>
+            <div class="hero__kicker">
+                <span class="dot" aria-hidden="true"></span>
+                <span>Youssef Elmonier · @jou.png</span>
+                <span aria-hidden="true">/</span>
+                <span>Cairo, Egypt</span>
             </div>
-            <div class="cardSkill animation">
-                <h3>3D & Graphic Design</h3>
-                <p>"Have a good experience in Photoshop and 3D Blender ,figma ,Rive,and in DaVinci Resolve and Adobe
-                    Premiere ,
-                    crafting stunning visuals for branding and music visuals."</p>
-            </div>
-        </div>
-        <!-- </div> -->
-    </section>
-
-    <!-- </section> -->
-    <section class="project">
-        <div class="Projects">
-            <div class="projects-header" onclick="toggleProjects(this)">
-                <p>3D Projects</p>
-                <svg class="projects-chevron" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </div>
-            <div class="projects-wrapper">
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/grr.webp" loading="lazy" decoding="async" alt="Abyusif GRRR Project">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Abyusif</h2>
-                            <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/198939571/Official-3D-Visuals-for-Abyusif-Grrr-Official-Artwork', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>GRRR</h3>
-                            <h4>Official 3D Visualizer</h4>
-                            <p3>"Created a fully immersive 3D visualizer for Egyptian
-                                rap legend Abyusif,<br>utilizing
-                                Blender for
-                                the 3D modeling and Adobe Premiere
-                                for post-production and editing."</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class=" row vertical__item animation Proj-container">
-                    <img src="/images/webp/MonalisaYTB.webp" loading="lazy" decoding="async"
-                        alt="Moscow Monalisa Project">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Moscow</h2> <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/201141085/Moscow-Monalisa-Official-3D-Visualizer', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Monalisa</h3>
-                            <h4>Official 3D Visualizer</h4>
-                            <p3>"Designed a dynamic 3D scene for Moscow's track
-                                'Monalisa' using Blender.<br>
-                                The scene
-                                features
-                                two
-                                contrasting parts: one with a vintage
-                                aesthetic and the other<br>
-                                with a futuristic vibe,
-                                blending
-                                both styles seamlessly."</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/11.webp" loading="lazy" decoding="async" alt="PUBG Mobile Project">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Pubg</h2> <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/198939075/Official-3D-model-for-pubg-mobile', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="5" height="5">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Pubg Mobile</h3>
-                            <h4>Official 3D Intro</h4>
-                            <p3>"Crafted a high-energy 3D intro for
-                                the PUBG series
-                                'Victor Adventures' using Blender,<br>
-                                delivering a visually engaging
-                                opening sequence
-                                <br>that sets the tone for the
-                                action-packed
-                                series."
-                            </p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/uzi.webp" loading="lazy" decoding="async" alt="Dezel Uzi Project">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Dezel Uzi</h2> <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/198938963/Dezel-Uzi-EP-Cover-Using-3D-Blender', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Mourad EP</h3>
-                            <h4>3D Visuals & Artwork</h4>
-                            <p3>"Created a captivating
-                                3D museum environment
-                                for Dezel Uzi's album <br>'Mourad' using
-                                Blender,
-                                offering an artistic
-                                space <br>that visually
-                                represents the album's
-                                themes and mood."</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/3ab3az.webp" loading="lazy" decoding="async" alt="3ab3az Project">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>3ab3az</h2> <button class="project-icon-button"
-                                onclick="window.open('https://www.youtube.com/watch?v=qHeQ29m_9v4', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Feen El E7sas EP</h3>
-                            <h4>3D CGI and VFX</h4>
-                            <p3>"Integrated CGI and
-                                3D plushies into real
-                                footage for <br> 3abaz's music video,
-                                seamlessly blending
-                                digital creations <br>
-                                with live-action using
-                                advanced CGI techniques."</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/bee.webp" loading="lazy" decoding="async" alt="Bee Group Project">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Bee GRP</h2> <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/201141333/Bee-Group-Eid-Ad-VFX', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Bee Grp Eid Ad</h3>
-                            <h4>Cgi & 3D</h4>
-                            <p3>"Produced a CGI/VFX 3D advertisement for Bee Group's Eid campaign <br> using Blender for
-                                the
-                                3D
-                                modeling and DaVinci Resolve for post-production, <br>creating a visually striking and
-                                festive
-                                promotional piece."</p3>
-                        </div>
-                    </div>
-                </div>
+            <h1>
+                <span class="line">AI FILMMAKER</span>
+                <span class="line text-grad">&amp;&nbsp;3D VISUALIZER</span>
+            </h1>
+            <p class="hero__sub">
+                Egyptian-rooted AI video, CGI and visuals for music and culture.
+            </p>
+            <div class="hero__actions">
+                <a href="#featured-reels" class="btn btn--primary">
+                    <span>Watch AI Reels</span>
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" aria-hidden="true">
+                        <path d="M12 5v14M19 12l-7 7-7-7" />
+                    </svg>
+                </a>
+                <a href="#credited-work" class="btn">
+                    <span>Credited Visuals</span>
+                </a>
+                <a href="#contact" class="btn">
+                    <span>Contact Direct</span>
+                </a>
             </div>
         </div>
-    </section>
-    <section>
-        <div class="Projects">
-            <div class="projects-header" onclick="toggleProjects(this)">
-                <p>Graphic Design</p>
-                <svg class="projects-chevron" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </div>
-            <div class="projects-wrapper">
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/habeby.webp" alt="Habebey Leah" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>TUL8TE</h2> <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>HABEEBY LEH </h3>
-                            <h4>Graphic Design</h4>
-                            <p3>"Designed the official typography and graphic elements for TUL8TE's album, including the
-                                visuals
-                                for the 'Habeby Leah' music video."</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container ">
-                    <img src="/images/webp/LAY.webp" alt="Habebey Leah" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>TUL8TE</h2> <button class="project-icon-button"
-                                onclick="window.open('https://www.youtube.com/watch?v=M5ofvOP1Ybc', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3> LAYALINA</h3>
-                            <h4>Graphic Design</h4>
-                            <p3>"Participated in the official graphic design elements for TUL8TE's<br> Track LAYALINA
-                                ,including
-                                the
-                                visuals for the 'LAYALINA' music video."</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/alab.webp" alt="alaab Moscow" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Alaab</h2><button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/212643955/Alaab-Moscow-Official-Artwork?', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Alaab - Moscow </h3>
-                            <h4> Official Cover Artwork</h4>
-                            <p3>"Designed the official artwork for the Moscow video clip "Alaab" <br> and typography for
-                                credits.
-                                Created engaging visual content <br>to enhance the video's storytelling and overall
-                                aesthetic."</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/donia.webp" alt="alaab Moscow" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>AEN EP</h2><button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/212643955/Alaab-Moscow-Official-Artwork?', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Gonia/Donia - Moscow </h3>
-                            <h4> Official Ep Artwork</h4>
-                            <p3>"Designed the official artwork for the Moscow new ep "ARD EL NEFAQ" <br> and typography
-                                for
-                                credits.<p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/myn.webp" alt="alaab Moscow" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>MYN </h2><button class="project-icon-button"
-                                onclick="window.open('https://www.youtube.com/watch?v=WPwWp-UeD1w&pp=0gcJCa0JAYcqIYzv', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Meen Ytafy Nary - Moscow X Nasser</h3>
-                            <h4> Official Stop Motion Visualizer </h4>
-                            <p3>"Made the Stop motion visualizer <br> using set of sequence images made with ai &
-                                also the spotify canvas vertical video.<p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/Jadduuuuu.webp" alt="  Jaadu Jealousy" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Jealousy </h2><button class="project-icon-button"
-                                onclick="window.open('https://www.youtube.com/watch?v=Jac53Z8Doi0&list=RDJac53Z8Doi0&start_radio=1', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Jealousy - Jaadu X Moaa</h3>
-                            <h4> Official Artwork remake </h4>
-                            <p3>Manipulated the original artwork<br>
-                                to include the remix artists and give it a more Egyptian-inspired style.<p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/diana.webp" alt="alaab Moscow" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Diana</h2><button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/213345783/Diana-Apotheke-Rebranding', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Diana - Apotheke </h3>
-                            <h4>Logo And Identity Rebranding</h4>
-                            <p3>"Created a new logo and identity rebranding <br> for the company, including a modernized
-                                visual aesthetic and cohesive brand elements.
-                                Developed updated branding materials <br>to enhance recognition and appeal to target
-                                audiences."</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container ">
-                    <img src="/images/webp/m3.webp" alt="Moments" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Moments</h2> <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/198938759/Moments-brand-identity', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Moments</h3>
-                            <h4>Brand Identity & Design</h4>
-                            <p3>"Designed the complete brand identity, including product design and packaging,<br> for
-                                Moments
-                                Egypt, delivering a cohesive and visually appealing brand presence."</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container ">
-                    <img src="/images/webp/des12.webp" alt="Moments" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Reda Haikal</h2> <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/198938759/Moments-brand-identity', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Banger Ath</h3>
-                            <h4>New Season Design </h4>
-                            <p3>"Designed New Season Poster for Reda haikal Egyptian Nationak Team <br> Volleyball
-                                Player "
-                            </p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/kufta.webp" alt="Kufta w Tameya" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>K w T</h2> <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/205108417/Kufta-w-Tameya-Product-Design-and-packaging', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Kufta w Tameya</h3>
-                            <h4>Brand Identity & Packaging</h4>
-                            <p3>"Developed the packaging and brand identity for Kufta We Tameya in Amman,<br> creating a
-                                distinct
-                                and memorable brand image."</p3>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="hero__scroll" aria-hidden="true">
+            <span>Scroll Down</span>
         </div>
-    </section>
-    <section class="showreel-section">
-        <div class="showreel-container">
-            <div class="showreel-wrapper">
-                <video autoplay loop muted playsinline webkit-playsinline class="showreel-gif"
-                    style="width:100%;height:auto;border-radius:10px;" preload="metadata" loading="lazy">
-                    <source src="RECAP24.mp4" type="video/mp4">
-                    <source src="videos/optimized/RECAP24.webm" type="video/webm">
-                    Your browser does not support the video tag.
-                </video>
-                <h2 class="showreel-title">JPNG 2024
-                    RECAP</h2>
-            </div>
-            <div class="tooltip-container">
-                <div class="tooltip">
-                    <div class="profile">
-                        <div class="user">
-                            <div class="img">
-                                <img src="images/webp/logoW.webp" alt="UI Image" loading="lazy" decoding="async">
-                            </div>
-                            <div class="details">
-                                <div class="username">@jou.png</div>
-                                <div class="about">1400+Followers</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="text">
-                    <a class="icon" href="https://www.instagram.com/jou.png/reel/DENf7ZwIr05/" target="_blank">
-                        <div class="layer">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                            <span class="instagramSVG">
-                                <svg fill="white" class="svgIcon" viewBox="0 0 448 512" height="1.5em"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <path
-                                        d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z">
-                                    </path>
-                                </svg>
-                            </span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+    </header>
 
-    </section>
-    <section>
-        <div class="Projects">
-            <div class="projects-header" onclick="toggleProjects(this)">
-                <p>Web Design</p>
-                <svg class="projects-chevron" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M6 9L12 15L18 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round" />
-                </svg>
-            </div>
-            <div class="projects-wrapper">
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/web14.webp" alt="Habebey Leah" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Blue Berry</h2>
-                            <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/219975245/Blue-Berry-Website?', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon"
-                                    loading="lazy" decoding="async" width="24" height="24">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Blue Berry</h3>
-                            <h4>UI & UX Design</h4>
-                            <p3>Designed the complete UI and UX for Blue Berry Clothing's website, focusing on
-                                delivering a
-                                seamless and user-friendly experience.</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/web15.webp" alt="Habebey Leah" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Xtra Time</h2>
-                            <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/237853897/Xtra-Time-Website', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Xtra Time</h3>
-                            <h4>UI & UX & Implementation</h4>
-                            <p3>Designed the complete Website ,UI ,and UX for Xtra Time website, focusing on delivering
-                                a
-                                seamless and user-friendly experience.</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/web6.webp" alt="Habebey Leah" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>FinFlow</h2>
-                            <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>FinFlow</h3>
-                            <h4>UI & UX Design</h4>
-                            <p3>Designed the complete UI and UX for FinFlow banking app, creating an intuitive and
-                                visually engaging shopping experience.</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/web12.webp" alt="Habebey Leah" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Nomad Hub</h2>
-                            <button class="project-icon-button"
-                                onclick="window.open('https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album', '_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Nomad Hub</h3>
-                            <h4>UI & UX Design</h4>
-                            <p3>Crafted a seamless UI and UX for Digital Nomad Hub,
-                                offering an inspiring and user-friendly platform for remote workers to explore, connect,
-                                and thrive.</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/web11.webp" alt="Habebey Leah" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>ClimaCheck</h2>
-                            <button class="project-icon-button"
-                                onclick="window.open('https://clima-check-five.vercel.app/','_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>ClimaCheck</h3>
-                            <h4>Web Design</h4>
-                            <p3>Created a dynamic and visually appealing weather forecast website using Tailwind CSS,
-                                JavaScript,
-                                and HTML, providing an intuitive and engaging experience for users to stay informed
-                                about the latest weather conditions.</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/webp/receta.webp" alt="Receta" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>Receta</h2>
-                            <button class="project-icon-button"
-                                onclick="window.open('https://reecta-r.vercel.app/','_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>Receta</h3>
-                            <h4>Web Design</h4>
-                            <p3>Created a dynamic and visually appealing Landing page for Receta using Tailwind CSS,
-                                JavaScript,</p3>
-                        </div>
-                    </div>
-                </div>
-                <div class="row vertical__item animation Proj-container">
-                    <img src="/images/trkr.png" alt="TRKR" loading="lazy" decoding="async">
-                    <div class="wrap">
-                        <div class="title">
-                            <h2>TRKR</h2>
-                            <button class="project-icon-button"
-                                onclick="window.open('https://trkr-job.vercel.app/','_blank');">
-                                <img src="images/webp/play-button.webp" alt="View Project" class="project-icon">
-                            </button>
-                        </div>
-                        <div class="details">
-                            <h3>TRKR</h3>
-                            <h4>Web Design</h4>
-                            <p3>Built TRKR — a full-stack AI-powered job tracker with a Chrome extension, Gmail auto-scanner, Kanban board, AI cover letter generator,
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <div class="text-with-lines">
-        Certificates
-    </div>
-    <section id="certificates" class="certificates-section ">
-        <div class="certificates-container">
-            <div class="certificate-item animation">
-                <img src="images/webp/ui.webp" alt="Certificate 1" loading="lazy" decoding="async" />
-                <h3>Introduction to UX Design </h3>
-                <p>(MDLPT-366) from IBM SkillsBuild</p>
-                <a href="/images/SkillsBuild.pdf" class="view-certificate-button" target="_blank">View Certificate</a>
-            </div>
-            <div class="certificate-item animation">
-                <img src="images/webp/webtest.webp" alt="Certificate 2" loading="lazy" decoding="async" />
-                <h3>Website Testing & Deployment </h3>
-                <p>(MDLPT-272) from IBM SkillsBuild</p>
-                <a href="/images/SkillsBuild WEB TEST.pdf" class="view-certificate-button" target="_blank">View
-                    Certificate</a>
-            </div>
-            <div class="certificate-item animation">
-                <img src="images/webp/pm.webp" alt="Certificate 2" loading="lazy" decoding="async" />
-                <h3>PM Fundamentals</h3>
-                <p> from IBM SkillsBuild </p>
-                <a href="/images/SkillsBuild PM .pdf" class="view-certificate-button" target="_blank">View
-                    Certificate</a>
-            </div>
-            <div class="certificate-item animation">
-                <img src="images/webp/agile.webp" alt="Certificate 2" loading="lazy" decoding="async" />
-                <h3>Agile Explorer </h3>
-                <p> from IBM SkillsBuild </p>
-                <a href="/images/SkillsBuild AGILE .pdf" class="view-certificate-button" target="_blank">View
-                    Certificate</a>
-            </div>
-            <div class="certificate-item animation">
-                <img src="images/webp/Ai.webp" alt="Certificate 2" loading="lazy" decoding="async" />
-                <h3>AI Fundamentals </h3>
-                <p> from IBM SkillsBuild </p>
-                <a href="/images/Ai.jpeg" class="view-certificate-button" target="_blank">View
-                    Certificate</a>
-            </div>
-        </div>
-        <section id="contact" class="contact-section">
-            <div class="text-with-lines">Contact Me</div>
-            <div class="contact-container">
-
-                <form id="contactForm" action="https://formspree.io/f/mkgnybgv" method="POST">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" required placeholder="Enter your full name">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" required placeholder="Enter your email address">
-                    </div>
-
-                    <div class="form-group">
-                        <label for="purpose">Purpose of Contact</label>
-                        <select id="purpose" name="purpose" required>
-                            <option value="">Select a purpose</option>
-                            <option value="project_inquiry">Project Inquiry</option>
-                            <option value="design_consultation">Design Consultation</option>
-                            <option value="collaboration">Collaboration Request</option>
-                            <option value="job_opportunity">Job Opportunity</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Your Message</label>
-                        <textarea id="message" name="message" required placeholder="Write your message here..."
-                            rows="5"></textarea>
-                    </div>
-                    <div id="notification"
-                        style="display: none; background-color: #4CAF50; color: white; padding: 15px; position: fixed; top: 10px; right: 10px; border-radius: 5px;">
-                        Your message has been sent successfully!
-                    </div>
-                    <div class="button-container">
-                        <button id="submitButton" type="submit" class="button">
-                            <div class="outline"></div>
-                            <div class="state state--default">
-                                <div class="icon">
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                                        height="1.2em" width="1.2em">
-                                        <g style="filter: url(#shadow)">
-                                            <path fill="currentColor"
-                                                d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63ZM7.63988 7.03001C4.85988 7.96001 3.86988 9.06001 3.86988 9.78001C3.86988 10.5 4.85988 11.6 7.63988 12.52L10.1599 13.36C10.3799 13.43 10.5599 13.61 10.6299 13.83L11.4699 16.35C12.3899 19.13 13.4999 20.12 14.2199 20.12C14.9399 20.12 16.0399 19.13 16.9699 16.35L19.7999 7.86001C20.3099 6.32001 20.2199 5.06001 19.5699 4.41001C18.9199 3.76001 17.6599 3.68001 16.1299 4.19001L7.63988 7.03001Z">
-                                            </path>
-                                            <path fill="currentColor"
-                                                d="M10.11 14.4C9.92005 14.4 9.73005 14.33 9.58005 14.18C9.29005 13.89 9.29005 13.41 9.58005 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z">
-                                            </path>
-                                        </g>
-                                        <defs>
-                                            <filter id="shadow">
-                                                <fedropshadow flood-opacity="0.6" stdDeviation="0.8" dy="1" dx="0">
-                                                </fedropshadow>
-                                            </filter>
-                                        </defs>
-                                    </svg>
-                                </div>
-                                <p>
-                                    <span style="--i:0">S</span>
-                                    <span style="--i:1">e</span>
-                                    <span style="--i:2">n</span>
-                                    <span style="--i:3">d</span>
-                                    <span style="--i:4"> </span>
-                                    <span style="--i:5">M</span>
-                                    <span style="--i:6">e</span>
-                                    <span style="--i:7">s</span>
-                                    <span style="--i:8">s</span>
-                                    <span style="--i:9">a</span>
-                                    <span style="--i:10">g</span>
-                                    <span style="--i:11">e</span>
-                                </p>
-                            </div>
-                            <div class="state state--sent">
-                                <div class="icon">
-                                    <svg stroke="black" stroke-width="0.5px" width="1.2em" height="1.2em"
-                                        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                        <g style="filter: url(#shadow)">
-                                            <path
-                                                d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"
-                                                fill="currentColor"></path>
-                                            <path
-                                                d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z"
-                                                fill="currentColor"></path>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <p>
-                                    <span style="--i:5">S</span>
-                                    <span style="--i:6">e</span>
-                                    <span style="--i:7">n</span>
-                                    <span style="--i:8">t</span>
-                                    <span style="--i:9">!</span>
-                                </p>
-                            </div>
-                        </button>
-
-                    </div>
-                </form>
+    <main id="main">
+        <!-- ── Tools Strip ── -->
+        <section class="tools" aria-label="Creative & AI Production Toolkit">
+            <div class="container tools__inner">
+                <span class="tools__label">Core Tools</span>
+                <ul class="tools__list">
+                    <li class="is-ai">Higgsfield</li>
+                    <li class="is-ai">Seedance</li>
+                    <li class="is-ai">Gemini Omni</li>
+                    <li class="is-ai">Genjutsu</li>
+                    <li>Blender 3D</li>
+                    <li>DaVinci Resolve</li>
+                    <li>Adobe Premiere</li>
+                    <li>Adobe After Effects</li>
+                </ul>
             </div>
         </section>
 
-        <footer>
-            <p>&copy; 2026 [Jou.png]. All rights reserved</p>
-            <p>&copy;Banger Managment</p>
-        </footer>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer async></script>
-        <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js" defer async></script>
-        <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-        <script src="JavaScript/main.js" defer></script>
-        <script src="js/scripts.js" defer></script>
+        <!-- ── Featured AI Reels ── -->
+        <section class="section" id="featured-reels" aria-labelledby="reels-heading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">Visual Storytelling</span>
+                        <h2 class="h2" id="reels-heading">Featured <span class="text-grad">AI Reels</span></h2>
+                    </div>
+                    <div class="stats-line" data-site="topreel">
+                        <!-- Populated dynamically from js/content.js -->
+                    </div>
+                </div>
+
+                <!-- 9:16 vertical cards (carousel on mobile, 3-col on desktop) -->
+                <ul class="reel-grid reel-grid--carousel" data-reels="REELS">
+                    <!-- Populated dynamically from js/content.js -->
+                </ul>
+                <div class="carousel-dots" aria-hidden="true"></div>
+            </div>
+        </section>
+
+        <!-- ── Series Intro: Pharaoh Day in the Life ── -->
+        <section class="section" id="series-concept" aria-labelledby="series-heading">
+            <div class="container">
+                <div class="series reveal">
+                    <div>
+                        <span class="eyebrow">Original Series</span>
+                        <h2 class="h2" id="series-heading">Pharaoh: <br><span class="text-grad">Day in the Life</span></h2>
+                    </div>
+                    <div class="series__text">
+                        <p>
+                            A short-form AI cinematic universe following one consistent pharaoh character dropped into modern-tech scenarios against authentic ancient Egyptian monuments. Shot with a raw, handheld phone-footage aesthetic, the series juxtaposes antiquity with streetwear, jetpacks, and contemporary humor to explore what happens when 3,000 years of mythology meet the internet age.
+                        </p>
+                        <ul class="series__points">
+                            <li>Consistent character modeling</li>
+                            <li>Modern-tech comedic gags</li>
+                            <li>Authentic ancient Egyptian locations</li>
+                            <li>Handheld phone-camera aesthetic</li>
+                            <li>Higgsfield &amp; AI generative pipelines</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Credited Visual Work ── -->
+        <section class="section" id="credited-work" aria-labelledby="credits-heading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">Industry Track Record</span>
+                        <h2 class="h2" id="credits-heading">Credited <span class="text-grad">Visual Work</span></h2>
+                    </div>
+                    <p class="lead">
+                        Official music videos, commercial VFX, and 3D visualizers created for major regional artists and commercial campaigns.
+                    </p>
+                </div>
+
+                <ul class="credit-grid" data-credits>
+                    <!-- Populated dynamically from js/content.js -->
+                </ul>
+            </div>
+        </section>
+
+        <!-- ── Showreel & Instagram Highlight ── -->
+        <section class="section" id="showreel" aria-labelledby="showreel-heading">
+            <div class="container">
+                <div class="showreel reveal">
+                    <div class="showreel__video">
+                        <video autoplay loop muted playsinline preload="metadata" poster="/images/webp/logoW.webp">
+                            <source src="videos/optimized/RECAP24.mp4" type="video/mp4">
+                            <source src="videos/optimized/RECAP24.webm" type="video/webm">
+                            Your browser does not support the video tag.
+                        </video>
+                    </div>
+                    <div class="showreel__info">
+                        <span class="eyebrow">Annual Cut</span>
+                        <h2 class="h2" id="showreel-heading">JPNG 2024 <span class="text-grad">Showreel</span></h2>
+                        <p class="lead" style="margin-top: 18px;">
+                            A fast-paced recap of 3D motion, VFX, and experimental visual storytelling created over the past year.
+                        </p>
+                        <div>
+                            <a class="ig-card" href="https://www.instagram.com/jou.png/" target="_blank" rel="noopener">
+                                <div class="ig-card__avatar" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </div>
+                                <div>
+                                    <div class="ig-card__name">@jou.png on Instagram</div>
+                                    <div class="ig-card__meta"><span data-site="followers">1400+</span> Followers · Daily Visual Updates</div>
+                                </div>
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="margin-left:auto;color:var(--gold);"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── More Work (Tabbed: Graphic Design & Web / Interactive) ── -->
+        <section class="section" id="more-work" aria-labelledby="more-heading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">Archive &amp; Supporting Disciplines</span>
+                        <h2 class="h2" id="more-heading">More <span class="text-grad">Work</span></h2>
+                    </div>
+                    <p class="lead">
+                        Brand identities, typography, cover art, and digital product design that complement my motion direction.
+                    </p>
+                </div>
+
+                <div class="tabs" role="tablist" aria-label="Portfolio categories">
+                    <button class="tab" role="tab" id="tab-graphic" aria-selected="true" aria-controls="panel-graphic" tabindex="0">
+                        Graphic Design &amp; Typography
+                    </button>
+                    <button class="tab" role="tab" id="tab-web" aria-selected="false" aria-controls="panel-web" tabindex="-1">
+                        Web &amp; Digital Products
+                    </button>
+                </div>
+
+                <!-- Graphic Design Panel -->
+                <div class="tab-panel" id="panel-graphic" role="tabpanel" aria-labelledby="tab-graphic">
+                    <ul class="work-grid">
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/habeby.webp" alt="TUL8TE Habeby Leah typography" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">TUL8TE</span>
+                                <h3 class="work__title">HABEEBY LEH</h3>
+                                <p class="work__desc">Official typography and graphic elements for TUL8TE's album and music video.</p>
+                                <a href="https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album" target="_blank" rel="noopener" class="work__link">
+                                    <span>Behance Project</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/LAY.webp" alt="TUL8TE Layalina artwork" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">TUL8TE</span>
+                                <h3 class="work__title">LAYALINA</h3>
+                                <p class="work__desc">Official graphic design and promotional visual elements for the LAYALINA release.</p>
+                                <a href="https://www.youtube.com/watch?v=M5ofvOP1Ybc" target="_blank" rel="noopener" class="work__link">
+                                    <span>Watch Video</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/alab.webp" alt="Moscow Alaab Cover Artwork" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Moscow</span>
+                                <h3 class="work__title">Alaab Artwork</h3>
+                                <p class="work__desc">Official cover artwork and credit typography for Moscow's 'Alaab' video clip.</p>
+                                <a href="https://www.behance.net/gallery/212643955/Alaab-Moscow-Official-Artwork" target="_blank" rel="noopener" class="work__link">
+                                    <span>Behance Project</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/donia.webp" alt="Moscow Ard El Nefaq EP" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Moscow</span>
+                                <h3 class="work__title">Ard El Nefaq EP</h3>
+                                <p class="work__desc">Official EP artwork and custom credit typography for Moscow's release.</p>
+                                <a href="https://www.behance.net/gallery/212643955/Alaab-Moscow-Official-Artwork" target="_blank" rel="noopener" class="work__link">
+                                    <span>Behance Project</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/diana.webp" alt="Diana Apotheke Rebranding" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Branding</span>
+                                <h3 class="work__title">Diana Apotheke</h3>
+                                <p class="work__desc">Logo and identity rebranding featuring modernized visual aesthetic and packaging.</p>
+                                <a href="https://www.behance.net/gallery/213345783/Diana-Apotheke-Rebranding" target="_blank" rel="noopener" class="work__link">
+                                    <span>Behance Project</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/m3.webp" alt="Moments brand identity" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Identity &amp; Packaging</span>
+                                <h3 class="work__title">Moments Egypt</h3>
+                                <p class="work__desc">Complete brand identity, product packaging, and cohesive visual language.</p>
+                                <a href="https://www.behance.net/gallery/198938759/Moments-brand-identity" target="_blank" rel="noopener" class="work__link">
+                                    <span>Behance Project</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/des12.webp" alt="Reda Haikal Poster" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Sports Graphics</span>
+                                <h3 class="work__title">Reda Haikal</h3>
+                                <p class="work__desc">New season poster for Reda Haikal, Egyptian National Team volleyball player.</p>
+                                <a href="https://www.behance.net/gallery/198938759/Moments-brand-identity" target="_blank" rel="noopener" class="work__link">
+                                    <span>Behance Project</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/kufta.webp" alt="Kufta w Tameya Packaging" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Branding &amp; Packaging</span>
+                                <h3 class="work__title">Kufta w Tameya</h3>
+                                <p class="work__desc">Packaging and brand identity created for Kufta We Tameya in Amman.</p>
+                                <a href="https://www.behance.net/gallery/205108417/Kufta-w-Tameya-Product-Design-and-packaging" target="_blank" rel="noopener" class="work__link">
+                                    <span>Behance Project</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/Jadduuuuu.webp" alt="Jealousy Artwork" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Remix Artwork</span>
+                                <h3 class="work__title">Jaadu × Moaa</h3>
+                                <p class="work__desc">Egyptian-inspired artwork remake for the remix release of 'Jealousy'.</p>
+                                <a href="https://www.youtube.com/watch?v=Jac53Z8Doi0" target="_blank" rel="noopener" class="work__link">
+                                    <span>Listen on YouTube</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Web Design Panel -->
+                <div class="tab-panel" id="panel-web" role="tabpanel" aria-labelledby="tab-web" hidden>
+                    <ul class="work-grid">
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/trkr.webp" alt="TRKR job search platform" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Full-Stack AI App</span>
+                                <h3 class="work__title">TRKR</h3>
+                                <p class="work__desc">Built TRKR — a full-stack AI-powered job tracker with a Chrome extension, Gmail auto-scanner, Kanban board interface, and AI cover letter generator.</p>
+                                <a href="https://trkr-job.vercel.app/" target="_blank" rel="noopener" class="work__link">
+                                    <span>Live App</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/web6.webp" alt="FinFlow Banking App UI" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Fintech UI/UX</span>
+                                <h3 class="work__title">FinFlow</h3>
+                                <p class="work__desc">Designed the complete UI and UX for FinFlow banking app, creating an intuitive and visually engaging financial management experience.</p>
+                                <a href="https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album" target="_blank" rel="noopener" class="work__link">
+                                    <span>Case Study</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/receta.webp" alt="Receta Recipe App" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Product &amp; Web</span>
+                                <h3 class="work__title">Receta</h3>
+                                <p class="work__desc">Created a dynamic and visually appealing landing page for Receta using Tailwind CSS and JavaScript, with interactive components designed in Rive and Figma.</p>
+                                <a href="https://reecta-r.vercel.app/" target="_blank" rel="noopener" class="work__link">
+                                    <span>Live Website</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/web14.webp" alt="Blue Berry Website" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">E-Commerce UI</span>
+                                <h3 class="work__title">Blue Berry</h3>
+                                <p class="work__desc">Complete UI and UX for Blue Berry Clothing's e-commerce platform, focusing on seamless browsing and checkout.</p>
+                                <a href="https://www.behance.net/gallery/219975245/Blue-Berry-Website" target="_blank" rel="noopener" class="work__link">
+                                    <span>Behance Project</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/web15.webp" alt="Xtra Time Website" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Sports Media</span>
+                                <h3 class="work__title">Xtra Time</h3>
+                                <p class="work__desc">Complete website design, interactive fixtures interface, and frontend implementation.</p>
+                                <a href="https://www.behance.net/gallery/237853897/Xtra-Time-Website" target="_blank" rel="noopener" class="work__link">
+                                    <span>Behance Project</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/web12.webp" alt="Nomad Hub platform" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Community Platform</span>
+                                <h3 class="work__title">Nomad Hub</h3>
+                                <p class="work__desc">UI and UX design for Digital Nomad Hub, a platform connecting remote creatives worldwide.</p>
+                                <a href="https://www.behance.net/gallery/205107225/Official-HABEBY-LEAH-Typography-for-TUL8te-album" target="_blank" rel="noopener" class="work__link">
+                                    <span>Behance Project</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                        <li class="work reveal">
+                            <div class="work__media">
+                                <img src="/images/webp/web11.webp" alt="ClimaCheck Weather app" loading="lazy" decoding="async" width="600" height="450">
+                            </div>
+                            <div class="work__body">
+                                <span class="work__kicker">Web Application</span>
+                                <h3 class="work__title">ClimaCheck</h3>
+                                <p class="work__desc">Dynamic weather forecast platform built with Tailwind CSS, JavaScript, and HTML with real-time API sync.</p>
+                                <a href="https://clima-check-five.vercel.app/" target="_blank" rel="noopener" class="work__link">
+                                    <span>Live Website</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Secondary Software Engineering Section ── -->
+        <section class="section" id="software" aria-labelledby="software-heading">
+            <div class="container">
+                <div class="software reveal">
+                    <div>
+                        <span class="eyebrow">Technical Foundation</span>
+                        <h2 id="software-heading">Software &amp; <span class="text-grad">Systems</span></h2>
+                        <p>
+                            Degree in Software Engineering (Arab Academy). My technical background powers custom AI workflows, automation scripts, Chrome extensions, and full-stack interactive platforms.
+                        </p>
+                        <div style="margin-top: 20px;">
+                            <a href="https://github.com/YoussefElmonier" target="_blank" rel="noopener" class="btn" style="min-height: 42px; padding: 8px 18px; font-size: 14px;">
+                                <span>GitHub @YoussefElmonier</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                    <ul class="dev-list">
+                        <li>
+                            <a class="dev-item" href="https://trkr-job.vercel.app/" target="_blank" rel="noopener">
+                                <strong>TRKR · Full-Stack AI Platform</strong>
+                                <span>Chrome Extension, Gmail auto-scanner, React &amp; AI APIs</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dev-item" href="https://reecta-r.vercel.app/" target="_blank" rel="noopener">
+                                <strong>Receta · Interactive Web App</strong>
+                                <span>Tailwind CSS, interactive state, Rive animations</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="dev-item" href="https://clima-check-five.vercel.app/" target="_blank" rel="noopener">
+                                <strong>ClimaCheck · Forecast Engine</strong>
+                                <span>Weather API integration, responsive interface</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── Contact Section ── -->
+        <section class="section" id="contact" aria-labelledby="contact-heading">
+            <div class="container">
+                <div class="contact">
+                    <div class="reveal">
+                        <span class="eyebrow">Start A Collaboration</span>
+                        <h2 class="h2" id="contact-heading">LET'S BUILD <br><span class="text-grad">TOGETHER</span></h2>
+                        <p class="lead" style="margin-top: 18px;">
+                            Currently open for creator partnerships, AI filmmaking projects, music video visuals, and CGI direction. Reach out directly or send a message below.
+                        </p>
+
+                        <!-- Direct Instagram + Email links -->
+                        <div class="contact__direct">
+                            <a href="https://www.instagram.com/jou.png/" target="_blank" rel="noopener" class="direct-link">
+                                <div class="direct-link__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                                </div>
+                                <div>
+                                    <small>Direct Instagram DM</small>
+                                    <span>@jou.png</span>
+                                </div>
+                            </a>
+                            <a href="mailto:youssifelmonier66@gmail.com" class="direct-link">
+                                <div class="direct-link__icon" aria-hidden="true">
+                                    <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                                </div>
+                                <div>
+                                    <small>Direct Email</small>
+                                    <span>youssifelmonier66@gmail.com</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form (Formspree) -->
+                    <form class="form reveal" id="contactForm" action="https://formspree.io/f/mkgnybgv" method="POST">
+                        <div class="form__row">
+                            <div class="field">
+                                <label for="name">Full Name</label>
+                                <input type="text" id="name" name="name" required placeholder="Your name" autocomplete="name">
+                            </div>
+                            <div class="field">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required placeholder="you@domain.com" autocomplete="email">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="purpose">Purpose of Contact</label>
+                            <select id="purpose" name="purpose" required>
+                                <option value="">Select project scope</option>
+                                <option value="creator_partnership">Higgsfield / Creator Partnership</option>
+                                <option value="ai_filmmaking">AI Filmmaking &amp; Music Visuals</option>
+                                <option value="cgi_direction">3D CGI / VFX Direction</option>
+                                <option value="brand_identity">Brand Identity &amp; Cover Art</option>
+                                <option value="other">Other Inquiry</option>
+                            </select>
+                        </div>
+
+                        <div class="field">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" required rows="4" placeholder="Briefly describe the concept, timeline, or scope..."></textarea>
+                        </div>
+
+                        <div class="form__status" aria-live="polite"></div>
+
+                        <button type="submit" class="btn btn--primary">
+                            <span>Send Message</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <div>
+                <p>&copy; <span data-year>2026</span> Youssef Elmonier (@jou.png). All rights reserved.</p>
+                <p style="margin-top: 4px; color: var(--dim);">&copy; Banger Management</p>
+            </div>
+            <ul class="socials" aria-label="Social and professional profiles">
+                <li><a href="https://www.instagram.com/jou.png/" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://www.behance.net/youssefelmonier" target="_blank" rel="noopener">Behance</a></li>
+                <li><a href="https://www.linkedin.com/in/youssef-elmonier-1a670020b/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://github.com/YoussefElmonier" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://wa.me/qr/JZ3OAP5EOO3KI1" target="_blank" rel="noopener">WhatsApp</a></li>
+                <li><a data-cv href="#" class="btn" style="min-height:36px;padding:6px 14px;">CV</a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/content.js"></script>
+    <script src="js/site.js"></script>
 </body>
 
 </html>

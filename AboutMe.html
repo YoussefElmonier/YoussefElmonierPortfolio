@@ -1,1083 +1,356 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
 
 <head>
-    <link rel="icon" type="image/png" href="/images/logo.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me - Youssef Elmonier</title>
+    <title>About — Youssef Elmonier (jou.png)</title>
+    <meta name="description"
+        content="About Youssef Elmonier (@jou.png) — Egyptian AI filmmaker, 3D visualizer, and creative technologist based in Egypt.">
+    <meta name="author" content="Youssef Elmonier">
+    <meta name="theme-color" content="#0b0a08">
 
-    <!-- Preload critical resources -->
-    <link rel="preload" href="css/style.css" as="style">
-    <link rel="preload" href="FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
-    <!-- Preload critical above-the-fold image -->
-    <link rel="preload" href="images/eljojj.png" as="image" fetchpriority="high">
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://youssefelmonier.com/AboutMe.html">
+    <meta property="og:title" content="About — Youssef Elmonier (jou.png)">
+    <meta property="og:description"
+        content="Egyptian AI filmmaker, 3D visualizer, and creative technologist based in Egypt. Background, credentials, and creative philosophy.">
+    <meta property="og:image" content="/images/og-cover.jpg">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/cleaned.css">
-    <link rel="stylesheet" href="css/custom.css">
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About — Youssef Elmonier (jou.png)">
+    <meta name="twitter:description"
+        content="Egyptian AI filmmaker, 3D visualizer, and creative technologist based in Egypt.">
+    <meta name="twitter:image" content="/images/og-cover.jpg">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js" defer></script>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <link rel="apple-touch-icon" href="/images/logo.png">
 
-    <!-- Preload critical fonts -->
+    <!-- Preload fonts -->
+    <link rel="preload" href="/FONTS/TuskerGrotesk-5700Bold.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/FONTS/Aspekta-400.ttf" as="font" type="font/ttf" crossorigin>
+    <link rel="preload" href="/FONTS/Aspekta-600.ttf" as="font" type="font/ttf" crossorigin>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="css/site.css">
     <style>
-        @font-face {
-            font-family: 'Aspekta';
-            src: url('FONTS/Aspekta-400.ttf') format('truetype');
-            font-weight: 400;
-            font-display: swap;
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: clamp(32px, 6vw, 80px);
+            align-items: center;
         }
 
-        @font-face {
-            font-family: 'Tusker GroteskMed';
-            src: url('FONTS/TuskerGrotesk-5500Medium.ttf') format('truetype');
-            font-weight: 500;
-            font-display: swap;
+        .about-portrait {
+            position: relative;
+            aspect-ratio: 4 / 5;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: var(--surface);
+            max-width: 440px;
         }
 
-        body {
-            background: #111;
-            color: #fff;
-            font-family: 'Aspekta', Arial, sans-serif;
+        .about-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-top: 36px;
+            padding: 24px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--line);
+            background: var(--surface);
+        }
+
+        .stat-block strong {
+            font-family: var(--font-display);
+            font-size: clamp(36px, 4vw, 52px);
+            line-height: 0.95;
+            color: var(--gold-hi);
+            display: block;
+        }
+
+        .stat-block span {
+            font-size: 13px;
+            color: var(--muted);
+            margin-top: 4px;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 18px;
+            list-style: none;
             margin: 0;
             padding: 0;
         }
 
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 40px 20px 0 20px;
-            margin-top: 120px;
-        }
-
-        .about-hero,
-        .about-section,
-        .education-hero {
-            border-radius: 38px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
-            padding: 32px 18px;
-            margin-bottom: 40px;
-        }
-
-        .about-hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
-
-        .about-text {
-            flex: 1 1 400px;
-        }
-
-        .about-text h1 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            margin-bottom: 1.2rem;
-            line-height: 1.1;
-        }
-
-        .about-text p {
-            color: #b0b0b0;
-            font-size: 1.15rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        .about-stats {
-            display: flex;
-            gap: 40px;
-            margin-top: 2rem;
-        }
-
-        .stat {
-            text-align: center;
-        }
-
-        .stat strong {
-            font-size: 2.2rem;
-            font-weight: 800;
-            display: block;
-            color: #fff;
-        }
-
-        .stat span {
-            color: #ffffff;
-            font-size: 1rem;
-        }
-
-        .about-image {
-            flex: 0 0 320px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .about-image img {
-            width: 320px;
-            height: 400px;
-            object-fit: cover;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
-            aspect-ratio: 320 / 400;
-        }
-
-        .about-section {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: flex-start;
-            justify-content: space-between;
-            gap: 40px;
-            margin-top: 60px;
-        }
-
-        .about-video {
-            flex: 1 1 420px;
-            background: #181818;
-            border-radius: 18px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 320px;
-            position: relative;
-        }
-
-        .about-video video,
-        .about-video img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .about-info {
-            flex: 1 1 320px;
-        }
-
-        .about-info h2 {
-            font-size: 3rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-        }
-
-        .about-info p {
-            color: #b0b0b0;
-            font-size: 1.15rem;
-            margin-bottom: 2rem;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        .about-buttons {
-            display: flex;
-            gap: 18px;
-            flex-wrap: wrap;
-        }
-
-        .about-buttons a {
-            padding: 12px 32px;
-            border-radius: 30px;
-            border: 1.5px solid #fff;
-            background: transparent;
-            color: #fff;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: background 0.2s, color 0.2s;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .about-buttons a.primary {
-            background: #fff;
-            color: #111;
-            border: none;
-        }
-
-        .about-buttons a:hover {
-            background: #333;
-            color: #fff;
-        }
-
-        .about-gallery-section {
-            margin-top: 70px;
-        }
-
-        .about-gallery {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
-        }
-
-        .about-gallery img {
-            width: 100%;
-            height: 320px;
-            object-fit: cover;
-            border-radius: 14px;
-            filter: grayscale(100%) contrast(1.1);
-            transition: filter 0.3s;
-        }
-
-        .about-gallery img:hover {
-            filter: grayscale(0%) contrast(1.1);
-        }
-
-        @media (max-width: 1000px) {
-
-            .about-hero,
-            .about-section {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .about-image {
-                width: 100%;
-                justify-content: flex-start;
-            }
-
-            .about-image img {
-                width: 100%;
-                max-width: 320px;
-                height: 340px;
-                aspect-ratio: 320 / 400;
-            }
-
-            .about-gallery {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .about-stats {
-                gap: 18px;
-                flex-wrap: wrap;
-            }
-        }
-
-        @media (max-width: 600px) {
-            body {
-                margin: 0;
-                padding: 0;
-            }
-
-            .about-container {
-                padding-top: 0;
-            }
-
-            .about-container {
-                padding: 16px 4vw 0 4vw;
-            }
-
-            .about-hero,
-            .about-section,
-            .education-hero {
-                padding: 18px 4vw;
-                margin-bottom: 24px;
-                border-radius: 28px;
-            }
-
-            .about-text h1 {
-                font-size: 2.1rem;
-                line-height: 1.18;
-                margin-bottom: 1.2rem;
-                text-align: left;
-                letter-spacing: 0.5px;
-            }
-
-            .about-text p,
-            .about-info p {
-                font-size: 1.08rem;
-                margin-bottom: 1.2rem;
-                line-height: 1.6;
-            }
-
-            .about-info h2 {
-                font-size: 1.3rem;
-                margin-bottom: 0.7rem;
-            }
-
-            .about-image {
-                width: 100%;
-                justify-content: center;
-                margin-bottom: 18px;
-            }
-
-            .about-image img {
-                width: 90vw;
-                max-width: 320px;
-                height: auto;
-                aspect-ratio: 320 / 400;
-                margin: 0 auto;
-                display: block;
-            }
-
-            .about-buttons {
-                flex-direction: column;
-                gap: 12px;
-                margin-top: 1.2rem;
-            }
-
-            .about-buttons a {
-                width: 100%;
-                justify-content: center;
-                font-size: 1.08rem;
-                padding: 12px 0;
-                border-radius: 18px;
-            }
-
-            .about-stats {
-                flex-direction: row;
-                gap: 0;
-                justify-content: space-between;
-                margin: 1.5rem 0 1.2rem 0;
-                background: #181818;
-                border-radius: 14px;
-                padding: 18px 8px;
-                box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
-            }
-
-            .stat {
-                flex: 1 1 0;
-                text-align: center;
-                margin: 0 2px;
-            }
-
-            .stat strong {
-                font-size: 1.4rem;
-                display: block;
-                margin-bottom: 0.2rem;
-                color: #fff;
-            }
-
-            .stat span {
-                font-size: 1.01rem;
-            }
-
-            .about-section {
-                padding-left: 4vw;
-                padding-right: 4vw;
-                border-radius: 0;
-                box-sizing: border-box;
-            }
-
-            .about-video {
-                padding-left: 0;
-                padding-right: 0;
-                border-radius: 0;
-                box-sizing: border-box;
-            }
-
-            .about-video video {
-                width: 100%;
-                height: auto;
-                border-radius: 0 !important;
-                display: block;
-            }
-
-            .logo {
-                width: 32px;
-                height: auto;
-                margin-left: 0;
-                margin-right: 12px;
-            }
-
-            footer {
-                font-size: 0.98rem;
-                margin: 30px 0 10px 0;
-            }
-        }
-
-        .dashboard-section {
-            margin-top: 70px;
-        }
-
-        .dashboard-grid {
-            display: grid;
-            grid-template-columns: 2fr 1.2fr;
-            grid-template-rows: 1.2fr 1fr;
-            gap: 28px;
-            grid-template-areas:
-                "main table"
-                "highlight1 toplist";
-        }
-
-        .dashboard-card {
-            background: #181818;
-            border-radius: 22px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
-            padding: 28px 24px;
-            color: #fff;
+        .cert-card {
+            border: 1px solid var(--line);
+            border-radius: var(--radius-sm);
+            background: var(--surface);
+            padding: 18px;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
-        }
-
-        .dashboard-main {
-            grid-area: main;
-            position: relative;
-            min-height: 320px;
-        }
-
-        .dashboard-title {
-            font-size: 1.7rem;
-            font-weight: 800;
-            margin-bottom: 18px;
-        }
-
-        .dashboard-icons {
-            display: flex;
-            gap: 18px;
-            margin-bottom: 18px;
-        }
-
-        .dashboard-icon-img {
-            width: 60px;
-            height: 60px;
-            object-fit: cover;
-            border-radius: 12px;
-            filter: grayscale(100%);
-            background: #222;
-            border: 2px solid #222;
-        }
-
-        .dashboard-top-item {
-            position: absolute;
-            top: 24px;
-            right: 24px;
-            background: #222;
-            border-radius: 18px;
-            padding: 18px 22px;
-            min-width: 180px;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
-        }
-
-        .dashboard-top-label {
-            font-size: 1.1rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-
-        .dashboard-top-content {
-            display: flex;
-            align-items: center;
             gap: 12px;
+            transition: border-color var(--t-fast), transform var(--t) var(--ease);
         }
 
-        .dashboard-top-img {
+        .cert-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        .cert-card img {
             width: 48px;
             height: 48px;
-            border-radius: 50%;
             object-fit: cover;
-            filter: grayscale(100%);
-            border: 2px solid #333;
+            border-radius: 8px;
         }
 
-        .dashboard-top-title {
-            font-weight: 700;
-            font-size: 1.1rem;
-        }
-
-        .dashboard-top-desc {
-            color: #bbb;
-            font-size: 0.95rem;
-        }
-
-        .dashboard-table {
-            grid-area: table;
-        }
-
-        .dashboard-table-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .dashboard-table-content {
-            width: 100%;
-            border-collapse: collapse;
-            color: #fff;
-            font-size: 1rem;
-        }
-
-        .dashboard-table-content th,
-        .dashboard-table-content td {
-            padding: 7px 10px;
-            border-bottom: 1px solid #333;
-            text-align: left;
-        }
-
-        .dashboard-table-content th {
-            color: #bbb;
+        .cert-card h3 {
+            font-size: 16px;
             font-weight: 600;
+            line-height: 1.3;
         }
 
-        .dashboard-highlight {
-            background: #181818;
-            border-radius: 22px;
-            box-shadow: 0 4px 24px rgba(0, 0, 0, 0.18);
-            padding: 24px 18px;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            min-width: 0;
+        .cert-card p {
+            font-size: 13px;
+            color: var(--muted);
         }
 
-        .dashboard-highlight-score {
-            font-size: 2rem;
-            font-weight: 800;
-            color: #fff;
-            margin-bottom: 10px;
-        }
-
-        .dashboard-highlight-content {
-            display: flex;
+        .cert-card a {
+            margin-top: auto;
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--sand);
+            display: inline-flex;
             align-items: center;
-            gap: 14px;
+            gap: 6px;
         }
 
-        .dashboard-highlight-img {
-            width: 44px;
-            height: 44px;
-            border-radius: 10px;
-            object-fit: cover;
-            filter: grayscale(100%);
-            border: 2px solid #222;
-        }
-
-        .dashboard-highlight-title {
-            font-weight: 700;
-            font-size: 1.05rem;
-        }
-
-        .dashboard-highlight-desc {
-            color: #bbb;
-            font-size: 0.95rem;
-        }
-
-        .dashboard-toplist {
-            grid-area: toplist;
-        }
-
-        .dashboard-toplist-title {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .dashboard-toplist-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 10px;
-        }
-
-        .dashboard-toplist-img {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            object-fit: cover;
-            filter: grayscale(100%);
-            border: 2px solid #333;
-        }
-
-        @media (max-width: 1000px) {
-            .dashboard-grid {
+        @media (max-width: 860px) {
+            .about-grid {
                 grid-template-columns: 1fr;
-                grid-template-rows: auto auto auto auto;
-                grid-template-areas:
-                    "main"
-                    "table"
-                    "highlight1"
-                    "toplist";
+            }
+
+            .about-portrait {
+                max-width: 340px;
             }
         }
 
-        @media (max-width: 600px) {
-            .dashboard-card {
-                padding: 14px 8px;
-            }
-
-            .dashboard-main {
-                min-height: 220px;
-            }
-
-            .logo {
-                width: 26px;
-                margin-left: 0;
-                margin-right: 8px;
-            }
-        }
-
-        .shiny-text {
-            display: inline-block;
-            background: linear-gradient(90deg,
-                    rgba(255, 255, 255, 0.7) 0%,
-                    rgba(255, 255, 255, 0.9) 25%,
-                    rgba(255, 255, 255, 1) 50%,
-                    rgba(255, 255, 255, 0.9) 75%,
-                    rgba(255, 255, 255, 0.7) 100%);
-            background-size: 200% auto;
-            color: #fff;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: shine 3.5s linear infinite;
-            font-weight: 400;
-            position: relative;
-        }
-
-        @keyframes shine {
-            to {
-                background-position: 200% center;
-            }
-        }
-
-        .section-separator {
-            border: none;
-            border-top: 2px solid #232323;
-            margin: 40px 0 32px 0;
-            width: 100%;
-            opacity: 0.7;
-        }
-
-        .scroll-reveal {
-            opacity: 0;
-            transform: translateY(40px);
-            transition: opacity 0.8s cubic-bezier(.77, 0, .18, 1), transform 0.8s cubic-bezier(.77, 0, .18, 1);
-            will-change: opacity, transform;
-        }
-
-        .scroll-reveal.revealed {
-            opacity: 1;
-            transform: none;
-        }
-
-        .education-hero {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-            /* background: #181818; */
-            border-radius: 16px;
-            padding: 32px 18px;
-            margin: 40px 0 0 0;
-            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.10);
-            color: #fff;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .education-text {
-            flex: 1 1 400px;
-        }
-
-        .education-text h1 {
-            font-size: 2.8rem;
-            font-weight: 900;
-            margin-bottom: 1.2rem;
-            line-height: 1.1;
-        }
-
-        .education-text p {
-            color: #868686;
-            font-size: 1.1rem;
-            margin-bottom: 1.5rem;
-            font-weight: 300;
-        }
-
-        .education-stats {
-            display: flex;
-            gap: 40px;
-            margin-top: 2rem;
-        }
-
-        .education-stats .stat {
-            text-align: center;
-        }
-
-        .education-stats .stat strong {
-            font-size: 2.2rem;
-            font-weight: 800;
-            display: block;
-            color: #fff;
-        }
-
-        .education-stats .stat span {
-            color: #858282;
-            font-size: 1rem;
-        }
-
-        .education-image {
-            flex: 0 0 320px;
-            display: flex;
-            justify-content: center;
-        }
-
-        .education-image img {
-            width: 320px;
-            height: 400px;
-            object-fit: cover;
-            filter: grayscale(100%);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
-            aspect-ratio: 320 / 400;
-        }
-
-        @media (max-width: 1000px) {
-            .education-hero {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .education-image {
-                width: 100%;
-                justify-content: flex-start;
-            }
-
-            .education-image img {
-                width: 100%;
-                max-width: 320px;
-                height: 340px;
-            }
-
-            .education-stats {
-                gap: 18px;
-                flex-wrap: wrap;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .education-hero {
-                padding: 18px 4vw;
-                gap: 18px;
-            }
-
-            .education-text h1 {
-                font-size: 2rem;
-            }
-
-            .education-image img {
-                width: 100%;
-                max-width: 100vw;
-                height: auto;
-                aspect-ratio: 320 / 400;
-            }
-
-            .education-stats {
-                flex-direction: column;
-                gap: 10px;
-                align-items: flex-start;
-            }
-
-            .education-stats .stat strong {
-                font-size: 1.2rem;
-                color: #fff;
-            }
-
-            .education-stats .stat span {
-                font-size: 0.95rem;
-            }
-        }
-
-        .about-container {
-            margin-top: 70px;
-        }
-
-        @media (max-width: 600px) {
-            .about-container {
-                margin-top: 56px;
-            }
-        }
-
-        /* Glass Card Effect */
-        .glass-card {
-            background: rgba(18, 18, 20, 0.4);
-            backdrop-filter: blur(28px) saturate(180%);
-            -webkit-backdrop-filter: blur(28px) saturate(180%);
-            border-radius: 32px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow:
-                0 15px 45px rgba(0, 0, 0, 0.35),
-                inset 0 0 0 1px rgba(255, 255, 255, 0.04),
-                inset 0 1px 0 rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), background 0.4s ease, border 0.4s ease;
-        }
-
-        .glass-card:hover {
-            background: rgba(22, 22, 24, 0.45);
-            border-color: rgba(255, 255, 255, 0.12);
-        }
-
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100%;
-            background: radial-gradient(circle at 50% 0%,
-                    rgba(255, 255, 255, 0.08) 0%,
-                    transparent 70%);
-            pointer-events: none;
-            z-index: 0;
-        }
-
-        .glass-card::after {
-            content: '';
-            position: absolute;
-            top: 1px;
-            left: 5%;
-            width: 90%;
-            height: 1px;
-            background: linear-gradient(90deg,
-                    transparent,
-                    rgba(255, 255, 255, 0.3),
-                    transparent);
-            z-index: 1;
-        }
-
-        .about-bg-video-wrapper {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .about-bg-video {
-            width: 320px;
-            height: 400px;
-            object-fit: cover;
-            border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
-        }
-
-        @media (max-width: 1000px) {
-            .about-bg-video {
-                width: 100%;
-                max-width: 320px;
-                height: 340px;
-            }
-        }
-
-        @media (max-width: 600px) {
-            .about-bg-video {
-                width: 100%;
-                max-width: 100vw;
-                height: 180px;
-                border-radius: 14px;
-            }
-        }
-
-        /* iOS Safari specific fixes */
-        @supports (-webkit-touch-callout: none) {
-            video {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0);
-                -webkit-backface-visibility: hidden;
-                backface-visibility: hidden;
-            }
-
-            .about-bg-video {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0);
-            }
-
-            .about-section-video {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0);
-            }
-
-            #intro-video {
-                -webkit-transform: translateZ(0);
-                transform: translateZ(0);
-            }
-        }
-
-        /* iOS Safari video container fixes */
-        @media screen and (-webkit-min-device-pixel-ratio: 0) {
-            video {
-                object-fit: cover;
-                object-position: center;
+        @media (max-width: 540px) {
+            .about-stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
             }
         }
     </style>
 </head>
 
 <body>
-    <nav class="navs section-nav">
-        <div class="nav-pill">
-            <a href="index.html" class="nav-item">Home</a>
-            <a href="process.html" class="nav-item">Process</a>
-            <a href="reels.html" class="nav-item">Reels</a>
-            <a href="AboutMe.html" class="nav-item active">About</a>
+    <a href="#main" class="skip-link">Skip to main content</a>
+
+    <!-- ── Floating Navigation ── -->
+    <nav class="site-nav" aria-label="Main navigation">
+        <div class="site-nav__inner">
+            <a href="index.html" class="site-nav__brand" aria-label="Youssef Elmonier Homepage">
+                <img src="/images/logo.png" alt="jou.png logo" width="22" height="22">
+                <span>jou.png</span>
+            </a>
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="reels.html" class="nav-link">Reels</a>
+            <a href="process.html" class="nav-link">Process</a>
+            <a href="AboutMe.html" class="nav-link" aria-current="page">About</a>
+            <a href="index.html#contact" class="nav-cta">Let's Talk</a>
         </div>
     </nav>
-    <div class="about-container">
-        <!-- Hero Section with Video BG -->
-        <div class="about-hero" style="position:relative;overflow:hidden;">
-            <div class="about-bg-video-wrapper"
-                style="position:absolute;top:0;left:0;width:100%;height:100%;z-index:0;">
-                <video class="about-bg-video" autoplay loop muted playsinline webkit-playsinline loading="lazy"
-                    style="width:100%;height:100%;object-fit:cover;filter:brightness(0.35);background:#000;"
-                    preload="metadata" poster="images/me1.jpg" width="320" height="400">
-                    <source src="images/vid2.MP4" type="video/mp4">
-                    <source src="images/vid2.webm" type="video/webm">
-                    Your browser does not support the video tag.
-                </video>
-            </div>
-            <div class="glass-card about-hero-glass"
-                style="position:relative;z-index:1;padding:60px 40px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;border-radius:40px !important;">
-                <div class="about-text">
-                    <h1 class="scroll-reveal">THIS IS ABOUT ME<br>AND HOW I'VE DONE THIS.</h1>
-                    <p class="shiny-text scroll-reveal">I'm Youssef Elmonier, a passionate software engineer, 3D
-                        visualizer, and designer. I specialize in blending technology and creativity to deliver unique
-                        digital experiences, from web development to 3D and graphic design.<br><br>
-                        Every project is a journey—combining technical expertise, artistic vision, and a drive for
-                        innovation. My work tells stories, solves problems, and leaves a lasting impression.</p>
-                    <div class="about-stats scroll-reveal">
-                        <div class="stat">
-                            <strong>70+</strong>
-                            <span>Projects Completed</span>
+
+    <header class="page-head">
+        <div class="container">
+            <span class="eyebrow">Creative Profile</span>
+            <h1>YOUSSEF <br><span class="text-grad">ELMONIER</span></h1>
+            <p class="lead">
+                AI filmmaker, 3D visualizer, and creative technologist based in Egypt. Merging generative AI, cinematic visual storytelling, and software architecture.
+            </p>
+        </div>
+    </header>
+
+    <main id="main">
+        <!-- ── About Hero ── -->
+        <section class="section" style="padding-top: clamp(48px, 6vw, 80px);">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="reveal">
+                        <span class="eyebrow">Vision &amp; Direction</span>
+                        <h2 class="h2" style="font-size:clamp(36px,5vw,64px); margin-top:12px;">EGYPTIAN ROOTS, <br><span class="text-grad">GLOBAL AESTHETICS</span></h2>
+                        <p class="lead" style="margin-top:20px;">
+                            I'M Youssef Elmonier (@jou.png), an AI filmmaker and 3D visualizer based in Egypt. I bridge ancient cultural heritage with bleeding-edge generative pipelines, crafting distinctive visuals for artists, labels, and brands.
+                        </p>
+                        <p style="color:var(--muted); margin-top:14px; font-size:16px;">
+                            My background in software engineering enables me to build bespoke AI workflows, automate multi-model pipelines (Higgsfield, Seedance, Gemini Omni), and composite cinematic CGI scenes in Blender and DaVinci Resolve. From viral TikTok/Reels series to official music videos for rap icons like Abyusif and Moscow, my work explores the edge of creative technology.
+                        </p>
+
+                        <div class="about-stats-grid">
+                            <div class="stat-block">
+                                <strong>70+</strong>
+                                <span>Projects Done</span>
+                            </div>
+                            <div class="stat-block">
+                                <strong>50M+</strong>
+                                <span>Visual Views</span>
+                            </div>
+                            <div class="stat-block">
+                                <strong>7+</strong>
+                                <span>Years Creating</span>
+                            </div>
                         </div>
-                        <div class="stat">
-                            <strong>50M+</strong>
-                            <span>Views</span>
-                        </div>
-                        <div class="stat">
-                            <strong>7+</strong>
-                            <span>Years Experience</span>
+
+                        <div style="display:flex; gap:12px; margin-top:32px; flex-wrap:wrap;">
+                            <a href="index.html#contact" class="btn btn--primary">
+                                <span>Start A Project</span>
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                            </a>
+                            <a data-cv href="#" class="btn">
+                                <span>Download CV</span>
+                            </a>
                         </div>
                     </div>
-                </div>
-                <div class="about-image scroll-reveal">
-                    <img src="images/eljojj.png" alt="Youssef Elmonier" loading="lazy" decoding="async" width="320"
-                        height="400" fetchpriority="high">
-                </div>
-            </div>
-        </div>
-        <hr class="section-separator scroll-reveal">
-        <div class="glass-card about-section" style="padding: 32px; margin-top: 40px;">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
-                <div class="about-video-wrapper"
-                    style="flex:0 0 320px;display:flex;justify-content:center;align-items:center;">
-                    <video class="scroll-reveal about-section-video" autoplay loop muted playsinline webkit-playsinline
-                        loading="lazy" preload="metadata"
-                        style="width:100%;height:100%;background:#000;border-radius:24px;" poster="images/me4.jpg"
-                        width="320" height="400">
-                        <source src="images/vid1.MP4" type="video/mp4">
-                        <source src="images/vid1.webm" type="video/webm">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="about-info scroll-reveal"
-                    style="flex:1 1 400px;display:flex;flex-direction:column;gap:24px;">
-                    <h2 class="scroll-reveal">WHERE THE MAGIC HAPPENS.</h2>
-                    <p class="shiny-text scroll-reveal">A heaven for creativity. Whether you're a client looking to
-                        enhance
-                        your brand or an individual seeking to immortalize a special moment, I provide a professional
-                        and
-                        personalized experience tailored to your unique vision.</p>
-                    <div class="about-buttons scroll-reveal">
-                        <a href="index.html#contact" class="primary">Start a Project &rarr;</a>
-                        <a href="index.html#portfolio">My Portfolio</a>
-                        <a href="#more">Learn More &rarr;</a>
+
+                    <div class="about-portrait reveal">
+                        <img src="/images/webp/eljojj.webp" alt="Youssef Elmonier portrait" loading="lazy" decoding="async" width="440" height="550">
                     </div>
                 </div>
             </div>
-        </div>
-        <hr class="section-separator scroll-reveal">
-        <!-- Education & Background Section -->
-        <div class="glass-card education-hero" style="padding: 32px; margin-top: 40px;">
-            <div style="display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;">
-                <div class="education-text">
-                    <h1 class="scroll-reveal">EDUCATION & BACKGROUND</h1>
-                    <p class="shiny-text scroll-reveal">Bachelor in Software Engineering from Arab Academy for Science
-                        and
-                        Technology and Maritime Transport, Alexandria, Egypt., Minor in Multimedia and Graphic Design,
-                        creative technology, and digital design. Passionate about blending technical skills with
-                        artistic
-                        vision to create impactful digital experiences.</p>
-                    <div class="certifications scroll-reveal" style="color: #ccc; font-weight: 500;">
-                        <strong style="color: #fff;">Certifications:</strong> IBM SkillsBuild, Web Design, Agile,
-                        Project Management
+        </section>
+
+        <!-- ── Education & Background ── -->
+        <section class="section" aria-labelledby="edu-heading">
+            <div class="container">
+                <div class="series reveal">
+                    <div>
+                        <span class="eyebrow">Academic Foundation</span>
+                        <h2 class="h2" id="edu-heading" style="font-size:clamp(34px,4.5vw,56px);">Education &amp; <br><span class="text-grad">Technology</span></h2>
+                    </div>
+                    <div class="series__text">
+                        <p>
+                            Bachelor in Software Engineering from Arab Academy for Science, Technology and Maritime Transport (AASTMT), Alexandria, Egypt. Minor in Multimedia and Graphic Design.
+                        </p>
+                        <p style="margin-top:14px; color:var(--muted); font-size:16px;">
+                            This software engineering rigor is the engine behind my filmmaking: mastering Python tooling, custom model finetuning, real-time rendering pipelines, and seamless creative workflows that traditional directors cannot replicate.
+                        </p>
                     </div>
                 </div>
-                <div class="education-image scroll-reveal">
-                    <img src="images/me67.jpg" alt="Youssef Elmonier Education" loading="lazy" decoding="async"
-                        width="320" height="400" style="border-radius: 20px;" />
-                </div>
             </div>
+        </section>
+
+        <!-- ── IBM SkillsBuild Credentials (Demoted from Home) ── -->
+        <section class="section" aria-labelledby="certs-heading">
+            <div class="container">
+                <div class="section-head reveal">
+                    <div>
+                        <span class="eyebrow">Institutional Credentials</span>
+                        <h2 class="h2" id="certs-heading">IBM SkillsBuild <span class="text-grad">Certifications</span></h2>
+                    </div>
+                    <p class="lead">
+                        Official technical certifications verifying foundational competencies in AI, user experience, deployment, and agile methodologies.
+                    </p>
+                </div>
+
+                <ul class="certs-grid">
+                    <li class="cert-card reveal">
+                        <img src="/images/webp/Ai.webp" alt="AI Fundamentals" loading="lazy" decoding="async" width="48" height="48">
+                        <div>
+                            <h3>AI Fundamentals</h3>
+                            <p>IBM SkillsBuild</p>
+                        </div>
+                        <a href="/images/Ai.jpeg" target="_blank" rel="noopener">
+                            <span>View Certificate</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                        </a>
+                    </li>
+                    <li class="cert-card reveal">
+                        <img src="/images/webp/ui.webp" alt="UX Design" loading="lazy" decoding="async" width="48" height="48">
+                        <div>
+                            <h3>Introduction to UX Design</h3>
+                            <p>(MDLPT-366) · IBM SkillsBuild</p>
+                        </div>
+                        <a href="/images/SkillsBuild.pdf" target="_blank" rel="noopener">
+                            <span>View Certificate</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                        </a>
+                    </li>
+                    <li class="cert-card reveal">
+                        <img src="/images/webp/webtest.webp" alt="Website Testing" loading="lazy" decoding="async" width="48" height="48">
+                        <div>
+                            <h3>Website Testing &amp; Deployment</h3>
+                            <p>(MDLPT-272) · IBM SkillsBuild</p>
+                        </div>
+                        <a href="/images/SkillsBuild WEB TEST.pdf" target="_blank" rel="noopener">
+                            <span>View Certificate</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                        </a>
+                    </li>
+                    <li class="cert-card reveal">
+                        <img src="/images/webp/pm.webp" alt="Project Management" loading="lazy" decoding="async" width="48" height="48">
+                        <div>
+                            <h3>PM Fundamentals</h3>
+                            <p>IBM SkillsBuild</p>
+                        </div>
+                        <a href="/images/SkillsBuild PM .pdf" target="_blank" rel="noopener">
+                            <span>View Certificate</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                        </a>
+                    </li>
+                    <li class="cert-card reveal">
+                        <img src="/images/webp/agile.webp" alt="Agile Explorer" loading="lazy" decoding="async" width="48" height="48">
+                        <div>
+                            <h3>Agile Explorer</h3>
+                            <p>IBM SkillsBuild</p>
+                        </div>
+                        <a href="/images/SkillsBuild AGILE .pdf" target="_blank" rel="noopener">
+                            <span>View Certificate</span>
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17L17 7M8 7h9v9"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- ── Footer ── -->
+    <footer class="site-footer">
+        <div class="container site-footer__inner">
+            <div>
+                <p>&copy; <span data-year>2026</span> Youssef Elmonier (@jou.png). All rights reserved.</p>
+                <p style="margin-top: 4px; color: var(--dim);">&copy; Banger Management</p>
+            </div>
+            <ul class="socials" aria-label="Social and professional profiles">
+                <li><a href="https://www.instagram.com/jou.png/" target="_blank" rel="noopener">Instagram</a></li>
+                <li><a href="https://www.behance.net/youssefelmonier" target="_blank" rel="noopener">Behance</a></li>
+                <li><a href="https://www.linkedin.com/in/youssef-elmonier-1a670020b/" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://github.com/YoussefElmonier" target="_blank" rel="noopener">GitHub</a></li>
+                <li><a href="https://wa.me/qr/JZ3OAP5EOO3KI1" target="_blank" rel="noopener">WhatsApp</a></li>
+                <li><a data-cv href="#" class="btn" style="min-height:36px;padding:6px 14px;">CV</a></li>
+            </ul>
         </div>
-    </div>
-    <footer style="text-align:center; color:#888; margin:40px 0 10px 0; font-size:1rem; background:#111;">
-        &copy; 2026 Youssef Elmonier. All rights reserved.
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const revealElements = document.querySelectorAll('.scroll-reveal');
 
-            // Use requestIdleCallback for better performance, fallback to setTimeout
-            const scheduleWork = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
-
-            scheduleWork(() => {
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.style.opacity = '1';
-                            entry.target.style.transform = 'translateY(0)';
-                            observer.unobserve(entry.target); // Stop observing once revealed
-                        }
-                    });
-                }, { threshold: 0.1, rootMargin: '50px' });
-
-                revealElements.forEach(el => observer.observe(el));
-            });
-        });
-    </script>
-
-    <!-- Optimized Video Error Handling -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            // iOS Safari detection
-            const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
-            const isSafari = /Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent);
-            const isIOSSafari = isIOS && isSafari;
-
-            // Hero background video error handling
-            const bgVideo = document.querySelector('.about-bg-video');
-            if (bgVideo) {
-                // iOS Safari specific handling for background video
-                if (isIOSSafari) {
-                    const startBgVideoOnInteraction = () => {
-                        bgVideo.play().catch(() => { });
-                    };
-                    document.addEventListener('touchstart', startBgVideoOnInteraction, { once: true });
-                    document.addEventListener('click', startBgVideoOnInteraction, { once: true });
-                }
-            }
-
-            // About section video error handling
-            const aboutVideo = document.querySelector('.about-section-video');
-            if (aboutVideo) {
-                // iOS Safari specific handling for about section video
-                if (isIOSSafari) {
-                    const startAboutVideoOnInteraction = () => {
-                        aboutVideo.play().catch(() => { });
-                    };
-                    document.addEventListener('touchstart', startAboutVideoOnInteraction, { once: true });
-                    document.addEventListener('click', startAboutVideoOnInteraction, { once: true });
-                }
-            }
-        });
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js" defer async></script>
-    <script src="https://assets.codepen.io/16327/ScrollTrigger.min.js" defer async></script>
-    <script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
-    <script src="JavaScript/main.js" defer></script>
-    <script src="js/scripts.js" defer></script>
+    <!-- Scripts -->
+    <script src="js/content.js"></script>
+    <script src="js/site.js"></script>
 </body>
 
 </html>
