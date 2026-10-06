@@ -550,6 +550,20 @@ p {
     color: var(--muted);
 }
 
+.stats-group {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px 10px;
+}
+
+.stats-divider {
+    color: var(--line-strong);
+    opacity: 0.6;
+    margin: 0 4px;
+    user-select: none;
+}
+
 .stats-line strong {
     color: var(--gold-hi);
     font-weight: 600;

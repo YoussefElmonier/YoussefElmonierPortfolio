@@ -33,9 +33,15 @@ window.SITE = {
     // Stats line under "Featured AI Reels" (edit freely).
     topReel: {
         title: 'Modern Day Pharaohs',
-        views: '149K',
-        likes: '9.7K',
-        shares: '2.9K'
+        views: '180K',
+        likes: '11.6K',
+        shares: '3.2K'
+    },
+
+    totalReels: {
+        views: '250K',
+        likes: '25K',
+        shares: '7K'
     }
 };
 
@@ -58,7 +64,7 @@ window.REELS = [
         url: 'https://www.instagram.com/reel/Dd7-LGPIHHd/?stkn=Yzl2ajM0MnR2NTU4',
         thumb: 'images/webp/reel1.webp',
         video: null,
-        tag: 'Viral · 149K'
+        tag: 'Viral · 180K'
     },
     {
         title: 'Day in KEMET',
@@ -85,12 +91,20 @@ window.REELS = [
         tag: 'Cinema AI'
     },
     {
-        title: 'Pharaoh on the Sphinx',
-        description: 'Streetwear puffer jacket atop the Giza Sphinx.',
-        url: 'REEL_URL_6',
-        thumb: null,
+        title: 'They Never Really Left',
+        description: 'Ancient mummy sharing tea and tawla at a local Cairo street café.',
+        url: 'https://www.instagram.com/p/DeEIUKCI4uP/',
+        thumb: 'images/webp/reel5.webp',
         video: null,
-        tag: 'Upcoming'
+        tag: 'Higgsfield AI'
+    },
+    {
+        title: 'Mummified The Drip',
+        description: 'Ancient royalty meets modern streetwear: iced-out grillz and counting cash.',
+        url: 'https://www.instagram.com/p/DeHpzBsIszr/',
+        thumb: 'images/webp/reel6.webp',
+        video: null,
+        tag: 'Higgsfield AI'
     }
 ];
 

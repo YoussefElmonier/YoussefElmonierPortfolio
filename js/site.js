@@ -40,13 +40,31 @@
         });
 
         var t = SITE.topReel;
+        var all = SITE.totalReels;
         document.querySelectorAll('[data-site="topreel"]').forEach(function (el) {
-            if (!t) { el.hidden = true; return; }
+            if (!t && !all) { el.hidden = true; return; }
+            var html = '';
+            if (t) {
+                html += '<span class="stats-group"><span>Top reel:</span> <strong>' + esc(t.views) + '</strong> views' +
+                    '<span class="sep" aria-hidden="true">·</span><strong>' + esc(t.likes) + '</strong> likes' +
+                    '<span class="sep" aria-hidden="true">·</span><strong>' + esc(t.shares) + '</strong> shares' +
+                    ' <span>on</span> <em class="gold" style="font-style:normal">' + esc(t.title) + '</em></span>';
+            }
+            if (all) {
+                if (html) html += '<span class="stats-divider" aria-hidden="true">|</span>';
+                html += '<span class="stats-group"><span>Total across reels:</span> <strong>' + esc(all.views) + '</strong> views' +
+                    '<span class="sep" aria-hidden="true">·</span><strong>' + esc(all.likes) + '</strong> likes' +
+                    '<span class="sep" aria-hidden="true">·</span><strong>' + esc(all.shares) + '</strong> shares</span>';
+            }
+            el.innerHTML = html;
+        });
+
+        document.querySelectorAll('[data-site="totalreels"]').forEach(function (el) {
+            if (!all) { el.hidden = true; return; }
             el.innerHTML =
-                '<span>Top reel:</span> <strong>' + esc(t.views) + '</strong> views' +
-                '<span class="sep" aria-hidden="true">·</span><strong>' + esc(t.likes) + '</strong> likes' +
-                '<span class="sep" aria-hidden="true">·</span><strong>' + esc(t.shares) + '</strong> shares' +
-                ' <span>on</span> <em class="gold" style="font-style:normal">' + esc(t.title) + '</em>';
+                '<span>Total reels:</span> <strong>' + esc(all.views) + '</strong> views' +
+                '<span class="sep" aria-hidden="true">·</span><strong>' + esc(all.likes) + '</strong> likes' +
+                '<span class="sep" aria-hidden="true">·</span><strong>' + esc(all.shares) + '</strong> shares';
         });
 
         // CV buttons: href comes from SITE.cvUrl (TODO in js/content.js)
